@@ -1,0 +1,50 @@
+\chapter{Unit 8: Chi-Square Tests}
+
+\section{The 3 Chi-Square Tests at a Glance}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Test Name} & \textbf{Number of Samples} & \textbf{Number of Variables} & \textbf{Null Hypothesis ($H_0$)} \\
+\midrule
+\textbf{Goodness-of-Fit (GOF)} & 1 Sample & 1 Categorical Variable & Stated distribution is correct. \\
+\textbf{Homogeneity} & 2+ Independent Samples & 1 Categorical Variable & Distribution is identical across populations. \\
+\textbf{Independence / Assoc.} & 1 Single Sample & 2 Categorical Variables & No association between variables. \\
+\bottomrule
+\end{tabular}
+\caption{Distinguishing the 3 Chi-Square Tests}
+\end{table}
+
+\section{Essential Conditions for All Chi-Square Tests}
+
+\begin{enumerate}
+    \item \textbf{Random:} Random sample(s) or randomized experiment.
+    \item \textbf{10\% Condition:} $n \le 0.10N$ (when sampling without replacement).
+    \item \textbf{Large Expected Counts:} \textbf{ALL expected counts $\ge 5$}. (Expected counts must be written explicitly in a table on FRQs).
+\end{enumerate}
+
+\section{Formulas \& Degrees of Freedom}
+
+\begin{formulabox}[Chi-Square Test Formulas]
+\textbf{Chi-Square Test Statistic ($\chi^2$):}
+\[
+\chi^2 = \sum \frac{(\text{Observed} - \text{Expected})^2}{\text{Expected}} = \sum \frac{(O - E)^2}{E}
+\]
+
+\textbf{Expected Counts for Two-Way Tables (Homogeneity / Independence):}
+\[
+\text{Expected Count} = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Table Total}}
+\]
+
+\textbf{Degrees of Freedom ($\text{df}$):}
+\begin{itemize}
+    \item \textbf{GOF Test:} $\text{df} = k - 1$ (where $k$ is the number of categories).
+    \item \textbf{Two-Way Table (Homogeneity / Independence):} $\text{df} = (\text{rows} - 1) \times (\text{columns} - 1)$.
+\end{itemize}
+\end{formulabox}
+
+\begin{trapbox}[AP Exam Trap Alert: Observed vs Expected Counts in Conditions]
+Never check whether \emph{observed} counts are $\ge 5$. The condition applies strictly to \textbf{EXPECTED counts} ($E \ge 5$). Graders will deduct points if you verify observed data rather than calculated expected values!
+\end{trapbox}

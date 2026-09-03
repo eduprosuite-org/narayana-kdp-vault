@@ -1,0 +1,59 @@
+\chapter{Unit 9: Inference for Slopes}
+
+\section{Essential Concepts \& Computer Output Interpretation}
+
+Inference for linear regression tests whether there is a statistically significant linear relationship between two quantitative variables in the population:
+\[
+\text{Population Model: } \mu_y = \alpha + \beta x
+\]
+\[
+\text{Sample Regression: } \hat{y} = a + bx
+\]
+
+\section{The LINER Conditions for Slope Inference}
+
+Before computing a $t$-interval or $t$-test for slope, verify the \textbf{LINER} conditions:
+\begin{enumerate}
+    \item \textbf{L --- Linear:} Scatterplot shows a linear pattern; residual plot shows no curved pattern.
+    \item \textbf{I --- Independent:} Observations are independent ($10\%$ condition: $n \le 0.10N$).
+    \item \textbf{N --- Normal Residuals:} Histogram, dotplot, or Normal Probability Plot of residuals shows no severe skewness or outliers.
+    \item \textbf{E --- Equal SD / Variance:} Residual plot shows consistent vertical spread along the horizontal line $= 0$ (no fanning).
+    \item \textbf{R --- Random:} Data obtained from a random sample or randomized experiment.
+\end{enumerate}
+
+\section{Formulas \& Computer Output Reading}
+
+\begin{formulabox}[Slope Inference Formulas]
+\textbf{$t$-Interval for Slope $\beta$:}
+\[
+b \pm t^* \cdot \text{SE}_b \quad \text{with } \text{df} = n - 2
+\]
+
+\textbf{$t$-Test for Slope $\beta$:}
+\[
+H_0: \beta = 0 \quad \text{vs} \quad H_a: \beta \ (<, >, \ne) \ 0
+\]
+\[
+t = \frac{b - 0}{\text{SE}_b} \quad \text{with } \text{df} = n - 2
+\]
+\end{formulabox}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{$T$} & \textbf{$P$} \\
+\midrule
+Constant (Intercept) & $a$ & $\text{SE}_a$ & $t_a$ & $p$-value \\
+$\mathbf{X \text{ Variable (Slope)}}$ & $\mathbf{b}$ & $\mathbf{\text{SE}_b}$ & $\mathbf{t}$ & $\mathbf{p\text{-value}}$ \\
+\midrule
+$S = \text{value}$ & \multicolumn{2}{l}{$R\text{-sq} = r^2$} & \multicolumn{2}{l}{$R\text{-sq(adj)} = \dots$} \\
+\bottomrule
+\end{tabular}
+\caption{Reading Standard Regression Computer Output}
+\end{table}
+
+\begin{templatebox}[Template for Interpreting $\text{SE}_b$]
+\emph{"If we repeated the sampling process many times, the estimated slope of the sample regression line relating [response variable] to [explanatory variable] would typically vary by about [value of $\text{SE}_b$] from the true population slope $\beta$."}
+\end{templatebox}

@@ -1,0 +1,29 @@
+{
+  "series_name": "AP Statistics Score-5 Blueprint Series",
+  "books": [
+    {
+      "volume": 1,
+      "book_title": "AP Statistics Formula & Cheat Sheet Companion",
+      "subtitle": "The Quick-Review Cram Guide: Essential Formulas, Inference Rules, and Key AP Exam Alerts",
+      "core_focus": "Formula cheat sheets, conditions for inference checklists, rapid unit summaries"
+    },
+    {
+      "volume": 2,
+      "book_title": "AP Statistics TI-84 Calculator Advantage",
+      "subtitle": "Step-by-Step Keystrokes to Solve Distributions, Confidence Intervals, and Hypothesis Tests Faster",
+      "core_focus": "TI-84 Plus CE keystroke guides, distribution menus, matrix operations, statistical tests"
+    },
+    {
+      "volume": 3,
+      "book_title": "AP Statistics FRQ & Response Templates",
+      "subtitle": "Master Free-Response Questions with Rubric-Aligned Model Answers, Scoring Hacks, and Common Pitfalls",
+      "core_focus": "Free response rubric phrasing, model written answers, common grader deduction traps"
+    },
+    {
+      "volume": 4,
+      "book_title": "AP Statistics Complete Exam Prep & Online Practice",
+      "subtitle": "The Ultimate 5-Score Blueprint: Unit Reviews, 500+ Practice Drills, and Full-Length Simulated Online Exams",
+      "core_focus": "Complete 9-unit review, 500+ questions, online simulated practice exams via QR code"
+    }
+  ]
+}

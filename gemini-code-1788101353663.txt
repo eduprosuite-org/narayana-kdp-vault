@@ -1,0 +1,13 @@
+% BAD: Bleeds off edge if text is long
+% \begin{tabular}{|l|l|l|} ... \end{tabular}
+
+% CORRECT: Fits within 4.625in printable area
+\begin{table}[h!]
+\small
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{1.1in}|Y|Y|}
+\hline
+Test Type & Null Hypothesis ($H_0$) & Alternative ($H_a$) \\ \hline
+1-Sample $z$-Test & $p = p_0$ & $p \neq p_0 \text{ or } p > p_0$ \\ \hline
+2-Sample $t$-Test & $\mu_1 - \mu_2 = 0$ & $\mu_1 - \mu_2 \neq 0$ \\ \hline
+\end{tabularx}
+\end{table}

@@ -1,0 +1,67 @@
+\documentclass[10pt]{article}
+% =========================================================================
+% PARAMETRIC KDP PAPERBACK FULL-WRAP COVER GENERATOR (6" x 9" PAPERBACK)
+% Formula: Total Width = Bleed (0.125") + Back (6.0") + Spine + Front (6.0") + Bleed (0.125")
+% Example for 200 Pages (White Paper factor = 0.002252 in/page):
+% Spine = 200 * 0.002252 = 0.4504 in -> Total Width = 12.7004 in
+% =========================================================================
+\usepackage[paperwidth=12.7004in, paperheight=9.250in, margin=0in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\definecolor{coverbg}{HTML}{0F172A}   % Dark Slate Navy
+\definecolor{accentgold}{HTML}{F59E0B} % Warm Gold
+\definecolor{cardbg}{HTML}{1E293B}    % Card Fill
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % Background Fill
+    \fill[coverbg] (current page.south west) rectangle (current page.north east);
+
+    % --- FRONT COVER (Right Side: X = 6.5754in to 12.7004in) ---
+    \node[anchor=north west, text width=5.2in, text=white] at (7.0, 8.2) {
+        {\fontsize{28}{34}\selectfont \textbf{HIGH-YIELD MASTER}\par}
+        \vspace{0.1in}
+        {\fontsize{20}{24}\selectfont \textcolor{accentgold}{\textbf{STUDY COMPANION}}\par}
+        \vspace{0.2in}
+        {\Large \textbf{The Complete Blueprint for Rapid Topic Mastery}\par}
+        \vspace{0.1in}
+        {\large\itshape Essential Concepts, Step-by-Step Drills, and Common Pitfall Alerts\par}
+    };
+
+    % Front Cover Feature Badge
+    \node[draw=accentgold, fill=cardbg, rounded corners=3pt, thick, inner sep=10pt, text width=4.8in, anchor=north west] at (7.0, 4.8) {
+        \textcolor{white}{\textbf{WHAT IS INSIDE:}}\\
+        \textcolor{white}{\small 
+        $\bullet$ Concise Unit-by-Unit Concept Summaries\\
+        $\bullet$ Practical Problem-Solving Workflows \& Cheat Sheets\\
+        $\bullet$ Rubric-Aligned Model Solutions \& Pitfall Alerts\\
+        $\bullet$ Free Access to Online GitHub Practice Portal}
+    };
+
+    % --- SPINE (Center: X = 6.3502in) ---
+    \node[rotate=-90, text=white, font=\bfseries\small] at (6.3502, 4.625) {
+        HIGH-YIELD MASTER STUDY COMPANION \hspace{0.5in} VOLUME 1
+    };
+
+    % --- BACK COVER (Left Side: X = 0.125in to 6.125in) ---
+    \node[anchor=north west, text width=5.0in, text=white] at (0.6, 8.2) {
+        {\Large \textcolor{accentgold}{\textbf{Accelerate Your Learning Curve}}}\par
+        \vspace{0.15in}
+        {\small Designed specifically for maximum retention, this companion eliminates textbook fluff and focuses 100\% on core understanding and practical execution. Perfect for rapid revision and exam prep.\par}
+        \vspace{0.2in}
+        {\small \textbf{Key Highlights:}}\\
+        \textcolor{white}{\small
+        $\bullet$ Zero-fluff formula cheat sheets\\
+        $\bullet$ Common error warnings to save marks\\
+        $\bullet$ Free digital practice resources}
+    };
+
+    % KDP Barcode Placeholder Area (2" x 1.2" on bottom right of back cover)
+    \draw[fill=white, draw=none] (3.8, 0.5) rectangle (5.8, 1.7);
+    \node[anchor=center, text=black] at (4.8, 1.1) {\tiny [KDP Barcode Area]};
+
+\end{tikzpicture}
+\end{document}

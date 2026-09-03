@@ -1,0 +1,74 @@
+\chapter{Unit 1: Exploring One-Variable Data}
+
+\section{Essential Concepts \& Cheat Sheet}
+
+When describing any quantitative single-variable distribution on the AP Exam, you \textbf{must} address four key characteristics: \textbf{SOCS} (Shape, Outliers, Center, Spread) always written \textbf{in context} of the problem.
+
+\begin{formulabox}[Core Formulas: One-Variable Statistics]
+\textbf{1. Mean ($\bar{x}$):}
+\[
+\bar{x} = \frac{\sum x_i}{n} = \frac{1}{n} \sum x_i
+\]
+
+\textbf{2. Sample Standard Deviation ($s_x$):}
+\[
+s_x = \sqrt{\frac{1}{n-1}\sum (x_i - \bar{x})^2}
+\]
+
+\textbf{3. Standardized Score ($z$-score):}
+\[
+z = \frac{x - \mu}{\sigma} \quad \text{or} \quad z = \frac{x - \bar{x}}{s_x}
+\]
+Represents how many standard deviations a value $x$ falls above ($z > 0$) or below ($z < 0$) the mean.
+\end{formulabox}
+
+\section{Outlier Identification Rules}
+
+\subsection{The 1.5 $\times$ IQR Rule (for Skewed Data / Medians)}
+\begin{itemize}
+    \item Calculate Interquartile Range: $\text{IQR} = Q_3 - Q_1$
+    \item Lower Outlier Boundary: $\text{Lower Fence} = Q_1 - 1.5(\text{IQR})$
+    \item Upper Outlier Boundary: $\text{Upper Fence} = Q_3 + 1.5(\text{IQR})$
+    \item Any data point $x < \text{Lower Fence}$ or $x > \text{Upper Fence}$ is an \textbf{outlier}.
+\end{itemize}
+
+\subsection{The 2-Standard-Deviation Rule (for Symmetric / Normal Data)}
+\begin{itemize}
+    \item Outliers are points beyond: $\mu \pm 2\sigma$ (or $\mu \pm 3\sigma$ for extreme outliers).
+\end{itemize}
+
+\section{Resistant vs. Non-Resistant Summary Statistics}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Measure} & \textbf{Resistant to Outliers / Skew?} & \textbf{When to Use on Exam} \\
+\midrule
+\textbf{Median} & \textbf{Yes} (Unaffected by extremes) & Skewed distributions \\
+\textbf{IQR} & \textbf{Yes} (Middle 50\% only) & Skewed distributions \\
+\textbf{Mean} & \textbf{No} (Pulled toward the tail/outliers) & Symmetric, unimodal distributions \\
+\textbf{Standard Deviation} & \textbf{No} (Squared deviations inflate) & Symmetric, unimodal distributions \\
+\textbf{Range} & \textbf{No} (Directly depends on Max/Min) & Never use as sole measure of spread \\
+\bottomrule
+\end{tabular}
+\caption{Resistant vs Non-Resistant Measures}
+\end{table}
+
+\begin{trapbox}[AP Exam Trap Alert: Comparing Distributions]
+When comparing two distributions on an FRQ:
+\begin{enumerate}
+    \item You \textbf{must} use comparative words (e.g., \emph{"Distribution A has a greater median than Distribution B"}, NOT just \emph{"Distribution A has a median of 5 and B has 3"}).
+    \item You \textbf{must} include context (e.g., grams of sugar, test scores, heights in inches).
+    \item Never mix resistant and non-resistant measures (compare median to median, or mean to mean).
+\end{enumerate}
+\end{trapbox}
+
+\section{The Empirical Rule (68-95-99.7 Rule)}
+For any approximately Normal distribution $N(\mu, \sigma)$:
+\begin{itemize}
+    \item $\approx 68\%$ of data falls within $\mu \pm 1\sigma$.
+    \item $\approx 95\%$ of data falls within $\mu \pm 2\sigma$.
+    \item $\approx 99.7\%$ of data falls within $\mu \pm 3\sigma$.
+\end{itemize}

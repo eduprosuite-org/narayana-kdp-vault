@@ -1,0 +1,60 @@
+\chapter{Unit 5: Sampling Distributions}
+
+\section{Essential Concepts \& Cheat Sheet}
+
+A \textbf{sampling distribution} is the probability distribution of a statistic obtained from all possible samples of size $n$ drawn from the same population.
+
+\begin{formulabox}[Sampling Distributions Formulas]
+\textbf{1. Sampling Distribution of Sample Proportion ($\hat{p}$):}
+\begin{itemize}
+    \item Mean: $\mu_{\hat{p}} = p$ (Unbiased estimator)
+    \item Standard Deviation: $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$ (Valid if $n \le 0.10N$, the 10\% condition)
+    \item Shape: Approximately Normal if Large Counts condition holds:
+    \[
+    np \ge 10 \quad \text{and} \quad n(1-p) \ge 10
+    \]
+\end{itemize}
+
+\textbf{2. Sampling Distribution of Sample Mean ($\bar{x}$):}
+\begin{itemize}
+    \item Mean: $\mu_{\bar{x}} = \mu$ (Unbiased estimator)
+    \item Standard Deviation: $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$ (Valid if $n \le 0.10N$, the 10\% condition)
+    \item Shape: Approximately Normal if:
+    \begin{itemize}
+        \item The population distribution is Normal, \textbf{OR}
+        \item \textbf{Central Limit Theorem (CLT):} Sample size is large enough ($n \ge 30$).
+    \end{itemize}
+\end{itemize}
+\end{formulabox}
+
+\section{The Central Limit Theorem (CLT) --- The Score-5 Truth}
+
+\begin{trapbox}[AP Exam Trap Alert: What the CLT Actually Says]
+\textbf{The Central Limit Theorem states ONLY that the SAMPLING DISTRIBUTION of $\bar{x}$ becomes approximately Normal as $n$ increases ($n \ge 30$), REGARDLESS of the population shape.}
+
+\textbf{What the CLT DOES NOT DO:}
+\begin{enumerate}
+    \item It does NOT make the population normal.
+    \item It does NOT make the sample data normal.
+    \item It does NOT apply to proportions ($\hat{p}$). (Proportions rely on the Large Counts condition).
+\end{enumerate}
+\end{trapbox}
+
+\section{Difference Between Statistics and Parameters}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Parameter (Population --- Greek)} & \textbf{Statistic (Sample --- Roman/Hat)} & \textbf{Formula for Std. Dev. of Statistic} \\
+\midrule
+Mean: $\mu$ & Sample Mean: $\bar{x}$ & $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$ \\
+Proportion: $p$ & Sample Proportion: $\hat{p}$ & $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$ \\
+Standard Deviation: $\sigma$ & Sample Std. Dev.: $s$ & --- \\
+Difference of Means: $\mu_1 - \mu_2$ & Sample Diff: $\bar{x}_1 - \bar{x}_2$ & $\sigma_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$ \\
+Difference of Proportions: $p_1 - p_2$ & Sample Diff: $\hat{p}_1 - \hat{p}_2$ & $\sigma_{\hat{p}_1 - \hat{p}_2} = \sqrt{\frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2}}$ \\
+\bottomrule
+\end{tabular}
+\caption{Parameters vs Statistics Summary}
+\end{table}

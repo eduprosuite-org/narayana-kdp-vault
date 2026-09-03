@@ -1,0 +1,8 @@
+% BAD: Single line equations that extend past right margin
+% \begin{equation} P(A \cup B) = P(A) + P(B) - P(A \cap B) \text{ where } P(A \cap B) = P(A)P(B|A) \end{equation}
+
+% CORRECT: Broken across multiple lines using multline or align*
+\begin{align*}
+P(A \cup B) &= P(A) + P(B) - P(A \cap B) \\
+            &= P(A) + P(B) - [P(A) \times P(B|A)]
+\end{align*}

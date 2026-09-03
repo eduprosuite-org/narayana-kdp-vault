@@ -1,0 +1,58 @@
+\chapter{Unit 6: Inference for Proportions}
+
+\section{Essential Conditions for All Proportion Inference}
+
+Before conducting any confidence interval or significance test for proportions, verify:
+\begin{enumerate}
+    \item \textbf{Randomness:} Data comes from a well-designed random sample or randomized experiment.
+    \item \textbf{10\% Rule (Independence):} When sampling without replacement, $n \le 0.10N$.
+    \item \textbf{Large Counts (Normality):}
+    \begin{itemize}
+        \item For \textbf{1-Prop $z$-Interval}: $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$ (using sample successes/failures).
+        \item For \textbf{1-Prop $z$-Test}: $np_0 \ge 10$ and $n(1-p_0) \ge 10$ (using \textbf{hypothesized} $p_0$).
+    \end{itemize}
+\end{enumerate}
+
+\section{1-Sample Proportion Inference}
+
+\begin{formulabox}[1-Proportion Inference Formulas]
+\textbf{1-Sample $z$-Interval for $p$:}
+\[
+\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]
+where $z^*$ is the critical value ($90\% \to 1.645, 95\% \to 1.960, 99\% \to 2.576$).
+
+\textbf{1-Sample $z$-Test for $p$:}
+\[
+H_0: p = p_0 \quad \text{vs} \quad H_a: p \ (<, >, \ne) \ p_0
+\]
+\[
+z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}
+\]
+\end{formulabox}
+
+\section{2-Sample Proportion Inference}
+
+\begin{formulabox}[2-Proportion Inference Formulas]
+\textbf{2-Sample $z$-Interval for $p_1 - p_2$:}
+\[
+(\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
+\]
+
+\textbf{2-Sample $z$-Test for $p_1 - p_2$ (Pooled/Combined Proportion):}
+\[
+H_0: p_1 - p_2 = 0 \quad (\text{or } p_1 = p_2)
+\]
+Calculate the \textbf{pooled proportion} $\hat{p}_c$:
+\[
+\hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2}
+\]
+Test statistic:
+\[
+z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_c(1-\hat{p}_c)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}
+\]
+\end{formulabox}
+
+\begin{trapbox}[AP Exam Trap Alert: When to Pool Proportions]
+\textbf{ONLY pool proportions for a 2-SAMPLE $Z$-TEST of $p_1 = p_2$}. NEVER pool for a 2-sample confidence interval, and NEVER pool for means ($t$-tests).
+\end{trapbox}

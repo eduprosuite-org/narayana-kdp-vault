@@ -1,0 +1,183 @@
+﻿\documentclass[10pt]{article}
+% =========================================================================
+% AMAZON KDP PAPERBACK FULL-WRAP COVER: CONCEPT A (MODERN TECH BLUEPRINT)
+% =========================================================================
+% BOOK DETAILS:
+% Title: AP Statistics Formula & Inference Decision Guide
+% Subtitle: The High-Yield Score-5 Cram Companion
+% Series: AP Statistics Score-5 Blueprint Series (Book 1)
+% Page Count: 100 Pages | Trim Size: 6.0" x 9.0" | Paper: White (0.002252"/page)
+% 
+% EXACT DIMENSIONS MATH (300 DPI):
+% Bleed: 0.125 in (37.5 px) on all 4 outer edges
+% Spine Width: 100 * 0.002252 in = 0.2252 in (67.56 px)
+% Total Width: 0.125" (Bleed) + 6.0" (Back) + 0.2252" (Spine) + 6.0" (Front) + 0.125" (Bleed) = 12.4752 in (3742.56 px)
+% Total Height: 0.125" (Bleed) + 9.0" (Trim) + 0.125" (Bleed) = 9.2500 in (2775.00 px)
+% 
+% COORDINATES (X in inches from left, Y in inches from bottom):
+% - Full Page: (0,0) to (12.4752, 9.25)
+% - Back Cover Trim: (0.125, 0.125) to (6.125, 9.125)
+% - Spine Trim: (6.125, 0.125) to (6.3502, 9.125) | Spine Center X = 6.2376 in
+% - Front Cover Trim: (6.3502, 0.125) to (12.3502, 9.125)
+% - Safe Margins: 0.25 in inside all trim lines
+% - Barcode Zone: 2.0" x 1.2" on Back Cover bottom-right: X = [3.875, 5.875], Y = [0.375, 1.575]
+% =========================================================================
+
+\usepackage[paperwidth=12.4752in, paperheight=9.2500in, margin=0in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+% Professional Color Palette (Modern Tech Blueprint)
+\definecolor{coverbg}{HTML}{0B1120}     % Deep Space Navy
+\definecolor{gridcolor}{HTML}{1E293B}   % Subtle Slate Grid
+\definecolor{accentcyan}{HTML}{06B6D4}  % Electric Blueprint Cyan
+\definecolor{accentgold}{HTML}{F59E0B}  % High-Visibility Warm Gold
+\definecolor{cardbg}{HTML}{131F37}      % Translucent Navy Card
+\definecolor{cardborder}{HTML}{38BDF8}  % Bright Sky Blue Border
+\definecolor{textgray}{HTML}{94A3B8}    % Cool Muted Text
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay, x=1in, y=1in]
+
+    % -------------------------------------------------------------------------
+    % 1. BACKGROUND & BLUEPRINT GRID
+    % -------------------------------------------------------------------------
+    \fill[coverbg] (current page.south west) rectangle (current page.north east);
+
+    % Technical Blueprint Grid (0.25" spacing, very faint)
+    \draw[step=0.25in, cyan!6, very thin] (current page.south west) grid (current page.north east);
+    \draw[step=1.00in, cyan!14, thin] (current page.south west) grid (current page.north east);
+
+    % Modern Tech Geometric Glow / Accent Ribbons
+    \shade[top color=accentcyan!20, bottom color=coverbg, opacity=0.4] 
+        (6.3502, 7.5) -- (12.4752, 9.25) -- (12.4752, 7.5) -- cycle;
+    \shade[bottom color=accentgold!15, top color=coverbg, opacity=0.3] 
+        (0, 0) -- (6.125, 0) -- (6.125, 2.5) -- cycle;
+
+    % -------------------------------------------------------------------------
+    % 2. SPINE (Center: X = 6.2376 in, Width = 0.2252 in)
+    % -------------------------------------------------------------------------
+    % Spine Background Tint
+    \fill[cardbg!90!black] (6.125, 0) rectangle (6.3502, 9.25);
+    \draw[cyan!30, thin] (6.125, 0) -- (6.125, 9.25);
+    \draw[cyan!30, thin] (6.3502, 0) -- (6.3502, 9.25);
+
+    % Spine Text (Rotated 90 deg clockwise / reading top-to-bottom)
+    \node[rotate=-90, text=white, font=\sffamily\bfseries\fontsize{7}{9}\selectfont, anchor=center] 
+        at (6.2376, 4.625) {
+        \textcolor{accentcyan}{AP\textsuperscript{\textregistered} STATISTICS} \hspace{0.15in}
+        \textcolor{white}{FORMULA \& INFERENCE DECISION GUIDE} \hspace{0.25in}
+        \textcolor{accentgold}{VOL. 1} \hspace{0.35in}
+        \textcolor{textgray}{PR}
+    };
+
+    % -------------------------------------------------------------------------
+    % 3. FRONT COVER (X: 6.3502 in to 12.4752 in | Center X = 9.4127 in)
+    % -------------------------------------------------------------------------
+
+    % Top Series Badge
+    \node[anchor=north, text width=5.2in, align=center] at (9.4127, 8.75) {
+        {\sffamily\bfseries\fontsize{10}{12}\selectfont \textcolor{accentcyan}{AP\textsuperscript{\textregistered} STATISTICS SCORE-5 BLUEPRINT SERIES $\bullet$ BOOK 1}}\\[2pt]
+        {\sffamily\fontsize{7.5}{9}\selectfont \textcolor{textgray}{HIGH-YIELD CRAM COMPANION \& FORMULA TRANSLATION SYSTEM}}
+    };
+
+    % Main Title Block
+    \node[anchor=north, text width=5.4in, align=center] at (9.4127, 8.05) {
+        {\sffamily\bfseries\fontsize{28}{32}\selectfont \textcolor{white}{AP\textsuperscript{\textregistered} STATISTICS}}\\[3pt]
+        {\sffamily\bfseries\fontsize{24}{28}\selectfont \textcolor{accentgold}{FORMULA \& INFERENCE}}\\[3pt]
+        {\sffamily\bfseries\fontsize{21}{25}\selectfont \textcolor{accentcyan}{DECISION GUIDE}}\\[8pt]
+        {\sffamily\bfseries\fontsize{11}{14}\selectfont \textcolor{white}{The Rapid-Review Exam Companion for Timed Mastery}}\\[3pt]
+        {\sffamily\itshape\fontsize{8.5}{11}\selectfont \textcolor{textgray}{Plain-English Formula Breakdowns $\bullet$ Master Inference Flowcharts $\bullet$ FRQ Sentence Frames}}
+    };
+
+    % Center Feature Blueprint Card
+    \node[draw=cardborder, fill=cardbg, rounded corners=6pt, line width=1pt, inner sep=10pt, text width=4.7in, anchor=north] 
+        at (9.4127, 5.45) {
+        {\sffamily\bfseries\fontsize{10.5}{13}\selectfont \textcolor{accentgold}{$\blacktriangleright$ INSIDE THE SCORE-5 FORMULA BLUEPRINT:}}\\[6pt]
+        \textcolor{white}{\sffamily\fontsize{8.5}{11.5}\selectfont
+        \textbf{\textcolor{accentcyan}{[$\checkmark$] 9-Unit Formula Translation:}} Every symbol decoded into everyday English\\
+        \textbf{\textcolor{accentcyan}{[$\checkmark$] Visual Inference Trees:}} Instant test selection (Z vs.\ t vs.\ $\chi^2$ vs.\ Slope)\\
+        \textbf{\textcolor{accentcyan}{[$\checkmark$] 100\% FRQ Rubric Frames:}} Fill-in-the-blank templates for $p$-values \& CI\\
+        \textbf{\textcolor{accentcyan}{[$\checkmark$] Top 25 Deduction Traps:}} Eliminate the errors that cost 80\% of students points\\
+        \textbf{\textcolor{accentcyan}{[$\checkmark$] In-Book Digital Portal:}} Free interactive formula search \& drills on mobile}
+    };
+
+    % Tech Flowchart Miniature Graphic Wireframe
+    \node[anchor=north, text width=4.8in, align=center] at (9.4127, 3.15) {
+        \begin{tikzpicture}[x=1in, y=1in, every node/.style={sffamily, font=\scriptsize}]
+            \node[draw=accentcyan, fill=coverbg, rounded corners=3pt, text=white, inner sep=3pt] (q) at (0,0) {Data Type?};
+            \node[draw=accentgold, fill=coverbg, rounded corners=3pt, text=accentgold, inner sep=3pt] (cat) at (-1.4, -0.45) {Categorical ($p$)};
+            \node[draw=accentgold, fill=coverbg, rounded corners=3pt, text=accentgold, inner sep=3pt] (quant) at (1.4, -0.45) {Quantitative ($\mu$)};
+            \node[draw=white!60, fill=cardbg, rounded corners=2pt, text=white, inner sep=2pt] (z) at (-1.4, -0.95) {1/2-Prop Z-Test};
+            \node[draw=white!60, fill=cardbg, rounded corners=2pt, text=white, inner sep=2pt] (t) at (1.4, -0.95) {1/2-Sample t-Test};
+            
+            \draw[->, cyan, thick] (q) -- (cat);
+            \draw[->, cyan, thick] (q) -- (quant);
+            \draw[->, white!70, thin] (cat) -- (z);
+            \draw[->, white!70, thin] (quant) -- (t);
+        \end{tikzpicture}
+    };
+
+    % Author & Publisher Footer
+    \node[anchor=south, text width=5.2in, align=center] at (9.4127, 0.45) {
+        {\sffamily\bfseries\fontsize{10}{12}\selectfont \textcolor{white}{NARAYANA EDUCATIONAL TEST-PREP SERIES}}\\[2pt]
+        {\sffamily\fontsize{7.5}{9}\selectfont \textcolor{textgray}{Engineered for the 2027 AP\textsuperscript{\textregistered} Statistics Exam Standards $\bullet$ Score-5 Edition}}
+    };
+
+    % -------------------------------------------------------------------------
+    % 4. BACK COVER (X: 0.125 in to 6.125 in | Center X = 3.125 in)
+    % -------------------------------------------------------------------------
+
+    % Back Cover Headline
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 8.75) {
+        {\sffamily\bfseries\fontsize{15}{18}\selectfont \textcolor{accentgold}{Stop Memorizing Theory.}}\\[2pt]
+        {\sffamily\bfseries\fontsize{14}{17}\selectfont \textcolor{accentcyan}{Master the Exact Execution Rubrics for a 5.}}\\[6pt]
+        {\sffamily\fontsize{8.5}{11.5}\selectfont \textcolor{white}{
+        You don't need another dense 600-page textbook packed with mathematical proofs you'll never be tested on. Designed specifically for rapid exam preparation and final 30-day review, this companion cuts through curriculum bloat to deliver the exact formula translations, inference decision trees, and fill-in-the-blank rubric phrasings required to secure maximum points on the AP\textsuperscript{\textregistered} Statistics Exam.
+        }}
+    };
+
+    % Back Cover Value Bullets
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 6.75) {
+        {\sffamily\bfseries\fontsize{10.5}{13}\selectfont \textcolor{white}{\underline{WHAT MAKES THIS HIGH-YIELD GUIDE ESSENTIAL:}}}\\[5pt]
+        \textcolor{white}{\sffamily\fontsize{8.2}{11}\selectfont
+        $\blacktriangleright$ \textbf{\textcolor{accentgold}{Official Formula Sheet Decoded:}} Every parameter, statistic, and condition translated into straightforward English with zero academic ambiguity.\\[3pt]
+        $\blacktriangleright$ \textbf{\textcolor{accentgold}{Zero-Guesswork Inference Flowchart:}} Never wonder whether to apply a 2-sample $t$-test, matched pairs $t$-test, or $\chi^2$ test of homogeneity again.\\[3pt]
+        $\blacktriangleright$ \textbf{\textcolor{accentgold}{Rubric-Compliant Sentence Frames:}} Plug-and-play sentence templates for interpreting $p$-values, confidence levels, standard error, and regression slope.\\[3pt]
+        $\blacktriangleright$ \textbf{\textcolor{accentgold}{Top 25 Grader Deduction Traps:}} Safeguard your score against fatal phrasing errors (like claiming the null hypothesis is ``proven true'').\\[3pt]
+        $\blacktriangleright$ \textbf{\textcolor{accentgold}{Free Mobile Interactive Web Portal:}} Built-in QR access to searchable formula lookups and interactive inference decision drills.}
+    };
+
+    % Trademark Legal Disclaimer on Back
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 3.40) {
+        \textcolor{textgray}{\sffamily\fontsize{6}{7.5}\selectfont
+        \textbf{DISCLAIMER:} AP\textsuperscript{\textregistered} and Advanced Placement\textsuperscript{\textregistered} are registered trademarks of the College Board, which is not affiliated with, and does not endorse, sponsor, or produce this publication. All trademark terms are used under Nominative Fair Use for descriptive educational test-preparation purposes only.}
+    };
+
+    % -------------------------------------------------------------------------
+    % 5. BARCODE EXCLUSION ZONE (2.0" x 1.2" on Back Cover Bottom-Right)
+    % -------------------------------------------------------------------------
+    % Coordinates: X from 3.875in to 5.875in, Y from 0.375in to 1.575in
+    \draw[fill=white, draw=gray!40, rounded corners=1pt] (3.875, 0.375) rectangle (5.875, 1.575);
+    \node[anchor=center, text=black!60, font=\sffamily\fontsize{7}{8}\selectfont, align=center] 
+        at (4.875, 0.975) {
+        \textbf{BARCODE ZONE}\\
+        \tiny 2.0'' $\times$ 1.2'' Amazon KDP\\
+        \tiny (Keep Completely Clear)
+    };
+
+    % ISBN / Series Identifier on Back Left
+    \node[anchor=south west, text width=2.8in, align=left] at (0.45, 0.45) {
+        {\sffamily\bfseries\fontsize{7.5}{9}\selectfont \textcolor{white}{AP STATISTICS SCORE-5 BLUEPRINT SERIES}}\\[2pt]
+        {\sffamily\fontsize{6.5}{8}\selectfont \textcolor{textgray}{Category: Mathematics / AP Test Prep}}\\[1pt]
+        {\sffamily\fontsize{6.5}{8}\selectfont \textcolor{textgray}{Published by Narayana Educational Publishing}}
+    };
+
+\end{tikzpicture}
+
+\end{document}
+
+

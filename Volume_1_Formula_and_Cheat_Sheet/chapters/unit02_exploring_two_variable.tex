@@ -1,0 +1,62 @@
+\chapter{Unit 2: Exploring Two-Variable Data}
+
+\section{Essential Concepts \& Cheat Sheet}
+
+Two-variable quantitative data is explored using scatterplots and evaluated using direction, form, strength, and unusual points (outliers/influential points).
+
+\begin{formulabox}[Core Formulas: Linear Regression]
+\textbf{1. Least-Squares Regression Line (LSRL):}
+\[
+\hat{y} = a + bx \quad \text{or} \quad \hat{y} = b_0 + b_1 x
+\]
+where $\hat{y}$ is the predicted response variable and $x$ is the explanatory variable.
+
+\textbf{2. Slope of the Regression Line ($b$):}
+\[
+b = r \left(\frac{s_y}{s_x}\right)
+\]
+
+\textbf{3. $y$-Intercept ($a$):}
+\[
+a = \bar{y} - b\bar{x}
+\]
+\textbf{Crucial Property:} The point $(\bar{x}, \bar{y})$ always lies on the regression line.
+
+\textbf{4. Residual ($e$):}
+\[
+\text{Residual} = \text{Actual } y - \text{Predicted } \hat{y} = y - \hat{y}
+\]
+
+\textbf{5. Standard Error of the Residuals ($s$):}
+\[
+s = \sqrt{\frac{\sum (y_i - \hat{y}_i)^2}{n - 2}} = \sqrt{\frac{\sum e_i^2}{n - 2}}
+\]
+\end{formulabox}
+
+\section{Correlation ($r$) vs Coefficient of Determination ($r^2$)}
+
+\begin{itemize}
+    \item \textbf{Correlation ($r$):} Measures the strength and direction of a \emph{linear} relationship between two quantitative variables. $-1 \le r \le 1$. It has \textbf{no units} and is unaffected by linear scaling or swapping $x$ and $y$.
+    \item \textbf{Coefficient of Determination ($r^2$):} The proportion of the variation in the response variable ($y$) that is explained by the linear relationship with the explanatory variable ($x$).
+\end{itemize}
+
+\section{Residual Plot Interpretation Rules}
+
+\begin{itemize}
+    \item \textbf{Linear Model Appropriate:} Residual plot shows a \textbf{random scatter} of points with no clear pattern around the horizontal residual line $= 0$.
+    \item \textbf{Linear Model NOT Appropriate:} Residual plot displays a \textbf{curved pattern} (e.g., U-shape or inverted U-shape) or fan shape (heteroscedasticity).
+\end{itemize}
+
+\begin{templatebox}[Score-5 Interpretation Sentence Templates]
+\textbf{1. Slope ($b$):} \emph{"For each additional 1 [unit of $x$], the predicted [response variable $y$] increases/decreases by [value of $b$] [units of $y$]."}
+
+\textbf{2. $y$-Intercept ($a$):} \emph{"When the [explanatory variable $x$] is 0 [units of $x$], the predicted [response variable $y$] is [value of $a$] [units of $y$]."}
+
+\textbf{3. $r^2$:} \emph{"Approximately [value of $r^2 \times 100\%$] of the variation in [response variable in context] is accounted for by the linear relationship with [explanatory variable in context]."}
+
+\textbf{4. Standard Error of Residuals ($s$):} \emph{"The typical distance between the actual [response variable in context] and the value predicted by the regression line is approximately [value of $s$] [units of $y$]."}
+\end{templatebox}
+
+\begin{trapbox}[AP Exam Trap Alert: Forgetting the "Hat" or "Predicted"]
+Always write $\hat{y}$ or explicitly write $\widehat{\text{Score}} = a + b(\text{Study Time})$. Never write $y = a + bx$ without indicating prediction, as graders will deduct points!
+\end{trapbox}

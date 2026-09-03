@@ -1,0 +1,63 @@
+\chapter{Unit 7: Inference for Means}
+
+\section{Essential Conditions for All Means Inference}
+
+Before conducting any confidence interval or $t$-test for means, verify:
+\begin{enumerate}
+    \item \textbf{Randomness:} Data comes from a random sample or randomized experiment.
+    \item \textbf{10\% Rule (Independence):} $n \le 0.10N$ when sampling without replacement.
+    \item \textbf{Normal / Large Sample Condition:}
+    \begin{itemize}
+        \item Population is stated to be Normal, \textbf{OR}
+        \item $n \ge 30$ (CLT applies), \textbf{OR}
+        \item If $n < 30$, plot the sample data (dotplot/boxplot) and confirm: \emph{"No strong skewness and no outliers"}.
+    \end{itemize}
+\end{enumerate}
+
+\section{1-Sample $t$-Inference (and Paired $t$-Inference)}
+
+\begin{formulabox}[1-Sample \& Paired $t$-Inference Formulas]
+\textbf{1-Sample $t$-Interval for $\mu$:}
+\[
+\bar{x} \pm t^* \left(\frac{s}{\sqrt{n}}\right) \quad \text{with } \text{df} = n - 1
+\]
+
+\textbf{1-Sample $t$-Test for $\mu$:}
+\[
+H_0: \mu = \mu_0 \quad \text{vs} \quad H_a: \mu \ (<, >, \ne) \ \mu_0
+\]
+\[
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \quad \text{with } \text{df} = n - 1
+\]
+
+\textbf{Paired $t$-Test / Interval (for Matched Pairs Difference $\mu_d$):}
+Analyze the list of differences $d_i = x_{1i} - x_{2i}$:
+\[
+\bar{x}_d \pm t^* \left(\frac{s_d}{\sqrt{n}}\right), \quad t = \frac{\bar{x}_d - 0}{s_d / \sqrt{n}}, \quad \text{df} = n - 1
+\]
+\end{formulabox}
+
+\section{2-Sample $t$-Inference (Independent Samples)}
+
+\begin{formulabox}[2-Sample $t$-Inference Formulas]
+\textbf{2-Sample $t$-Interval for $\mu_1 - \mu_2$:}
+\[
+(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+\]
+
+\textbf{2-Sample $t$-Test for $\mu_1 - \mu_2$:}
+\[
+H_0: \mu_1 - \mu_2 = 0 \quad (\text{or } \mu_1 = \mu_2)
+\]
+\[
+t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+\]
+Degrees of freedom ($\text{df}$): Use the TI-84 calculated Satterthwaite df, or conservative $\text{df} = \min(n_1 - 1, n_2 - 1)$.
+\end{formulabox}
+
+\begin{trapbox}[AP Exam Trap Alert: 2-Sample $t$ vs Paired $t$]
+\begin{itemize}
+    \item If two measurements are taken on the \textbf{same subject} (e.g., Pre-Test vs Post-Test), or matched pairs: Use \textbf{Paired $t$-Test} (1 quantitative variable of differences).
+    \item If measurements come from \textbf{two independent groups}: Use \textbf{2-Sample $t$-Test} (2 distinct populations).
+\end{itemize}
+\end{trapbox}

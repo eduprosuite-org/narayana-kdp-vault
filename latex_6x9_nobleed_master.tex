@@ -1,0 +1,136 @@
+\documentclass[10pt,twoside,openright]{book}
+
+% =========================================================================
+% KDP 6" x 9" NO-BLEED GEOMETRY & OVERFLOW PROTECTION
+% =========================================================================
+\usepackage[
+    paperwidth=6in,
+    paperheight=9in,
+    top=0.75in,
+    bottom=0.75in,
+    inner=0.75in,  % Gutter allowance for spine binding (150-300 pages)
+    outer=0.625in,
+    headheight=14pt,
+    footskip=0.4in
+]{geometry}
+
+% --- ESSENTIAL PACKAGES ---
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{microtype} % High-grade typography & micro-justification to prevent overfull hboxes
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+% --- TABLE OVERFLOW PREVENTION ---
+\usepackage{tabularx}
+\usepackage[export]{adjustbox}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% --- CALLOUT BOXES (Strictly bounded to \linewidth) ---
+\usepackage[most]{tcolorbox}
+\tcbset{
+    enhanced,
+    boxrule=0.8pt,
+    arc=1.5mm,
+    left=6pt, right=6pt, top=6pt, bottom=6pt,
+    grow to left by=0mm, grow to right by=0mm,
+    width=\linewidth % Forces box to stay within 4.625in printable area
+}
+
+\newtcolorbox{conceptbox}[1][]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title=Core Concept Summary,
+    #1
+}
+
+\newtcolorbox{warningbox}[1][]{
+    colback=red!5!white,
+    colframe=red!75!black,
+    fonttitle=\bfseries,
+    title=Common Pitfall Alert,
+    #1
+}
+
+% --- HEADERS & FOOTERS ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\small\leftmark}
+\fancyhead[LO]{\small High-Yield Master Companion}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+% ==========================================
+% FRONT MATTER: TITLE & COPYRIGHT
+% ==========================================
+\frontmatter
+\begin{titlepage}
+    \centering
+    \vspace*{1.5in}
+    {\Huge\bfseries HIGH-YIELD MASTER STUDY COMPANION\par}
+    \vspace{0.3in}
+    {\Large\itshape The Complete Reference Guide for Rapid Mastery\par}
+    \vspace{0.8in}
+    {\Large\bfseries Professional Mastery Series --- Volume 1\par}
+    \vfill
+    {\large Independent Learning Press\par}
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+\vspace*{3.5in}
+
+\noindent \textbf{High-Yield Master Study Companion}\\
+Copyright \copyright\ 2026 by Author/Publisher Name. All rights reserved.\\
+
+\noindent Printed in the United States of America / Published via Amazon KDP.\\
+
+\vspace{0.2in}
+\noindent \small{\textbf{TRADEMARK DISCLAIMER \& NOMINATIVE FAIR USE NOTICE:}\\
+All product names, trademarks, registered trademarks, and logos mentioned herein are the property of their respective owners. The use of any trade name or trademark in this text is strictly for identification, educational, and descriptive purposes under Nominative Fair Use guidelines, and does not imply any affiliation with or endorsement by the trademark holder.}
+
+% ==========================================
+% MAIN CONTENT
+% ==========================================
+\mainmatter
+
+\chapter{Foundational Principles \& Frameworks}
+
+\section{Overview of Key Concepts}
+
+To ensure content never bleeds past the 4.625-inch printable width, all structured data must use auto-wrapping column layouts.
+
+\begin{table}[h!]
+\small
+\centering
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{1.1in}|Y|Y|}
+\hline
+Module Component & Key Objective & Practical Output \\ \hline
+Phase 1: Theory & Core concept synthesis & Structured summary \\ \hline
+Phase 2: Drills & Skill application & Rubric-aligned answers \\ \hline
+Phase 3: Review & Pitfall avoidance & Error-free execution \\ \hline
+\end{tabularx}
+\caption{Framework Execution Breakdown}
+\end{table}
+
+\begin{conceptbox}
+\textbf{Key Rule:} Wrap all multiline mathematical formulas inside \texttt{align*} or \texttt{multline} environments so long expressions wrap cleanly across lines without exceeding page borders.
+\end{conceptbox}
+
+\begin{align*}
+\text{Total Score} &= \sum_{i=1}^{n} \Big( \text{Weight}_i \times \text{Performance}_i \Big) \\
+                   &\quad - \text{Deductions}_{\text{Pitfalls}}
+\end{align*}
+
+\begin{warningbox}
+Never hardcode fixed column widths in standard \texttt{tabular} blocks without checking line bounds. Always utilize \texttt{tabularx} with \texttt{\\linewidth} for full KDP no-bleed print compliance.
+\end{warningbox}
+
+\end{document}

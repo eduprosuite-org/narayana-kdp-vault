@@ -1,0 +1,89 @@
+\chapter{Unit 4: Probability, Random Variables, \& Distributions}
+
+\section{Essential Probability Rules}
+
+\begin{formulabox}[Core Probability Formulas]
+\textbf{1. Complement Rule:}
+\[
+P(A^c) = 1 - P(A)
+\]
+
+\textbf{2. General Addition Rule:}
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+If $A$ and $B$ are \textbf{mutually exclusive (disjoint)}, $P(A \cap B) = 0$, so $P(A \cup B) = P(A) + P(B)$.
+
+\textbf{3. Conditional Probability:}
+\[
+P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad (\text{where } P(B) > 0)
+\]
+
+\textbf{4. General Multiplication Rule:}
+\[
+P(A \cap B) = P(A) \cdot P(B \mid A) = P(B) \cdot P(A \mid B)
+\]
+
+\textbf{5. Test for Independence:}
+Events $A$ and $B$ are \textbf{independent} if and only if any of the following hold:
+\[
+P(A \mid B) = P(A) \quad \text{or} \quad P(B \mid A) = P(B) \quad \text{or} \quad P(A \cap B) = P(A) \cdot P(B)
+\]
+\end{formulabox}
+
+\section{Discrete Random Variables}
+
+\begin{formulabox}[Mean and Variance of Discrete Random Variables]
+\textbf{Mean / Expected Value ($E(X) = \mu_X$):}
+\[
+\mu_X = E(X) = \sum x_i P(x_i)
+\]
+
+\textbf{Variance ($\text{Var}(X) = \sigma_X^2$):}
+\[
+\sigma_X^2 = \sum (x_i - \mu_X)^2 P(x_i)
+\]
+Standard deviation: $\sigma_X = \sqrt{\sigma_X^2}$.
+\end{formulabox}
+
+\section{Transformations and Linear Combinations}
+For random variables $X$ and $Y$ and constants $a$ and $b$:
+\begin{itemize}
+    \item \textbf{Linear Transformation $Y = a + bX$:}
+    \[
+    \mu_Y = a + b\mu_X, \quad \sigma_Y = |b|\sigma_X, \quad \sigma_Y^2 = b^2 \sigma_X^2
+    \]
+    \item \textbf{Sum and Difference of Independent Random Variables:}
+    \[
+    \mu_{X \pm Y} = \mu_X \pm \mu_Y
+    \]
+    \[
+    \sigma_{X+Y}^2 = \sigma_X^2 + \sigma_Y^2 \quad \text{and} \quad \sigma_{X-Y}^2 = \sigma_X^2 + \sigma_Y^2 \quad (\textbf{Always ADD variances!})
+    \]
+    \[
+    \sigma_{X \pm Y} = \sqrt{\sigma_X^2 + \sigma_Y^2}
+    \]
+\end{itemize}
+
+\section{Binomial vs Geometric Distributions}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Property} & \textbf{Binomial Distribution} $B(n, p)$ & \textbf{Geometric Distribution} $G(p)$ \\
+\midrule
+\textbf{Setting (BINS)} & Binary, Independent, Fixed $\mathbf{n}$, Same $p$ & Binary, Independent, Count trials until $\mathbf{1}^{\text{st}}$ success, Same $p$ \\
+\textbf{PDF Formula} & $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$ & $P(X = k) = (1-p)^{k-1} p$ \\
+\textbf{CDF / Inequalities} & $P(X \le k) = \text{binomcdf}(n, p, k)$ & $P(X > k) = (1-p)^k$ \\
+\textbf{Mean ($\mu$)} & $\mu = np$ & $\mu = \frac{1}{p}$ \\
+\textbf{Std Dev ($\sigma$)} & $\sigma = \sqrt{np(1-p)}$ & $\sigma = \frac{\sqrt{1-p}}{p}$ \\
+\bottomrule
+\end{tabular}
+\caption{Binomial vs Geometric Comparison}
+\end{table}
+
+\begin{trapbox}[AP Exam Trap Alert: Disjoint vs Independent]
+\textbf{Mutually exclusive (disjoint) events can NEVER be independent} (unless one event has probability 0). If $A$ occurs, $P(B \mid A) = 0$, meaning knowledge of $A$ changes the probability of $B$ occurring!
+\end{trapbox}

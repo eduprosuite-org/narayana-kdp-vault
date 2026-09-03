@@ -1,0 +1,152 @@
+﻿\documentclass[10pt]{article}
+% =========================================================================
+% AMAZON KDP PAPERBACK FULL-WRAP COVER: CONCEPT C (VISUAL DIAGRAM & CHEAT SHEET)
+% =========================================================================
+% BOOK DETAILS:
+% Title: AP Statistics Formula & Inference Decision Guide
+% Subtitle: The High-Yield Score-5 Cram Companion
+% Series: AP Statistics Score-5 Blueprint Series (Book 1)
+% Page Count: 100 Pages | Trim: 6.0" x 9.0" | White Paper (0.002252"/page)
+% Total Width: 12.4752 in | Total Height: 9.2500 in | 300 DPI
+% Spine Width: 0.2252 in | Spine Center X = 6.2376 in
+% =========================================================================
+
+\usepackage[paperwidth=12.4752in, paperheight=9.2500in, margin=0in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+% Academic Visual Palette
+\definecolor{navybg}{HTML}{0A2540}       % Oxford Deep Navy
+\definecolor{cobalt}{HTML}{0284C7}       % Bright Academic Cobalt
+\definecolor{emerald}{HTML}{10B981}      % Success Emerald
+\definecolor{amber}{HTML}{F59E0B}        % Amber Accent
+\definecolor{sheetbg}{HTML}{F8FAFC}      % Crisp Off-White Card Fill
+\definecolor{darkslate}{HTML}{0F172A}    % Dark Charcoal Text
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay, x=1in, y=1in]
+
+    % -------------------------------------------------------------------------
+    % 1. BACKGROUND & ACADEMIC COLOR GRADIENTS
+    % -------------------------------------------------------------------------
+    \fill[navybg] (current page.south west) rectangle (current page.north east);
+
+    % Subtle Diagonal Split Accent
+    \shade[bottom color=cobalt!30, top color=navybg, opacity=0.4] 
+        (6.3502, 0) -- (12.4752, 0) -- (12.4752, 4.5) -- cycle;
+
+    % -------------------------------------------------------------------------
+    % 2. SPINE (Center: X = 6.2376 in, Width = 0.2252 in)
+    % -------------------------------------------------------------------------
+    \fill[navybg!80!black] (6.125, 0) rectangle (6.3502, 9.25);
+    \draw[cobalt!40, thin] (6.125, 0) -- (6.125, 9.25);
+    \draw[cobalt!40, thin] (6.3502, 0) -- (6.3502, 9.25);
+
+    \node[rotate=-90, text=white, font=\sffamily\bfseries\fontsize{7}{8.5}\selectfont, anchor=center] 
+        at (6.2376, 4.625) {
+        \textcolor{cobalt}{AP\textsuperscript{\textregistered} STATISTICS} \hspace{0.15in}
+        \textcolor{white}{FORMULA \& INFERENCE DECISION GUIDE} \hspace{0.25in}
+        \textcolor{amber}{VOL. 1} \hspace{0.35in}
+        \textcolor{white!70}{PR}
+    };
+
+    % -------------------------------------------------------------------------
+    % 3. FRONT COVER (Center X = 9.4127 in)
+    % -------------------------------------------------------------------------
+
+    % Top Visual Header
+    \node[anchor=north, text width=5.2in, align=center] at (9.4127, 8.80) {
+        {\sffamily\bfseries\fontsize{9.5}{11}\selectfont \textcolor{cobalt}{VISUAL STUDY SYSTEM $\bullet$ ALL-IN-ONE CRAM COMPANION}}\\[2pt]
+        {\sffamily\fontsize{7.5}{9}\selectfont \textcolor{white!70}{FORMULA BREAKDOWNS + INFERENCE FLOWCHARTS + SENTENCE FRAMES}}
+    };
+
+    % Main Title Block
+    \node[anchor=north, text width=5.4in, align=center] at (9.4127, 8.15) {
+        {\sffamily\bfseries\fontsize{27}{31}\selectfont \textcolor{white}{AP\textsuperscript{\textregistered} STATISTICS}}\\[3pt]
+        {\sffamily\bfseries\fontsize{23}{27}\selectfont \textcolor{amber}{FORMULA \& INFERENCE}}\\[3pt]
+        {\sffamily\bfseries\fontsize{20}{24}\selectfont \textcolor{cobalt}{DECISION GUIDE}}\\[6pt]
+        {\sffamily\bfseries\fontsize{10.5}{13}\selectfont \textcolor{white}{The Visual Cheat-Sheet \& Master Decision System}}
+    };
+
+    % Interactive "Cheat Sheet" White Card on Front Cover
+    \node[draw=cobalt!60, fill=sheetbg, rounded corners=8pt, line width=1.5pt, inner sep=10pt, text width=4.8in, anchor=north] 
+        at (9.4127, 5.60) {
+        \begin{center}
+            {\sffamily\bfseries\fontsize{10}{12}\selectfont \textcolor{darkslate}{MASTER INFERENCE QUICK-SELECT FLOWCHART}}\\[4pt]
+            \begin{tikzpicture}[x=1in, y=1in, every node/.style={sffamily, font=\scriptsize\bfseries}]
+                \node[draw=cobalt, fill=white, rounded corners=3pt, text=darkslate, inner sep=3pt] (root) at (0, 0) {Exam Question Scenario};
+                \node[draw=amber, fill=amber!15, rounded corners=3pt, text=darkslate, inner sep=3pt] (prop) at (-1.35, -0.42) {Proportions (\%)};
+                \node[draw=emerald, fill=emerald!15, rounded corners=3pt, text=darkslate, inner sep=3pt] (mean) at (1.35, -0.42) {Means ($\bar{x}$)};
+                
+                \node[draw=gray!50, fill=white, rounded corners=2pt, text=darkslate, inner sep=2pt] (z1) at (-1.35, -0.85) {1-Prop / 2-Prop Z};
+                \node[draw=gray!50, fill=white, rounded corners=2pt, text=darkslate, inner sep=2pt] (t1) at (1.35, -0.85) {1-Sample / 2-Sample $t$};
+                
+                \draw[->, cobalt, thick] (root) -- (prop);
+                \draw[->, cobalt, thick] (root) -- (mean);
+                \draw[->, gray!70, thin] (prop) -- (z1);
+                \draw[->, gray!70, thin] (mean) -- (t1);
+            \end{tikzpicture}
+        \end{center}
+        \vspace{-0.05in}
+        \textcolor{darkslate}{\sffamily\fontsize{8}{10.5}\selectfont
+        $\checkmark$ \textbf{Complete 9-Unit Formula Translation} (Plain English definitions)\\
+        $\checkmark$ \textbf{Master Hypothesis Test Selector} (Z, t, $\chi^2$, Linear Regression Slope)\\
+        $\checkmark$ \textbf{Fill-in-the-Blank FRQ Sentence Frames} (Confidence Intervals \& $p$-values)\\
+        $\checkmark$ \textbf{Top 25 Deductions Graders Look For} (And how to avoid them)}
+    };
+
+    % Author / Series Footer
+    \node[anchor=south, text width=5.2in, align=center] at (9.4127, 0.45) {
+        {\sffamily\bfseries\fontsize{10}{12}\selectfont \textcolor{white}{PR $\bullet$ SCORE-5 BLUEPRINT}}\\[2pt]
+        {\sffamily\fontsize{7.5}{9}\selectfont \textcolor{white!70}{Complete Visual Architecture for High School \& College Statistics}}
+    };
+
+    % -------------------------------------------------------------------------
+    % 4. BACK COVER (Center X = 3.125 in)
+    % -------------------------------------------------------------------------
+
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 8.80) {
+        {\sffamily\bfseries\fontsize{15}{18}\selectfont \textcolor{amber}{The Visual Advantage:}}\\[2pt]
+        {\sffamily\bfseries\fontsize{14}{17}\selectfont \textcolor{cobalt}{From Confusing Formulas to Instant Point Capture.}}\\[6pt]
+        {\sffamily\fontsize{8.5}{11.5}\selectfont \textcolor{white}{
+        Statistics is inherently visual and logical. When you understand the underlying decision tree behind every formula and hypothesis test, scoring a 5 on the AP\textregistered\ Statistics Exam becomes straightforward and repeatable.
+        }}
+    };
+
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 6.75) {
+        {\sffamily\bfseries\fontsize{10.5}{13}\selectfont \textcolor{white}{\underline{INSIDE THIS COMPREHENSIVE VISUAL GUIDE:}}}\\[5pt]
+        \textcolor{white}{\sffamily\fontsize{8.2}{11}\selectfont
+        $\bullet$ \textbf{\textcolor{amber}{Formula Breakdown Cards:}} Official equations mapped to context.\\[3pt]
+        $\bullet$ \textbf{\textcolor{amber}{Inference Decision Maps:}} Instant path to the correct statistical procedure.\\[3pt]
+        $\bullet$ \textbf{\textcolor{amber}{FRQ Point-Scoring Frames:}} Exact rubric phrasings for high scores.\\[3pt]
+        $\bullet$ \textbf{\textcolor{amber}{Grader Pitfall Directory:}} Avoid common mistakes on Type I/II errors \& power.\\[3pt]
+        $\bullet$ \textbf{\textcolor{amber}{Interactive QR Web Portal:}} Seamless mobile access anywhere.}
+    };
+
+    % Trademark Legal Note
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 3.40) {
+        \textcolor{white!60}{\sffamily\fontsize{6}{7.5}\selectfont
+        \textbf{DISCLAIMER:} AP\textsuperscript{\textregistered} and Advanced Placement\textsuperscript{\textregistered} are registered trademarks of the College Board, which is not affiliated with, and does not endorse, this publication. All terms used under Nominative Fair Use.}
+    };
+
+    % Barcode Box
+    \draw[fill=white, draw=gray!40] (3.875, 0.375) rectangle (5.875, 1.575);
+    \node[anchor=center, text=black!60, font=\sffamily\fontsize{7}{8}\selectfont, align=center] 
+        at (4.875, 0.975) {
+        \textbf{BARCODE ZONE}\\
+        \tiny 2.0'' $\times$ 1.2'' Amazon KDP
+    };
+
+    \node[anchor=south west, text width=2.8in, align=left] at (0.45, 0.45) {
+        {\sffamily\bfseries\fontsize{7.5}{9}\selectfont \textcolor{white}{AP STATISTICS SCORE-5 BLUEPRINT SERIES}}\\[2pt]
+        {\sffamily\fontsize{6.5}{8}\selectfont \textcolor{white!60}{Visual Study Edition $\bullet$ Book 1}}
+    };
+
+\end{tikzpicture}
+
+\end{document}
+
+

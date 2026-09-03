@@ -1,0 +1,148 @@
+﻿\documentclass[10pt]{article}
+% =========================================================================
+% AMAZON KDP PAPERBACK FULL-WRAP COVER: CONCEPT B (BOLD HIGH-CONTRAST AUTHORITY)
+% =========================================================================
+% BOOK DETAILS:
+% Title: AP Statistics Formula & Inference Decision Guide
+% Subtitle: The High-Yield Score-5 Cram Companion
+% Series: AP Statistics Score-5 Blueprint Series (Book 1)
+% Page Count: 100 Pages | Trim: 6.0" x 9.0" | White Paper (0.002252"/page)
+% Total Width: 12.4752 in | Total Height: 9.2500 in | 300 DPI
+% Spine Width: 0.2252 in | Spine Center X = 6.2376 in
+% =========================================================================
+
+\usepackage[paperwidth=12.4752in, paperheight=9.2500in, margin=0in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+% High-Contrast Color Palette
+\definecolor{darkbg}{HTML}{0A0A0A}       % Jet Pitch Black
+\definecolor{cardbg}{HTML}{171717}       % Deep Charcoal Card
+\definecolor{brightyellow}{HTML}{FACC15} % Signal Yellow
+\definecolor{warmgold}{HTML}{F59E0B}     % Rich Gold
+\definecolor{alertred}{HTML}{EF4444}     % High-Impact Accent Red
+\definecolor{textwhite}{HTML}{FFFFFF}    % Pure White
+\definecolor{textmuted}{HTML}{A3A3A3}    % Neutral Gray
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay, x=1in, y=1in]
+
+    % -------------------------------------------------------------------------
+    % 1. BACKGROUND & HIGH-CONTRAST ACCENTS
+    % -------------------------------------------------------------------------
+    \fill[darkbg] (current page.south west) rectangle (current page.north east);
+
+    % Yellow Top Header Bar on Front Cover
+    \fill[brightyellow] (6.3502, 8.45) rectangle (12.4752, 9.25);
+
+    % Diagonal Authority Accent Stripe
+    \shade[left color=alertred!80, right color=darkbg, opacity=0.35] 
+        (6.3502, 0) -- (12.4752, 2.0) -- (12.4752, 0) -- cycle;
+
+    % -------------------------------------------------------------------------
+    % 2. SPINE (Center: X = 6.2376 in, Width = 0.2252 in)
+    % -------------------------------------------------------------------------
+    \fill[cardbg] (6.125, 0) rectangle (6.3502, 9.25);
+    \draw[brightyellow!40, thin] (6.125, 0) -- (6.125, 9.25);
+    \draw[brightyellow!40, thin] (6.3502, 0) -- (6.3502, 9.25);
+
+    \node[rotate=-90, text=textwhite, font=\sffamily\bfseries\fontsize{7.5}{9}\selectfont, anchor=center] 
+        at (6.2376, 4.625) {
+        \textcolor{brightyellow}{AP\textsuperscript{\textregistered} STATISTICS} \hspace{0.15in}
+        \textcolor{textwhite}{FORMULA \& INFERENCE GUIDE} \hspace{0.25in}
+        \textcolor{alertred}{BOOK 1} \hspace{0.35in}
+        \textcolor{textmuted}{PR}
+    };
+
+    % -------------------------------------------------------------------------
+    % 3. FRONT COVER (Center X = 9.4127 in)
+    % -------------------------------------------------------------------------
+
+    % Top Alert Banner
+    \node[anchor=center, text=black, font=\sffamily\bfseries\fontsize{10.5}{12}\selectfont] at (9.4127, 8.85) {
+        $\bigstar$ THE ULTIMATE 30-DAY AP\textsuperscript{\textregistered} EXAM CRAM MANUAL $\bigstar$
+    };
+
+    % Massive Ultra-Bold Title
+    \node[anchor=north, text width=5.5in, align=center] at (9.4127, 8.25) {
+        {\sffamily\bfseries\fontsize{30}{34}\selectfont \textcolor{textwhite}{AP\textsuperscript{\textregistered} STATISTICS}}\\[4pt]
+        {\sffamily\bfseries\fontsize{25}{29}\selectfont \textcolor{brightyellow}{FORMULA \& INFERENCE}}\\[3pt]
+        {\sffamily\bfseries\fontsize{22}{26}\selectfont \textcolor{textwhite}{DECISION GUIDE}}\\[8pt]
+        {\sffamily\bfseries\fontsize{11}{14}\selectfont \textcolor{brightyellow}{THE NO-FLUFF SCORE-5 CRAM BLUEPRINT}}\\[2pt]
+        {\sffamily\fontsize{8.5}{11}\selectfont \textcolor{textmuted}{Formulas Decoded $\bullet$ Test Decision Trees $\bullet$ Perfect FRQ Sentence Frames}}
+    };
+
+    % Red Pill Badge
+    \node[draw=alertred, fill=alertred!15, rounded corners=12pt, line width=1.2pt, inner sep=5pt, text=textwhite, anchor=north] 
+        at (9.4127, 5.65) {
+        {\sffamily\bfseries\fontsize{9}{11}\selectfont \textcolor{textwhite}{\textbf{100\% RUBRIC ALIGNED}} \textcolor{brightyellow}{$\bullet$} \textbf{ZERO BULK} \textcolor{brightyellow}{$\bullet$} \textbf{RAPID 5s}}
+    };
+
+    % High-Contrast Checklist Card
+    \node[draw=brightyellow, fill=cardbg, rounded corners=5pt, line width=1.5pt, inner sep=11pt, text width=4.8in, anchor=north] 
+        at (9.4127, 5.10) {
+        {\sffamily\bfseries\fontsize{11}{13}\selectfont \textcolor{brightyellow}{MASTER EVERY EXAM REQUIREMENT FAST:}}\\[7pt]
+        \textcolor{textwhite}{\sffamily\fontsize{9}{12}\selectfont
+        \textbf{\textcolor{brightyellow}{[+] FULL FORMULA BREAKDOWN:}} Every variable translated into simple terms\\
+        \textbf{\textcolor{brightyellow}{[+] INSTANT TEST SELECTOR:}} Master flowcharts for Z, t, $\chi^2$, and Regression\\
+        \textbf{\textcolor{brightyellow}{[+] RUBRIC SENTENCE TEMPLATES:}} Exact fill-in-the-blank frames for full credit\\
+        \textbf{\textcolor{brightyellow}{[+] 25 FATAL GRADER TRAPS:}} Stop losing 1-2 points on avoidable careless errors\\
+        \textbf{\textcolor{brightyellow}{[+] FREE WEB COMPANION APP:}} Mobile flashcard drills and digital cheat sheets}
+    };
+
+    % Bottom Series Brand Tag
+    \node[anchor=south, text width=5.2in, align=center] at (9.4127, 0.45) {
+        {\sffamily\bfseries\fontsize{10.5}{12}\selectfont \textcolor{textwhite}{NARAYANA TEST-PREP EDITIONS}}\\[2pt]
+        {\sffamily\fontsize{8}{10}\selectfont \textcolor{brightyellow}{EXAM YEAR 2027 Exam Edition $\bullet$ SCORE-5 GUARANTEE ARCHITECTURE}}
+    };
+
+    % -------------------------------------------------------------------------
+    % 4. BACK COVER (Center X = 3.125 in)
+    % -------------------------------------------------------------------------
+
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 8.80) {
+        {\sffamily\bfseries\fontsize{16}{19}\selectfont \textcolor{brightyellow}{EVERY FORMULA.}}\\[1pt]
+        {\sffamily\bfseries\fontsize{16}{19}\selectfont \textcolor{textwhite}{EVERY INFERENCE TEST.}}\\[1pt]
+        {\sffamily\bfseries\fontsize{16}{19}\selectfont \textcolor{alertred}{ZERO WASTED TIME.}}\\[8pt]
+        {\sffamily\fontsize{8.5}{11.5}\selectfont \textcolor{textwhite}{
+        Standard 600-page AP Statistics review books are filled with confusing proofs and unnecessary fluff. When exam day is approaching, you need instant clarity on how to pick the right formula, verify inference conditions, and write rubric-perfect conclusions.
+        }}
+    };
+
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 6.70) {
+        {\sffamily\bfseries\fontsize{11}{13}\selectfont \textcolor{brightyellow}{THE SCORE-5 RAPID EXECUTION SYSTEM:}}\\[6pt]
+        \textcolor{textwhite}{\sffamily\fontsize{8.5}{11.5}\selectfont
+        $\blacksquare$ \textbf{\textcolor{brightyellow}{Formulas Explained in Plain English:}} Zero guesswork on variables or notation.\\[3pt]
+        $\blacksquare$ \textbf{\textcolor{brightyellow}{Inference Decision Logic:}} Pick the exact test in under 10 seconds.\\[3pt]
+        $\blacksquare$ \textbf{\textcolor{brightyellow}{Fill-in-the-Blank FRQ Phrasings:}} Guaranteed point capture on interpretations.\\[3pt]
+        $\blacksquare$ \textbf{\textcolor{brightyellow}{The 25 Deduction Traps:}} Protect your hard-earned points from grader deductions.\\[3pt]
+        $\blacksquare$ \textbf{\textcolor{brightyellow}{Interactive Digital Companion:}} Instant mobile formula search via QR code.}
+    };
+
+    % Trademark Legal Note
+    \node[anchor=north, text width=5.1in, align=left] at (3.125, 3.40) {
+        \textcolor{textmuted}{\sffamily\fontsize{6}{7.5}\selectfont
+        \textbf{DISCLAIMER:} AP\textsuperscript{\textregistered} is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this publication. Used strictly under Nominative Fair Use for educational preparation purposes.}
+    };
+
+    % Barcode Box
+    \draw[fill=white, draw=gray!40] (3.875, 0.375) rectangle (5.875, 1.575);
+    \node[anchor=center, text=black!60, font=\sffamily\fontsize{7}{8}\selectfont, align=center] 
+        at (4.875, 0.975) {
+        \textbf{BARCODE ZONE}\\
+        \tiny 2.0'' $\times$ 1.2'' Amazon KDP
+    };
+
+    \node[anchor=south west, text width=2.8in, align=left] at (0.45, 0.45) {
+        {\sffamily\bfseries\fontsize{7.5}{9}\selectfont \textcolor{textwhite}{AP STATISTICS SCORE-5 BLUEPRINT SERIES}}\\[2pt]
+        {\sffamily\fontsize{6.5}{8}\selectfont \textcolor{textmuted}{Volume 1 $\bullet$ Rapid Cram Guide}}
+    };
+
+\end{tikzpicture}
+
+\end{document}
+
+

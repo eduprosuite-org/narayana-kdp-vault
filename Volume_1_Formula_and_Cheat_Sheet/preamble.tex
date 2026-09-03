@@ -1,0 +1,120 @@
+\usepackage[
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.875in,
+  outer=0.75in,
+  top=0.75in,
+  bottom=0.75in
+]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,multirow}
+\usepackage{enumitem}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows.meta,positioning,calc}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape \BookTitle}
+\fancyhead[RO]{\small\itshape \leftmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{10pt}{\LARGE\bfseries}
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{MidnightBlue}}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{DarkSlateGray}}{\thesubsection}{1em}{}
+
+% Custom TColorBoxes for Professional KDP Interior
+\newtcolorbox{formulabox}[1][]{
+  enhanced,
+  colback=NavyBlue!5!white,
+  colframe=NavyBlue!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=3mm,
+  boxrule=1pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  before skip=10pt,
+  after skip=10pt
+}
+
+\newtcolorbox{trapbox}[1][]{
+  enhanced,
+  colback=Red!5!white,
+  colframe=Red!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=3mm,
+  boxrule=1pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  before skip=10pt,
+  after skip=10pt
+}
+
+\newtcolorbox{templatebox}[1][]{
+  enhanced,
+  colback=ForestGreen!5!white,
+  colframe=ForestGreen!85!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=3mm,
+  boxrule=1pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  before skip=10pt,
+  after skip=10pt
+}
+
+\newtcolorbox{tipbox}[1][]{
+  enhanced,
+  colback=Amber!8!white,
+  colframe=DarkOrange!90!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=3mm,
+  boxrule=1pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  before skip=10pt,
+  after skip=10pt
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=NavyBlue,
+  citecolor=NavyBlue,
+  urlcolor=NavyBlue
+}

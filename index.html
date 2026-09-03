@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Statistics Score-5 Blueprint | Interactive Student Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span>📊 AP® Stats Blueprint</span>
+        <span class="logo-badge">SCORE 5</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>AP® Statistics Digital Companion Portal</h1>
+      <p>Instant formula lookups, interactive TI-84 keystroke guides, FRQ rubric phrasing generators, and exam trap alerts designed to secure your 5.</p>
+      <div class="badge-row">
+        <span class="hero-pill">⚡ 9-Unit Formula Translation</span>
+        <span class="hero-pill">🎯 Master Inference Wizard</span>
+        <span class="hero-pill">✍️ FRQ Sentence Builder</span>
+        <span class="hero-pill">🔍 100% Free Companion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Portal -->
+  <main class="container" style="margin-top: 30px;">
+    
+    <!-- Tab Navigation -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="formulas">📚 Formula Cheat Sheets</button>
+      <button class="tab-btn" data-tab="wizard">🧭 Inference Test Wizard</button>
+      <button class="tab-btn" data-tab="generator">✍️ FRQ Sentence Generator</button>
+      <button class="tab-btn" data-tab="quiz">📝 Diagnostic Drill</button>
+      <button class="tab-btn" data-tab="books">📖 Book Series & Downloads</button>
+    </nav>
+
+    <!-- TAB 1: FORMULAS -->
+    <section class="tab-pane active" id="formulas">
+      <div class="card">
+        <h2>Searchable AP® Statistics Formulas & Conditions</h2>
+        <input type="text" class="search-box" id="formulaSearch" placeholder="Type to search any formula (e.g. z-score, CLT, slope, 2-prop, chi-square)...">
+        <div class="grid-2" id="formulaGrid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: INFERENCE WIZARD -->
+    <section class="tab-pane" id="wizard">
+      <div class="card">
+        <h2>Master Inference Procedure Selector</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Answer 3 quick questions to discover the exact statistical test, conditions, and TI-84 keystrokes for your problem.</p>
+        
+        <div id="step1" class="wizard-step">
+          <h3>Step 1: What type of data or variable are you analyzing?</h3>
+          <div class="btn-group">
+            <button class="btn" onclick="setWizardData('categorical')">Categorical (Counts, %, Proportions)</button>
+            <button class="btn" onclick="setWizardData('quantitative')">Quantitative (Means, Averages, Measurements)</button>
+          </div>
+        </div>
+
+        <div id="step2" class="wizard-step" style="display:none;">
+          <h3>Step 2: How many sample groups or variables?</h3>
+          <div class="btn-group">
+            <button class="btn" onclick="setWizardGroups('1')">1 Sample / Group</button>
+            <button class="btn" onclick="setWizardGroups('matched')">Matched Pairs (Pre/Post or Paired)</button>
+            <button class="btn" onclick="setWizardGroups('2')">2 Independent Groups</button>
+            <button class="btn" onclick="setWizardGroups('multi')">3+ Groups / 2 Categorical Variables</button>
+          </div>
+        </div>
+
+        <div id="step3" class="wizard-step" style="display:none;">
+          <h3>Step 3: What is your objective?</h3>
+          <div class="btn-group">
+            <button class="btn" onclick="setWizardGoal('interval')">Estimate a Parameter (Confidence Interval)</button>
+            <button class="btn" onclick="setWizardGoal('test')">Test a Claim (Significance / Hypothesis Test)</button>
+          </div>
+        </div>
+
+        <div id="wizardResult" class="wizard-result" style="display:none;">
+          <div id="wizardResultText"></div>
+          <button class="btn btn-secondary" onclick="resetWizard()" style="margin-top: 15px;">🔄 Start Over</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SENTENCE GENERATOR -->
+    <section class="tab-pane" id="generator">
+      <div class="card">
+        <h2>FRQ Model Phrasing & Sentence Frame Generator</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Fill in your problem details below to generate 100% rubric-compliant interpretations for the AP exam.</p>
+        
+        <div class="form-group">
+          <label for="templateType">Select Interpretation Type:</label>
+          <select id="templateType" class="form-control">
+            <option value="ci">Confidence Interval (e.g. 95% CI)</option>
+            <option value="pvalue">p-Value in Context</option>
+            <option value="slope">Slope of Regression Line (b)</option>
+            <option value="r2">Coefficient of Determination (r²)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="templateContext">Context of Problem (e.g. "mean commute time of high school seniors in minutes"):</label>
+          <input type="text" id="templateContext" class="form-control" placeholder="Enter problem context...">
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="templateVal1">Confidence Level / p-Value / X Unit:</label>
+            <input type="text" id="templateVal1" class="form-control" placeholder="e.g. 95 or 0.024 or hours studied">
+          </div>
+          <div class="form-group">
+            <label for="templateVal2">Interval Range / Y Rate:</label>
+            <input type="text" id="templateVal2" class="form-control" placeholder="e.g. 14.2 to 18.6 minutes or 3.2 points">
+          </div>
+        </div>
+
+        <div class="template-output" id="templateResult"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: DIAGNOSTIC QUIZ -->
+    <section class="tab-pane" id="quiz">
+      <div class="card">
+        <h2>Quick Diagnostic Exam Drill (5 High-Yield Questions)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Test your knowledge on common AP exam traps and grader deduction points.</p>
+        <div id="quizContainer"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: BOOK SERIES & RESOURCES -->
+    <section class="tab-pane" id="books">
+      <div class="card">
+        <h2>The AP® Statistics Score-5 Blueprint Series</h2>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Four laser-focused companions engineered to replace bulky 600-page textbooks.</p>
+
+        <div class="grid-2">
+          <div class="formula-card">
+            <h3>📘 Volume 1: Formula & Cheat Sheet Companion</h3>
+            <p>The Quick-Review Cram Guide: Essential Formulas, Inference Rules, and Key AP Exam Alerts.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> Available on Amazon KDP</p>
+          </div>
+          <div class="formula-card">
+            <h3>📟 Volume 2: TI-84 Calculator Advantage</h3>
+            <p>Step-by-Step Keystrokes to Solve Distributions, Confidence Intervals, and Hypothesis Tests Faster.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> In Press</p>
+          </div>
+          <div class="formula-card">
+            <h3>✍️ Volume 3: FRQ & Response Templates</h3>
+            <p>Master Free-Response Questions with Rubric-Aligned Model Answers, Scoring Hacks, and Common Pitfalls.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> In Press</p>
+          </div>
+          <div class="formula-card">
+            <h3>🎯 Volume 4: Complete Exam Prep & Online Practice</h3>
+            <p>The Ultimate 5-Score Blueprint: Unit Reviews, 500+ Practice Drills, and Full-Length Simulated Online Exams.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> In Press</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Narayana Educational Series. Designed for independent student mastery.</p>
+      <p style="font-size: 0.8rem; margin-top: 8px;">*AP® and Advanced Placement® are registered trademarks of the College Board. TI-84® is a registered trademark of Texas Instruments. Neither is affiliated with nor endorses this site.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

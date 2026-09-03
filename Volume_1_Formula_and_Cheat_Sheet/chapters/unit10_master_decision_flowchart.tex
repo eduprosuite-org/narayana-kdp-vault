@@ -1,0 +1,45 @@
+\chapter{Master Inference Decision Flowchart}
+
+\section{How to Pick the Exact Inference Procedure Every Time}
+
+Follow this 3-question decision process:
+
+\begin{enumerate}[label=\textbf{Step \arabic*:}]
+    \item \textbf{What type of data / variable(s) are you analyzing?}
+    \begin{itemize}
+        \item Categorical (Counts, percentages, proportions) $\to$ Go to Proportion / Chi-Square.
+        \item Quantitative (Numerical measurements, averages, means) $\to$ Go to $t$-Test / Slope.
+    \end{itemize}
+    \item \textbf{How many samples / groups are being compared?}
+    \item \textbf{Are you estimating an unknown value (Confidence Interval) or testing a claim (Significance Test)?}
+\end{enumerate}
+
+\section{The Master Decision Matrix}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{@{}llllp{1.8in}@{}}
+\toprule
+\textbf{Data Type} & \textbf{Groups} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{Calculator Command} \\
+\midrule
+Categorical & 1 Sample & Estimate $p$ & \textbf{1-Prop $z$-Interval} & \texttt{1-PropZInt} \\
+Categorical & 1 Sample & Test $p$ & \textbf{1-Prop $z$-Test} & \texttt{1-PropZTest} \\
+Categorical & 2 Samples & Estimate $p_1 - p_2$ & \textbf{2-Prop $z$-Interval} & \texttt{2-PropZInt} \\
+Categorical & 2 Samples & Test $p_1 = p_2$ & \textbf{2-Prop $z$-Test (Pooled)} & \texttt{2-PropZTest} \\
+Categorical & 1 Sample (Multinomial) & Fit to distribution & \textbf{$\chi^2$ Goodness-of-Fit} & \texttt{$\chi^2$ GOF-Test} \\
+Categorical & 2+ Samples & Compare distributions & \textbf{$\chi^2$ Test of Homogeneity} & \texttt{$\chi^2$-Test} (Matrix) \\
+Categorical & 1 Sample (2 Variables) & Test relationship & \textbf{$\chi^2$ Test of Independence} & \texttt{$\chi^2$-Test} (Matrix) \\
+\midrule
+Quantitative & 1 Sample & Estimate $\mu$ & \textbf{1-Sample $t$-Interval} & \texttt{TInterval} \\
+Quantitative & 1 Sample & Test $\mu$ & \textbf{1-Sample $t$-Test} & \texttt{T-Test} \\
+Quantitative & Matched Pairs (Diff) & Estimate $\mu_d$ & \textbf{Paired $t$-Interval} & \texttt{TInterval} on $L_1 - L_2$ \\
+Quantitative & Matched Pairs (Diff) & Test $\mu_d = 0$ & \textbf{Paired $t$-Test} & \texttt{T-Test} on $L_1 - L_2$ \\
+Quantitative & 2 Indep. Samples & Estimate $\mu_1 - \mu_2$ & \textbf{2-Sample $t$-Interval} & \texttt{2-SampTInt} (Pooled=No) \\
+Quantitative & 2 Indep. Samples & Test $\mu_1 = \mu_2$ & \textbf{2-Sample $t$-Test} & \texttt{2-SampTTest} (Pooled=No) \\
+Quantitative & 2 Variables ($x, y$) & Estimate slope $\beta$ & \textbf{Linear Reg $t$-Interval} & \texttt{LinRegTInt} \\
+Quantitative & 2 Variables ($x, y$) & Test slope $\beta = 0$ & \textbf{Linear Reg $t$-Test} & \texttt{LinRegTTest} \\
+\bottomrule
+\end{tabular}
+\caption{The Complete Master AP Statistics Inference Matrix}
+\end{table}

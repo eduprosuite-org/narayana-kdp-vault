@@ -1,0 +1,31 @@
+\chapter{Top 25 "Never Forget" AP Exam Traps}
+
+Avoid these 25 most frequent point-deduction mistakes compiled from official Chief Reader reports:
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{NEVER say "Accept $H_0$":} Always write \emph{"Fail to reject $H_0$"}. We never prove the null hypothesis is true; we only lack evidence against it.
+    \item \textbf{NEVER write "We prove $H_a$":} Write \emph{"We have convincing statistical evidence that [context]"}.
+    \item \textbf{Hypotheses MUST be in terms of PARAMETERS ($\mu, p, \beta$), NEVER statistics ($\bar{x}, \hat{p}, b$):} E.g., $H_0: \mu = 50$, NEVER $H_0: \bar{x} = 50$.
+    \item \textbf{Define parameters in context:} Whenever you write $\mu$ or $p$, immediately add \emph{"where $p$ is the true proportion of..."}.
+    \item \textbf{Always use comparative words when comparing distributions:} Write \emph{"greater than"}, \emph{"less than"}, or \emph{"similar to"}, not just isolated numbers.
+    \item \textbf{Include units on ALL quantitative statistics and interpretations:} (e.g., dollars, seconds, grams).
+    \item \textbf{Don't forget the hat ($\hat{y}$) on regression equations:} $\hat{y}$ signifies predicted response.
+    \item \textbf{Correlation ($r$) measures LINEAR strength only:} A strong curved relationship can have $r \approx 0$.
+    \item \textbf{Association is NOT Causation:} Only randomized experiments can establish causation.
+    \item \textbf{Blocking is NOT Stratification:} Stratification is for sampling; Blocking is for experiments.
+    \item \textbf{Mutually exclusive events are NEVER independent:} If disjoint, knowing $A$ occurred means $B$ cannot occur ($P(B|A)=0 \ne P(B)$).
+    \item \textbf{Always ADD variances, NEVER add standard deviations:} $\sigma_{X-Y} = \sqrt{\sigma_X^2 + \sigma_Y^2}$.
+    \item \textbf{The CLT applies to the SAMPLING DISTRIBUTION of $\bar{x}$, not individual data:} It requires $n \ge 30$.
+    \item \textbf{Use $p_0$ for 1-Prop $Z$-Test Large Counts, not $\hat{p}$:} $np_0 \ge 10$ and $n(1-p_0) \ge 10$.
+    \item \textbf{Use $\hat{p}$ for 1-Prop $Z$-Interval Large Counts:} $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$.
+    \item \textbf{Chi-square conditions require EXPECTED counts $\ge 5$, not observed counts.}
+    \item \textbf{Chi-square degrees of freedom:} $\text{df} = (\text{rows}-1)(\text{cols}-1)$, NOT total sample size.
+    \item \textbf{Never pool standard deviations for 2-sample $t$-tests:} Always keep \texttt{Pooled = NO} on your TI-84.
+    \item \textbf{Confidence Interval vs Confidence Level:} The \emph{interval} gives estimated plausible values; the \emph{level} describes the long-run capture rate over many samples.
+    \item \textbf{A high $r^2$ does NOT prove linearity:} Check the residual plot for no pattern.
+    \item \textbf{Voluntary response produces extreme bias:} Never generalize voluntary survey results to a population.
+    \item \textbf{State the conclusion in terms of $H_a$:} If $p < \alpha$, \emph{"There is convincing statistical evidence that [state $H_a$ in context]"}.
+    \item \textbf{State the significance level ($\alpha$):} If none given, explicitly assume $\alpha = 0.05$.
+    \item \textbf{Calculator Speak is NOT enough on FRQs:} Write out the name of the test, formulas, degrees of freedom, and $p$-value, not just \texttt{1-PropZTest(12, 50, 0.2)}.
+    \item \textbf{Context, Context, Context:} Every conclusion, condition, and interpretation must explicitly mention the subject matter of the problem.
+\end{enumerate}
