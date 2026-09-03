@@ -1,4 +1,4 @@
-﻿# Amazon KDP Publishing & SEO Package: Book 1
+# Amazon KDP Publishing & SEO Package: Book 1
 
 **Book Title:** AP Statistics Formula & Inference Decision Guide  
 **Subtitle:** The High-Yield Score-5 Cram Companion: Rapid Formula Breakdowns, Inference Decision Trees, and Fill-in-the-Blank FRQ Sentence Frames  
@@ -10,7 +10,7 @@
 ## 0. Amazon Trademark & IP Legal Disclaimer
 
 ```
-Disclaimer: AP® and Advanced Placement® are registered trademarks of the College Board, which is not affiliated with, and does not endorse or sponsor, this publication. TI-84 Plus® is a registered trademark of Texas Instruments. All terms are used under Nominative Fair Use for descriptive and educational purposes only.
+Disclaimer: AP� and Advanced Placement� are registered trademarks of the College Board, which is not affiliated with, and does not endorse or sponsor, this publication. TI-84 Plus� is a registered trademark of Texas Instruments. All terms are used under Nominative Fair Use for descriptive and educational purposes only.
 ```
 
 ---
@@ -20,15 +20,15 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 *Copy and paste the HTML block below directly into the Amazon KDP Description editor:*
 
 ```html
-<h3><b>Stop Memorizing Hundreds of Formulas. Master the Exact Decision Trees, Inference Rules, and Rubric Phrasings to Score a 5 on the AP® Statistics Exam!</b></h3>
+<h3><b>Stop Memorizing Hundreds of Formulas. Master the Exact Decision Trees, Inference Rules, and Rubric Phrasings to Score a 5 on the AP� Statistics Exam!</b></h3>
 
 <p>Are you feeling overwhelmed by dense 600-page prep books, confusing hypothesis tests, and tricky College Board grading rubrics? You don't need another heavy textbook filled with theoretical proofs. You need a fast, laser-focused cram companion designed to give you instant clarity and maximum points under timed exam conditions.</p>
 
-<p>The <b>AP Statistics Formula & Inference Decision Guide</b> breaks down the entire AP® curriculum into high-yield formula translations, step-by-step inference flowcharts, and fill-in-the-blank interpretation templates that ensure you never lose partial credit on Free-Response Questions (FRQs).</p>
+<p>The <b>AP Statistics Formula & Inference Decision Guide</b> breaks down the entire AP� curriculum into high-yield formula translations, step-by-step inference flowcharts, and fill-in-the-blank interpretation templates that ensure you never lose partial credit on Free-Response Questions (FRQs).</p>
 
 <h3><b>Inside This High-Yield Score-5 Companion, You'll Discover:</b></h3>
 <ul>
-  <li><b>Complete 9-Unit Formula Translation:</b> Plain-English explanations of every official formula sheet equation—so you know exactly what each symbol represents and when to apply it.</li>
+  <li><b>Complete 9-Unit Formula Translation:</b> Plain-English explanations of every official formula sheet equation�so you know exactly what each symbol represents and when to apply it.</li>
   <li><b>Master Inference Decision Flowchart:</b> Never guess whether to use a 1-Prop Z-Test, 2-Sample t-Test, Chi-Square Test of Homogeneity, or Linear Regression Slope t-Test again.</li>
   <li><b>The Non-Negotiable Conditions Checklist:</b> Exact required checks for Randomness, 10% Independence Rule, Large Counts ($np \ge 10$), and Nearly Normal ($n \ge 30$) conditions.</li>
   <li><b>Fill-in-the-Blank FRQ Sentence Frames:</b> Standardized rubric templates for interpreting $p$-values, confidence intervals, correlation $r$, coefficient of determination $r^2$, and slope $b$ in context.</li>
@@ -37,12 +37,12 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 </ul>
 
 <h3><b>Why Choose This Guide Over Bulky 600-Page Textbooks?</b></h3>
-<p>Unlike massive prep books packed with bloated theory, this guide is engineered for <b>pure high-yield execution</b>—perfect for the final 30 days before exam day, weekend cramming, and rapid reference during class homework.</p>
+<p>Unlike massive prep books packed with bloated theory, this guide is engineered for <b>pure high-yield execution</b>�perfect for the final 30 days before exam day, weekend cramming, and rapid reference during class homework.</p>
 
-<p><b>Equip yourself with the ultimate AP® Statistics edge. Scroll up, click "Buy Now", and secure your Score of 5 today!</b></p>
+<p><b>Equip yourself with the ultimate AP� Statistics edge. Scroll up, click "Buy Now", and secure your Score of 5 today!</b></p>
 
 <hr>
-<p><small><i>*AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this publication.</i></small></p>
+<p><small><i>*AP� and Advanced Placement� are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this publication.</i></small></p>
 ```
 
 ---
@@ -197,11 +197,11 @@ print(f"Generated KDP Cover Template: {TOTAL_WIDTH_PX}x{TOTAL_HEIGHT_PX} px at 3
 ```latex
 \begin{center}
     \vspace{0.1in}
-    \qrcode[height=1.2in]{https://narayanakdp.github.io/ap-stats-score5-blueprint/}
+    \qrcode[height=1.2in]{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}
     
     \vspace{0.08in}
     {\footnotesize\textbf{\textsf{Scan on Mobile to Access Interactive Web Companion}}}\\
-    {\scriptsize\texttt{https://narayanakdp.github.io/ap-stats-score5-blueprint/}}
+    {\scriptsize\texttt{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}}
 \end{center}
 ```
 
@@ -211,7 +211,7 @@ print(f"Generated KDP Cover Template: {TOTAL_WIDTH_PX}x{TOTAL_HEIGHT_PX} px at 3
 
 ### Module 1: Standard Hero Banner (970 x 300 px)
 * **Headline:** CRACK THE SCORE-5 BLUEPRINT
-* **Sub-headline:** The High-Yield Formula & Inference Companion for AP® Statistics
+* **Sub-headline:** The High-Yield Formula & Inference Companion for AP� Statistics
 * **Body Copy:** Stop sifting through 600+ pages of textbook theory. Get crystal-clear formula breakdowns, inference decision trees, and fill-in-the-blank FRQ templates in a compact, rapid-review guide.
 * **AI Image Prompt:** *A high-resolution, modern study desk setup with a sleek 6x9 open paperback book displaying crisp LaTeX math formulas and an inference decision tree, beside a tablet showing the interactive companion web portal. Navy blue, cyan, and clean white lighting.*
 
@@ -231,17 +231,17 @@ print(f"Generated KDP Cover Template: {TOTAL_WIDTH_PX}x{TOTAL_HEIGHT_PX} px at 3
 
 | Feature / Criterion | **AP Stats Formula & Inference Guide** | **Bulky 600-Page Prep Books** | **General Math Textbooks** |
 | :--- | :---: | :---: | :---: |
-| **Rapid 30-Day Cram Format** | **Yes (Pure High-Yield)** | ❌ No (Too Dense & Heavy) | ❌ No (Heavy Theory) |
-| **Visual Inference Decision Trees** | **Yes (Step-by-Step Selection)** | ⚠️ Partial / Unclear | ❌ No |
-| **Fill-in-the-Blank FRQ Frames** | **Yes (Rubric Phrasings)** | ❌ No | ❌ No |
-| **Top 25 Grader Trap Alerts** | **Yes (Explicitly Highlighted)** | ⚠️ Rare | ❌ No |
-| **Free In-Book Interactive Portal** | **Yes (Instant QR Access)** | ⚠️ Clunky / Paid Account | ❌ No |
+| **Rapid 30-Day Cram Format** | **Yes (Pure High-Yield)** | ? No (Too Dense & Heavy) | ? No (Heavy Theory) |
+| **Visual Inference Decision Trees** | **Yes (Step-by-Step Selection)** | ?? Partial / Unclear | ? No |
+| **Fill-in-the-Blank FRQ Frames** | **Yes (Rubric Phrasings)** | ? No | ? No |
+| **Top 25 Grader Trap Alerts** | **Yes (Explicitly Highlighted)** | ?? Rare | ? No |
+| **Free In-Book Interactive Portal** | **Yes (Instant QR Access)** | ?? Clunky / Paid Account | ? No |
 
 ---
 
 ## 10. Amazon PPC Ads & Launch Strategy
 
-1. **Auto Campaign:** Daily budget $5–$10 for discovery.
+1. **Auto Campaign:** Daily budget $5�$10 for discovery.
 2. **Exact Match Campaign (High-Intent Keywords):**
    * `ap statistics formula sheet`
    * `ap statistics cheat sheet`
@@ -250,5 +250,6 @@ print(f"Generated KDP Cover Template: {TOTAL_WIDTH_PX}x{TOTAL_HEIGHT_PX} px at 3
    * `ap statistics cram guide`
 3. **Product / ASIN Targeting (Competitor Placement):**
    * Target ASINs of *Barron's AP Statistics*, *Princeton Review AP Stats*, and *5 Steps to a 5*.
+
 
 

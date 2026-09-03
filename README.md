@@ -40,7 +40,7 @@ This repository contains the **Value-Added Interactive Student Companion Portal*
    - Under **Build and deployment > Source**, select **Deploy from a branch**.
    - Under **Branch**, select `main` and `/ (root)`, then click **Save**.
 4. Your site will be live instantly at:
-   `https://<your-username>.github.io/ap-stats-score5-blueprint/`
+   `https://eduprosuite-org.github.io/ap-stats-score5-blueprint/`
 
 ---
 
@@ -62,3 +62,4 @@ Open `Volume_1_KDP_Publishing_Package.md` to find:
 - Exactly 7 Backend Search Keywords.
 - Amazon Category Placements to target #1 Bestseller Rank.
 - Full Amazon A+ Content graphics and text modules.
+

@@ -1,9 +1,9 @@
-﻿# AP Statistics Formula & Inference Decision Guide (Book 1)
+# AP Statistics Formula & Inference Decision Guide (Book 1)
 ### Complete Amazon KDP Publishing, LaTeX Manuscript & Marketing Package
 
 ---
 
-## 📂 Folder Contents & Architecture
+## ?? Folder Contents & Architecture
 
 | File / Subfolder | Purpose & Description |
 | :--- | :--- |
@@ -15,7 +15,7 @@
 
 ---
 
-## 🚀 Step-by-Step Publishing Guide
+## ?? Step-by-Step Publishing Guide
 
 ### 1. Compile the Interior PDF in Overleaf:
 1. Open [Overleaf.com](https://www.overleaf.com/) and create a **Blank Project**.
@@ -39,11 +39,12 @@
 1. Create a GitHub repository named `ap-stats-score5-blueprint`.
 2. Upload the files inside `web_companion_portal/` (`index.html`, `styles.css`, `app.js`).
 3. Enable GitHub Pages under **Repository Settings > Pages > Deploy from Branch (main)**.
-4. Your companion web portal will be live at `https://<your-username>.github.io/ap-stats-score5-blueprint/`.
+4. Your companion web portal will be live at `https://eduprosuite-org.github.io/ap-stats-score5-blueprint/`.
 
 ---
 
-## 🛡️ IP & Legal Compliance Statement
-This publication strictly follows Amazon KDP's Intellectual Property and Nominative Fair Use policies. No trademark symbols (`®`, `™`) are used in search metadata, and the required College Board trademark disclaimer is embedded on the copyright page and book description.
+## ??? IP & Legal Compliance Statement
+This publication strictly follows Amazon KDP's Intellectual Property and Nominative Fair Use policies. No trademark symbols (`�`, `�`) are used in search metadata, and the required College Board trademark disclaimer is embedded on the copyright page and book description.
+
 
 

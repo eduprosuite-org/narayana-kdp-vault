@@ -1,4 +1,4 @@
-﻿# Amazon KDP Publishing & SEO Package: Book 1
+# Amazon KDP Publishing & SEO Package: Book 1
 
 **Book Title:** AP Statistics Formula & Inference Decision Guide  
 **Subtitle:** The High-Yield Score-5 Cram Companion: Rapid Formula Breakdowns, Inference Decision Trees, and Fill-in-the-Blank FRQ Sentence Frames  
@@ -10,7 +10,7 @@
 ## 0. Amazon Trademark & IP Legal Disclaimer (Book Interior & Metadata)
 
 ```
-Disclaimer: AP® and Advanced Placement® are registered trademarks of the College Board, which is not affiliated with, and does not endorse or sponsor, this publication. TI-84 Plus® is a registered trademark of Texas Instruments. All terms are used under Nominative Fair Use for descriptive and educational purposes only.
+Disclaimer: AP� and Advanced Placement� are registered trademarks of the College Board, which is not affiliated with, and does not endorse or sponsor, this publication. TI-84 Plus� is a registered trademark of Texas Instruments. All terms are used under Nominative Fair Use for descriptive and educational purposes only.
 ```
 
 ---
@@ -20,15 +20,15 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 *Copy and paste the HTML block below directly into the Amazon KDP Description editor:*
 
 ```html
-<h3><b>Stop Memorizing Hundreds of Formulas. Master the Exact Decision Trees, Inference Rules, and Rubric Phrasings to Score a 5 on the AP® Statistics Exam!</b></h3>
+<h3><b>Stop Memorizing Hundreds of Formulas. Master the Exact Decision Trees, Inference Rules, and Rubric Phrasings to Score a 5 on the AP� Statistics Exam!</b></h3>
 
 <p>Are you feeling overwhelmed by dense 600-page prep books, confusing hypothesis tests, and tricky College Board grading rubrics? You don't need another heavy textbook filled with theoretical proofs. You need a fast, laser-focused cram companion designed to give you instant clarity and maximum points under timed exam conditions.</p>
 
-<p>The <b>AP Statistics Formula & Inference Decision Guide</b> breaks down the entire AP® curriculum into high-yield formula translations, step-by-step inference flowcharts, and fill-in-the-blank interpretation templates that ensure you never lose partial credit on Free-Response Questions (FRQs).</p>
+<p>The <b>AP Statistics Formula & Inference Decision Guide</b> breaks down the entire AP� curriculum into high-yield formula translations, step-by-step inference flowcharts, and fill-in-the-blank interpretation templates that ensure you never lose partial credit on Free-Response Questions (FRQs).</p>
 
 <h3><b>Inside This High-Yield Score-5 Companion, You'll Discover:</b></h3>
 <ul>
-  <li><b>Complete 9-Unit Formula Translation:</b> Plain-English explanations of every official formula sheet equation—so you know exactly what each symbol represents and when to apply it.</li>
+  <li><b>Complete 9-Unit Formula Translation:</b> Plain-English explanations of every official formula sheet equation�so you know exactly what each symbol represents and when to apply it.</li>
   <li><b>Master Inference Decision Flowchart:</b> Never guess whether to use a 1-Prop Z-Test, 2-Sample t-Test, Chi-Square Test of Homogeneity, or Linear Regression Slope t-Test again.</li>
   <li><b>The Non-Negotiable Conditions Checklist:</b> Exact required checks for Randomness, 10% Independence Rule, Large Counts ($np \ge 10$), and Nearly Normal ($n \ge 30$) conditions.</li>
   <li><b>Fill-in-the-Blank FRQ Sentence Frames:</b> Standardized rubric templates for interpreting $p$-values, confidence intervals, correlation $r$, coefficient of determination $r^2$, and slope $b$ in context.</li>
@@ -37,12 +37,12 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 </ul>
 
 <h3><b>Why Choose This Guide Over Bulky 600-Page Textbooks?</b></h3>
-<p>Unlike massive prep books packed with bloated theory, this guide is engineered for <b>pure high-yield execution</b>—perfect for the final 30 days before exam day, weekend cramming, and rapid reference during class homework.</p>
+<p>Unlike massive prep books packed with bloated theory, this guide is engineered for <b>pure high-yield execution</b>�perfect for the final 30 days before exam day, weekend cramming, and rapid reference during class homework.</p>
 
-<p><b>Equip yourself with the ultimate AP® Statistics edge. Scroll up, click "Buy Now", and secure your Score of 5 today!</b></p>
+<p><b>Equip yourself with the ultimate AP� Statistics edge. Scroll up, click "Buy Now", and secure your Score of 5 today!</b></p>
 
 <hr>
-<p><small><i>*AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this publication.</i></small></p>
+<p><small><i>*AP� and Advanced Placement� are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this publication.</i></small></p>
 ```
 
 ---
@@ -70,18 +70,18 @@ Amazon KDP allows authors to select up to **3 primary categories** directly in t
 ### Category Selection Framework & Exact Paths
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                   KDP CATEGORY STRATEGY MATRIX                                  │
-├───────────────────────────────┬──────────────────────────────────┬──────────────────────────────┤
-│ 1. HIGH-RELEVANCE ANCHOR     │ 2. LOW-COMPETITION MICRO-NICHE   │ 3. CROSS-NICHE COMPLEMENTARY │
-│ (Test Prep Giants Match)      │ (#1 Orange Badge Fast-Track)     │ (Educators & Tutors Target)  │
-├───────────────────────────────┼──────────────────────────────────┼──────────────────────────────┤
-│ Nonfiction > Study Aids >     │ Nonfiction > Science & Math >    │ Nonfiction > Education &     │
-│ Advanced Placement            │ Mathematics > Probability &      │ Reference > Schools &        │
-│                               │ Statistics                       │ Teaching > Secondary         │
-│ BISAC: STU004000              │ BISAC: MAT029000                 │ BISAC: EDU029040             │
-│ Target BSR: Top 10 (~5,000)   │ Target BSR: #1 Badge (~35,000)   │ Target BSR: Top 5 (~20,000)  │
-└───────────────────────────────┴──────────────────────────────────┴──────────────────────────────┘
++-------------------------------------------------------------------------------------------------+
+�                                   KDP CATEGORY STRATEGY MATRIX                                  �
++-------------------------------------------------------------------------------------------------�
+� 1. HIGH-RELEVANCE ANCHOR     � 2. LOW-COMPETITION MICRO-NICHE   � 3. CROSS-NICHE COMPLEMENTARY �
+� (Test Prep Giants Match)      � (#1 Orange Badge Fast-Track)     � (Educators & Tutors Target)  �
++-------------------------------+----------------------------------+------------------------------�
+� Nonfiction > Study Aids >     � Nonfiction > Science & Math >    � Nonfiction > Education &     �
+� Advanced Placement            � Mathematics > Probability &      � Reference > Schools &        �
+�                               � Statistics                       � Teaching > Secondary         �
+� BISAC: STU004000              � BISAC: MAT029000                 � BISAC: EDU029040             �
+� Target BSR: Top 10 (~5,000)   � Target BSR: #1 Badge (~35,000)   � Target BSR: Top 5 (~20,000)  �
++-------------------------------------------------------------------------------------------------+
 ```
 
 ---
@@ -96,8 +96,8 @@ Amazon KDP allows authors to select up to **3 primary categories** directly in t
 * **Placement Objective & Algorithmic Rationale:**  
   Directly anchors Book 1 into the exact primary category of top market leaders (*Barron's AP Statistics Premium*, *Princeton Review AP Statistics Prep*, *5 Steps to a 5: AP Statistics*). This triggers Amazon's "Frequently Bought Together" and "Customers who viewed this item also viewed" recommendation carousels on competitor product pages.
 * **BSR Competitor Benchmark:**
-  * **Peak Season (Feb–May):** #1 BSR ~1,200 – 3,500 (~40–100 units/day); Top 10 BSR ~8,000 – 18,000 (~10–25 units/day).
-  * **Off-Peak Season (Jun–Jan):** #1 BSR ~8,000 – 15,000 (~15–30 units/day); Top 10 BSR ~25,000 – 45,000 (~4–8 units/day).
+  * **Peak Season (Feb�May):** #1 BSR ~1,200 � 3,500 (~40�100 units/day); Top 10 BSR ~8,000 � 18,000 (~10�25 units/day).
+  * **Off-Peak Season (Jun�Jan):** #1 BSR ~8,000 � 15,000 (~15�30 units/day); Top 10 BSR ~25,000 � 45,000 (~4�8 units/day).
 
 ---
 
@@ -111,8 +111,8 @@ Amazon KDP allows authors to select up to **3 primary categories** directly in t
 * **Placement Objective & Algorithmic Rationale:**  
   A focused mathematical discipline category where sub-genre velocity thresholds are significantly lower than broad test-prep categories. This allows the guide to capture the coveted **#1 New Release** and **#1 Bestseller** orange badges with moderate launch sales velocity, boosting click-through rates (CTR) across all search results.
 * **BSR Competitor Benchmark:**
-  * **#1 Bestseller Threshold:** BSR ~25,000 – 45,000 (~5–8 units/day).
-  * **Top 5 Bestseller Threshold:** BSR ~50,000 – 85,000 (~2–4 units/day).
+  * **#1 Bestseller Threshold:** BSR ~25,000 � 45,000 (~5�8 units/day).
+  * **Top 5 Bestseller Threshold:** BSR ~50,000 � 85,000 (~2�4 units/day).
 
 ---
 
@@ -124,10 +124,10 @@ Amazon KDP allows authors to select up to **3 primary categories** directly in t
   *(Alternative / Secondary target: `Books > Teen & Young Adult > Education & Reference > Study Aids > Mathematics`)*
 * **BISAC Subject Code:** `EDU029040` (`EDUCATION / Teaching / Secondary`)
 * **Placement Objective & Algorithmic Rationale:**  
-  Targets high school AP math teachers, department heads, homeschool parents, and private test-prep tutors who actively source concise reference summaries and classroom handout frameworks. Readers browsing secondary teaching methodologies frequently buy multi-copy sets (5–30 copies) for classroom distribution.
+  Targets high school AP math teachers, department heads, homeschool parents, and private test-prep tutors who actively source concise reference summaries and classroom handout frameworks. Readers browsing secondary teaching methodologies frequently buy multi-copy sets (5�30 copies) for classroom distribution.
 * **BSR Competitor Benchmark:**
-  * **#1 Bestseller Threshold:** BSR ~18,000 – 35,000 (~6–12 units/day).
-  * **Top 5 Bestseller Threshold:** BSR ~40,000 – 70,000 (~3–5 units/day).
+  * **#1 Bestseller Threshold:** BSR ~18,000 � 35,000 (~6�12 units/day).
+  * **Top 5 Bestseller Threshold:** BSR ~40,000 � 70,000 (~3�5 units/day).
 
 ---
 
@@ -136,9 +136,9 @@ Amazon KDP allows authors to select up to **3 primary categories** directly in t
 1. Log in to the **KDP Dashboard** (`kdp.amazon.com`) and open **Book 1 Details** (`Paperback Details` or `Kindle eBook Details`).
 2. Scroll to the **Categories** section and click **Choose Categories**.
 3. In the Category selection modal, select the following 3 categories:
-   * **Category 1:** Check `Nonfiction` → Expand `Study Aids` → Select `Advanced Placement`.
-   * **Category 2:** Check `Nonfiction` → Expand `Science & Mathematics` → Expand `Mathematics` → Select `Probability & Statistics`.
-   * **Category 3:** Check `Nonfiction` → Expand `Education & Reference` → Expand `Schools & Teaching` → Select `Secondary`.
+   * **Category 1:** Check `Nonfiction` ? Expand `Study Aids` ? Select `Advanced Placement`.
+   * **Category 2:** Check `Nonfiction` ? Expand `Science & Mathematics` ? Expand `Mathematics` ? Select `Probability & Statistics`.
+   * **Category 3:** Check `Nonfiction` ? Expand `Education & Reference` ? Expand `Schools & Teaching` ? Select `Secondary`.
 4. Click **Save Categories**.
 
 ---
@@ -236,14 +236,14 @@ Module 4: Standard Company Bio / From the Publisher Brand Story (300 x 300 px + 
 
 * **Module Slot:** Hero Introduction (Top of A+ Content)
 * **Exact Dimensions:** 970 x 600 px (300 DPI, RGB color space, JPG/PNG, < 2 MB)
-* **Headline:** CRACK THE AP® STATISTICS SCORE-5 BLUEPRINT
+* **Headline:** CRACK THE AP� STATISTICS SCORE-5 BLUEPRINT
 * **Sub-Headline:** The Laser-Focused Cram Companion: Plain-English Formulas, Inference Decision Trees & Rubric-Perfect FRQs
 * **Persuasive Marketing Copy:**
   > Stop wasting dozens of hours sifting through dense 600-page prep books and confusing theoretical proofs. Master every official formula translation, eliminate inference test confusion in seconds, and capture maximum Free-Response partial credit with plug-and-play rubric templates engineered specifically for timed exam execution.
 * **Trust & Feature Badges:**
-  - `[✓] 100% CED & Rubric Aligned`
-  - `[✓] Zero-Guesswork Inference Flowcharts`
-  - `[✓] Free Interactive Digital Companion Portal`
+  - `[?] 100% CED & Rubric Aligned`
+  - `[?] Zero-Guesswork Inference Flowcharts`
+  - `[?] Free Interactive Digital Companion Portal`
 * **Exact AI Image Generation Prompt (Midjourney v6 / DALL-E 3 / Flux Pro):**
   > `Ultra-premium commercial hero banner for an educational STEM test-prep book, exact 970:600 aspect ratio banner format. In the center-left foreground, a pristine physical paperback book titled "AP Statistics Formula & Inference Decision Guide" is angled open, showcasing crisp mathematical typesetting, clean normal distribution bell curves, and vibrant step-by-step decision flowcharts. In the background and right side, an Apple iPad and modern smartphone display the glowing interactive web companion app with sleek UI cards. Rich cinematic dark slate navy blue background with electric cyan (#00E5FF) and brushed metallic gold (#FFB300) data-grid line graphics, floating glowing statistical symbols (mu, sigma, x-bar, p-hat, chi-square, alpha), soft volumetric studio lighting, hyper-realistic 8k resolution, clean modern tech aesthetic, ultra-sharp focus, no distorted typography.`
 
@@ -287,13 +287,13 @@ Module 4: Standard Company Bio / From the Publisher Brand Story (300 x 300 px + 
 
 | Core Feature & Exam Readiness Metric | **AP Statistics Formula & Inference Decision Guide** | **Bulky 600+ Page Prep Books (Barron's / Princeton)** | **Standard High School Textbooks (TPS / Stats Modeling)** |
 | :--- | :---: | :---: | :---: |
-| **Page Count & Cognitive Load** | **100 Pages (100% High-Yield Cram)** | ❌ 600–750 Pages (Dense & Exhausting) | ❌ 850+ Pages (Heavy Proofs & Fluff) |
-| **Visual Inference Decision Trees** | **✅ Yes (Instant Step-by-Step Flowcharts)** | ⚠️ Buried in Dense Chapter Paragraphs | ❌ No Flowcharts Provided |
-| **Fill-in-the-Blank FRQ Sentence Frames** | **✅ Yes (Official College Board Rubric Alignment)** | ❌ Generalized Sample Answers Only | ❌ Zero Rubric Template Focus |
-| **Top 25 Grader Trap & Deduction Alerts** | **✅ Yes (Explicit Warning Callout Boxes)** | ⚠️ Rare / Minor Footnotes | ❌ No Grader Insights |
-| **Free Interactive Digital Companion** | **✅ Yes (Scan QR for Mobile Drills & Tools)** | ⚠️ Clunky / Requires Paid Account | ❌ None |
-| **30-Day Cram & Rapid Review Ready** | **✅ Engineered Specifically for Fast Review** | ❌ Impossible to Finish in 30 Days | ❌ Not Suitable for Rapid Cramming |
-| **Physical Portability** | **✅ Lightweight 6" x 9" Pocket Companion** | ❌ Heavy 3 lb Desk-Bound Brick | ❌ Heavy 5 lb Hardcover |
+| **Page Count & Cognitive Load** | **100 Pages (100% High-Yield Cram)** | ? 600�750 Pages (Dense & Exhausting) | ? 850+ Pages (Heavy Proofs & Fluff) |
+| **Visual Inference Decision Trees** | **? Yes (Instant Step-by-Step Flowcharts)** | ?? Buried in Dense Chapter Paragraphs | ? No Flowcharts Provided |
+| **Fill-in-the-Blank FRQ Sentence Frames** | **? Yes (Official College Board Rubric Alignment)** | ? Generalized Sample Answers Only | ? Zero Rubric Template Focus |
+| **Top 25 Grader Trap & Deduction Alerts** | **? Yes (Explicit Warning Callout Boxes)** | ?? Rare / Minor Footnotes | ? No Grader Insights |
+| **Free Interactive Digital Companion** | **? Yes (Scan QR for Mobile Drills & Tools)** | ?? Clunky / Requires Paid Account | ? None |
+| **30-Day Cram & Rapid Review Ready** | **? Engineered Specifically for Fast Review** | ? Impossible to Finish in 30 Days | ? Not Suitable for Rapid Cramming |
+| **Physical Portability** | **? Lightweight 6" x 9" Pocket Companion** | ? Heavy 3 lb Desk-Bound Brick | ? Heavy 5 lb Hardcover |
 
 ---
 
@@ -303,9 +303,9 @@ Module 4: Standard Company Bio / From the Publisher Brand Story (300 x 300 px + 
 * **Module Type:** Standard Company Bio / Author Showcase (300 x 300 px Image + 350+ Character Authority Bio)
 * **Image Dimensions:** 300 x 300 px (Brand Logo / Editorial Crest)
 * **Section Header:** Built by Educators. Engineered for Score-5 Mastery.
-* **Sub-Headline:** The AP® Statistics Score-5 Blueprint Series Mission
+* **Sub-Headline:** The AP� Statistics Score-5 Blueprint Series Mission
 * **Publisher & Brand Authority Bio (430 Characters):**
-  > At **Apex Score-5 Publishing**, our mission is simple: eliminate academic overwhelm and engineer the most efficient, high-yielding test preparation tools on the market. Created by veteran AP® mathematics educators, curriculum specialists, and data analysts, our guides strip away textbook fluff and deliver the exact cognitive frameworks, rubric blueprints, and decision models required to achieve a top score on test day. We combine rigorous pedagogical alignment with modern interactive digital tools, ensuring every student walks into exam day with absolute clarity, confidence, and speed.
+  > At **Apex Score-5 Publishing**, our mission is simple: eliminate academic overwhelm and engineer the most efficient, high-yielding test preparation tools on the market. Created by veteran AP� mathematics educators, curriculum specialists, and data analysts, our guides strip away textbook fluff and deliver the exact cognitive frameworks, rubric blueprints, and decision models required to achieve a top score on test day. We combine rigorous pedagogical alignment with modern interactive digital tools, ensuring every student walks into exam day with absolute clarity, confidence, and speed.
 * **Exact AI Image Generation Prompt:**
   > `Prestigious academic publisher emblem and brand crest, 1:1 square aspect ratio. A sleek minimalist crest featuring an upward trending statistical normal distribution curve interwoven with a golden graduation cap, open book, and academic laurels. Modern deep royal navy blue (#0A192F) and brushed gold metallic (#FFD700) textures, elegant embossed vector styling, dark studio background, 8k resolution, hyper-clean.`
 
@@ -313,7 +313,7 @@ Module 4: Standard Company Bio / From the Publisher Brand Story (300 x 300 px + 
 
 ## 8. Amazon PPC Ads & Launch Strategy
 
-1. **Auto Campaign:** Daily budget $5–$10 for discovery.
+1. **Auto Campaign:** Daily budget $5�$10 for discovery.
 2. **Exact Match Campaign (High-Intent Keywords):**
    * `ap statistics formula sheet`
    * `ap statistics cheat sheet`
@@ -322,4 +322,5 @@ Module 4: Standard Company Bio / From the Publisher Brand Story (300 x 300 px + 
    * `ap statistics cram guide`
 3. **Product / ASIN Targeting (Competitor Placement):**
    * Target ASINs of *Barron's AP Statistics*, *Princeton Review AP Stats*, and *5 Steps to a 5*.
+
 
