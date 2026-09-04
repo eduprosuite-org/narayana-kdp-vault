@@ -17,7 +17,7 @@
 \usepackage{enumitem}
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric,arrows.meta,positioning}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,trees}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{microtype}
@@ -35,13 +35,13 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 
-\newcommand{\BookTitle}{AP\textsuperscript{\textregistered} Statistics Formula \& Inference Decision Guide}
-\newcommand{\BookSubtitle}{The High-Yield Score-5 Cram Companion: Rapid Formula Breakdowns, Inference Decision Trees, and Fill-in-the-Blank FRQ Sentence Frames}
-\newcommand{\BookSeries}{AP\textsuperscript{\textregistered} Statistics Score-5 Blueprint Series --- Volume 1}
+\newcommand{\BookTitle}{AP Statistics Formula \& Inference Decision Guide}
+\newcommand{\BookSubtitle}{The Complete High-Yield Exam Companion: Formula Breakdowns, Mindmaps, Inference Decision Trees, and Rubric Sentence Frames}
+\newcommand{\BookSeries}{AP Statistics Master Review Series --- Book 1}
 \newcommand{\BookAuthor}{PR}
-\newcommand{\Edition}{2027 Exam Edition}
+\newcommand{\Edition}{2026--2027 Edition}
 
-% Header & Footer (Strict KDP Safe Boundary >= 0.25in from trim)
+% Header & Footer
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[LE]{\small\itshape \BookTitle}
@@ -52,96 +52,71 @@
 
 % Section styling
 \titleformat{\chapter}[display]
-  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{10pt}{\LARGE\bfseries}
+  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{8pt}{\LARGE\bfseries}
 \titleformat{\section}
   {\normalfont\large\bfseries\color{MidnightBlue}}{\thesection}{1em}{}
 \titleformat{\subsection}
   {\normalfont\normalsize\bfseries\color{DarkSlateGray}}{\thesubsection}{1em}{}
 
-% Custom TColorBoxes for Professional KDP Interior (Strict No-Bleed / Breakable Enabled)
+% Custom TColorBoxes
 \newtcolorbox{formulabox}[1][]{
   enhanced,
-  breakable,
   colback=NavyBlue!5!white,
   colframe=NavyBlue!80!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2.5mm,
+  arc=2mm,
   boxrule=1pt,
-  left=8pt,
-  right=8pt,
-  top=6pt,
-  bottom=6pt,
-  before skip=8pt,
-  after skip=8pt
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=8pt, after skip=8pt
+}
+
+\newtcolorbox{mnemonicbox}[1][]{
+  enhanced,
+  colback=Purple!5!white,
+  colframe=Purple!85!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=2mm,
+  boxrule=1pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=8pt, after skip=8pt
 }
 
 \newtcolorbox{trapbox}[1][]{
   enhanced,
-  breakable,
   colback=Red!5!white,
   colframe=Red!80!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2.5mm,
+  arc=2mm,
   boxrule=1pt,
-  left=8pt,
-  right=8pt,
-  top=6pt,
-  bottom=6pt,
-  before skip=8pt,
-  after skip=8pt
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=8pt, after skip=8pt
 }
 
 \newtcolorbox{templatebox}[1][]{
   enhanced,
-  breakable,
   colback=ForestGreen!5!white,
   colframe=ForestGreen!85!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2.5mm,
+  arc=2mm,
   boxrule=1pt,
-  left=8pt,
-  right=8pt,
-  top=6pt,
-  bottom=6pt,
-  before skip=8pt,
-  after skip=8pt
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=8pt, after skip=8pt
 }
 
 \newtcolorbox{tipbox}[1][]{
   enhanced,
-  breakable,
   colback=Amber!8!white,
   colframe=DarkOrange!90!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2.5mm,
+  arc=2mm,
   boxrule=1pt,
-  left=8pt,
-  right=8pt,
-  top=6pt,
-  bottom=6pt,
-  before skip=8pt,
-  after skip=8pt
-}
-
-\newtcolorbox{calloutbox}[1][]{
-  enhanced,
-  breakable,
-  colback=SlateGray!8!white,
-  colframe=SlateGray!90!black,
-  fonttitle=\bfseries\color{white},
-  title={#1},
-  arc=2.5mm,
-  boxrule=1pt,
-  left=8pt,
-  right=8pt,
-  top=6pt,
-  bottom=6pt,
-  before skip=8pt,
-  after skip=8pt
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=8pt, after skip=8pt
 }
 
 \hypersetup{
@@ -158,93 +133,82 @@
 % TITLE PAGE
 \begin{titlepage}
 \centering
-\vspace*{0.8in}
+\vspace*{0.6in}
 
 {\Large\scshape \BookSeries}\par
-\vspace{1.2cm}
+\vspace{1.0cm}
 
 {\Huge\bfseries\color{MidnightBlue} \BookTitle}\par
-\vspace{0.6cm}
+\vspace{0.5cm}
 {\Large\itshape \BookSubtitle}\par
 
-\vspace{2cm}
-
-\rule{0.6\linewidth}{1.2pt}\par
 \vspace{1.5cm}
 
+\rule{0.6\textwidth}{1.2pt}\par
+\vspace{1.2cm}
+
 {\Large\bfseries \BookAuthor}\par
-\vspace{0.4cm}
+\vspace{0.3cm}
 {\large \Edition}\par
 
 \vfill
 
 {\small Published for Independent Amazon KDP Distribution}\par
-\vspace*{0.5in}
+\vspace*{0.4in}
 \end{titlepage}
 
 % COPYRIGHT PAGE
 \newpage
 \thispagestyle{empty}
-\vspace*{2.5in}
+\vspace*{2.0in}
 
-\noindent \copyright\ 2027 \BookAuthor. All rights reserved.\\
-No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the author and publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+\noindent \copyright\ 2026--2027 \BookAuthor. All rights reserved.\\
+No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without prior written permission.
 
-\vspace{0.3in}
+\vspace{0.25in}
 
 \noindent \textbf{\textregistered\ Trademark Notice \& Nominative Fair Use Disclaimer:}\\
-\small{AP\textregistered\ and Advanced Placement\textregistered\ are trademarks registered by the College Board, which was not involved in the production of, and does not endorse, this product. TI-84\textregistered\ is a registered trademark of Texas Instruments. All trademarks, service marks, and trade names referred to in this book are the property of their respective owners and are used herein for nominative, educational, and descriptive purposes only under Fair Use rules.}
+\small{AP\textregistered\ and Advanced Placement\textregistered\ are trademarks registered by the College Board, which was not involved in the production of, and does not endorse, this product. TI-84 Plus\textregistered\ is a registered trademark of Texas Instruments. All trademarks are used under Nominative Fair Use for educational and descriptive purposes only.}
 
 \vspace{0.2in}
 
-\noindent \textbf{Free Companion Online Portal \& Resources:}\\
-Access downloadable PDF cheat sheets, interactive diagnostic drills, and live formula lookups:
+\noindent \textbf{Free Interactive Companion Web Portal:}\\
+Access searchable formula lookups, interactive inference wizards, and diagnostic drills:
 
 \begin{center}
-    \vspace{0.1in}
+    \vspace{0.08in}
     \adjustbox{max width=\linewidth}{%
       \qrcode[height=1.2in]{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}%
     }
     
-    \vspace{0.08in}
-    {\footnotesize\textbf{\textsf{Scan on Mobile to Access Interactive Web Companion}}}\\
+    \vspace{0.06in}
+    {\footnotesize\textbf{\textsf{Scan to Access Free Interactive Student Companion Portal}}}\\
     {\scriptsize\texttt{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}}
 \end{center}
 
-\vspace{0.15in}
+\vspace{0.1in}
 \noindent Published Independently via Amazon KDP\\
-First Edition: 2027\\
-ISBN / ASIN: Assigned by Amazon KDP
+First Edition: 2026--2027
 
 % HOW TO USE
-\chapter*{How to Use This Companion to Score a 5}
-\addcontentsline{toc}{chapter}{How to Use This Companion to Score a 5}
+\chapter*{How to Use This Master Companion}
+\addcontentsline{toc}{chapter}{How to Use This Master Companion}
 
-Welcome to the \textbf{AP Statistics Formula \& Inference Decision Guide}! This book was engineered specifically to solve the two biggest complaints students have with standard AP prep books:
-\begin{enumerate}
-    \item \textbf{Textbook Bloat:} Standard books are 600+ pages of dense theory that take weeks to read.
-    \item \textbf{The FRQ Point Leak:} Students lose partial credit on Free-Response Questions not because their math is wrong, but because their verbal phrasing fails to satisfy strict AP rubric wording.
+Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulky 600-page textbooks with high-yield clarity, visual mindmaps, and rubric sentence frames.
+
+\section*{The 4-Pillar Master System}
+\begin{enumerate}[label=\textbf{Pillar \arabic*:}]
+    \item \textbf{Unit Mindmaps \& Flowcharts:} Master the visual architecture of each unit before diving into detailed formulas.
+    \item \textbf{Formula \& Parameter Translations:} Understand exactly what every Greek symbol ($\mu, \sigma, \hat{p}, \chi^2$) represents in plain English.
+    \item \textbf{Mnemonics \& Grader Pitfalls:} Use universal mnemonics (\texttt{SOCS}, \texttt{BINS}, \texttt{LINER}, \texttt{PANIC}, \texttt{PHANTOM}) to avoid losing partial credit.
+    \item \textbf{Fill-in-the-Blank Sentence Frames:} Memorize standardized rubric templates to capture 100\% credit on Free-Response Questions (FRQs).
 \end{enumerate}
 
-\section*{The 3-Step Score-5 System}
+% EXAM BLUEPRINT & SYLLABUS WEIGHTAGE
+\chapter*{Official AP\textregistered\ Statistics Exam Blueprint}
+\addcontentsline{toc}{chapter}{Official AP Exam Blueprint}
 
-\begin{enumerate}[label=\textbf{Step \arabic*:}]
-    \item \textbf{Master the Formulas \& Parameters (Chapters 1--9):} For every formula on the official College Board reference sheet, review the plain-English parameter translation, when to use it, and what conditions are required.
-    \item \textbf{Navigate the Master Inference Flowchart (Chapter 10):} Before starting any hypothesis test or confidence interval problem, follow the decision tree to ensure you select the correct procedure without second-guessing.
-    \item \textbf{Eliminate Grader Traps \& Memorize Sentence Frames (Chapters 11--12):} Read through the Top 25 Exam Traps and adopt the exact fill-in-the-blank sentence frames for $p$-values, confidence levels, slope, and $r^2$ so that graders award you full points.
-\end{enumerate}
-
-\begin{tipbox}[Pro Tip for the Final 14 Days Before Exam Day]
-Don't re-read entire textbooks. Spend 20 minutes each morning reviewing one unit's cheat sheet box and 10 minutes writing out the conditions checklist from memory.
-\end{tipbox}
-
-% OFFICIAL EXAM BLUEPRINT & SYLLABUS WEIGHTAGE
-\chapter*{Official AP\textregistered\ Statistics Exam Blueprint \& Unit Weightages}
-\addcontentsline{toc}{chapter}{Official AP Exam Blueprint \& Unit Weightages}
-
-Understanding the exact exam structure, pacing requirements, and syllabus weightages ensures you invest your study hours into the highest-yield topics.
-
-\section*{1. Exam Format, Duration \& Pacing Strategy}
+\section*{1. Exam Format \& Pacing Strategy (3 Hours / 180 Mins)}
 
 \begin{table}[H]
 \centering
@@ -283,12 +247,59 @@ Understanding the exact exam structure, pacing requirements, and syllabus weight
 \end{tabularx}
 \end{table}
 
-\section*{3. College Board Calculator \& Formula Rules}
+% EXAM DAY TIPS & MEMORY TRICKS
+\chapter*{Exam-Day Morning Routine \& Master Mnemonics}
+\addcontentsline{toc}{chapter}{Exam-Day Routine \& Master Mnemonics}
+
+\section*{Exam-Day Morning Checklist}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Graphing Calculator Policy:} A graphing calculator with standard statistical capabilities (e.g., TI-84 Plus CE, TI-Nspire) is permitted throughout the entire 3-hour exam (both Section I and Section II).
-    \item \textbf{Formula Reference Sheet:} The official College Board formula reference sheet and standard normal ($z$), $t$, and $\chi^2$ distribution tables are provided during the test.
-    \item \textbf{Avoid Calculator Speak on FRQs:} Never write calculator commands alone (e.g., \texttt{1-PropZTest(0.5, 30, 50)}). Graders require stating the named procedure, null and alternative hypotheses, condition checks, test statistic value, degrees of freedom, and $p$-value in context.
+    \item \textbf{TI-84 Plus CE Inspection:} Charge your calculator to 100\% the night before. Ensure RAM is clean and degree/radian mode does not interfere with list stats.
+    \item \textbf{Digital Bluebook Readiness:} Verify your device is fully charged, software is updated, and your College Board login credentials are confirmed.
+    \item \textbf{The 5-Minute Brain Dump:} When the exam starts, write down key mnemonics (\texttt{SOCS}, \texttt{BINS}, \texttt{LINER}, \texttt{PANIC}, \texttt{PHANTOM}) on your scratch paper.
 \end{itemize}
+
+\section*{The Top 5 Universal AP Statistics Mnemonics}
+
+\begin{mnemonicbox}[1. SOCS --- Describing Quantitative Distributions (Unit 1)]
+\textbf{S --- Shape:} Skewed Left, Skewed Right, Symmetric, Unimodal, Bimodal.\\
+\textbf{O --- Outliers:} Apply $1.5 \times \text{IQR}$ rule or $2\text{SD}$ rule.\\
+\textbf{C --- Center:} Report Median (for skewed) or Mean (for symmetric).\\
+\textbf{S --- Spread:} Report IQR/Range (for skewed) or Standard Deviation (for symmetric).\\
+\textit{Always include context and units!}
+\end{mnemonicbox}
+
+\begin{mnemonicbox}[2. BINS --- Binomial Distribution Checks (Unit 4)]
+\textbf{B --- Binary:} Only two possible outcomes (Success vs Failure).\\
+\textbf{I --- Independent:} Trials must be independent (or $10\%$ condition holds).\\
+\textbf{N --- Number:} Fixed number of trials ($n$).\\
+\textbf{S --- Same Probability:} Probability of success ($p$) remains constant.
+\end{mnemonicbox}
+
+\begin{mnemonicbox}[3. LINER --- Linear Regression Inference Conditions (Unit 9)]
+\textbf{L --- Linear:} Scatterplot shows linear pattern; residual plot shows random scatter.\\
+\textbf{I --- Independent:} $10\%$ condition ($n \le 0.10N$).\\
+\textbf{N --- Normal Residuals:} Histogram/normal probability plot of residuals is roughly normal.\\
+\textbf{E --- Equal Variance:} Residuals show equal spread across all $\hat{y}$ values.\\
+\textbf{R --- Random:} Data collected via random sampling or randomized experiment.
+\end{mnemonicbox}
+
+\begin{mnemonicbox}[4. PANIC --- 5-Step Confidence Interval Protocol]
+\textbf{P} --- Parameter of interest defined in context ($\mu$ or $p$).\\
+\textbf{A} --- Assumptions \& Conditions checked (Random, $10\%$, Normal / Large Counts).\\
+\textbf{N} --- Name the specific interval procedure (e.g., 1-Sample $t$-Interval for $\mu$).\\
+\textbf{I} --- Interval calculated with formula and calculator degrees of freedom.\\
+\textbf{C} --- Conclusion stated using standard rubric sentence frames in context.
+\end{mnemonicbox}
+
+\begin{mnemonicbox}[5. PHANTOM --- 7-Step Hypothesis Testing Protocol]
+\textbf{P} --- Parameter defined in context.\\
+\textbf{H} --- Hypotheses stated ($H_0$ and $H_a$ using parameter symbols).\\
+\textbf{A} --- Assumptions checked.\\
+\textbf{N} --- Name the test procedure (e.g., 2-Prop $z$-Test).\\
+\textbf{T} --- Test statistic calculated ($z$, $t$, or $\chi^2$).\\
+\textbf{O} --- Obtain $p$-value and report degrees of freedom.\\
+\textbf{M} --- Make decision: Reject $H_0$ or Fail to Reject $H_0$ with contextual conclusion.
+\end{mnemonicbox}
 
 \tableofcontents
 
@@ -296,265 +307,334 @@ Understanding the exact exam structure, pacing requirements, and syllabus weight
 
 % UNIT 1
 \chapter{Unit 1: Exploring One-Variable Data}
-\section{Essential Concepts \& Cheat Sheet}
-When describing any quantitative single-variable distribution on the AP Exam, you \textbf{must} address four key characteristics: \textbf{SOCS} (Shape, Outliers, Center, Spread) always written \textbf{in context} of the problem.
 
-\begin{formulabox}[Core Formulas: One-Variable Statistics]
-\textbf{1. Mean ($\bar{x}$):} $\bar{x} = \frac{\sum x_i}{n} = \frac{1}{n} \sum x_i$
+\section{Unit 1 Visual Mindmap}
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm, auto, >=Latex, 
+    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.6in, text centered, rounded corners, minimum height=0.5in, font=\small\bfseries},
+    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.4in, rounded corners, minimum height=0.4in, font=\footnotesize}]
+    
+    \node [block] (root) {Unit 1: One-Variable Data (15--23\%)};
+    \node [subblock, below=0.6cm of root] (data) {\textbf{Data Types:} Categorical (Bar/Pie) vs Quantitative (Dot/Stem/Hist/Boxplot)};
+    \node [subblock, below=0.5cm of data] (socs) {\textbf{Description Protocol:} SOCS (Shape, Outliers, Center, Spread) in context};
+    \node [subblock, below=0.5cm of socs] (outliers) {\textbf{Outlier Rule:} Lower $= Q_1 - 1.5\text{IQR}$, Upper $= Q_3 + 1.5\text{IQR}$};
+    \node [subblock, below=0.5cm of outliers] (norm) {\textbf{Normal Model:} $z = \frac{x-\mu}{\sigma}$, 68-95-99.7 Rule, \texttt{normalcdf}};
 
-\textbf{2. Sample Standard Deviation ($s_x$):} $s_x = \sqrt{\frac{1}{n-1}\sum (x_i - \bar{x})^2}$
+    \draw [->, thick, NavyBlue] (root) -- (data);
+    \draw [->, thick, NavyBlue] (data) -- (socs);
+    \draw [->, thick, NavyBlue] (socs) -- (outliers);
+    \draw [->, thick, NavyBlue] (outliers) -- (norm);
+\end{tikzpicture}
+\end{center}
 
-\textbf{3. Standardized Score ($z$-score):} $z = \frac{x - \mu}{\sigma} \quad \text{or} \quad z = \frac{x - \bar{x}}{s_x}$
+\section{Essential Formulas \& Plain-English Translation}
+\begin{formulabox}[Unit 1 Core Formulas]
+\textbf{1. Sample Mean ($\bar{x}$):} $\bar{x} = \frac{\sum x_i}{n}$ --- The arithmetic average; non-resistant to skew/outliers.
+
+\textbf{2. Sample Standard Deviation ($s_x$):} $s_x = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}$ --- The typical distance of observations from the mean.
+
+\textbf{3. Standardized Score ($z$-score):} $z = \frac{x - \mu}{\sigma}$ --- Number of standard deviations an observation falls above ($+$) or below ($-$) the mean.
 \end{formulabox}
-
-\section{Outlier Identification Rules}
-\begin{itemize}
-    \item \textbf{1.5 $\times$ IQR Rule:} $\text{IQR} = Q_3 - Q_1$. Outliers are values $< Q_1 - 1.5(\text{IQR})$ or $> Q_3 + 1.5(\text{IQR})$.
-    \item \textbf{2-SD Rule (Normal data):} Outliers are values outside $\mu \pm 2\sigma$.
-\end{itemize}
 
 \section{Resistant vs. Non-Resistant Summary Statistics}
 \begin{table}[H]
 \centering
 \small
-\begin{tabularx}{\linewidth}{@{}l X X@{}}
+\begin{tabularx}{\linewidth}{@{}lXl@{}}
 \toprule
 \textbf{Measure} & \textbf{Resistant to Outliers / Skew?} & \textbf{When to Use on Exam} \\
 \midrule
-\textbf{Median} & \textbf{Yes} (Unaffected by extremes) & Skewed distributions \\
-\textbf{IQR} & \textbf{Yes} (Middle 50\% only) & Skewed distributions \\
-\textbf{Mean} & \textbf{No} (Pulled toward tail/outliers) & Symmetric, unimodal distributions \\
-\textbf{Standard Deviation} & \textbf{No} (Squared deviations inflate) & Symmetric, unimodal distributions \\
+\textbf{Median \& IQR} & \textbf{Yes} (Middle 50\% only) & Skewed data or data with outliers \\
+\textbf{Mean \& Standard Deviation} & \textbf{No} (Pulled toward the tail/extremes) & Symmetric, bell-shaped distributions \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\begin{trapbox}[AP Exam Trap Alert: Comparing Distributions]
-When comparing two distributions on an FRQ:
-\begin{enumerate}
-    \item You \textbf{must} use comparative words (e.g., \emph{"Distribution A has a greater median than Distribution B"}).
-    \item You \textbf{must} include context (e.g., grams of sugar, test scores, heights).
-\end{enumerate}
+\section{Top Exam Traps & Sentence Frames}
+\begin{trapbox}[Unit 1 Trap Alert: Comparative Language]
+When comparing two distributions on an FRQ, you \textbf{must} use comparative words (\emph{"greater than", "less than"}). Stating two separate descriptions scores zero credit!
 \end{trapbox}
+
+\begin{templatebox}[Unit 1 FRQ Sentence Frame: $z$-Score Interpretation]
+\emph{"The observed value of [context] is [z-score value] standard deviations [above/below] the mean of [context with units]."}
+\end{templatebox}
 
 % UNIT 2
 \chapter{Unit 2: Exploring Two-Variable Data}
-\section{Essential Concepts \& Cheat Sheet}
-\begin{formulabox}[Core Formulas: Linear Regression]
-\textbf{1. Least-Squares Regression Line (LSRL):} $\hat{y} = a + bx$ ($\hat{y} = \text{predicted response}$)
 
-\textbf{2. Slope ($b$):} $b = r \left(\frac{s_y}{s_x}\right)$
+\section{Unit 2 Visual Mindmap}
+\begin{center}
+\begin{tikzpicture}[node distance=1.1cm, auto, >=Latex,
+    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.6in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
+    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.4in, rounded corners, minimum height=0.4in, font=\footnotesize}]
+    
+    \node [block] (root) {Unit 2: Two-Variable Data (5--7\%)};
+    \node [subblock, below=0.5cm of root] (scatter) {\textbf{Scatterplots:} Direction ($+/-$), Form (linear/non), Strength, Outliers};
+    \node [subblock, below=0.4cm of scatter] (lsrl) {\textbf{LSRL Line:} $\hat{y} = a + bx$ (Always include hat on predicted $y$)};
+    \node [subblock, below=0.4cm of lsrl] (res) {\textbf{Residuals:} $\text{Residual} = y - \hat{y}$ (Actual minus Predicted)};
+    \node [subblock, below=0.4cm of res] (r2) {\textbf{Coefficients:} Correlation $r$, Coefficient of Determination $r^2$, SE $s$};
 
-\textbf{3. $y$-Intercept ($a$):} $a = \bar{y} - b\bar{x}$ (The point $(\bar{x}, \bar{y})$ is always on the line).
+    \draw [->, thick, NavyBlue] (root) -- (scatter);
+    \draw [->, thick, NavyBlue] (scatter) -- (lsrl);
+    \draw [->, thick, NavyBlue] (lsrl) -- (res);
+    \draw [->, thick, NavyBlue] (res) -- (r2);
+\end{tikzpicture}
+\end{center}
 
-\textbf{4. Residual ($e$):} $\text{Residual} = \text{Actual } y - \text{Predicted } \hat{y} = y - \hat{y}$
+\section{Essential Formulas & Parameter Breakdowns}
+\begin{formulabox}[Unit 2 Core Formulas: Linear Regression]
+\textbf{1. Least-Squares Regression Line:} $\hat{y} = a + bx$ ($\hat{y} = \text{predicted response}$)
 
-\textbf{5. Standard Error of Residuals ($s$):} $s = \sqrt{\frac{\sum (y_i - \hat{y}_i)^2}{n - 2}}$
+\textbf{2. Slope ($b$):} $b = r \left(\frac{s_y}{s_x}\right)$ --- Change in predicted $y$ per 1-unit increase in $x$.
+
+\textbf{3. $y$-Intercept ($a$):} $a = \bar{y} - b\bar{x}$ --- The point $(\bar{x}, \bar{y})$ is always on the LSRL.
+
+\textbf{4. Residual ($e$):} $\text{Residual} = y - \hat{y} = \text{Actual } y - \text{Predicted } \hat{y}$
 \end{formulabox}
 
-\begin{templatebox}[Score-5 Interpretation Sentence Templates]
-\textbf{1. Slope ($b$):} \emph{"For each additional 1 [unit of $x$], the predicted [response variable $y$] increases/decreases by [value of $b$] [units of $y$]."}
+\section{Sentence Templates for FRQs}
+\begin{templatebox}[Unit 2 FRQ Sentence Templates]
+\textbf{1. Slope ($b$):} \emph{"For each additional 1 [unit of $x$], the predicted [response variable $y$] increases/decreases by approximately [value of $b$] [units of $y$]."}
 
-\textbf{2. $r^2$:} \emph{"Approximately [value of $r^2 \times 100\%$] of the variation in [response variable in context] is accounted for by the linear relationship with [explanatory variable in context]."}
+\textbf{2. $r^2$:} \emph{"Approximately [value of $r^2 \times 100\%$] of the variation in [response variable in context] is accounted for by the linear model with [explanatory variable in context]."}
+
+\textbf{3. Standard Error of Residuals ($s$):} \emph{"The typical distance between the actual [response variable $y$] and the predicted values from the regression line is approximately [$s$ units of $y$]."}
 \end{templatebox}
 
 % UNIT 3
 \chapter{Unit 3: Collecting Data}
-\section{Sampling Methods \& Experimental Design}
-\begin{table}[H]
-\centering
-\small
-\begin{tabularx}{\linewidth}{@{}p{0.25\linewidth} X@{}}
-\toprule
-\textbf{Sampling Method} & \textbf{Key Procedure \& Purpose} \\
-\midrule
-\textbf{SRS} & Every group of $n$ individuals has equal chance of selection. Eliminates selection bias. \\
-\textbf{Stratified} & Homogeneous groups (\emph{strata}); sample some from \emph{all} strata. Reduces variability. \\
-\textbf{Cluster} & Heterogeneous groups (\emph{clusters}); randomly select several clusters and sample \emph{all} within them. Saves cost. \\
-\textbf{Systematic} & Select every $k$-th individual from an ordered list. \\
-\bottomrule
-\end{tabularx}
-\end{table}
 
-\begin{trapbox}[AP Exam Trap Alert: Confounding vs Bias]
-\textbf{Confounding} occurs when an outside variable is associated with the explanatory variable AND affects the response variable. Always explain both connections on FRQs!
+\section{Unit 3 Visual Flowchart: Sampling vs. Experimentation}
+\begin{center}
+\begin{tikzpicture}[node distance=1.1cm, auto, >=Latex,
+    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.6in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
+    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.4in, rounded corners, minimum height=0.4in, font=\footnotesize}]
+    
+    \node [block] (root) {Unit 3: Collecting Data (12--15\%)};
+    \node [subblock, below=0.5cm of root] (obs) {\textbf{Observational Studies:} Shows association only; no treatments assigned.};
+    \node [subblock, below=0.4cm of obs] (exp) {\textbf{Experiments:} Random assignment of treatments; can establish \textbf{Causation}.};
+    \node [subblock, below=0.4cm of exp] (sample) {\textbf{Sampling Methods:} SRS, Stratified (homogeneous), Cluster (heterogeneous).};
+    \node [subblock, below=0.4cm of sample] (bias) {\textbf{Bias Types:} Undercoverage, Nonresponse, Response, Voluntary Response.};
+
+    \draw [->, thick, NavyBlue] (root) -- (obs);
+    \draw [->, thick, NavyBlue] (obs) -- (exp);
+    \draw [->, thick, NavyBlue] (exp) -- (sample);
+    \draw [->, thick, NavyBlue] (sample) -- (bias);
+\end{tikzpicture}
+\end{center}
+
+\section{The 4 Principles of Experimental Design}
+\begin{enumerate}
+    \item \textbf{Comparison:} At least two treatment groups (or treatment vs. control) to isolate effects.
+    \item \textbf{Random Assignment:} Balances the effects of confounding variables across treatment groups.
+    \item \textbf{Control:} Keep all other outside variables constant.
+    \item \textbf{Replication:} Apply treatments to sufficiently many experimental units.
+\end{enumerate}
+
+\begin{trapbox}[Unit 3 Trap Alert: Blocking vs. Stratification]
+\textbf{Stratification} is used when \emph{sampling} from a population.\\
+\textbf{Blocking} is used when \emph{assigning treatments} in an experiment.\\
+Never mix these terms on an AP exam!
 \end{trapbox}
 
 % UNIT 4
 \chapter{Unit 4: Probability, Random Variables, \& Distributions}
-\begin{formulabox}[Core Probability Formulas]
-\textbf{General Addition Rule:} $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 
-\textbf{Conditional Probability:} $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$
+\section{Essential Formulas & Probability Rules}
+\begin{formulabox}[Unit 4 Core Formulas]
+\textbf{1. Addition Rule:} $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (If disjoint, $P(A \cap B) = 0$).
 
-\textbf{Linear Combinations:} $\mu_{X \pm Y} = \mu_X \pm \mu_Y$, \quad $\sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2$ (\textbf{Always ADD variances!})
+\textbf{2. Conditional Probability:} $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$
 
-\textbf{Binomial Distribution $B(n, p)$:} $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad \mu = np, \quad \sigma = \sqrt{np(1-p)}$
+\textbf{3. Independence Test:} Events $A$ and $B$ are independent if and only if $P(A \mid B) = P(A)$ or $P(A \cap B) = P(A) \cdot P(B)$.
+
+\textbf{4. Combining Random Variables:}
+$$\mu_{X \pm Y} = \mu_X \pm \mu_Y \qquad \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \quad \text{(\textbf{Always ADD variances!})}$$
+
+\textbf{5. Binomial Distribution $B(n, p)$:}
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \qquad \mu_X = np \qquad \sigma_X = \sqrt{np(1-p)}$$
 \end{formulabox}
+
+\begin{trapbox}[Unit 4 Trap Alert: Independence vs Disjoint]
+Mutually exclusive (disjoint) events can \textbf{NEVER} be independent (if $P > 0$). Knowing $A$ happened means $B$ cannot happen!
+\end{trapbox}
 
 % UNIT 5
 \chapter{Unit 5: Sampling Distributions}
-\begin{formulabox}[Sampling Distributions Formulas]
-\textbf{Sample Proportion ($\hat{p}$):} $\mu_{\hat{p}} = p, \quad \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$ (Normal if $np \ge 10, n(1-p) \ge 10$)
 
-\textbf{Sample Mean ($\bar{x}$):} $\mu_{\bar{x}} = \mu, \quad \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$ (Normal if $n \ge 30$ by CLT or pop normal)
+\section{Unit 5 Core Formulas & Central Limit Theorem}
+\begin{formulabox}[Sampling Distributions]
+\textbf{1. Sample Proportion ($\hat{p}$):}
+$$\mu_{\hat{p}} = p \qquad \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} \quad (\text{Normal if } np \ge 10, n(1-p) \ge 10)$$
+
+\textbf{2. Sample Mean ($\bar{x}$):}
+$$\mu_{\bar{x}} = \mu \qquad \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} \quad (\text{Normal if } n \ge 30 \text{ by CLT or pop is normal})$$
 \end{formulabox}
+
+\begin{mnemonicbox}[Central Limit Theorem (CLT) Golden Rule]
+The CLT states that the \textbf{sampling distribution of $\bar{x}$} becomes approximately normal as $n$ increases ($n \ge 30$), regardless of the shape of the underlying population! It does \emph{not} apply to individual observations.
+\end{mnemonicbox}
 
 % UNIT 6
-\chapter{Unit 6: Inference for Proportions}
-\begin{formulabox}[Proportions Inference Formulas]
+\chapter{Unit 6: Inference for Proportions (Categorical Data)}
+
+\section{1-Proportion vs. 2-Proportion Inference Procedures}
+\begin{formulabox}[Unit 6 Formulas]
 \textbf{1-Prop $z$-Interval:} $\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
 
-\textbf{1-Prop $z$-Test:} $z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$
+\textbf{1-Prop $z$-Test:} $z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$ (Use $p_0$ for Large Counts condition!)
 
-\textbf{2-Prop $z$-Test (Pooled):} $\hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2}, \quad z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_c(1-\hat{p}_c)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$
+\textbf{2-Prop $z$-Test (Pooled):}
+$$\hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2} \qquad z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_c(1-\hat{p}_c)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$$
 \end{formulabox}
 
+\begin{templatebox}[Unit 6 PANIC Template for 1-Prop $z$-Interval]
+\textbf{P:} Let $p =$ true proportion of [context].\\
+\textbf{A:} Random sample; $10\%$ condition ($n \le 0.10N$); Large counts ($n\hat{p} \ge 10, n(1-\hat{p}) \ge 10$).\\
+\textbf{N:} 1-Proportion $z$-Interval.\\
+\textbf{I:} Record $[ \text{Lower}, \text{Upper} ]$ with $95\%$ confidence.\\
+\textbf{C:} \emph{"We are 95\% confident that the interval from [Lower] to [Upper] captures the true proportion of [context]."}
+\end{templatebox}
+
 % UNIT 7
-\chapter{Unit 7: Inference for Means}
-\begin{formulabox}[Means Inference Formulas]
+\chapter{Unit 7: Inference for Means (Quantitative Data)}
+
+\section{1-Sample $t$, Paired $t$, and 2-Sample $t$ Inference}
+\begin{formulabox}[Unit 7 Means Formulas]
 \textbf{1-Sample $t$-Interval:} $\bar{x} \pm t^* \left(\frac{s}{\sqrt{n}}\right) \quad (\text{df} = n - 1)$
 
 \textbf{1-Sample $t$-Test:} $t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \quad (\text{df} = n - 1)$
 
-\textbf{2-Sample $t$-Test:} $t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ (\texttt{Pooled = NO})
+\textbf{2-Sample $t$-Test:} $t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \quad (\texttt{Pooled: NO})$
 \end{formulabox}
+
+\begin{trapbox}[Unit 7 Trap Alert: Paired $t$-Test vs. 2-Sample $t$-Test]
+If data comes from pre/post tests, twins, or the same experimental unit measured twice, it is a \textbf{Paired $t$-Test} on the single list of differences ($L_1 - L_2$). Never run a 2-sample $t$-test on paired data!
+\end{trapbox}
 
 % UNIT 8
 \chapter{Unit 8: Chi-Square Tests}
-\begin{formulabox}[Chi-Square Formulas]
-$\chi^2 = \sum \frac{(O - E)^2}{E}, \quad \text{Expected Count} = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Table Total}}$
-\end{formulabox}
-\begin{trapbox}[Condition Alert]
-ALL Expected Counts MUST be $\ge 5$ (never check observed counts).
-\end{trapbox}
 
-% UNIT 9
-\chapter{Unit 9: Inference for Slopes}
-\begin{formulabox}[Slope Inference]
-$t$-Interval for $\beta$: $b \pm t^* \cdot \text{SE}_b \quad (\text{df} = n - 2)$
-
-$t$-Test for $\beta$: $t = \frac{b - 0}{\text{SE}_b} \quad (\text{df} = n - 2)$
-\end{formulabox}
-
-% UNIT 10
-\chapter{Master Inference Decision Flowchart}
-
-\section{Visual Inference Decision Tree}
-\begin{center}
-\adjustbox{max width=\linewidth}{%
-\begin{tikzpicture}[
-  node distance=1.1cm and 0.8cm,
-  every node/.style={font=\footnotesize, align=center},
-  boxroot/.style={rectangle, rounded corners=3pt, minimum width=3.5cm, minimum height=0.7cm, draw=MidnightBlue, fill=MidnightBlue!12, font=\bfseries\small},
-  branch/.style={diamond, aspect=1.8, draw=NavyBlue, fill=NavyBlue!8, font=\bfseries\footnotesize, inner sep=2pt},
-  leaf/.style={rectangle, rounded corners=3pt, minimum width=2.6cm, minimum height=0.6cm, draw=ForestGreen, fill=ForestGreen!10, font=\bfseries\scriptsize},
-  edge/.style={draw=MidnightBlue!80, -Latex, thick}
-]
-  \node[boxroot] (root) {Inference Problem};
-  \node[branch, below left=1.0cm and 0.2cm of root] (cat) {Categorical\\Data};
-  \node[branch, below right=1.0cm and 0.2cm of root] (quant) {Quantitative\\Data};
-  
-  \node[leaf, below left=0.9cm and -0.4cm of cat] (c1) {1 Sample $\rightarrow$ 1-Prop $z$};
-  \node[leaf, below=0.9cm of cat] (c2) {2 Samples $\rightarrow$ 2-Prop $z$};
-  \node[leaf, below right=0.9cm and -0.4cm of cat] (c3) {Counts/Fit $\rightarrow$ $\chi^2$ Test};
-
-  \node[leaf, below left=0.9cm and -0.4cm of quant] (q1) {1 Mean $\rightarrow$ 1-Sample $t$};
-  \node[leaf, below=0.9cm of quant] (q2) {Paired $\rightarrow$ Paired $t$};
-  \node[leaf, below right=0.9cm and -0.4cm of quant] (q3) {2 Means $\rightarrow$ 2-Samp $t$\\Slope $\rightarrow$ LinReg $t$};
-
-  \draw[edge] (root) -| (cat);
-  \draw[edge] (root) -| (quant);
-  \draw[edge] (cat) -- (c1);
-  \draw[edge] (cat) -- (c2);
-  \draw[edge] (cat) -- (c3);
-  \draw[edge] (quant) -- (q1);
-  \draw[edge] (quant) -- (q2);
-  \draw[edge] (quant) -- (q3);
-\end{tikzpicture}%
-}
-\end{center}
-
-\vspace{0.2in}
-\section{Inference Procedures Lookup Matrix}
-
+\section{The 3 Types of Chi-Square Tests}
 \begin{table}[H]
 \centering
-\scriptsize
-\begin{tabularx}{\linewidth}{@{}p{0.18\linewidth} p{0.17\linewidth} p{0.16\linewidth} X p{0.22\linewidth}@{}}
+\small
+\begin{tabularx}{\linewidth}{@{}lXXl@{}}
 \toprule
-\textbf{Data Type} & \textbf{Groups} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{Calculator Command} \\
+\textbf{Test Name} & \textbf{Number of Samples} & \textbf{Variables} & \textbf{Degrees of Freedom} \\
 \midrule
-Categorical & 1 Sample & Estimate $p$ & \textbf{1-Prop $z$-Interval} & \texttt{1-PropZInt} \\
-Categorical & 1 Sample & Test $p$ & \textbf{1-Prop $z$-Test} & \texttt{1-PropZTest} \\
-Categorical & 2 Samples & Estimate $p_1 - p_2$ & \textbf{2-Prop $z$-Interval} & \texttt{2-PropZInt} \\
-Categorical & 2 Samples & Test $p_1 = p_2$ & \textbf{2-Prop $z$-Test (Pooled)} & \texttt{2-PropZTest} \\
-Categorical & 1 Sample (Fit) & Fit distribution & \textbf{$\chi^2$ GOF-Test} & \texttt{$\chi^2$ GOF-Test} \\
-Categorical & 2+ Samples & Homogeneity & \textbf{$\chi^2$ Test of Homogeneity} & \texttt{$\chi^2$-Test} (Matrix) \\
-Categorical & 1 Sample (2 Var) & Association & \textbf{$\chi^2$ Test of Independence} & \texttt{$\chi^2$-Test} (Matrix) \\
-\midrule
-Quantitative & 1 Sample & Estimate $\mu$ & \textbf{1-Sample $t$-Interval} & \texttt{TInterval} \\
-Quantitative & 1 Sample & Test $\mu$ & \textbf{1-Sample $t$-Test} & \texttt{T-Test} \\
-Quantitative & Matched Pairs & Difference $\mu_d$ & \textbf{Paired $t$-Test/Interval} & \texttt{T-Test} on $L_1 - L_2$ \\
-Quantitative & 2 Indep Samples & Compare $\mu_1 - \mu_2$ & \textbf{2-Sample $t$-Test/Interval} & \texttt{2-SampTTest} \\
-Quantitative & Linear Slope & Slope $\beta$ & \textbf{LinReg $t$-Test/Interval} & \texttt{LinRegTTest} \\
+\textbf{$\chi^2$ Goodness of Fit} & 1 Sample & 1 Categorical Variable & $\text{df} = k - 1$ \\
+\textbf{$\chi^2$ Homogeneity} & 2+ Independent Samples & 1 Categorical Variable & $\text{df} = (r-1)(c-1)$ \\
+\textbf{$\chi^2$ Independence} & 1 Single Sample & 2 Categorical Variables & $\text{df} = (r-1)(c-1)$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-% UNIT 11
-\chapter{Top 25 "Never Forget" AP Exam Traps}
+\begin{formulabox}[Chi-Square Test Statistic]
+$$\chi^2 = \sum \frac{(\text{Observed} - \text{Expected})^2}{\text{Expected}} \qquad \text{Expected Count} = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Table Total}}$$
+\end{formulabox}
+
+\begin{trapbox}[Unit 8 Condition Alert]
+All \textbf{Expected Counts} must be $\ge 5$. Never check observed counts for this condition!
+\end{trapbox}
+
+% UNIT 9
+\chapter{Unit 9: Inference for Slopes}
+
+\section{Linear Regression Slope $t$-Test & $t$-Interval}
+\begin{formulabox}[Unit 9 Formulas]
+\textbf{$t$-Interval for Slope $\beta$:} $b \pm t^* \cdot \text{SE}_b \quad (\text{df} = n - 2)$
+
+\textbf{$t$-Test for Slope $\beta$:} $t = \frac{b - 0}{\text{SE}_b} \quad (\text{df} = n - 2)$
+\end{formulabox}
+
+\begin{mnemonicbox}[LINER Condition Checklist for Slopes]
+\textbf{L} --- Linear pattern in scatterplot.\\
+\textbf{I} --- Independent observations ($10\%$ rule).\\
+\textbf{N} --- Normal distribution of residuals.\\
+\textbf{E} --- Equal variance of residuals across line.\\
+\textbf{R} --- Random sampling or assignment.
+\end{mnemonicbox}
+
+% CHAPTER 10: MASTER INFERENCE FLOWCHART
+\chapter{Master Inference Selection Decision Flowchart}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabularx}{\linewidth}{@{}llllp{1.4in}@{}}
+\toprule
+\textbf{Data Type} & \textbf{Groups} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{TI-84 Path} \\
+\midrule
+Categorical & 1 Sample & Estimate $p$ & \textbf{1-Prop $z$-Interval} & \texttt{STAT $\to$ TESTS $\to$ A} \\
+Categorical & 1 Sample & Test $p$ & \textbf{1-Prop $z$-Test} & \texttt{STAT $\to$ TESTS $\to$ 5} \\
+Categorical & 2 Samples & Estimate $p_1 - p_2$ & \textbf{2-Prop $z$-Interval} & \texttt{STAT $\to$ TESTS $\to$ B} \\
+Categorical & 2 Samples & Test $p_1 = p_2$ & \textbf{2-Prop $z$-Test (Pooled)} & \texttt{STAT $\to$ TESTS $\to$ 6} \\
+Categorical & 1 Sample (Fit) & Fit dist. & \textbf{$\chi^2$ GOF-Test} & \texttt{STAT $\to$ TESTS $\to$ D} \\
+Categorical & 2+ Samples & Homogeneity & \textbf{$\chi^2$ Test of Homogeneity} & \texttt{STAT $\to$ TESTS $\to$ C} \\
+Categorical & 1 Sample (2 Var) & Association & \textbf{$\chi^2$ Test of Independence} & \texttt{STAT $\to$ TESTS $\to$ C} \\
+\midrule
+Quantitative & 1 Sample & Estimate $\mu$ & \textbf{1-Sample $t$-Interval} & \texttt{STAT $\to$ TESTS $\to$ 8} \\
+Quantitative & 1 Sample & Test $\mu$ & \textbf{1-Sample $t$-Test} & \texttt{STAT $\to$ TESTS $\to$ 2} \\
+Quantitative & Matched Pairs & Difference $\mu_d$ & \textbf{Paired $t$-Test/Interval} & \texttt{T-Test on $L_1-L_2$} \\
+Quantitative & 2 Indep Samples & Compare $\mu_1 - \mu_2$ & \textbf{2-Sample $t$-Test/Interval} & \texttt{STAT $\to$ TESTS $\to$ 4/0} \\
+Quantitative & Linear Slope & Slope $\beta$ & \textbf{LinReg $t$-Test/Interval} & \texttt{STAT $\to$ TESTS $\to$ F/G} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% CHAPTER 11: TOP 25 TRAPS
+\chapter{Top 25 "Never-Forget" AP Grader Deduction Traps}
+
 \begin{enumerate}[label=\textbf{\arabic*.}]
     \item \textbf{NEVER say "Accept $H_0$":} Always write \emph{"Fail to reject $H_0$"}.
-    \item \textbf{NEVER write "We prove $H_a$":} Write \emph{"We have convincing statistical evidence that [context]"}.
+    \item \textbf{NEVER write "We prove $H_a$":} Write \emph{"We have convincing statistical evidence for $H_a$"}.
     \item \textbf{Hypotheses in parameters ($\mu, p, \beta$), NEVER statistics ($\bar{x}, \hat{p}, b$).}
-    \item \textbf{Define parameters in context.}
-    \item \textbf{Use comparative words when comparing distributions (greater, lesser).}
-    \item \textbf{Include units on ALL quantitative statistics and interpretations.}
-    \item \textbf{Don't forget the hat ($\hat{y}$) on regression equations.}
-    \item \textbf{Correlation ($r$) measures LINEAR strength only.}
+    \item \textbf{Always define parameters in context with units.}
+    \item \textbf{Comparative language required on all distribution comparison FRQs (greater, lesser).}
+    \item \textbf{Always put a hat ($\hat{y}$) on regression predicted values.}
+    \item \textbf{Correlation ($r$) measures LINEAR strength only (never use $r$ for curved data).}
     \item \textbf{Association is NOT Causation.}
     \item \textbf{Blocking is for experiments; Stratification is for sampling.}
     \item \textbf{Mutually exclusive events are NEVER independent.}
-    \item \textbf{Always ADD variances, NEVER add standard deviations.}
-    \item \textbf{CLT applies to sampling distribution of $\bar{x}$ ($n \ge 30$), not individual data.}
-    \item \textbf{Use $p_0$ for 1-Prop $Z$-Test Large Counts ($np_0 \ge 10, n(1-p_0) \ge 10$).}
-    \item \textbf{Use $\hat{p}$ for 1-Prop $Z$-Interval Large Counts ($n\hat{p} \ge 10, n(1-\hat{p}) \ge 10$).}
+    \item \textbf{Always ADD variances ($\sigma^2$), NEVER add standard deviations ($\sigma$).}
+    \item \textbf{CLT applies to the sampling distribution of $\bar{x}$, not sample data.}
+    \item \textbf{Use hypothesized $p_0$ for 1-Prop $z$-Test Large Counts ($np_0 \ge 10, n(1-p_0) \ge 10$).}
+    \item \textbf{Use sample $\hat{p}$ for 1-Prop $z$-Interval Large Counts ($n\hat{p} \ge 10, n(1-\hat{p}) \ge 10$).}
     \item \textbf{Chi-square conditions require EXPECTED counts $\ge 5$, not observed counts.}
     \item \textbf{Chi-square df:} $\text{df} = (\text{rows}-1)(\text{cols}-1)$.
-    \item \textbf{Never pool standard deviations for 2-sample $t$-tests (\texttt{Pooled = NO}).}
+    \item \textbf{Never pool standard deviations for 2-sample $t$-tests (\texttt{Pooled: NO}).}
     \item \textbf{Confidence Interval (plausible values) vs Confidence Level (long-run capture rate).}
-    \item \textbf{A high $r^2$ does NOT prove linearity (always check residual plot).}
-    \item \textbf{Voluntary response produces extreme bias.}
-    \item \textbf{State the conclusion in terms of $H_a$.}
-    \item \textbf{State the significance level ($\alpha$).}
-    \item \textbf{Calculator Speak is NOT enough on FRQs (write formulas, df, $p$-value).}
-    \item \textbf{Context, Context, Context: Include problem context in every sentence!}
+    \item \textbf{A high $r^2$ does NOT prove linearity (always check residual plot for random scatter).}
+    \item \textbf{Voluntary response produces severe bias; results cannot be generalized.}
+    \item \textbf{State test conclusion in terms of $H_a$ in context.}
+    \item \textbf{State the significance level ($\alpha$) explicitly in decision sentences.}
+    \item \textbf{Calculator Speak alone scores ZERO on FRQs (must write formulas and parameter names).}
+    \item \textbf{Extrapolation is dangerous (do not predict $\hat{y}$ outside the domain of $x$).}
+    \item \textbf{Context, Context, Context: Include problem units and scenario in every sentence!}
 \end{enumerate}
 
-% UNIT 12
-\chapter{Standard Interpretation Sentence Templates}
-\begin{templatebox}[Template 1: Confidence Interval for a Parameter]
-\emph{"We are [C\%] confident that the interval from [Lower Bound] to [Upper Bound] captures the true [proportion / mean] of [context with units]."}
+% CHAPTER 12: SENTENCE FRAME DIRECTORY
+\chapter{Standard FRQ Interpretation Sentence Frames}
+
+\begin{templatebox}[Frame 1: Confidence Interval for a Parameter]
+\emph{"We are [C\%] confident that the interval from [Lower] to [Upper] captures the true [proportion / mean] of [context with units]."}
 \end{templatebox}
 
-\begin{templatebox}[Template 2: Confidence Level ($C\%$)]
-\emph{"If we take many random samples of size $n$ and construct [C\%] confidence intervals, about [C\%] of the intervals will capture the true [parameter in context]."}
+\begin{templatebox}[Frame 2: Confidence Level ($C\%$)]
+\emph{"If we take many random samples of the same size and construct [C\%] confidence intervals, about [C\%] of the intervals will capture the true [parameter in context]."}
 \end{templatebox}
 
-\begin{templatebox}[Template 3: $p$-Value in Context]
+\begin{templatebox}[Frame 3: $p$-Value in Context]
 \emph{"Assuming that [null hypothesis $H_0$ in context] is true, there is a [p-value] probability of obtaining a sample statistic as extreme as or more extreme than observed, purely by random chance."}
 \end{templatebox}
 
-\begin{templatebox}[Template 4: Test Conclusion (Reject $H_0$)]
-\emph{"Because $p$-value ($[p]$) $< \alpha$ ($[0.05]$), we reject $H_0$. There is convincing statistical evidence that [state $H_a$ in context]."}
+\begin{templatebox}[Frame 4: Reject $H_0$ Conclusion]
+\emph{"Because the $p$-value ($[p]$) is less than $\alpha$ ($[0.05]$), we reject $H_0$. There is convincing statistical evidence that [state $H_a$ in context]."}
 \end{templatebox}
 
-\begin{templatebox}[Template 5: Test Conclusion (Fail to Reject $H_0$)]
-\emph{"Because $p$-value ($[p]$) $> \alpha$ ($[0.05]$), we fail to reject $H_0$. There is NOT convincing statistical evidence that [state $H_a$ in context]."}
+\begin{templatebox}[Frame 5: Fail to Reject $H_0$ Conclusion]
+\emph{"Because the $p$-value ($[p]$) is greater than $\alpha$ ($[0.05]$), we fail to reject $H_0$. There is NOT convincing statistical evidence that [state $H_a$ in context]."}
 \end{templatebox}
 
 \end{document}
-
-
-
