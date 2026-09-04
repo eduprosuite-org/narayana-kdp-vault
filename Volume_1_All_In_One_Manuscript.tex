@@ -1,5 +1,11 @@
 \documentclass[11pt,oneside,openany]{book}
 
+% =========================================================================
+% STRICT KDP 6" x 9" NO-BLEED INTERIOR GEOMETRY
+% Page Width: 6.0 in | Page Height: 9.0 in
+% Inner (Gutter): 0.75 in | Outer: 0.50 in | Top/Bottom: 0.50 in
+% Printable Text Width: 4.75 in (343.3 pt) -> ALL elements strictly <= \linewidth
+% =========================================================================
 \usepackage[
   paperwidth=6in,
   paperheight=9in,
@@ -33,7 +39,7 @@
 \onehalfspacing
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
 
 \newcommand{\BookTitle}{AP Statistics Formula \& Inference Decision Guide}
 \newcommand{\BookSubtitle}{The Complete High-Yield Exam Companion: Formula Breakdowns, Mindmaps, Inference Decision Trees, and Rubric Sentence Frames}
@@ -41,7 +47,7 @@
 \newcommand{\BookAuthor}{PR}
 \newcommand{\Edition}{2026--2027 Edition}
 
-% Header & Footer
+% Header & Footer (Strictly confined within margins)
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[LE]{\small\itshape \BookTitle}
@@ -50,73 +56,83 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Section styling
+% Section styling (Tight & clean for 6x9 trim)
 \titleformat{\chapter}[display]
-  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{8pt}{\LARGE\bfseries}
+  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{6pt}{\LARGE\bfseries}
 \titleformat{\section}
-  {\normalfont\large\bfseries\color{MidnightBlue}}{\thesection}{1em}{}
+  {\normalfont\large\bfseries\color{MidnightBlue}}{\thesection}{0.8em}{}
 \titleformat{\subsection}
-  {\normalfont\normalsize\bfseries\color{DarkSlateGray}}{\thesubsection}{1em}{}
+  {\normalfont\normalsize\bfseries\color{DarkSlateGray}}{\thesubsection}{0.8em}{}
 
-% Custom TColorBoxes
+% Custom TColorBoxes (Strict width=\linewidth, breakable, zero overflow)
 \newtcolorbox{formulabox}[1][]{
   enhanced,
+  width=\linewidth,
+  breakable,
   colback=NavyBlue!5!white,
   colframe=NavyBlue!80!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2mm,
-  boxrule=1pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=8pt, after skip=8pt
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
 }
 
 \newtcolorbox{mnemonicbox}[1][]{
   enhanced,
+  width=\linewidth,
+  breakable,
   colback=Purple!5!white,
   colframe=Purple!85!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2mm,
-  boxrule=1pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=8pt, after skip=8pt
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
 }
 
 \newtcolorbox{trapbox}[1][]{
   enhanced,
+  width=\linewidth,
+  breakable,
   colback=Red!5!white,
   colframe=Red!80!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2mm,
-  boxrule=1pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=8pt, after skip=8pt
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
 }
 
 \newtcolorbox{templatebox}[1][]{
   enhanced,
+  width=\linewidth,
+  breakable,
   colback=ForestGreen!5!white,
   colframe=ForestGreen!85!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2mm,
-  boxrule=1pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=8pt, after skip=8pt
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
 }
 
 \newtcolorbox{tipbox}[1][]{
   enhanced,
+  width=\linewidth,
+  breakable,
   colback=Amber!8!white,
   colframe=DarkOrange!90!black,
   fonttitle=\bfseries\color{white},
   title={#1},
-  arc=2mm,
-  boxrule=1pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  before skip=8pt, after skip=8pt
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
 }
 
 \hypersetup{
@@ -133,55 +149,55 @@
 % TITLE PAGE
 \begin{titlepage}
 \centering
-\vspace*{0.6in}
+\vspace*{0.5in}
 
 {\Large\scshape \BookSeries}\par
-\vspace{1.0cm}
+\vspace{0.8cm}
 
 {\Huge\bfseries\color{MidnightBlue} \BookTitle}\par
-\vspace{0.5cm}
-{\Large\itshape \BookSubtitle}\par
+\vspace{0.4cm}
+{\large\itshape \BookSubtitle}\par
 
-\vspace{1.5cm}
-
-\rule{0.6\textwidth}{1.2pt}\par
 \vspace{1.2cm}
 
+\rule{0.6\textwidth}{1.0pt}\par
+\vspace{1.0cm}
+
 {\Large\bfseries \BookAuthor}\par
-\vspace{0.3cm}
+\vspace{0.25cm}
 {\large \Edition}\par
 
 \vfill
 
 {\small Published for Independent Amazon KDP Distribution}\par
-\vspace*{0.4in}
+\vspace*{0.3in}
 \end{titlepage}
 
 % COPYRIGHT PAGE
 \newpage
 \thispagestyle{empty}
-\vspace*{2.0in}
+\vspace*{1.5in}
 
 \noindent \copyright\ 2026--2027 \BookAuthor. All rights reserved.\\
 No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without prior written permission.
 
-\vspace{0.25in}
+\vspace{0.2in}
 
 \noindent \textbf{\textregistered\ Trademark Notice \& Nominative Fair Use Disclaimer:}\\
 \small{AP\textregistered\ and Advanced Placement\textregistered\ are trademarks registered by the College Board, which was not involved in the production of, and does not endorse, this product. TI-84 Plus\textregistered\ is a registered trademark of Texas Instruments. All trademarks are used under Nominative Fair Use for educational and descriptive purposes only.}
 
-\vspace{0.2in}
+\vspace{0.15in}
 
 \noindent \textbf{Free Interactive Companion Web Portal:}\\
 Access searchable formula lookups, interactive inference wizards, and diagnostic drills:
 
 \begin{center}
-    \vspace{0.08in}
+    \vspace{0.06in}
     \adjustbox{max width=\linewidth}{%
-      \qrcode[height=1.2in]{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}%
+      \qrcode[height=1.1in]{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}%
     }
     
-    \vspace{0.06in}
+    \vspace{0.05in}
     {\footnotesize\textbf{\textsf{Scan to Access Free Interactive Student Companion Portal}}}\\
     {\scriptsize\texttt{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}}
 \end{center}
@@ -197,7 +213,7 @@ First Edition: 2026--2027
 Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulky 600-page textbooks with high-yield clarity, visual mindmaps, and rubric sentence frames.
 
 \section*{The 4-Pillar Master System}
-\begin{enumerate}[label=\textbf{Pillar \arabic*:}]
+\begin{enumerate}[label=\textbf{Pillar \arabic*:}, leftmargin=*]
     \item \textbf{Unit Mindmaps \& Flowcharts:} Master the visual architecture of each unit before diving into detailed formulas.
     \item \textbf{Formula \& Parameter Translations:} Understand exactly what every Greek symbol ($\mu, \sigma, \hat{p}, \chi^2$) represents in plain English.
     \item \textbf{Mnemonics \& Grader Pitfalls:} Use universal mnemonics (\texttt{SOCS}, \texttt{BINS}, \texttt{LINER}, \texttt{PANIC}, \texttt{PHANTOM}) to avoid losing partial credit.
@@ -212,6 +228,7 @@ Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulk
 
 \begin{table}[H]
 \centering
+\adjustbox{max width=\linewidth}{%
 \small
 \begin{tabularx}{\linewidth}{@{}lcccc@{}}
 \toprule
@@ -222,13 +239,15 @@ Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulk
 \quad \emph{Part A (Q1--5)} & 5 Standard & 65 mins & 37.5\% & Core concepts \\
 \quad \emph{Part B (Q6)} & 1 Invest. Task & 25 mins & 12.5\% & Novel applications \\
 \bottomrule
-\end{tabularx}
+\end{tabularx}%
+}
 \end{table}
 
 \section*{2. Official 9-Unit Syllabus Weightage Matrix}
 
 \begin{table}[H]
 \centering
+\adjustbox{max width=\linewidth}{%
 \small
 \begin{tabularx}{\linewidth}{@{}lXcc@{}}
 \toprule
@@ -244,7 +263,8 @@ Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulk
 \textbf{Unit 8} & Chi-Square Tests & 2--5\% & \textbf{Tier 3 (Quick)} \\
 \textbf{Unit 9} & Inference for Slopes & 2--5\% & \textbf{Tier 3 (Quick)} \\
 \bottomrule
-\end{tabularx}
+\end{tabularx}%
+}
 \end{table}
 
 % EXAM DAY TIPS & MEMORY TRICKS
@@ -310,21 +330,23 @@ Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulk
 
 \section{Unit 1 Visual Mindmap}
 \begin{center}
-\begin{tikzpicture}[node distance=1.2cm, auto, >=Latex, 
-    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.6in, text centered, rounded corners, minimum height=0.5in, font=\small\bfseries},
-    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.4in, rounded corners, minimum height=0.4in, font=\footnotesize}]
+\adjustbox{max width=\linewidth}{%
+\begin{tikzpicture}[node distance=1.0cm, auto, >=Latex, 
+    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.4in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
+    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.3in, rounded corners, minimum height=0.38in, font=\footnotesize}]
     
     \node [block] (root) {Unit 1: One-Variable Data (15--23\%)};
-    \node [subblock, below=0.6cm of root] (data) {\textbf{Data Types:} Categorical (Bar/Pie) vs Quantitative (Dot/Stem/Hist/Boxplot)};
-    \node [subblock, below=0.5cm of data] (socs) {\textbf{Description Protocol:} SOCS (Shape, Outliers, Center, Spread) in context};
-    \node [subblock, below=0.5cm of socs] (outliers) {\textbf{Outlier Rule:} Lower $= Q_1 - 1.5\text{IQR}$, Upper $= Q_3 + 1.5\text{IQR}$};
-    \node [subblock, below=0.5cm of outliers] (norm) {\textbf{Normal Model:} $z = \frac{x-\mu}{\sigma}$, 68-95-99.7 Rule, \texttt{normalcdf}};
+    \node [subblock, below=0.5cm of root] (data) {\textbf{Data Types:} Categorical vs Quantitative};
+    \node [subblock, below=0.4cm of data] (socs) {\textbf{Description:} SOCS (Shape, Outliers, Center, Spread)};
+    \node [subblock, below=0.4cm of socs] (outliers) {\textbf{Outliers:} Lower $= Q_1 - 1.5\text{IQR}$, Upper $= Q_3 + 1.5\text{IQR}$};
+    \node [subblock, below=0.4cm of outliers] (norm) {\textbf{Normal Model:} $z = \frac{x-\mu}{\sigma}$, 68-95-99.7 Rule};
 
     \draw [->, thick, NavyBlue] (root) -- (data);
     \draw [->, thick, NavyBlue] (data) -- (socs);
     \draw [->, thick, NavyBlue] (socs) -- (outliers);
     \draw [->, thick, NavyBlue] (outliers) -- (norm);
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \end{center}
 
 \section{Essential Formulas \& Plain-English Translation}
@@ -339,6 +361,7 @@ Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulk
 \section{Resistant vs. Non-Resistant Summary Statistics}
 \begin{table}[H]
 \centering
+\adjustbox{max width=\linewidth}{%
 \small
 \begin{tabularx}{\linewidth}{@{}lXl@{}}
 \toprule
@@ -347,10 +370,11 @@ Welcome to the \textbf{\BookTitle}! This companion is engineered to replace bulk
 \textbf{Median \& IQR} & \textbf{Yes} (Middle 50\% only) & Skewed data or data with outliers \\
 \textbf{Mean \& Standard Deviation} & \textbf{No} (Pulled toward the tail/extremes) & Symmetric, bell-shaped distributions \\
 \bottomrule
-\end{tabularx}
+\end{tabularx}%
+}
 \end{table}
 
-\section{Top Exam Traps & Sentence Frames}
+\section{Top Exam Traps \& Sentence Frames}
 \begin{trapbox}[Unit 1 Trap Alert: Comparative Language]
 When comparing two distributions on an FRQ, you \textbf{must} use comparative words (\emph{"greater than", "less than"}). Stating two separate descriptions scores zero credit!
 \end{trapbox}
@@ -364,24 +388,26 @@ When comparing two distributions on an FRQ, you \textbf{must} use comparative wo
 
 \section{Unit 2 Visual Mindmap}
 \begin{center}
-\begin{tikzpicture}[node distance=1.1cm, auto, >=Latex,
-    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.6in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
-    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.4in, rounded corners, minimum height=0.4in, font=\footnotesize}]
+\adjustbox{max width=\linewidth}{%
+\begin{tikzpicture}[node distance=1.0cm, auto, >=Latex,
+    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.4in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
+    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.3in, rounded corners, minimum height=0.38in, font=\footnotesize}]
     
     \node [block] (root) {Unit 2: Two-Variable Data (5--7\%)};
-    \node [subblock, below=0.5cm of root] (scatter) {\textbf{Scatterplots:} Direction ($+/-$), Form (linear/non), Strength, Outliers};
-    \node [subblock, below=0.4cm of scatter] (lsrl) {\textbf{LSRL Line:} $\hat{y} = a + bx$ (Always include hat on predicted $y$)};
+    \node [subblock, below=0.5cm of root] (scatter) {\textbf{Scatterplots:} Direction ($+/-$), Form, Strength, Outliers};
+    \node [subblock, below=0.4cm of scatter] (lsrl) {\textbf{LSRL Line:} $\hat{y} = a + bx$ ($\hat{y} = \text{predicted response}$)};
     \node [subblock, below=0.4cm of lsrl] (res) {\textbf{Residuals:} $\text{Residual} = y - \hat{y}$ (Actual minus Predicted)};
-    \node [subblock, below=0.4cm of res] (r2) {\textbf{Coefficients:} Correlation $r$, Coefficient of Determination $r^2$, SE $s$};
+    \node [subblock, below=0.4cm of res] (r2) {\textbf{Coefficients:} Correlation $r$, Determination $r^2$, SE $s$};
 
     \draw [->, thick, NavyBlue] (root) -- (scatter);
     \draw [->, thick, NavyBlue] (scatter) -- (lsrl);
     \draw [->, thick, NavyBlue] (lsrl) -- (res);
     \draw [->, thick, NavyBlue] (res) -- (r2);
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \end{center}
 
-\section{Essential Formulas & Parameter Breakdowns}
+\section{Essential Formulas \& Parameter Breakdowns}
 \begin{formulabox}[Unit 2 Core Formulas: Linear Regression]
 \textbf{1. Least-Squares Regression Line:} $\hat{y} = a + bx$ ($\hat{y} = \text{predicted response}$)
 
@@ -406,25 +432,27 @@ When comparing two distributions on an FRQ, you \textbf{must} use comparative wo
 
 \section{Unit 3 Visual Flowchart: Sampling vs. Experimentation}
 \begin{center}
-\begin{tikzpicture}[node distance=1.1cm, auto, >=Latex,
-    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.6in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
-    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.4in, rounded corners, minimum height=0.4in, font=\footnotesize}]
+\adjustbox{max width=\linewidth}{%
+\begin{tikzpicture}[node distance=1.0cm, auto, >=Latex,
+    block/.style={rectangle, draw=NavyBlue, fill=NavyBlue!8, text width=2.4in, text centered, rounded corners, minimum height=0.45in, font=\small\bfseries},
+    subblock/.style={rectangle, draw=DarkSlateGray, fill=white, text width=2.3in, rounded corners, minimum height=0.38in, font=\footnotesize}]
     
     \node [block] (root) {Unit 3: Collecting Data (12--15\%)};
-    \node [subblock, below=0.5cm of root] (obs) {\textbf{Observational Studies:} Shows association only; no treatments assigned.};
-    \node [subblock, below=0.4cm of obs] (exp) {\textbf{Experiments:} Random assignment of treatments; can establish \textbf{Causation}.};
-    \node [subblock, below=0.4cm of exp] (sample) {\textbf{Sampling Methods:} SRS, Stratified (homogeneous), Cluster (heterogeneous).};
-    \node [subblock, below=0.4cm of sample] (bias) {\textbf{Bias Types:} Undercoverage, Nonresponse, Response, Voluntary Response.};
+    \node [subblock, below=0.5cm of root] (obs) {\textbf{Observational Studies:} Shows association only.};
+    \node [subblock, below=0.4cm of obs] (exp) {\textbf{Experiments:} Random assignment establishes \textbf{Causation}.};
+    \node [subblock, below=0.4cm of exp] (sample) {\textbf{Sampling Methods:} SRS, Stratified, Cluster, Systematic.};
+    \node [subblock, below=0.4cm of sample] (bias) {\textbf{Bias Types:} Undercoverage, Nonresponse, Response.};
 
     \draw [->, thick, NavyBlue] (root) -- (obs);
     \draw [->, thick, NavyBlue] (obs) -- (exp);
     \draw [->, thick, NavyBlue] (exp) -- (sample);
     \draw [->, thick, NavyBlue] (sample) -- (bias);
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \end{center}
 
 \section{The 4 Principles of Experimental Design}
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*]
     \item \textbf{Comparison:} At least two treatment groups (or treatment vs. control) to isolate effects.
     \item \textbf{Random Assignment:} Balances the effects of confounding variables across treatment groups.
     \item \textbf{Control:} Keep all other outside variables constant.
@@ -440,19 +468,21 @@ Never mix these terms on an AP exam!
 % UNIT 4
 \chapter{Unit 4: Probability, Random Variables, \& Distributions}
 
-\section{Essential Formulas & Probability Rules}
+\section{Essential Formulas \& Probability Rules}
 \begin{formulabox}[Unit 4 Core Formulas]
 \textbf{1. Addition Rule:} $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (If disjoint, $P(A \cap B) = 0$).
 
 \textbf{2. Conditional Probability:} $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$
 
-\textbf{3. Independence Test:} Events $A$ and $B$ are independent if and only if $P(A \mid B) = P(A)$ or $P(A \cap B) = P(A) \cdot P(B)$.
+\textbf{3. Independence Test:} Events $A$ and $B$ are independent if $P(A \mid B) = P(A)$ or $P(A \cap B) = P(A) \cdot P(B)$.
 
 \textbf{4. Combining Random Variables:}
-$$\mu_{X \pm Y} = \mu_X \pm \mu_Y \qquad \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \quad \text{(\textbf{Always ADD variances!})}$$
+$$\mu_{X \pm Y} = \mu_X \pm \mu_Y$$
+$$\sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \quad \text{(\textbf{Always ADD variances!})}$$
 
 \textbf{5. Binomial Distribution $B(n, p)$:}
-$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \qquad \mu_X = np \qquad \sigma_X = \sqrt{np(1-p)}$$
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+$$\mu_X = np, \qquad \sigma_X = \sqrt{np(1-p)}$$
 \end{formulabox}
 
 \begin{trapbox}[Unit 4 Trap Alert: Independence vs Disjoint]
@@ -462,13 +492,15 @@ Mutually exclusive (disjoint) events can \textbf{NEVER} be independent (if $P > 
 % UNIT 5
 \chapter{Unit 5: Sampling Distributions}
 
-\section{Unit 5 Core Formulas & Central Limit Theorem}
+\section{Unit 5 Core Formulas \& Central Limit Theorem}
 \begin{formulabox}[Sampling Distributions]
 \textbf{1. Sample Proportion ($\hat{p}$):}
-$$\mu_{\hat{p}} = p \qquad \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} \quad (\text{Normal if } np \ge 10, n(1-p) \ge 10)$$
+$$\mu_{\hat{p}} = p, \qquad \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$$
+\emph{Normal if $np \ge 10$ and $n(1-p) \ge 10$.}
 
 \textbf{2. Sample Mean ($\bar{x}$):}
-$$\mu_{\bar{x}} = \mu \qquad \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} \quad (\text{Normal if } n \ge 30 \text{ by CLT or pop is normal})$$
+$$\mu_{\bar{x}} = \mu, \qquad \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
+\emph{Normal if $n \ge 30$ by CLT or population is normal.}
 \end{formulabox}
 
 \begin{mnemonicbox}[Central Limit Theorem (CLT) Golden Rule]
@@ -485,7 +517,8 @@ The CLT states that the \textbf{sampling distribution of $\bar{x}$} becomes appr
 \textbf{1-Prop $z$-Test:} $z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$ (Use $p_0$ for Large Counts condition!)
 
 \textbf{2-Prop $z$-Test (Pooled):}
-$$\hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2} \qquad z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_c(1-\hat{p}_c)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$$
+$$\hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2}$$
+$$z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_c(1-\hat{p}_c)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$$
 \end{formulabox}
 
 \begin{templatebox}[Unit 6 PANIC Template for 1-Prop $z$-Interval]
@@ -518,6 +551,7 @@ If data comes from pre/post tests, twins, or the same experimental unit measured
 \section{The 3 Types of Chi-Square Tests}
 \begin{table}[H]
 \centering
+\adjustbox{max width=\linewidth}{%
 \small
 \begin{tabularx}{\linewidth}{@{}lXXl@{}}
 \toprule
@@ -527,11 +561,13 @@ If data comes from pre/post tests, twins, or the same experimental unit measured
 \textbf{$\chi^2$ Homogeneity} & 2+ Independent Samples & 1 Categorical Variable & $\text{df} = (r-1)(c-1)$ \\
 \textbf{$\chi^2$ Independence} & 1 Single Sample & 2 Categorical Variables & $\text{df} = (r-1)(c-1)$ \\
 \bottomrule
-\end{tabularx}
+\end{tabularx}%
+}
 \end{table}
 
 \begin{formulabox}[Chi-Square Test Statistic]
-$$\chi^2 = \sum \frac{(\text{Observed} - \text{Expected})^2}{\text{Expected}} \qquad \text{Expected Count} = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Table Total}}$$
+$$\chi^2 = \sum \frac{(\text{Observed} - \text{Expected})^2}{\text{Expected}}$$
+$$\text{Expected Count} = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Table Total}}$$
 \end{formulabox}
 
 \begin{trapbox}[Unit 8 Condition Alert]
@@ -541,7 +577,7 @@ All \textbf{Expected Counts} must be $\ge 5$. Never check observed counts for th
 % UNIT 9
 \chapter{Unit 9: Inference for Slopes}
 
-\section{Linear Regression Slope $t$-Test & $t$-Interval}
+\section{Linear Regression Slope $t$-Test \& $t$-Interval}
 \begin{formulabox}[Unit 9 Formulas]
 \textbf{$t$-Interval for Slope $\beta$:} $b \pm t^* \cdot \text{SE}_b \quad (\text{df} = n - 2)$
 
@@ -588,7 +624,7 @@ Quantitative & Linear Slope & Slope $\beta$ & \textbf{LinReg $t$-Test/Interval} 
 % CHAPTER 11: TOP 25 TRAPS
 \chapter{Top 25 "Never-Forget" AP Grader Deduction Traps}
 
-\begin{enumerate}[label=\textbf{\arabic*.}]
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
     \item \textbf{NEVER say "Accept $H_0$":} Always write \emph{"Fail to reject $H_0$"}.
     \item \textbf{NEVER write "We prove $H_a$":} Write \emph{"We have convincing statistical evidence for $H_a$"}.
     \item \textbf{Hypotheses in parameters ($\mu, p, \beta$), NEVER statistics ($\bar{x}, \hat{p}, b$).}
