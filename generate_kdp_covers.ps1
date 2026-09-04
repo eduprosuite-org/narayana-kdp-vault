@@ -1,5 +1,6 @@
 # =========================================================================
-# UNIVERSAL AMAZON KDP COVER GENERATOR (DIRECT JPG & PRINT-READY PDF)
+# UNIVERSAL AMAZON KDP 5-DESIGN COVER SUITE GENERATOR
+# Generates 5 Kindle Covers (JPG), 5 Paperback Covers (PDF), and 5 Hardcover Covers (PDF)
 # =========================================================================
 
 Add-Type -AssemblyName System.Drawing
@@ -61,35 +62,34 @@ function Convert-JpgToPdf {
     $stream.Dispose()
 }
 
-function Render-KdpCoverPackage {
+function Render-SingleDesignTheme {
     param(
+        [hashtable]$Theme,
         [string]$OutputDir,
-        [string]$SeriesTitle = "AP STATISTICS MASTER REVIEW SERIES",
-        [string]$VolumeText  = "BOOK 1",
-        [string]$MainTitle   = "AP STATISTICS",
-        [string]$AccentTitle = "FORMULA & INFERENCE",
-        [string]$BottomTitle = "DECISION GUIDE",
-        [string]$Subtitle    = "The Complete High-Yield Exam Companion: Formula Breakdowns, Mindmaps, Inference Decision Trees, and Rubric Sentence Frames",
-        [string]$Author      = "PR",
-        [string]$Edition     = "2026-2027 Edition",
-        [int]$PageCount      = 160,
-        [double]$TrimWidth   = 6.0,
-        [double]$TrimHeight  = 9.0,
-        [double]$WhitePaperFactor = 0.002252
+        [string]$SeriesTitle,
+        [string]$VolumeText,
+        [string]$MainTitle,
+        [string]$AccentTitle,
+        [string]$BottomTitle,
+        [string]$Subtitle,
+        [string]$Author,
+        [string]$Edition,
+        [int]$PageCount,
+        [double]$TrimWidth,
+        [double]$TrimHeight,
+        [double]$WhitePaperFactor
     )
 
-    if (!(Test-Path $OutputDir)) {
-        New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
-    }
+    $id   = $Theme.Id
+    $name = $Theme.Name
 
-    # Color Palette
-    $cBg      = [System.Drawing.ColorTranslator]::FromHtml("#0F172A")
-    $cCard    = [System.Drawing.ColorTranslator]::FromHtml("#1E293B")
-    $cGrid    = [System.Drawing.ColorTranslator]::FromHtml("#1E3A5F")
-    $cGold    = [System.Drawing.ColorTranslator]::FromHtml("#F59E0B")
-    $cCyan    = [System.Drawing.ColorTranslator]::FromHtml("#06B6D4")
+    $cBg      = [System.Drawing.ColorTranslator]::FromHtml($Theme.BgColor)
+    $cCard    = [System.Drawing.ColorTranslator]::FromHtml($Theme.CardColor)
+    $cGrid    = [System.Drawing.ColorTranslator]::FromHtml($Theme.GridColor)
+    $cGold    = [System.Drawing.ColorTranslator]::FromHtml($Theme.GoldColor)
+    $cCyan    = [System.Drawing.ColorTranslator]::FromHtml($Theme.AccentColor)
     $cWhite   = [System.Drawing.Color]::White
-    $cMuted   = [System.Drawing.ColorTranslator]::FromHtml("#94A3B8")
+    $cMuted   = [System.Drawing.ColorTranslator]::FromHtml($Theme.MutedColor)
 
     $bGold    = New-Object System.Drawing.SolidBrush $cGold
     $bCyan    = New-Object System.Drawing.SolidBrush $cCyan
@@ -108,9 +108,7 @@ function Render-KdpCoverPackage {
         "[+] Free In-Book Interactive Student Companion Portal"
     )
 
-    # =====================================================================
-    # 1. KINDLE EBOOK FRONT COVER (1600 x 2560 px, 300 DPI JPG)
-    # =====================================================================
+    # 1. KINDLE FRONT COVER (1600 x 2560 px, 300 DPI JPG)
     $kW = 1600
     $kH = 2560
     $kBmp = New-Object System.Drawing.Bitmap $kW, $kH
@@ -148,7 +146,7 @@ function Render-KdpCoverPackage {
     $kG.DrawRectangle($cardPen, $cardRect)
     $cardPen.Dispose()
 
-    $kG.DrawString("CRACK THE SCORE-5 RUBRIC:", $fBadgeH, $bGold, 140, 970)
+    $kG.DrawString("CRACK THE OFFICIAL RUBRIC:", $fBadgeH, $bGold, 140, 970)
     $by = 1080
     foreach ($b in $bullets) {
         $kG.DrawString($b, $fBadgeB, $bWhite, 140, $by)
@@ -157,15 +155,13 @@ function Render-KdpCoverPackage {
 
     $kG.DrawString("By $Author - $Edition", $fAuthor, $bWhite, 100, 2350)
 
-    $kindleJpgPath = Join-Path $OutputDir "kindle_cover_front_2560x1600.jpg"
+    $kindleJpgPath = Join-Path $OutputDir "Design_${id}_${name}_Kindle_Cover.jpg"
     $kBmp.Save($kindleJpgPath, [System.Drawing.Imaging.ImageFormat]::Jpeg)
     $kG.Dispose()
     $kBmp.Dispose()
-    Write-Host "Generated Kindle eBook Cover: $kindleJpgPath"
+    Write-Host "  -> Generated: $kindleJpgPath"
 
-    # =====================================================================
     # 2. PAPERBACK FULL-WRAP COVER (PDF & JPG)
-    # =====================================================================
     $bleed = 0.125
     $spineWidth = [Math]::Round($PageCount * $WhitePaperFactor, 4)
     $pWidthIn = $bleed + $TrimWidth + $spineWidth + $TrimWidth + $bleed
@@ -190,7 +186,7 @@ function Render-KdpCoverPackage {
     $spineWidthPx = [int][Math]::Round($spineWidth * 300)
     $frontStartPx = $spineStartPx + $spineWidthPx
 
-    # Front Side
+    # Front
     $fX = $frontStartPx + 150
     $pG.DrawString("$SeriesTitle - $VolumeText", (New-Object System.Drawing.Font ("Arial", 22, [System.Drawing.FontStyle]::Bold)), $bCyan, $fX, 220)
     $pG.DrawString($MainTitle, (New-Object System.Drawing.Font ("Arial", 52, [System.Drawing.FontStyle]::Bold)), $bWhite, $fX, 300)
@@ -214,7 +210,7 @@ function Render-KdpCoverPackage {
     }
     $pG.DrawString("By $Author - $Edition", (New-Object System.Drawing.Font ("Arial", 26, [System.Drawing.FontStyle]::Bold)), $bWhite, $fX, 2450)
 
-    # Spine Side
+    # Spine
     $spineMidX = $spineStartPx + ($spineWidthPx / 2)
     $state = $pG.Save()
     $pG.TranslateTransform($spineMidX, ($pH / 2))
@@ -225,7 +221,7 @@ function Render-KdpCoverPackage {
     $pG.DrawString($spineText, $spineFont, $bWhite, (-$spineSize.Width / 2), (-$spineSize.Height / 2))
     $pG.Restore($state)
 
-    # Back Side
+    # Back
     $bX = 150
     $pG.DrawString("Stop Memorizing. Master the Blueprint.", (New-Object System.Drawing.Font ("Arial", 36, [System.Drawing.FontStyle]::Bold)), $bGold, $bX, 220)
     $backDesc = "You do not need another dense 600-page prep book. Designed for high-yield clarity, this companion cuts through textbook bloat to give you the exact formulas, visual mindmaps, inference decision trees, and rubric sentence frames required to master the AP Statistics Exam."
@@ -248,24 +244,21 @@ function Render-KdpCoverPackage {
         $bby += 130
     }
 
-    # Barcode
     $barcodeX = $spineStartPx - 700
     $barcodeY = $pH - 460
     $pG.FillRectangle($bWhite, $barcodeX, $barcodeY, 600, 360)
     $pG.DrawString("[ KDP BARCODE EXCLUSION ZONE ]", (New-Object System.Drawing.Font ("Arial", 16, [System.Drawing.FontStyle]::Bold)), $bBlack, ($barcodeX + 100), ($barcodeY + 160))
 
-    $paperbackJpgPath = Join-Path $OutputDir "paperback_cover_fullwrap_6x9.jpg"
-    $paperbackPdfPath = Join-Path $OutputDir "paperback_cover_fullwrap_6x9.pdf"
+    $paperbackJpgPath = Join-Path $OutputDir "Design_${id}_${name}_Paperback_Cover_FullWrap.jpg"
+    $paperbackPdfPath = Join-Path $OutputDir "Design_${id}_${name}_Paperback_Cover_FullWrap.pdf"
     $pBmp.Save($paperbackJpgPath, [System.Drawing.Imaging.ImageFormat]::Jpeg)
     $pG.Dispose()
     $pBmp.Dispose()
 
     Convert-JpgToPdf -JpgPath $paperbackJpgPath -PdfPath $paperbackPdfPath -WidthInches $pWidthIn -HeightInches $pHeightIn
-    Write-Host "Generated Paperback Full-Wrap PDF: $paperbackPdfPath ($pWidthIn x $pHeightIn in)"
+    Write-Host "  -> Generated: $paperbackPdfPath"
 
-    # =====================================================================
     # 3. HARDCOVER CASE-LAMINATE COVER (PDF & JPG)
-    # =====================================================================
     $hWrap = 0.59
     $hWidthIn = $hWrap + $TrimWidth + $spineWidth + $TrimWidth + $hWrap
     $hHeightIn = $hWrap + $TrimHeight + $hWrap
@@ -311,7 +304,6 @@ function Render-KdpCoverPackage {
     }
     $hG.DrawString("By $Author - Hardcover Edition", (New-Object System.Drawing.Font ("Arial", 26, [System.Drawing.FontStyle]::Bold)), $bWhite, $hfX, 2550)
 
-    # Hardcover Spine
     $hSpineMidX = $hSpineStartPx + ($spineWidthPx / 2)
     $stateH = $hG.Save()
     $hG.TranslateTransform($hSpineMidX, ($hH / 2))
@@ -319,7 +311,6 @@ function Render-KdpCoverPackage {
     $hG.DrawString($spineText, $spineFont, $bWhite, (-$spineSize.Width / 2), (-$spineSize.Height / 2))
     $hG.Restore($stateH)
 
-    # Hardcover Back
     $hbX = 250
     $hG.DrawString("Stop Memorizing. Master the Blueprint.", (New-Object System.Drawing.Font ("Arial", 36, [System.Drawing.FontStyle]::Bold)), $bGold, $hbX, 320)
     $hDescRect = New-Object System.Drawing.RectangleF $hbX, 450, 1450, 320
@@ -337,15 +328,110 @@ function Render-KdpCoverPackage {
     $hG.FillRectangle($bWhite, $hBarcodeX, $hBarcodeY, 600, 360)
     $hG.DrawString("[ KDP BARCODE EXCLUSION ZONE ]", (New-Object System.Drawing.Font ("Arial", 16, [System.Drawing.FontStyle]::Bold)), $bBlack, ($hBarcodeX + 100), ($hBarcodeY + 160))
 
-    $hardcoverJpgPath = Join-Path $OutputDir "hardcover_cover_caselaminate_6x9.jpg"
-    $hardcoverPdfPath = Join-Path $OutputDir "hardcover_cover_caselaminate_6x9.pdf"
+    $hardcoverJpgPath = Join-Path $OutputDir "Design_${id}_${name}_Hardcover_Cover_CaseLaminate.jpg"
+    $hardcoverPdfPath = Join-Path $OutputDir "Design_${id}_${name}_Hardcover_Cover_CaseLaminate.pdf"
     $hBmp.Save($hardcoverJpgPath, [System.Drawing.Imaging.ImageFormat]::Jpeg)
     $hG.Dispose()
     $hBmp.Dispose()
 
     Convert-JpgToPdf -JpgPath $hardcoverJpgPath -PdfPath $hardcoverPdfPath -WidthInches $hWidthIn -HeightInches $hHeightIn
-    Write-Host "Generated Hardcover Case-Laminate PDF: $hardcoverPdfPath ($hWidthIn x $hHeightIn in)"
+    Write-Host "  -> Generated: $hardcoverPdfPath"
 }
 
-# Render Direct Files for Book 1
-Render-KdpCoverPackage -OutputDir "d:\Narayana kdp\With 2.o\Book_1_AP_Statistics_Formula_and_Inference_Guide\Cover_Output_Files"
+function Generate-AllKdpCoverSuites {
+    param(
+        [string]$OutputDir = "d:\Narayana kdp\With 2.o\Book_1_AP_Statistics_Formula_and_Inference_Guide\Cover_Output_Files",
+        [string]$SeriesTitle = "AP STATISTICS MASTER REVIEW SERIES",
+        [string]$VolumeText  = "BOOK 1",
+        [string]$MainTitle   = "AP STATISTICS",
+        [string]$AccentTitle = "FORMULA & INFERENCE",
+        [string]$BottomTitle = "DECISION GUIDE",
+        [string]$Subtitle    = "The Complete High-Yield Exam Companion: Formula Breakdowns, Mindmaps, Inference Decision Trees, and Rubric Sentence Frames",
+        [string]$Author      = "PR",
+        [string]$Edition     = "2026-2027 Edition",
+        [int]$PageCount      = 160
+    )
+
+    $themes = @(
+        @{
+            Id          = "1"
+            Name        = "Modern_Tech_Blueprint"
+            BgColor     = "#0F172A" # Slate Navy
+            CardColor   = "#1E293B" # Dark Slate Card
+            GridColor   = "#1E3A5F" # Blue Grid
+            AccentColor = "#06B6D4" # Electric Cyan
+            GoldColor   = "#F59E0B" # Warm Gold
+            MutedColor  = "#94A3B8"
+        },
+        @{
+            Id          = "2"
+            Name        = "Academic_Emerald_Authority"
+            BgColor     = "#062C24" # Oxford Deep Emerald
+            CardColor   = "#0F3E33" # Forest Card
+            GridColor   = "#134E4A" # Dark Emerald Grid
+            AccentColor = "#10B981" # Mint Emerald
+            GoldColor   = "#FBBF24" # Warm Amber
+            MutedColor  = "#A7F3D0"
+        },
+        @{
+            Id          = "3"
+            Name        = "Crimson_High_Yield_Focus"
+            BgColor     = "#3B0712" # Deep Crimson
+            CardColor   = "#540D1B" # Dark Maroon Card
+            GridColor   = "#881337" # Rose Grid
+            AccentColor = "#FB7185" # Rose Pink
+            GoldColor   = "#FCD34D" # Bright Gold
+            MutedColor  = "#FECDD3"
+        },
+        @{
+            Id          = "4"
+            Name        = "Royal_Sapphire_Minimalist"
+            BgColor     = "#0C1838" # Deep Royal Navy
+            CardColor   = "#162854" # Navy Card
+            GridColor   = "#1E3A8A" # Royal Grid
+            AccentColor = "#38BDF8" # Sky Blue
+            GoldColor   = "#E2E8F0" # Platinum White
+            MutedColor  = "#93C5FD"
+        },
+        @{
+            Id          = "5"
+            Name        = "Cyber_Dark_Theme"
+            BgColor     = "#18181B" # Obsidian Charcoal
+            CardColor   = "#27272A" # Dark Zinc Card
+            GridColor   = "#3F3F46" # Zinc Grid
+            AccentColor = "#C084FC" # Neon Purple
+            GoldColor   = "#4ADE80" # Neon Lime
+            MutedColor  = "#D4D4D8"
+        }
+    )
+
+    Write-Host "========================================================================="
+    Write-Host "RENDERING 5 DISTINCT KDP COVER SUITES (15 FILES TOTAL)"
+    Write-Host "========================================================================="
+
+    foreach ($theme in $themes) {
+        Write-Host "Generating Suite $($theme.Id): $($theme.Name)..."
+        Render-SingleDesignTheme `
+            -Theme $theme `
+            -OutputDir $OutputDir `
+            -SeriesTitle $SeriesTitle `
+            -VolumeText $VolumeText `
+            -MainTitle $MainTitle `
+            -AccentTitle $AccentTitle `
+            -BottomTitle $BottomTitle `
+            -Subtitle $Subtitle `
+            -Author $Author `
+            -Edition $Edition `
+            -PageCount $PageCount `
+            -TrimWidth 6.0 `
+            -TrimHeight 9.0 `
+            -WhitePaperFactor 0.002252
+    }
+
+    Write-Host "========================================================================="
+    Write-Host "ALL 5 COVER SUITES GENERATED SUCCESSFULLY IN: $OutputDir"
+    Write-Host "========================================================================="
+}
+
+# Execute full 5-suite generation
+Generate-AllKdpCoverSuites
