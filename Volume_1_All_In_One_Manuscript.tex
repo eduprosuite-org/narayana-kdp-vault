@@ -561,8 +561,9 @@ All \textbf{Expected Counts} must be $\ge 5$. Never check observed counts for th
 
 \begin{table}[H]
 \centering
-\scriptsize
-\begin{tabularx}{\linewidth}{@{}llllp{1.4in}@{}}
+\adjustbox{max width=\linewidth}{%
+\small
+\begin{tabularx}{\linewidth}{@{}lllXl@{}}
 \toprule
 \textbf{Data Type} & \textbf{Groups} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{TI-84 Path} \\
 \midrule
@@ -580,7 +581,8 @@ Quantitative & Matched Pairs & Difference $\mu_d$ & \textbf{Paired $t$-Test/Inte
 Quantitative & 2 Indep Samples & Compare $\mu_1 - \mu_2$ & \textbf{2-Sample $t$-Test/Interval} & \texttt{STAT $\to$ TESTS $\to$ 4/0} \\
 Quantitative & Linear Slope & Slope $\beta$ & \textbf{LinReg $t$-Test/Interval} & \texttt{STAT $\to$ TESTS $\to$ F/G} \\
 \bottomrule
-\end{tabularx}
+\end{tabularx}%
+}
 \end{table}
 
 % CHAPTER 11: TOP 25 TRAPS

@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+% =========================================================================
+% PARAMETRIC KDP HARDCOVER CASE-LAMINATE COVER (6" x 9" HARDCOVER)
+% Series: AP Statistics Master Review Series --- Book 1
+% Trim: 6" x 9" | White Paper | 160 Pages (Minimum 75 pages met!)
+% Spine Width = 160 * 0.002252 = 0.3603 in
+% Wrap Margin (Hardcover Bleed) = 0.59 in (15 mm) on all 4 sides
+% Total Width = 0.59" + 6.0" (Back) + 0.3603" (Spine) + 6.0" (Front) + 0.59" = 13.5403 in
+% Total Height = 0.59" + 9.0" (Height) + 0.59" = 10.180 in
+% =========================================================================
+\usepackage[paperwidth=13.5403in, paperheight=10.180in, margin=0in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\definecolor{coverbg}{HTML}{0F172A}   % Deep Slate Navy
+\definecolor{accentcyan}{HTML}{06B6D4} % Electric Cyan
+\definecolor{accentgold}{HTML}{F59E0B} % Warm Gold
+\definecolor{cardbg}{HTML}{1E293B}    % Card Container Fill
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % Background Full Canvas (including 0.59" wrap)
+    \fill[coverbg] (current page.south west) rectangle (current page.north east);
+
+    % Grid Blueprint Texture
+    \draw[step=0.5in, cyan!8, very thin] (current page.south west) grid (current page.north east);
+
+    % --- FRONT COVER (Right: X = 7.1403in to 13.1403in) ---
+    \node[anchor=north west, text width=5.2in, text=white] at (7.4, 9.2) {
+        {\fontsize{13}{16}\selectfont \textcolor{accentcyan}{\textbf{AP STATISTICS MASTER REVIEW SERIES $\bullet$ BOOK 1}}\par}
+        \vspace{0.15in}
+        {\fontsize{26}{32}\selectfont \textbf{AP STATISTICS}\par}
+        {\fontsize{24}{30}\selectfont \textcolor{accentgold}{\textbf{FORMULA \& INFERENCE}}\par}
+        {\fontsize{22}{28}\selectfont \textbf{DECISION GUIDE}\par}
+        \vspace{0.18in}
+        {\large \textbf{The Complete High-Yield Exam Companion}\par}
+        \vspace{0.08in}
+        {\small\itshape Formula Breakdowns, Mindmaps, Inference Decision Trees, and Rubric Sentence Frames\par}
+    };
+
+    % Feature Badge on Front Cover
+    \node[draw=accentcyan, fill=cardbg, rounded corners=4pt, thick, inner sep=10pt, text width=4.8in, anchor=north west] at (7.4, 5.0) {
+        \textcolor{accentgold}{\textbf{\textsf{COLLECTOR HARDCOVER EDITION:}}}\\
+        \vspace{0.05in}
+        \textcolor{white}{\small 
+        $\checkmark$ \textbf{Complete 9-Unit Mindmaps \& Visual Flowcharts}\\
+        $\checkmark$ \textbf{Master Inference Decision Matrix} (Z vs t vs $\chi^2$ test selection)\\
+        $\checkmark$ \textbf{Master Mnemonics:} SOCS, BINS, LINER, PANIC, PHANTOM\\
+        $\checkmark$ \textbf{Fill-in-the-Blank Sentence Frames} for 100\% FRQ credit\\
+        $\checkmark$ \textbf{Top 25 Grader Deduction Traps} \& Exam-Day Morning Routine\\
+        $\checkmark$ \textbf{Free In-Book Interactive Student Web Portal Access}}
+    };
+
+    \node[anchor=north west, text=white] at (7.4, 1.4) {
+        {\small \textbf{PR} $\bullet$ \textit{Collector Hardcover Score-5 Edition}}
+    };
+
+    % --- SPINE (Center: X = 6.7701in, Width = 0.3603in) ---
+    \node[rotate=-90, text=white, font=\bfseries\small] at (6.7701, 5.09) {
+        AP STATISTICS FORMULA \& INFERENCE DECISION GUIDE \hspace{0.4in} BOOK 1
+    };
+
+    % --- BACK COVER (Left: X = 0.59in to 6.59in) ---
+    \node[anchor=north west, text width=5.0in, text=white] at (1.0, 9.2) {
+        {\Large \textcolor{accentgold}{\textbf{Stop Memorizing. Master the Blueprint.}}}\par
+        \vspace{0.12in}
+        {\small Designed for long-lasting classroom and desk reference, this Hardcover Edition gives you durable access to high-yield formula translations, visual mindmaps, inference decision trees, and rubric sentence frames required to master the AP\textregistered\ Statistics Exam.\par}
+        \vspace{0.18in}
+        {\normalsize \textcolor{accentcyan}{\textbf{Hardcover Reference Features:}}}\\
+        \vspace{0.05in}
+        \textcolor{white}{\small
+        $\bullet$ \textbf{Plain-English Formulas:} Every Greek parameter decoded without proofs.\\
+        $\bullet$ \textbf{Unit Mindmaps:} Visual 1-page concept roadmaps for all 9 units.\\
+        $\bullet$ \textbf{Master Mnemonics:} Zero-guesswork checklists (PANIC, PHANTOM, BINS).\\
+        $\bullet$ \textbf{FRQ Sentence Frames:} Standardized phrases for $p$-values and intervals.\\
+        $\bullet$ \textbf{Top 25 Traps:} Never confuse "failing to reject" with "accepting".\\
+        $\bullet$ \textbf{Free Digital Web Companion:} Instant interactive mobile practice.}
+    };
+
+    % Barcode Placeholder Area (2.0" x 1.2" on bottom-right of back cover)
+    \draw[fill=white, draw=none] (4.0, 0.9) rectangle (6.0, 2.1);
+    \node[anchor=center, text=black] at (5.0, 1.5) {\tiny [KDP Barcode Exclusion Zone]};
+
+\end{tikzpicture}
+\end{document}
