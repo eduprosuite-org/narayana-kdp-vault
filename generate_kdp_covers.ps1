@@ -1,7 +1,5 @@
 # =========================================================================
-# UNIVERSAL AMAZON KDP 5-COVER SUITE COMPOSITOR & GENERATOR
-# Takes 5 Kindle Front Cover Images (JPG) and generates matching
-# 5 Paperback Full-Wrap PDFs and 5 Hardcover Case-Laminate PDFs.
+# UNIVERSAL AMAZON KDP COVER ENGINE (ZERO-BLEED SAFE ZONE PROTOCOL)
 # =========================================================================
 
 Add-Type -AssemblyName System.Drawing
@@ -63,18 +61,18 @@ function Convert-JpgToPdf {
     $stream.Dispose()
 }
 
-function Build-FullCoverFromFrontImage {
+function Build-ZeroBleedFullCover {
     param(
         [string]$FrontJpgPath,
         [hashtable]$Theme,
         [string]$OutputDir,
-        [string]$SeriesTitle = "AP STATISTICS MASTER REVIEW SERIES",
+        [string]$SeriesTitle = "AP® STATISTICS MASTER REVIEW SERIES",
         [string]$VolumeText  = "BOOK 1",
-        [string]$MainTitle   = "AP STATISTICS",
+        [string]$MainTitle   = "AP® STATISTICS",
         [string]$AccentTitle = "FORMULA & INFERENCE",
         [string]$BottomTitle = "DECISION GUIDE",
         [string]$Author      = "PR",
-        [string]$Edition     = "2026-2027 Edition",
+        [string]$Edition     = "2027 Exam Ready Edition",
         [int]$PageCount      = 160,
         [double]$TrimWidth   = 6.0,
         [double]$TrimHeight  = 9.0,
@@ -88,11 +86,12 @@ function Build-FullCoverFromFrontImage {
     $cGrid    = [System.Drawing.ColorTranslator]::FromHtml($Theme.GridColor)
     $cGold    = [System.Drawing.ColorTranslator]::FromHtml($Theme.GoldColor)
     $cCyan    = [System.Drawing.ColorTranslator]::FromHtml($Theme.AccentColor)
-    $cWhite   = [System.Drawing.Color]::White
+    $cText    = [System.Drawing.ColorTranslator]::FromHtml($Theme.TextColor)
 
     $bGold    = New-Object System.Drawing.SolidBrush $cGold
     $bCyan    = New-Object System.Drawing.SolidBrush $cCyan
-    $bWhite   = New-Object System.Drawing.SolidBrush $cWhite
+    $bText    = New-Object System.Drawing.SolidBrush $cText
+    $bWhite   = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::White)
     $bBlack   = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::Black)
 
     $spineWidth = [Math]::Round($PageCount * $WhitePaperFactor, 4)
@@ -115,33 +114,38 @@ function Build-FullCoverFromFrontImage {
 
     $pG.Clear($cBg)
 
-    # Draw Blueprint Grid on Back & Spine
+    # Grid texture on Back only
     $gridPen = New-Object System.Drawing.Pen $cGrid, 2
-    for ($x = 0; $x -lt $pW; $x += 75) { $pG.DrawLine($gridPen, $x, 0, $x, $pH) }
-    for ($y = 0; $y -lt $pH; $y += 75) { $pG.DrawLine($gridPen, 0, $y, $pW, $y) }
-    $gridPen.Dispose()
-
     $spineStartPx = [int][Math]::Round(($bleed + $TrimWidth) * 300)
     $spineWidthPx = [int][Math]::Round($spineWidth * 300)
     $frontStartPx = $spineStartPx + $spineWidthPx
     $frontWidthPx = [int][Math]::Round(($TrimWidth + $bleed) * 300)
 
-    # Composite Front Image onto Front Cover Area
+    for ($x = 0; $x -lt $spineStartPx; $x += 80) { $pG.DrawLine($gridPen, $x, 0, $x, $pH) }
+    for ($y = 0; $y -lt $pH; $y += 80) { $pG.DrawLine($gridPen, 0, $y, $spineStartPx, $y) }
+    $gridPen.Dispose()
+
+    # Draw Front Image (Strictly from frontStartPx to right edge)
     if (Test-Path $FrontJpgPath) {
         $frontImg = [System.Drawing.Image]::FromFile($FrontJpgPath)
         $pG.DrawImage($frontImg, $frontStartPx, 0, $frontWidthPx, $pH)
         $frontImg.Dispose()
     }
 
-    # Draw Back Cover Details
+    # Strict Back Cover Text Area (Bounded safely: Left 150px, Right stops 100px before spine!)
+    $safeBackWidth = $spineStartPx - 250
     $bX = 140
-    $pG.DrawString("Stop Memorizing. Master the Blueprint.", (New-Object System.Drawing.Font ("Arial", 34, [System.Drawing.FontStyle]::Bold)), $bGold, $bX, 220)
-    
-    $backDesc = "You do not need another dense 600-page prep book. Designed for high-yield clarity, this companion cuts through textbook bloat to give you the exact formulas, visual mindmaps, inference decision trees, and rubric sentence frames required to master the AP Statistics Exam."
-    $descRect = New-Object System.Drawing.RectangleF $bX, 350, 1450, 320
-    $pG.DrawString($backDesc, (New-Object System.Drawing.Font ("Arial", 22, [System.Drawing.FontStyle]::Regular)), $bWhite, $descRect)
 
-    $pG.DrawString("Inside This Master Review Companion:", (New-Object System.Drawing.Font ("Arial", 26, [System.Drawing.FontStyle]::Bold)), $bCyan, $bX, 720)
+    $titleRect = New-Object System.Drawing.RectangleF $bX, 200, $safeBackWidth, 120
+    $pG.DrawString("Stop Memorizing. Master the Blueprint.", (New-Object System.Drawing.Font ("Arial", 30, [System.Drawing.FontStyle]::Bold)), $bGold, $titleRect)
+    
+    $backDesc = "You do not need another dense 600-page prep book. Designed for high-yield clarity, this companion cuts through textbook bloat to give you the exact formulas, visual mindmaps, inference decision trees, and rubric sentence frames required to master the AP® Statistics Exam."
+    $descRect = New-Object System.Drawing.RectangleF $bX, 340, $safeBackWidth, 320
+    $pG.DrawString($backDesc, (New-Object System.Drawing.Font ("Arial", 21, [System.Drawing.FontStyle]::Regular)), $bText, $descRect)
+
+    $headerRect = New-Object System.Drawing.RectangleF $bX, 680, $safeBackWidth, 70
+    $pG.DrawString("Inside This 2027 Master Companion:", (New-Object System.Drawing.Font ("Arial", 25, [System.Drawing.FontStyle]::Bold)), $bCyan, $headerRect)
+    
     $backBullets = @(
         "* Plain-English Formulas: Every parameter decoded without proofs.",
         "* Unit Mindmaps: Visual 1-page concept roadmaps for all 9 units.",
@@ -151,27 +155,28 @@ function Build-FullCoverFromFrontImage {
         "* Exam Pacing Strategy: Pacing blueprints for the 3-hour digital exam.",
         "* Free Digital Companion: Instant interactive mobile practice drills."
     )
-    $bby = 820
+    $bby = 770
     foreach ($bb in $backBullets) {
-        $pG.DrawString($bb, (New-Object System.Drawing.Font ("Arial", 21, [System.Drawing.FontStyle]::Regular)), $bWhite, $bX, $bby)
-        $bby += 130
+        $bulletRect = New-Object System.Drawing.RectangleF $bX, $bby, $safeBackWidth, 90
+        $pG.DrawString($bb, (New-Object System.Drawing.Font ("Arial", 19, [System.Drawing.FontStyle]::Regular)), $bText, $bulletRect)
+        $bby += 115
     }
 
-    # Barcode
+    # Barcode (Safely inside back cover, 100px before spine)
     $barcodeX = $spineStartPx - 680
     $barcodeY = $pH - 450
-    $pG.FillRectangle($bWhite, $barcodeX, $barcodeY, 600, 360)
-    $pG.DrawString("[ KDP BARCODE EXCLUSION ZONE ]", (New-Object System.Drawing.Font ("Arial", 16, [System.Drawing.FontStyle]::Bold)), $bBlack, ($barcodeX + 100), ($barcodeY + 160))
+    $pG.FillRectangle($bWhite, $barcodeX, $barcodeY, 580, 340)
+    $pG.DrawString("[ KDP BARCODE ZONE ]", (New-Object System.Drawing.Font ("Arial", 15, [System.Drawing.FontStyle]::Bold)), $bBlack, ($barcodeX + 90), ($barcodeY + 150))
 
-    # Spine
+    # Spine (Strictly centered inside spine, 0 text bleed!)
     $spineMidX = $spineStartPx + ($spineWidthPx / 2)
     $state = $pG.Save()
     $pG.TranslateTransform($spineMidX, ($pH / 2))
     $pG.RotateTransform(90)
-    $spineFont = New-Object System.Drawing.Font ("Arial", 19, [System.Drawing.FontStyle]::Bold)
-    $spineText = "$MainTitle $AccentTitle $BottomTitle    $VolumeText"
+    $spineFont = New-Object System.Drawing.Font ("Arial", 18, [System.Drawing.FontStyle]::Bold)
+    $spineText = "AP STATISTICS FORMULA & INFERENCE DECISION GUIDE    $VolumeText"
     $spineSize = $pG.MeasureString($spineText, $spineFont)
-    $pG.DrawString($spineText, $spineFont, $bWhite, (-$spineSize.Width / 2), (-$spineSize.Height / 2))
+    $pG.DrawString($spineText, $spineFont, $bText, (-$spineSize.Width / 2), (-$spineSize.Height / 2))
     $pG.Restore($state)
 
     $paperbackJpgPath = Join-Path $OutputDir "Paperback_Cover_Design_${id}_${name}_FullWrap.jpg"
@@ -181,7 +186,7 @@ function Build-FullCoverFromFrontImage {
     $pBmp.Dispose()
 
     Convert-JpgToPdf -JpgPath $paperbackJpgPath -PdfPath $paperbackPdfPath -WidthInches $pWidthIn -HeightInches $pHeightIn
-    Write-Host "  -> Generated Paperback PDF: $paperbackPdfPath"
+    Write-Host "  -> Generated Zero-Bleed Paperback PDF: $paperbackPdfPath"
 
     # ---------------------------------------------------------------------
     # 2. HARDCOVER CASE-LAMINATE (13.5403" x 10.180" @ 300 DPI)
@@ -200,47 +205,54 @@ function Build-FullCoverFromFrontImage {
     $hG.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
 
     $hG.Clear($cBg)
-    $hGridPen = New-Object System.Drawing.Pen $cGrid, 2
-    for ($x = 0; $x -lt $hW; $x += 75) { $hG.DrawLine($hGridPen, $x, 0, $x, $hH) }
-    for ($y = 0; $y -lt $hH; $y += 75) { $hG.DrawLine($hGridPen, 0, $y, $hW, $y) }
-    $hGridPen.Dispose()
-
     $hSpineStartPx = [int][Math]::Round(($hWrap + $TrimWidth) * 300)
     $hFrontStartPx = $hSpineStartPx + $spineWidthPx
     $hFrontWidthPx = [int][Math]::Round(($TrimWidth + $hWrap) * 300)
 
-    # Composite Front Image onto Hardcover Front Area
+    $hGridPen = New-Object System.Drawing.Pen $cGrid, 2
+    for ($x = 0; $x -lt $hSpineStartPx; $x += 80) { $hG.DrawLine($hGridPen, $x, 0, $x, $hH) }
+    for ($y = 0; $y -lt $hH; $y += 80) { $hG.DrawLine($hGridPen, 0, $y, $hSpineStartPx, $y) }
+    $hGridPen.Dispose()
+
+    # Draw Hardcover Front Image
     if (Test-Path $FrontJpgPath) {
         $frontImgH = [System.Drawing.Image]::FromFile($FrontJpgPath)
         $hG.DrawImage($frontImgH, $hFrontStartPx, 0, $hFrontWidthPx, $hH)
         $frontImgH.Dispose()
     }
 
-    # Hardcover Back
+    # Hardcover Back Text (Bounded strictly)
+    $hSafeBackWidth = $hSpineStartPx - 320
     $hbX = 240
-    $hG.DrawString("Stop Memorizing. Master the Blueprint.", (New-Object System.Drawing.Font ("Arial", 34, [System.Drawing.FontStyle]::Bold)), $bGold, $hbX, 300)
-    $hDescRect = New-Object System.Drawing.RectangleF $hbX, 430, 1450, 320
-    $hG.DrawString($backDesc, (New-Object System.Drawing.Font ("Arial", 22, [System.Drawing.FontStyle]::Regular)), $bWhite, $hDescRect)
 
-    $hG.DrawString("Inside This Hardcover Edition:", (New-Object System.Drawing.Font ("Arial", 26, [System.Drawing.FontStyle]::Bold)), $bCyan, $hbX, 800)
-    $hbby = 900
+    $hTitleRect = New-Object System.Drawing.RectangleF $hbX, 280, $hSafeBackWidth, 120
+    $hG.DrawString("Stop Memorizing. Master the Blueprint.", (New-Object System.Drawing.Font ("Arial", 30, [System.Drawing.FontStyle]::Bold)), $bGold, $hTitleRect)
+    
+    $hDescRect = New-Object System.Drawing.RectangleF $hbX, 420, $hSafeBackWidth, 320
+    $hG.DrawString($backDesc, (New-Object System.Drawing.Font ("Arial", 21, [System.Drawing.FontStyle]::Regular)), $bText, $hDescRect)
+
+    $hHeaderRect = New-Object System.Drawing.RectangleF $hbX, 760, $hSafeBackWidth, 70
+    $hG.DrawString("Inside This Hardcover Edition:", (New-Object System.Drawing.Font ("Arial", 25, [System.Drawing.FontStyle]::Bold)), $bCyan, $hHeaderRect)
+    
+    $hbby = 850
     foreach ($bb in $backBullets) {
-        $hG.DrawString($bb, (New-Object System.Drawing.Font ("Arial", 21, [System.Drawing.FontStyle]::Regular)), $bWhite, $hbX, $hbby)
-        $hbby += 130
+        $hBulletRect = New-Object System.Drawing.RectangleF $hbX, $hbby, $hSafeBackWidth, 90
+        $hG.DrawString($bb, (New-Object System.Drawing.Font ("Arial", 19, [System.Drawing.FontStyle]::Regular)), $bText, $hBulletRect)
+        $hbby += 115
     }
 
     # Hardcover Barcode
     $hBarcodeX = $hSpineStartPx - 680
     $hBarcodeY = $hH - 560
-    $hG.FillRectangle($bWhite, $hBarcodeX, $hBarcodeY, 600, 360)
-    $hG.DrawString("[ KDP BARCODE EXCLUSION ZONE ]", (New-Object System.Drawing.Font ("Arial", 16, [System.Drawing.FontStyle]::Bold)), $bBlack, ($hBarcodeX + 100), ($hBarcodeY + 160))
+    $hG.FillRectangle($bWhite, $hBarcodeX, $hBarcodeY, 580, 340)
+    $hG.DrawString("[ KDP BARCODE ZONE ]", (New-Object System.Drawing.Font ("Arial", 15, [System.Drawing.FontStyle]::Bold)), $bBlack, ($hBarcodeX + 90), ($hBarcodeY + 150))
 
     # Hardcover Spine
     $hSpineMidX = $hSpineStartPx + ($spineWidthPx / 2)
     $stateH = $hG.Save()
     $hG.TranslateTransform($hSpineMidX, ($hH / 2))
     $hG.RotateTransform(90)
-    $hG.DrawString($spineText, $spineFont, $bWhite, (-$spineSize.Width / 2), (-$spineSize.Height / 2))
+    $hG.DrawString($spineText, $spineFont, $bText, (-$spineSize.Width / 2), (-$spineSize.Height / 2))
     $hG.Restore($stateH)
 
     $hardcoverJpgPath = Join-Path $OutputDir "Hardcover_Cover_Design_${id}_${name}_CaseLaminate.jpg"
@@ -250,73 +262,78 @@ function Build-FullCoverFromFrontImage {
     $hBmp.Dispose()
 
     Convert-JpgToPdf -JpgPath $hardcoverJpgPath -PdfPath $hardcoverPdfPath -WidthInches $hWidthIn -HeightInches $hHeightIn
-    Write-Host "  -> Generated Hardcover PDF: $hardcoverPdfPath"
+    Write-Host "  -> Generated Zero-Bleed Hardcover PDF: $hardcoverPdfPath"
 }
 
-function Build-All5CoverSuites {
+function Run-AllCoverGenerations {
     $outDir = "d:\Narayana kdp\With 2.o\Book_1_AP_Statistics_Formula_and_Inference_Guide\Cover_Output_Files"
     
     $suites = @(
         @{
             Id          = "1"
+            Name        = "SkyBlue_White_2027_Ready"
+            FrontImage  = "Kindle_Cover_Design_1_SkyBlue_2027_Ready.jpg"
+            BgColor     = "#0284C7" # Sky Blue
+            GridColor   = "#38BDF8"
+            AccentColor = "#FFFFFF"
+            GoldColor   = "#FEF08A"
+            TextColor   = "#FFFFFF"
+        },
+        @{
+            Id          = "2"
+            Name        = "RoyalBlue_Gold_2027_Ready"
+            FrontImage  = "Kindle_Cover_Design_2_RoyalBlue_2027_Ready.jpg"
+            BgColor     = "#0F172A" # Deep Slate Navy
+            GridColor   = "#1E3A5F"
+            AccentColor = "#38BDF8"
+            GoldColor   = "#F59E0B"
+            TextColor   = "#FFFFFF"
+        },
+        @{
+            Id          = "3"
             Name        = "TechBlueprint"
-            FrontImage  = "Kindle_Cover_Design_1_TechBlueprint.jpg"
+            FrontImage  = "Kindle_Cover_Design_3_TechBlueprint.jpg"
             BgColor     = "#0F172A"
             GridColor   = "#1E3A5F"
             AccentColor = "#06B6D4"
             GoldColor   = "#F59E0B"
+            TextColor   = "#FFFFFF"
         },
         @{
-            Id          = "2"
+            Id          = "4"
             Name        = "EmeraldAcademic"
-            FrontImage  = "Kindle_Cover_Design_2_EmeraldAcademic.jpg"
+            FrontImage  = "Kindle_Cover_Design_4_EmeraldAcademic.jpg"
             BgColor     = "#062C24"
             GridColor   = "#134E4A"
             AccentColor = "#10B981"
             GoldColor   = "#FBBF24"
+            TextColor   = "#FFFFFF"
         },
         @{
-            Id          = "3"
-            Name        = "CrimsonCram"
-            FrontImage  = "Kindle_Cover_Design_3_CrimsonCram.jpg"
-            BgColor     = "#3B0712"
-            GridColor   = "#881337"
-            AccentColor = "#FB7185"
-            GoldColor   = "#FCD34D"
-        },
-        @{
-            Id          = "4"
+            Id          = "5"
             Name        = "SapphireMinimalist"
-            FrontImage  = "Kindle_Cover_Design_4_SapphireMinimalist.jpg"
+            FrontImage  = "Kindle_Cover_Design_5_SapphireMinimalist.jpg"
             BgColor     = "#0C1838"
             GridColor   = "#1E3A8A"
             AccentColor = "#38BDF8"
             GoldColor   = "#E2E8F0"
-        },
-        @{
-            Id          = "5"
-            Name        = "CyberDark"
-            FrontImage  = "Kindle_Cover_Design_5_CyberDark.jpg"
-            BgColor     = "#18181B"
-            GridColor   = "#3F3F46"
-            AccentColor = "#C084FC"
-            GoldColor   = "#4ADE80"
+            TextColor   = "#FFFFFF"
         }
     )
 
     Write-Host "========================================================================="
-    Write-Host "BUILDING 5 MATCHING PAPERBACK & HARDCOVER PDFS FROM 5 KINDLE IMAGES"
+    Write-Host "COMPOSITING 5 ZERO-BLEED PAPERBACK & HARDCOVER PDFS"
     Write-Host "========================================================================="
 
     foreach ($s in $suites) {
         $frontImgPath = Join-Path $outDir $s.FrontImage
-        Write-Host "Compositing Suite $($s.Id): $($s.Name) using $($s.FrontImage)..."
-        Build-FullCoverFromFrontImage -FrontJpgPath $frontImgPath -Theme $s -OutputDir $outDir
+        Write-Host "Building Suite $($s.Id): $($s.Name)..."
+        Build-ZeroBleedFullCover -FrontJpgPath $frontImgPath -Theme $s -OutputDir $outDir
     }
 
     Write-Host "========================================================================="
-    Write-Host "ALL 5 COMPLETE COVER SUITES ARE 100% READY IN: $outDir"
+    Write-Host "ALL 5 COVER SUITES COMPLETED WITH ZERO-BLEED INTEGRITY!"
     Write-Host "========================================================================="
 }
 
-Build-All5CoverSuites
+Run-AllCoverGenerations

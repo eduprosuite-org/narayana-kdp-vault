@@ -3,14 +3,15 @@
 **Book Title:** AP Statistics Formula & Inference Decision Guide  
 **Subtitle:** The Complete High-Yield Exam Companion: Formula Breakdowns, Mindmaps, Inference Decision Trees, and Rubric Sentence Frames  
 **Series Name:** AP Statistics Master Review Series (Book 1)  
+**Edition:** 2027 Exam Ready Edition  
 **Target Audience:** AP Statistics students, High school AP Math teachers, introductory college statistics students, test-prep tutors.
 
 ---
 
-## 0. Amazon Trademark & IP Legal Disclaimer
+## 0. Amazon Trademark & IP Legal Disclaimer (Trademark Compliance Agent)
 
 ```
-Disclaimer: AP® and Advanced Placement® are registered trademarks of the College Board, which is not affiliated with, and does not endorse or sponsor, this publication. TI-84 Plus® is a registered trademark of Texas Instruments. All terms are used under Nominative Fair Use for descriptive and educational purposes only.
+Disclaimer: AP® and Advanced Placement® are registered trademarks of the College Board, which is not affiliated with, and does not endorse or sponsor, this publication. TI-84 Plus® is a registered trademark of Texas Instruments. All terms are used strictly under Nominative Fair Use for descriptive and educational purposes only.
 ```
 
 ---
@@ -24,7 +25,7 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 
 <p>Are you feeling overwhelmed by dense 600-page prep books, confusing hypothesis tests, and tricky College Board grading rubrics? You don't need another heavy textbook filled with theoretical proofs. You need a fast, laser-focused visual companion designed to give you instant clarity and maximum points under timed exam conditions.</p>
 
-<p>The <b>AP Statistics Formula & Inference Decision Guide</b> breaks down the entire AP® curriculum into high-yield formula translations, 1-page visual mindmaps, step-by-step inference flowcharts, and fill-in-the-blank interpretation templates that ensure you never lose partial credit on Free-Response Questions (FRQs).</p>
+<p>The <b>AP Statistics Formula & Inference Decision Guide (2027 Exam Ready Edition)</b> breaks down the entire AP® curriculum into high-yield formula translations, 1-page visual mindmaps, step-by-step inference flowcharts, and fill-in-the-blank interpretation templates that ensure you never lose partial credit on Free-Response Questions (FRQs).</p>
 
 <h3><b>Inside This Complete Master Review Companion, You'll Discover:</b></h3>
 <ul>
@@ -49,9 +50,7 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 
 ---
 
-## 2. Seven Backend KDP Search Keywords (Max 50 Characters Each)
-
-*Space-separated, zero repetition of words from Title/Subtitle, zero banned promotional words:*
+## 2. Seven Backend KDP Search Keywords (Clean Text - No Symbols)
 
 1. `high school math exam review study notes` (40 chars)
 2. `free response rubric inference rules checklist` (46 chars)
@@ -63,21 +62,36 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 
 ---
 
-## 3. Recommended Amazon Browse Categories
+## 3. Amazon A+ Content Strategy & Layout Modules
 
-1. **Primary Test Prep:**  
-   `Young Adult Nonfiction > School & Education > Test Preparation`
-2. **Subject Specific:**  
-   `Science & Math > Mathematics > Applied > Probability & Statistics`
-3. **Study Reference:**  
-   `Education & Teaching > Schools & Teaching > Secondary Education`
+### Module 1: Standard Company / Hero Header (970 x 300 px)
+* **Visual Theme:** Sky Blue & White Gradient with 2027 Exam Ready Badge.
+* **Headline:** Master the Formulas. Conquer the Decision Trees. Score a 5 on Exam Day.
+* **Body Copy:** Engineered by AP exam veterans to replace 600-page textbook bloat with laser-focused visual cheat sheets, rubric phrasing frames, and instant inference selection trees.
+
+### Module 2: Standard 3-Feature Card Grid (300 x 225 px Cards)
+* **Card 1: 9-Unit Visual Mindmaps**
+  * *Body:* Grasp complex probability, sampling distributions, and regression models in seconds with 1-page visual flowcharts for every unit.
+* **Card 2: Master Inference Flowchart**
+  * *Body:* Eliminate exam-hall anxiety with our step-by-step decision tree distinguishing between Z, t, Chi-Square, and Slope tests.
+* **Card 3: Fill-in-the-Blank FRQ Templates**
+  * *Body:* Memorize exact rubric sentence frames for $p$-values, confidence levels, and slopes to capture 100% partial credit from graders.
+
+### Module 3: Technical Comparison Table
+| Feature | Traditional 600-Page Textbooks | Free Online Summary Sheets | Our Master Review Companion |
+| :--- | :---: | :---: | :---: |
+| **Page Bloat** | 600+ pages of dense theory | 2-4 pages (tiny font) | **160 pages (Pure High-Yield)** |
+| **FRQ Rubric Sentence Frames** | ❌ None | ❌ None | **✅ 25 Standardized Templates** |
+| **Master Inference Flowchart** | ❌ Buried in chapters | ❌ Incomplete | **✅ 1-Page Master Matrix** |
+| **Digital Exam Pacing (Bluebook)** | ❌ Outdated | ❌ None | **✅ 3-Hour Pacing Blueprint** |
+| **Mobile Web Companion Portal** | ❌ None | ❌ None | **✅ Free QR Code Portal Included** |
 
 ---
 
-## 4. Cover Precision Mathematical Specifications (160 Pages)
+## 4. Cover Specifications (160 Pages White Paper, Zero-Bleed)
 
 * **Trim Size:** 6.0" x 9.0"
 * **Spine Width Calculation:** $160 \times 0.002252\text{ in} = \mathbf{0.3603\text{ in}}$
-* **Total Cover Width:** $0.125\text{" (Bleed)} + 6.0\text{" (Back)} + 0.3603\text{" (Spine)} + 6.0\text{" (Front)} + 0.125\text{" (Bleed)} = \mathbf{12.6103\text{"}}$
-* **Total Cover Height:** $0.125\text{" (Bleed)} + 9.0\text{" (Height)} + 0.125\text{" (Bleed)} = \mathbf{9.25\text{"}}$
-* **Barcode Safe Area:** Bottom-right $2.0\text{"} \times 1.2\text{"}$ of the back cover completely clear.
+* **Paperback Total Width:** $12.6103\text{"}$ | Height: $9.250\text{"}$ (Bleed $0.125\text{"}$)
+* **Hardcover Total Width:** $13.5403\text{"}$ | Height: $10.180\text{"}$ (Wrap $0.59\text{"}$)
+* **Back Cover Safe Boundary:** Text strictly bounded to Left $140\text{ px}$ to Right $1550\text{ px}$ (Stopping 250px before spine - Zero Bleeding).
