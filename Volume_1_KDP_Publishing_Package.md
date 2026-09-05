@@ -73,15 +73,20 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 * **Body Text:** Stop drowning in 600+ pages of dense textbook theory. The AP Statistics Formula & Inference Decision Guide is engineered for pure, high-yield exam mastery. Get instant clarity on official formula sheet equations, visual decision trees for all 8 hypothesis tests, and fill-in-the-blank sentence frames designed to lock in full partial credit on Free-Response Questions under timed conditions.
 
 ### STEP 2: Add Module → "Standard Three Image & Text"
+* **Module Main Heading:** `Three Pillars of High-Yield AP Statistics Mastery`
+* **Module Main Body Text:** `Engineered to replace dense textbook bloat with laser-focused visual clarity, step-by-step decision trees, and fill-in-the-blank scoring rubrics across all 9 College Board units.`
 * **Card 1 (Left):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_1_300x300.jpg`  
   * *Alt-Text:* `Plain English AP Statistics Formula Translations and TI-84 Plus Shortcuts`  
-  * *Headline:* `Plain-English Formulas`
+  * *Headline:* `Plain-English Formulas`  
+  * *Body Text:* Every official AP Statistics formula sheet equation broken down with plain-English parameter definitions, calculation shortcuts, and clear application rules so you never plug in the wrong variable on exam day.
 * **Card 2 (Middle):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_2_300x300.jpg`  
   * *Alt-Text:* `Inference Decision Tree Flowchart for Hypothesis Testing and Confidence Intervals`  
-  * *Headline:* `Zero-Guesswork Testing`
+  * *Headline:* `Zero-Guesswork Testing`  
+  * *Body Text:* Follow step-by-step visual decision trees to effortlessly select the right test—from 1-Prop Z-Tests to Chi-Square Homogeneity and Linear Regression slope tests—without second-guessing yourself under timed exam pressure.
 * **Card 3 (Right):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_3_300x300.jpg`  
   * *Alt-Text:* `AP Statistics Free Response FRQ Sentence Frames and Interpretation Templates`  
-  * *Headline:* `Rubric-Perfect FRQs`
+  * *Headline:* `Rubric-Perfect FRQs`  
+  * *Body Text:* Plug your problem data into pre-formatted, grader-approved sentence frames for interpreting p-values, confidence intervals, correlation r, and slope b to ensure you capture every available rubric point.
 
 ### STEP 3: Add Module → "Standard Comparison Table"
 * **Comparison Columns:** AP Stats Cram Guide (Our Book) vs 600-Page Prep Books vs Standard Textbooks.

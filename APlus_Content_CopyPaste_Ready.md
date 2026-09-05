@@ -25,8 +25,10 @@
 AP Statistics Formula and Inference Decision Guide 2027 Exam Ready Cram Companion with Web App
 ```
 
-* 🏷️ **Headline (Optional / Above Text):**  
-  `AP® STATISTICS MASTER REVIEW: 2027 EXAM READY`
+* 🏷️ **Headline (Above Text):**
+```text
+AP® STATISTICS MASTER REVIEW: 2027 EXAM READY
+```
 
 * 📝 **Body Text (Copy & Paste):**
 ```text
@@ -37,46 +39,66 @@ Stop drowning in 600+ pages of dense textbook theory. The AP Statistics Formula 
 
 ## 🟦 STEP 2: Click "Add Module" → Choose "Standard Three Image & Text"
 
-This module creates 3 side-by-side feature cards:
+### 📌 Module Main Heading (Above the 3 Cards):
+```text
+Three Pillars of High-Yield AP Statistics Mastery
+```
 
-### 🔹 Card 1 (Left):
+### 📌 Module Main Body Text (Introductory Text Above Cards):
+```text
+Engineered to replace dense textbook bloat with laser-focused visual clarity, step-by-step decision trees, and fill-in-the-blank scoring rubrics across all 9 College Board units.
+```
+
+---
+
+### 🔹 Card 1 (Left Card):
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_1_300x300.jpg`
 * 🔤 **Image Alt-Text (Copy & Paste):**
 ```text
 Plain English AP Statistics Formula Translations and TI-84 Plus Shortcuts
 ```
-* 🏷️ **Headline:**  
-  `Plain-English Formulas`
-* 📝 **Body Text (Copy & Paste):**
+* 🏷️ **Card 1 Headline (Copy & Paste):**
+```text
+Plain-English Formulas
+```
+* 📝 **Card 1 Body Text (Copy & Paste):**
 ```text
 Every official AP Statistics formula sheet equation broken down with plain-English parameter definitions, calculation shortcuts, and clear application rules so you never plug in the wrong variable on exam day.
 ```
 
-### 🔹 Card 2 (Middle):
+---
+
+### 🔹 Card 2 (Middle Card):
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_2_300x300.jpg`
 * 🔤 **Image Alt-Text (Copy & Paste):**
 ```text
 Inference Decision Tree Flowchart for Hypothesis Testing and Confidence Intervals
 ```
-* 🏷️ **Headline:**  
-  `Zero-Guesswork Testing`
-* 📝 **Body Text (Copy & Paste):**
+* 🏷️ **Card 2 Headline (Copy & Paste):**
+```text
+Zero-Guesswork Testing
+```
+* 📝 **Card 2 Body Text (Copy & Paste):**
 ```text
 Follow step-by-step visual decision trees to effortlessly select the right test—from 1-Prop Z-Tests to Chi-Square Homogeneity and Linear Regression slope tests—without second-guessing yourself under timed exam pressure.
 ```
 
-### 🔹 Card 3 (Right):
+---
+
+### 🔹 Card 3 (Right Card):
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_3_300x300.jpg`
 * 🔤 **Image Alt-Text (Copy & Paste):**
 ```text
 AP Statistics Free Response FRQ Sentence Frames and Interpretation Templates
 ```
-* 🏷️ **Headline:**  
-  `Rubric-Perfect FRQs`
-* 📝 **Body Text (Copy & Paste):**
+* 🏷️ **Card 3 Headline (Copy & Paste):**
+```text
+Rubric-Perfect FRQs
+```
+* 📝 **Card 3 Body Text (Copy & Paste):**
 ```text
 Plug your problem data into pre-formatted, grader-approved sentence frames for interpreting p-values, confidence intervals, correlation r, and slope b to ensure you capture every available rubric point.
 ```
@@ -84,6 +106,11 @@ Plug your problem data into pre-formatted, grader-approved sentence frames for i
 ---
 
 ## 🟦 STEP 3: Click "Add Module" → Choose "Standard Comparison Table"
+
+* **Table Main Heading (Optional):**
+```text
+Why Our Cram Guide Outperforms Heavy Textbooks
+```
 
 * **Table Header 1 (Our Book):** `AP Stats Cram Guide`
 * **Table Header 2 (Competitor 1):** `600-Page Prep Books`
@@ -110,10 +137,14 @@ Fill in the comparison rows as follows:
 ```text
 Scan QR Code for Free Interactive AP Statistics Web Companion Portal and Keystroke Guide
 ```
-* 🏷️ **Headline:**  
-  `Free Interactive Web Companion Portal Included`
-* 🏷️ **Sub-Headline / Sidebar Title:**  
-  `Scan In-Book QR Code for Instant Study Tools`
+* 🏷️ **Main Headline (Copy & Paste):**
+```text
+Free Interactive Web Companion Portal Included
+```
+* 🏷️ **Sub-Headline / Sidebar Title (Copy & Paste):**
+```text
+Scan In-Book QR Code for Instant Study Tools
+```
 * 📝 **Body Text (Copy & Paste):**
 ```text
 Every copy includes direct access to our interactive web companion portal. Scan the in-book QR code with your phone or tablet for searchable formula cheat sheets, 3-click inference wizards, TI-84 calculator keystrokes, and diagnostic exam drills anywhere with zero app downloads.
