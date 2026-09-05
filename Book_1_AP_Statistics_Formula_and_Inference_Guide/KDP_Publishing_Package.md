@@ -62,29 +62,27 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 
 ---
 
-## 3. Amazon A+ Content Strategy & Layout Modules
+## 3. Amazon A+ Content Strategy & Layout Modules (100% Copy-Paste Ready)
 
-### Module 1: Standard Company / Hero Header (970 x 300 px)
-* **Visual Theme:** Sky Blue & White Gradient with 2027 Exam Ready Badge.
-* **Headline:** Master the Formulas. Conquer the Decision Trees. Score a 5 on Exam Day.
-* **Body Copy:** Engineered by AP exam veterans to replace 600-page textbook bloat with laser-focused visual cheat sheets, rubric phrasing frames, and instant inference selection trees.
+> Full step-by-step upload kit with copy-paste headlines, alt-texts, and body text is available in [APlus_Content_CopyPaste_Ready.md](file:///d:/Narayana%20kdp/With%202.o/Book_1_AP_Statistics_Formula_and_Inference_Guide/APlus_Content_CopyPaste_Ready.md).
 
-### Module 2: Standard 3-Feature Card Grid (300 x 225 px Cards)
-* **Card 1: 9-Unit Visual Mindmaps**
-  * *Body:* Grasp complex probability, sampling distributions, and regression models in seconds with 1-page visual flowcharts for every unit.
-* **Card 2: Master Inference Flowchart**
-  * *Body:* Eliminate exam-hall anxiety with our step-by-step decision tree distinguishing between Z, t, Chi-Square, and Slope tests.
-* **Card 3: Fill-in-the-Blank FRQ Templates**
-  * *Body:* Memorize exact rubric sentence frames for $p$-values, confidence levels, and slopes to capture 100% partial credit from graders.
+### STEP 1: Add Module → "Standard Image Header with Text"
+* **Image File:** `APlus_Content_Assets/KDP_Module_1_Choose_Standard_Image_Header_with_Text_970x600.jpg` (970 x 600 px)
+* **Headline:** `AP® STATISTICS MASTER REVIEW: 2027 EXAM READY`
+* **Body Text:** Stop drowning in 600+ pages of dense textbook theory. The AP Statistics Formula & Inference Decision Guide is engineered for pure, high-yield exam mastery. Get instant clarity on official formula sheet equations, visual decision trees for all 8 hypothesis tests, and fill-in-the-blank sentence frames designed to lock in full partial credit on Free-Response Questions under timed conditions.
 
-### Module 3: Technical Comparison Table
-| Feature | Traditional 600-Page Textbooks | Free Online Summary Sheets | Our Master Review Companion |
-| :--- | :---: | :---: | :---: |
-| **Page Bloat** | 600+ pages of dense theory | 2-4 pages (tiny font) | **160 pages (Pure High-Yield)** |
-| **FRQ Rubric Sentence Frames** | ❌ None | ❌ None | **✅ 25 Standardized Templates** |
-| **Master Inference Flowchart** | ❌ Buried in chapters | ❌ Incomplete | **✅ 1-Page Master Matrix** |
-| **Digital Exam Pacing (Bluebook)** | ❌ Outdated | ❌ None | **✅ 3-Hour Pacing Blueprint** |
-| **Mobile Web Companion Portal** | ❌ None | ❌ None | **✅ Free QR Code Portal Included** |
+### STEP 2: Add Module → "Standard Three Image & Text"
+* **Card 1 (Left):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_1_300x300.jpg` — Headline: `Plain-English Formulas`
+* **Card 2 (Middle):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_2_300x300.jpg` — Headline: `Zero-Guesswork Testing`
+* **Card 3 (Right):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_3_300x300.jpg` — Headline: `Rubric-Perfect FRQs`
+
+### STEP 3: Add Module → "Standard Comparison Table"
+* **Comparison Columns:** AP Stats Cram Guide (Our Book) vs 600-Page Prep Books vs Standard Textbooks.
+
+### STEP 4: Add Module → "Standard Single Image & Sidebar"
+* **Image File:** `APlus_Content_Assets/KDP_Module_4_Choose_Standard_Single_Image_and_Sidebar_300x300.jpg` (300 x 300 px)
+* **Headline:** `Free Interactive Web Companion Portal Included`
+* **Sub-Headline:** `Scan In-Book QR Code for Instant Study Tools`
 
 ---
 
