@@ -68,19 +68,27 @@ Disclaimer: AP® and Advanced Placement® are registered trademarks of the Colle
 
 ### STEP 1: Add Module → "Standard Image Header with Text"
 * **Image File:** `APlus_Content_Assets/KDP_Module_1_Choose_Standard_Image_Header_with_Text_970x600.jpg` (970 x 600 px)
+* **Image Alt-Text:** `AP Statistics Formula and Inference Decision Guide 2027 Exam Ready Cram Companion with Web App`
 * **Headline:** `AP® STATISTICS MASTER REVIEW: 2027 EXAM READY`
 * **Body Text:** Stop drowning in 600+ pages of dense textbook theory. The AP Statistics Formula & Inference Decision Guide is engineered for pure, high-yield exam mastery. Get instant clarity on official formula sheet equations, visual decision trees for all 8 hypothesis tests, and fill-in-the-blank sentence frames designed to lock in full partial credit on Free-Response Questions under timed conditions.
 
 ### STEP 2: Add Module → "Standard Three Image & Text"
-* **Card 1 (Left):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_1_300x300.jpg` — Headline: `Plain-English Formulas`
-* **Card 2 (Middle):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_2_300x300.jpg` — Headline: `Zero-Guesswork Testing`
-* **Card 3 (Right):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_3_300x300.jpg` — Headline: `Rubric-Perfect FRQs`
+* **Card 1 (Left):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_1_300x300.jpg`  
+  * *Alt-Text:* `Plain English AP Statistics Formula Translations and TI-84 Plus Shortcuts`  
+  * *Headline:* `Plain-English Formulas`
+* **Card 2 (Middle):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_2_300x300.jpg`  
+  * *Alt-Text:* `Inference Decision Tree Flowchart for Hypothesis Testing and Confidence Intervals`  
+  * *Headline:* `Zero-Guesswork Testing`
+* **Card 3 (Right):** `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_3_300x300.jpg`  
+  * *Alt-Text:* `AP Statistics Free Response FRQ Sentence Frames and Interpretation Templates`  
+  * *Headline:* `Rubric-Perfect FRQs`
 
 ### STEP 3: Add Module → "Standard Comparison Table"
 * **Comparison Columns:** AP Stats Cram Guide (Our Book) vs 600-Page Prep Books vs Standard Textbooks.
 
 ### STEP 4: Add Module → "Standard Single Image & Sidebar"
 * **Image File:** `APlus_Content_Assets/KDP_Module_4_Choose_Standard_Single_Image_and_Sidebar_300x300.jpg` (300 x 300 px)
+* **Image Alt-Text:** `Scan QR Code for Free Interactive AP Statistics Web Companion Portal and Keystroke Guide`
 * **Headline:** `Free Interactive Web Companion Portal Included`
 * **Sub-Headline:** `Scan In-Book QR Code for Instant Study Tools`
 

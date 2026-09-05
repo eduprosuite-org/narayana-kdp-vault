@@ -19,10 +19,15 @@
 
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_1_Choose_Standard_Image_Header_with_Text_970x600.jpg`
-* 🔤 **Image Alt-Text (Max 100 chars):**  
-  `AP Statistics Formula and Inference Decision Guide 2027 Exam Ready Cram Companion with Web App`
+
+* 🔤 **Image Alt-Text (Copy & Paste):**
+```text
+AP Statistics Formula and Inference Decision Guide 2027 Exam Ready Cram Companion with Web App
+```
+
 * 🏷️ **Headline (Optional / Above Text):**  
   `AP® STATISTICS MASTER REVIEW: 2027 EXAM READY`
+
 * 📝 **Body Text (Copy & Paste):**
 ```text
 Stop drowning in 600+ pages of dense textbook theory. The AP Statistics Formula & Inference Decision Guide is engineered for pure, high-yield exam mastery. Get instant clarity on official formula sheet equations, visual decision trees for all 8 hypothesis tests, and fill-in-the-blank sentence frames designed to lock in full partial credit on Free-Response Questions under timed conditions.
@@ -37,8 +42,10 @@ This module creates 3 side-by-side feature cards:
 ### 🔹 Card 1 (Left):
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_1_300x300.jpg`
-* 🔤 **Image Alt-Text:**  
-  `Plain English AP Statistics Formula Translations`
+* 🔤 **Image Alt-Text (Copy & Paste):**
+```text
+Plain English AP Statistics Formula Translations and TI-84 Plus Shortcuts
+```
 * 🏷️ **Headline:**  
   `Plain-English Formulas`
 * 📝 **Body Text (Copy & Paste):**
@@ -49,8 +56,10 @@ Every official AP Statistics formula sheet equation broken down with plain-Engli
 ### 🔹 Card 2 (Middle):
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_2_300x300.jpg`
-* 🔤 **Image Alt-Text:**  
-  `Inference Decision Tree Flowchart for Hypothesis Testing`
+* 🔤 **Image Alt-Text (Copy & Paste):**
+```text
+Inference Decision Tree Flowchart for Hypothesis Testing and Confidence Intervals
+```
 * 🏷️ **Headline:**  
   `Zero-Guesswork Testing`
 * 📝 **Body Text (Copy & Paste):**
@@ -61,8 +70,10 @@ Follow step-by-step visual decision trees to effortlessly select the right test�
 ### 🔹 Card 3 (Right):
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_2_Choose_Standard_Three_Image_and_Text_Card_3_300x300.jpg`
-* 🔤 **Image Alt-Text:**  
-  `FRQ Sentence Frames and Interpretation Templates`
+* 🔤 **Image Alt-Text (Copy & Paste):**
+```text
+AP Statistics Free Response FRQ Sentence Frames and Interpretation Templates
+```
 * 🏷️ **Headline:**  
   `Rubric-Perfect FRQs`
 * 📝 **Body Text (Copy & Paste):**
@@ -95,8 +106,10 @@ Fill in the comparison rows as follows:
 
 * 🖼️ **Upload Image File:**  
   `APlus_Content_Assets/KDP_Module_4_Choose_Standard_Single_Image_and_Sidebar_300x300.jpg`
-* 🔤 **Image Alt-Text:**  
-  `Scan QR Code for Free Interactive AP Statistics Web Companion App`
+* 🔤 **Image Alt-Text (Copy & Paste):**
+```text
+Scan QR Code for Free Interactive AP Statistics Web Companion Portal and Keystroke Guide
+```
 * 🏷️ **Headline:**  
   `Free Interactive Web Companion Portal Included`
 * 🏷️ **Sub-Headline / Sidebar Title:**  
