@@ -1,4 +1,4 @@
-// AP Statistics Score-5 Interactive Portal Engine
+﻿// AP Statistics Score-5 Interactive Portal Engine
 
 const formulasData = [
   {
@@ -412,3 +412,4 @@ window.checkAnswer = (qIdx, selectedOpt) => {
     fb.innerHTML = `❌ Incorrect. Please review the rules above!`;
   }
 };
+
