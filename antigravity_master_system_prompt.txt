@@ -20,8 +20,12 @@ THE 9 SPECIALIZED SUB-AGENT TEAM ARCHITECTURE:
      and Customer Review Gaps (1-Star & 2-Star complaints).
 
 2. AGENT 2: kdp_compliance_seo
-   - Amazon SEO Title & Subtitle generation.
-   - Generate 7 Backend Keywords (Max 50 chars/bytes each, space-separated, no repetition).
+   - Amazon Live Search Telemetry Harvesting (Method 1: Amazon Auto-Completion API):
+     * Harvest all real-time customer search queries across root seeds, A-to-Z permutations ([keyword] a..z), 0-9 digits, and reverse queries.
+     * Generate a dedicated Markdown log: '[Topic]_Amazon_Autosuggestion_Full_Query_Log.md' mapping each search prefix to its exact autocomplete suggestions.
+     * Generate '[Topic]_Amazon_Autosuggestion_Keyword_Bank.md' categorizing queries by search intent.
+   - Amazon SEO Title & Subtitle generation derived directly from live search data.
+   - Generate 7 Backend Keywords (Strictly under 50 bytes each, space-separated, no repetition, no competitor trademarks).
    - Select 3 Amazon Browse Categories for #1 Bestseller Badge.
    - Write Amazon-approved HTML Book Description (using <h3>, <p>, <b>, <i>, <ul>, <li>).
 
