@@ -47,8 +47,71 @@ This file contains the **permanent workspace guidelines** that are automatically
 
 ---
 
+## 🎨 Rule 5: Kindle Cover Generation — AI-Only Mandate (NEVER PowerShell)
+> CRITICAL LESSON LEARNED from Book 2: Kindle front covers generated via PowerShell System.Drawing produced flat 2D gradient images with grid lines — NOT acceptable.
+
+1. **Kindle Cover Tool:** ALWAYS use the `generate_image` tool (AI photorealistic art). NEVER use PowerShell `System.Drawing` to draw Kindle front covers.
+2. **Aspect Ratio:** Always `2:3` for Kindle covers (portrait orientation).
+3. **Required Prompt Elements for Every Kindle Cover:**
+   - "Photorealistic 3D softcover/hardcover book mockup"
+   - Book title prominently on cover
+   - Statistics visual element (bell curve, scatter plot, histogram, formulas)
+   - Brand color theme (Sky Blue / Royal Navy / Gold)
+   - "professional KDP book cover quality, 3D perspective showing page thickness"
+4. **5 Designs per book** — each must have a distinct color theme:
+   - Design 1: Sky Blue + White
+   - Design 2: Royal Blue + Gold
+   - Design 3: Tech Blueprint (Dark Navy + Cyan Neon)
+   - Design 4: Emerald Academic (Forest Green + Gold)
+   - Design 5: Sapphire Minimalist (Deep Blue + White)
+5. **Save path:** `[Book_Folder]\Cover_Output_Files\Kindle_Cover_Design_[N]_[ThemeName].jpg`
+
+---
+
+## 🖼️ Rule 6: Amazon A+ Content — AI generate_image Only (NEVER PowerShell Scripts)
+> CRITICAL LESSON LEARNED from Book 2: A+ assets generated via PowerShell showed plain text boxes, garbled Unicode emoji artifacts, no 3D elements, no book mockup — completely unacceptable.
+
+1. **A+ Tool:** ALWAYS use `generate_image` tool for ALL 6 A+ assets. NEVER use PowerShell `FillRectangle` + `DrawString` to create A+ content.
+2. **Module 1 Hero Banner (970x600, aspect 16:9):** Must include:
+   - Photorealistic 3D floating book mockup (center)
+   - Realistic QR code image (left panel)
+   - Smartphone app mockup (right panel)
+   - Gold star badge "2027 EXAM READY BESTSELLER"
+   - Bottom sky blue strip with alignment text
+3. **Module 2 Cards x3 (300x300, aspect 1:1):** Each card = distinct feature:
+   - Card 1: 9-Unit Curriculum (3D open textbook with holographic unit labels)
+   - Card 2: Practice Workbooks (photorealistic student writing in workbook)
+   - Card 3: TI-84 Calculator (photorealistic 3D calculator with glowing screen)
+4. **Module 4 Sidebar (300x300, aspect 1:1):** Free web portal + QR code + smartphone mockup.
+5. **Alternative Highlights Banner (970x300, aspect 16:9):** 5-column icon feature strip.
+6. **Every A+ image must match Book 1 Gold Standard quality** — photorealistic, 3D, premium product photography aesthetic.
+
+---
+
+## 📦 Rule 7: Full-Wrap Paperback/Hardcover — Composite Workflow (NEVER Draw Front Programmatically)
+> CRITICAL LESSON LEARNED from Book 2: The original script drew Kindle front cover programmatically inside the full-wrap builder — resulting in 2D flat front face. Back cover content also bled past spine into front cover zone.
+
+1. **Workflow Order (MANDATORY):**
+   - FIRST: Generate all 5 Kindle covers using `generate_image` (Rule 5).
+   - SECOND: Copy AI-generated Kindle JPGs to `Cover_Output_Files\` folder.
+   - THIRD: Build full-wrap covers by LOADING the AI Kindle JPG as front face via `System.Drawing.Image.FromFile()` and compositing onto canvas.
+2. **Full-Wrap Canvas = Back Cover + Spine + Front Cover (left to right).**
+3. **Front Face:** `DrawImage(kindleImage, frontRect)` — stretch AI JPG into the front cover region. Never draw text/graphics programmatically on the front face.
+4. **Back Cover Safe Zone (STRICT):**
+   - `$spineStartPx = (bleedInches + backWidthInches) * DPI`
+   - `$backMaxX = $spineStartPx - 250` (MINIMUM 250px barrier before spine)
+   - `$bX = 140` (left start, clears 0.125" bleed)
+   - `$safeWidth = $backMaxX - $bX` (all back text must fit within this)
+5. **Back Cover Font Sizes:** Title max 28px, Body max 19px — prevents text truncation within safe zone.
+6. **PDF Output:** Use `Convert-JpgToPdf` function after each JPG save.
+7. **Output per book:** 5 Kindle JPGs + 5 Paperback JPG+PDF + 5 Hardcover JPG+PDF = 25 files total.
+
+---
+
 ## 🔄 Standard 4-Step Publishing Workflow
 - **STEP 1:** Amazon Real-Time Search Demand Telemetry (Harvest queries via Amazon Completion API).
 - **STEP 2:** Series Architecture & Master Roadmap Catalog.
 - **STEP 3:** SEO Metadata Package (Title, Subtitle, 7 50-byte safe Keywords, 3 Categories, HTML Description, Detailed 9-Unit TOC).
-- **STEP 4:** High-Yield Production Suite (LaTeX Interior Manuscript, 5-Design 3D Zero-Bleed Cover Suite, 3D A+ Content Launch Kit, and GitHub Sync).
+- **STEP 4:** High-Yield Production Suite (LaTeX Interior Manuscript, 5-Design 3D Zero-Bleed Cover Suite via Rules 5+6+7, 3D A+ Content Launch Kit, and GitHub Sync).
+
+**Quick Prompt to trigger:** `Start Step 1 to 4 for [keyword]` — runs all steps automatically without interruption.
