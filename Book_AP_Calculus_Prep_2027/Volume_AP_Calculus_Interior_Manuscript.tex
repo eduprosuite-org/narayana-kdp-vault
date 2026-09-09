@@ -1,0 +1,218 @@
+﻿\documentclass[11pt,oneside,openany]{book}
+
+% =========================================================================
+% STRICT KDP 6" x 9" NO-BLEED INTERIOR GEOMETRY
+% Page Width: 6.0 in | Page Height: 9.0 in
+% Inner (Gutter): 0.75 in | Outer: 0.50 in | Top/Bottom: 0.50 in
+% Printable Text Width: 4.75 in (343.3 pt) -> ALL elements strictly <= \linewidth
+% =========================================================================
+\usepackage[
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.75in,
+  outer=0.5in,
+  top=0.5in,
+  bottom=0.5in,
+  headheight=14pt,
+  headsep=12pt,
+  footskip=20pt
+]{geometry}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,multirow,tabularx}
+\usepackage{enumitem}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,trees}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{qrcode}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+
+\newcommand{\BookTitle}{AP\textsuperscript{\textregistered} Calculus AB \& BC Prep Book 2027}
+\newcommand{\BookSubtitle}{The Complete High School Textbook \& Study Guide with Practice Workbooks and Exam Strategies}
+\newcommand{\BookSeries}{AP Calculus Master Review Series --- Book 2}
+\newcommand{\BookAuthor}{PR}
+\newcommand{\Edition}{2027 Exam Ready Edition}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape AP Calculus AB \& BC Prep Book 2027}
+\fancyhead[RO]{\small\itshape \leftmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Color Palette
+\definecolor{RoyalNavy}{HTML}{0F172A}
+\definecolor{SkyBlue}{HTML}{0284C7}
+\definecolor{AmberGold}{HTML}{D97706}
+\definecolor{SlateMuted}{HTML}{475569}
+\definecolor{BoxBg}{HTML}{F8FAFC}
+
+% Callout Boxes
+\newtcolorbox{theorembox}[1]{
+  colback=BoxBg,
+  colframe=SkyBlue,
+  coltitle=white,
+  fonttitle=\bfseries\small,
+  title={#1},
+  arc=3pt,
+  boxrule=1pt,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+\newtcolorbox{trapbox}[1]{
+  colback=BoxBg,
+  colframe=AmberGold,
+  coltitle=white,
+  fonttitle=\bfseries\small,
+  title={EXAM PITFALL TRAP: #1},
+  arc=3pt,
+  boxrule=1pt,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+\newtcolorbox{frqbox}[1]{
+  colback=BoxBg,
+  colframe=RoyalNavy,
+  coltitle=white,
+  fonttitle=\bfseries\small,
+  title={RUBRIC JUSTIFICATION TEMPLATE: #1},
+  arc=3pt,
+  boxrule=1pt,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+\begin{document}
+
+% --- TITLE PAGE ---
+\begin{titlepage}
+\begin{center}
+\vspace*{0.8in}
+{\Huge\bfseries\color{RoyalNavy} AP\textsuperscript{\textregistered} CALCULUS AB \& BC}\\[0.2in]
+{\Large\bfseries\color{SkyBlue} PREP BOOK 2027}\\[0.15in]
+{\large\itshape\color{SlateMuted} The Complete High School Textbook \& Study Guide}\\[0.4in]
+\hrule height 1.5pt
+\vspace*{0.3in}
+{\bfseries\color{AmberGold} 2027 EXAM READY EDITION}\\[0.1in]
+{\small 100\% Aligned with the College Board Course and Exam Description (CED)}\\[1.5in]
+{\large\bfseries \BookAuthor}\\[0.1in]
+{\small AP Calculus Master Review Series}
+\vfill
+{\footnotesize Educational Excellence Publishing}
+\end{center}
+\end{titlepage}
+
+% --- COPYRIGHT & DISCLAIMER ---
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushleft}
+\textbf{\BookTitle}\\
+\textit{\BookSubtitle}\\
+Copyright \copyright\ 2026--2027 by \BookAuthor. All rights reserved.\\[0.15in]
+
+\textbf{Mandatory College Board \& Trademark Disclaimer:}\\
+AP\textsuperscript{\textregistered} and Advanced Placement\textsuperscript{\textregistered} are registered trademarks of the College Board, which was not involved in the production of, and does not endorse, this product. TI-84 Plus\textsuperscript{\textregistered} and TI-Nspire\textsuperscript{\textregistered} are registered trademarks of Texas Instruments. All trademarks are used strictly under Nominative Fair Use for educational purposes only.\\[0.15in]
+
+Published in the United States of America.
+\end{flushleft}
+\vspace*{0.5in}
+
+% --- TABLE OF CONTENTS ---
+\newpage
+\tableofcontents
+
+% --- CHAPTER 1: LIMITS & CONTINUITY ---
+\chapter{Unit 1: Limits and Continuity}
+\section{Understanding the Limit Concept}
+Calculus is the mathematical study of change. The foundation upon which all differential and integral calculus rests is the concept of a \textbf{limit}. Informally, the statement:
+\[
+\lim_{x \to c} f(x) = L
+\]
+means that as $x$ approaches the value $c$ from both sides, the function values $f(x)$ get arbitrarily close to the real number $L$.
+
+\begin{theorembox}{Formal Definition of Continuity at a Point}
+A function $f(x)$ is continuous at $x = c$ if and only if all three of the following conditions are satisfied:
+\begin{enumerate}[leftmargin=1.5em]
+  \item $f(c)$ is defined (i.e., $c$ lies within the domain of $f$).
+  \item $\lim_{x \to c} f(x)$ exists (i.e., $\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) = L$).
+  \item $\lim_{x \to c} f(x) = f(c)$.
+\end{enumerate}
+\end{theorembox}
+
+\begin{theorembox}{The Intermediate Value Theorem (IVT)}
+If $f$ is continuous on the closed interval $[a, b]$, and $u$ is any number between $f(a)$ and $f(b)$, then there exists at least one number $c$ in the open interval $(a, b)$ such that:
+\[
+f(c) = u
+\]
+\end{theorembox}
+
+\begin{frqbox}{Free-Response Justification Frame for IVT}
+\textbf{Standard College Board Writing Format:}\\
+``Since $f(x)$ is continuous on the closed interval $[a, b]$, and since $f(a) = \underline{\hspace{0.5in}}$ and $f(b) = \underline{\hspace{0.5in}}$, and because $\underline{\hspace{0.3in}} < u < \underline{\hspace{0.3in}}$, by the \textbf{Intermediate Value Theorem} there must exist at least one value $c \in (a, b)$ such that $f(c) = u$.''
+\end{frqbox}
+
+% --- CHAPTER 2: DIFFERENTIATION ---
+\chapter{Unit 2: Differentiation --- Definition and Fundamental Rules}
+\section{The Derivative as a Limit of Difference Quotients}
+The derivative of a function $f$ at a point represents both the instantaneous rate of change of the function and the slope of the tangent line to its graph:
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+\]
+
+\begin{theorembox}{Essential Differentiation Rules}
+Let $u$ and $v$ be differentiable functions of $x$:
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Power Rule:} $\frac{d}{dx}[x^n] = n x^{n-1}$
+  \item \textbf{Product Rule:} $\frac{d}{dx}[u \cdot v] = u' v + u v'$
+  \item \textbf{Quotient Rule:} $\frac{d}{dx}\left[\frac{u}{v}\right] = \frac{u' v - u v'}{v^2}$
+  \item \textbf{Chain Rule:} $\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$
+\end{itemize}
+\end{theorembox}
+
+\begin{trapbox}{Common Chain Rule Omission Trap}
+Over 35\% of AP exam-takers forget the inner derivative when differentiating composite trigonometric or exponential functions. For example:
+\[
+\frac{d}{dx}[\sin(3x^2)] = \cos(3x^2) \cdot (6x) \quad \text{(Do not omit the $6x$!)}
+\]
+\end{trapbox}
+
+% --- CHAPTER 3: INTEGRATION & FTC ---
+\chapter{Unit 6: Integration and Accumulation of Change}
+\section{The Fundamental Theorem of Calculus (FTC)}
+The Fundamental Theorem of Calculus bridges the two central concepts of calculus: differentiation and integration.
+
+\begin{theorembox}{The Fundamental Theorem of Calculus (Part 1 \& Part 2)}
+\textbf{Part 1 (Accumulation Derivative):} If $f$ is continuous on $[a, b]$ and $g(x) = \int_a^x f(t)\,dt$, then:
+\[
+g'(x) = \frac{d}{dx}\left[\int_a^x f(t)\,dt\right] = f(x)
+\]
+\textbf{Part 2 (Evaluation):} If $f$ is continuous on $[a, b]$ and $F$ is any antiderivative of $f$, then:
+\[
+\int_a^b f(x)\,dx = F(b) - F(a)
+\]
+\end{theorembox}
+
+\begin{frqbox}{Net Change Theorem Justification Template}
+``The total quantity accumulated between $t = a$ and $t = b$ is given by the initial amount plus the definite integral of the rate of change:''
+\[
+\text{Total}(b) = \text{Initial}(a) + \int_a^b \text{Rate}(t)\,dt
+\]
+\end{frqbox}
+
+\end{document}
