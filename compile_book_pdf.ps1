@@ -29,24 +29,37 @@ Write-Host "==========================================================" -Foregro
 Set-Location $dir
 $sw = [System.Diagnostics.Stopwatch]::StartNew()
 
-# Run pass 1
-Write-Host "[1/2] Running Pass 1..." -ForegroundColor Yellow
-& $pdflatex -interaction=nonstopmode "Volume_${BookNumber}_All_In_One_Manuscript.tex" | Out-Null
+# Compile using jobname to avoid file locks if user has PDF open
+$jobName = "Volume_${BookNumber}_Interior_300Page_Master"
 
-# Run pass 2 (for TOC, page numbers, and cross-references)
+Write-Host "[1/2] Running Pass 1..." -ForegroundColor Yellow
+& $pdflatex -interaction=nonstopmode -jobname="$jobName" "Volume_${BookNumber}_All_In_One_Manuscript.tex" | Out-Null
+
 Write-Host "[2/2] Running Pass 2 (Table of Contents & Pagination)..." -ForegroundColor Yellow
-$out = & $pdflatex -interaction=nonstopmode "Volume_${BookNumber}_All_In_One_Manuscript.tex"
+$logOutput = & $pdflatex -interaction=nonstopmode -jobname="$jobName" "Volume_${BookNumber}_All_In_One_Manuscript.tex"
 
 $sw.Stop()
 
-$pdfPath = Join-Path $dir "Volume_${BookNumber}_All_In_One_Manuscript.pdf"
-if (Test-Path $pdfPath) {
-    $pdf = Get-Item $pdfPath
+# Parse page count from output
+$pageLine = $logOutput | Select-String "Output written on .* \((\d+) pages"
+$pages = if ($pageLine) { $pageLine.Matches[0].Groups[1].Value } else { "Unknown" }
+
+$genPdf = Join-Path $dir "${jobName}.pdf"
+$mainPdf = Join-Path $dir "Volume_${BookNumber}_All_In_One_Manuscript.pdf"
+
+# Also try to copy to main PDF if unlocked
+try {
+    Copy-Item $genPdf $mainPdf -Force -ErrorAction SilentlyContinue
+} catch {}
+
+if (Test-Path $genPdf) {
+    $pdf = Get-Item $genPdf
     $sizeKb = [math]::Round($pdf.Length / 1KB, 1)
     $elapsedSec = [math]::Round($sw.Elapsed.TotalSeconds, 1)
     Write-Host "`n==========================================================" -ForegroundColor Green
     Write-Host " [SUCCESS] PDF Generated Successfully in $elapsedSec seconds!" -ForegroundColor Green
-    Write-Host " Location: $pdfPath" -ForegroundColor Green
+    Write-Host " Page Count: $pages Pages" -ForegroundColor Green
+    Write-Host " Location: $genPdf" -ForegroundColor Green
     Write-Host " File Size: ${sizeKb} KB" -ForegroundColor Green
     Write-Host "==========================================================" -ForegroundColor Green
 } else {

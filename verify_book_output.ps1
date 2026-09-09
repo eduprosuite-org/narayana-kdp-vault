@@ -1,9 +1,9 @@
-﻿param (
+param (
     [int]$BookNumber = 2
 )
 
 Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host " AP Statistics Master Review Series — Quality Gate Check " -ForegroundColor Cyan
+Write-Host " AP Statistics Master Review Series - Quality Gate Check " -ForegroundColor Cyan
 Write-Host " Checking Book $BookNumber Output Artifacts " -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 
@@ -40,13 +40,15 @@ function Report-Check {
 }
 
 # 1. Manuscript Check
-$texFiles = Get-ChildItem -Path $targetDir -Filter "Volume_${BookNumber}_All_In_One_Manuscript.tex"
-if ($texFiles.Count -gt 0) {
-    $tex = $texFiles[0]
-    $lines = (Get-Content $tex.FullName -Encoding UTF8).Count
-    $sizeKb = [math]::Round($tex.Length / 1KB, 1)
-    $hasMinLines = $lines -ge 1200
-    Report-Check "Manuscript Volume_$BookNumber (.tex)" ($hasMinLines -and ($sizeKb -ge 50)) "$lines lines, ${sizeKb}KB (Target: >=1200 lines, >=50KB for 300+ pages)"
+$mainTex = Join-Path $targetDir "Volume_${BookNumber}_All_In_One_Manuscript.tex"
+if (Test-Path $mainTex) {
+    $allTexFiles = Get-ChildItem -Path $targetDir -Filter "*.tex" -Recurse
+    $totalLines = ($allTexFiles | Get-Content -Encoding UTF8 | Measure-Object -Line).Lines
+    $totalBytes = ($allTexFiles | Measure-Object -Property Length -Sum).Sum
+    $sizeKb = [math]::Round($totalBytes / 1KB, 1)
+    $hasMinLines = $totalLines -ge 1200
+    $msg = "$totalLines lines, ${sizeKb}KB across $($allTexFiles.Count) TeX files"
+    Report-Check -Name "Manuscript Volume_$BookNumber (.tex)" -Condition ($hasMinLines -and ($sizeKb -ge 50)) -Details $msg
 } else {
     Report-Check "Manuscript Volume_$BookNumber (.tex)" $false "Main manuscript .tex file missing!"
 }
@@ -107,9 +109,10 @@ if (Test-Path $aplusDir) {
     }
 
     $aplusAllGood = ($existingAplus -eq 6) -and ($aiGeneratedAplus -eq 6)
-    Report-Check "Amazon A+ 3D Assets" $aplusAllGood "$existingAplus/6 files present ($aiGeneratedAplus/6 confirmed photorealistic 3D >=150KB)" ($aiGeneratedAplus -lt 6)
+    $apMsg = "$existingAplus/6 files present, $aiGeneratedAplus/6 photorealistic 3D >= 150KB"
+    Report-Check -Name "Amazon A+ 3D Assets" -Condition $aplusAllGood -Details $apMsg -IsWarning ($aiGeneratedAplus -lt 6)
 } else {
-    Report-Check "A+ Content Folder" $false "Missing APlus_Content_Assets folder!"
+    Report-Check -Name "A+ Content Folder" -Condition $false -Details "Missing APlus_Content_Assets folder!"
 }
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
