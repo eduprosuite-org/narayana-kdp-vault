@@ -119,6 +119,14 @@ This file contains the **permanent workspace guidelines** that are automatically
 - **STEP 1:** Amazon Real-Time Search Demand Telemetry (Harvest queries via Amazon Completion API).
 - **STEP 2:** Series Architecture & Master Roadmap Catalog.
 - **STEP 3:** SEO Metadata Package (Title, Subtitle, 7 50-byte safe Keywords, 3 Categories, HTML Description, Detailed 9-Unit TOC).
-- **STEP 4:** High-Yield Production Suite (LaTeX Interior Manuscript, 5-Design 3D Zero-Bleed Cover Suite via Rules 5+6+7, 3D A+ Content Launch Kit, and GitHub Sync).
+- **STEP 4:** High-Yield Production Suite — broken into 4 mandatory sub-steps:
+  - **STEP 4A — Full LaTeX Manuscript (MANDATORY 300-350 pages):**
+    - Follow ALL rules in `.agents/rules/manuscript_content_standards.md`
+    - 9 Units × ~30 pages each + Front Matter + 2 Practice Exams + Answer Keys + Glossary
+    - NEVER submit skeleton/outline only — write complete content for every section
+    - Verify page count ≥ 300 before proceeding to Step 4B
+  - **STEP 4B — 5-Design 3D Cover Suite:** AI `generate_image` only (Rules 5 + 7). Never PowerShell.
+  - **STEP 4C — 6 A+ Content Images:** AI `generate_image` only (Rule 6). Never PowerShell.
+  - **STEP 4D — GitHub Sync:** Commit and push all files to `narayana-kdp-vault` main branch.
 
 **Quick Prompt to trigger:** `Start Step 1 to 4 for [keyword]` — runs all steps automatically without interruption.
