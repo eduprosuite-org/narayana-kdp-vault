@@ -26,7 +26,7 @@
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning,trees}
 \usepackage{float}
 \usepackage{caption}
-\usepackage{microtype}
+% \usepackage{microtype} % (Disabled to prevent Overleaf 60s timeout)
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
@@ -66,7 +66,7 @@
 
 % Custom TColorBoxes (Strict width=\linewidth, breakable, zero overflow)
 \newtcolorbox{lessonbox}[1][]{
-  enhanced,
+  standard jigsaw,
   width=\linewidth,
   breakable,
   colback=NavyBlue!5!white,
@@ -80,7 +80,7 @@
 }
 
 \newtcolorbox{workbookbox}[1][]{
-  enhanced,
+  standard jigsaw,
   width=\linewidth,
   breakable,
   colback=ForestGreen!5!white,
@@ -94,7 +94,7 @@
 }
 
 \newtcolorbox{calculatorbox}[1][]{
-  enhanced,
+  standard jigsaw,
   width=\linewidth,
   breakable,
   colback=Orange!5!white,
@@ -108,7 +108,7 @@
 }
 
 \newtcolorbox{trapbox}[1][]{
-  enhanced,
+  standard jigsaw,
   width=\linewidth,
   breakable,
   colback=Red!5!white,
@@ -122,7 +122,7 @@
 }
 
 \newtcolorbox{frqrubricbox}[1][]{
-  enhanced,
+  standard jigsaw,
   width=\linewidth,
   breakable,
   colback=Purple!5!white,
