@@ -1,0 +1,558 @@
+\documentclass[11pt,oneside,openany]{book}
+
+% =========================================================================
+% STRICT KDP 6" x 9" NO-BLEED INTERIOR GEOMETRY
+% Page Width: 6.0 in | Page Height: 9.0 in
+% Inner (Gutter): 0.75 in | Outer: 0.50 in | Top/Bottom: 0.50 in
+% Printable Text Width: 4.75 in (343.3 pt) -> ALL elements strictly <= \linewidth
+% =========================================================================
+\usepackage[
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.75in,
+  outer=0.5in,
+  top=0.5in,
+  bottom=0.5in,
+  headheight=14pt,
+  headsep=12pt,
+  footskip=20pt
+]{geometry}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,multirow,tabularx}
+\usepackage{enumitem}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,trees}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{qrcode}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+
+\newcommand{\BookTitle}{AP Statistics Prep Book 2027}
+\newcommand{\BookSubtitle}{The Complete Study Guide \& Textbook for High School Students Featuring Practice Workbooks and Exam Strategies}
+\newcommand{\BookSeries}{AP Statistics Master Review Series --- Book 2}
+\newcommand{\BookAuthor}{PR}
+\newcommand{\Edition}{2027 Exam Ready Edition}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape \BookTitle}
+\fancyhead[RO]{\small\itshape \leftmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{6pt}{\LARGE\bfseries}
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{MidnightBlue}}{\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{DarkSlateGray}}{\thesubsection}{0.8em}{}
+
+% Custom TColorBoxes (Strict width=\linewidth, breakable, zero overflow)
+\newtcolorbox{lessonbox}[1][]{
+  enhanced,
+  width=\linewidth,
+  breakable,
+  colback=NavyBlue!5!white,
+  colframe=NavyBlue!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{workbookbox}[1][]{
+  enhanced,
+  width=\linewidth,
+  breakable,
+  colback=ForestGreen!5!white,
+  colframe=ForestGreen!85!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{calculatorbox}[1][]{
+  enhanced,
+  width=\linewidth,
+  breakable,
+  colback=Orange!5!white,
+  colframe=DarkOrange!90!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{trapbox}[1][]{
+  enhanced,
+  width=\linewidth,
+  breakable,
+  colback=Red!5!white,
+  colframe=Red!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{frqrubricbox}[1][]{
+  enhanced,
+  width=\linewidth,
+  breakable,
+  colback=Purple!5!white,
+  colframe=Purple!85!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\begin{document}
+\frontmatter
+
+% -------------------------------------------------------------------------
+% HALF-TITLE & TITLE PAGE
+% -------------------------------------------------------------------------
+\thispagestyle{empty}
+\begin{center}
+  \vspace*{2cm}
+  {\Huge\bfseries\color{MidnightBlue} \BookTitle}\\[12pt]
+  {\Large\color{DarkSlateGray} \BookSubtitle}\\[24pt]
+  {\large\bfseries \BookSeries}\\[36pt]
+  {\Large \BookAuthor}\\[24pt]
+  {\normalsize \Edition}
+\end{center}
+\clearpage
+
+% -------------------------------------------------------------------------
+% COPYRIGHT & LEGAL DISCLAIMER (100% NOMINATIVE FAIR USE COMPLIANT)
+% -------------------------------------------------------------------------
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  \begin{minipage}{0.9\linewidth}
+    \small
+    \textbf{\BookTitle: \BookSubtitle}\\
+    \BookSeries\\[6pt]
+    Copyright \copyright\ 2026--2027 by \BookAuthor. All rights reserved.\\[10pt]
+    No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.\\[10pt]
+    \textbf{Trademark Notice:}\\
+    $\text{AP}^\circledR$ and $\text{Advanced Placement}^\circledR$ are registered trademarks of the College Board, which was not involved in the production of, and does not endorse, this product. All references to $\text{AP}^\circledR$ within this text are made strictly under nominative fair use for descriptive, educational, and exam-preparation purposes.\\[10pt]
+    Published independently for Kindle Direct Publishing (KDP).\\
+    Paperback ISBN: \texttt{[Assigned by KDP]}\\
+    Hardcover ISBN: \texttt{[Assigned by KDP]}\\
+    Manufactured in the United States of America.
+  \end{minipage}
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+% -------------------------------------------------------------------------
+% TABLE OF CONTENTS
+% -------------------------------------------------------------------------
+\tableofcontents
+\clearpage
+
+% -------------------------------------------------------------------------
+% HOW TO USE THIS TEXTBOOK & COMPANION APP PORTAL
+% -------------------------------------------------------------------------
+\chapter*{How to Use This Textbook}
+\addcontentsline{toc}{chapter}{How to Use This Textbook}
+
+Welcome to the \textbf{AP Statistics Prep Book 2027}. This complete textbook and study system is engineered to guide high school students from foundational principles to complete Score-5 exam mastery.
+
+\section*{The 4-Pillar Pedagogical System}
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Core Concept Lessons:} Every unit breaks down the official College Board Course and Exam Description (CED) topics into intuitive, digestible modules with zero confusing academic fluff.
+  \item \textbf{Guided Practice Workbooks:} Each chapter includes hands-on drill sets ranging from foundational calculations to challenging multi-step Free-Response Questions (FRQs).
+  \item \textbf{TI-84 Plus CE Playbooks:} Step-by-step keystrokes and display menus showing exactly how to execute probability calculations, regression models, and hypothesis tests.
+  \item \textbf{Score-4 Rubric Templates:} Grader-approved fill-in-the-blank sentence frames designed to guarantee maximum credit on the 6 exam FRQs.
+\end{enumerate}
+
+\begin{center}
+\begin{tcolorbox}[width=0.95\linewidth,colback=NavyBlue!5!white,colframe=NavyBlue,title=\textbf{FREE DIGITAL WEB COMPANION PORTAL}]
+\begin{minipage}{0.65\linewidth}
+  \textbf{Scan to Access Online Practice Tools:}\\
+  $\bullet$ Unit-by-Unit Diagnostic Quizzes\\
+  $\bullet$ Interactive TI-84 Keystroke Simulator\\
+  $\bullet$ Searchable Formula Cheat Sheets\\
+  $\bullet$ Printable FRQ Practice Worksheets\\[4pt]
+  \textit{Direct URL:} \texttt{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}
+\end{minipage}
+\hfill
+\begin{minipage}{0.30\linewidth}
+  \centering
+  \qrcode[height=2.2cm]{https://eduprosuite-org.github.io/ap-stats-score5-blueprint/}
+\end{minipage}
+\end{tcolorbox}
+\end{center}
+
+\mainmatter
+
+% =========================================================================
+% UNIT 1: EXPLORING ONE-VARIABLE DATA
+% =========================================================================
+\chapter{Unit 1: Exploring One-Variable Data}
+
+\section{Categorical vs. Quantitative Data}
+\begin{lessonbox}[Lesson 1.1: Variable Classification]
+Statistical variables represent characteristics of individuals:
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Categorical (Qualitative):} Places individuals into categories or groups (e.g., Eye Color, Grade Level, Zip Code, AP Score Category). Visualized with \textit{Bar Charts, Segmented Bar Charts, Mosaic Plots, and Pie Charts}.
+  \item \textbf{Quantitative (Numerical):} Takes numerical values for which arithmetic operations make sense (e.g., Height in cm, Exam Score out of 100, Reaction Time). Visualized with \textit{Dotplots, Stemplots, Histograms, Boxplots, and Cumulative Relative Frequency Plots}.
+\end{itemize}
+\end{lessonbox}
+
+\section{Describing Distributions: The C-U-S-S Framework}
+When asked to describe or compare distributions on the AP Exam, you MUST address all four components in context:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Center:} Median (for skewed data or data with outliers) or Mean (for symmetric, non-outlier data).
+  \item \textbf{Unusual Features:} Outliers, gaps, or multiple clusters.
+  \item \textbf{Spread:} IQR and Range (for skewed data) or Standard Deviation and Variance (for symmetric data).
+  \item \textbf{Shape:} Skewed Left (tail to the left, $\text{Mean} < \text{Median}$), Skewed Right (tail to the right, $\text{Mean} > \text{Median}$), Symmetric / Bell-shaped ($\text{Mean} \approx \text{Median}$), or Uniform.
+\end{enumerate}
+
+\begin{trapbox}[Exam Trap Alert: Comparing Distributions]
+When comparing two or more distributions on FRQs, you \textbf{must use explicit comparative language} (e.g., \textit{"Distribution A has a greater median than Distribution B"}, \textit{"The spread of Group 1 is less variable than Group 2"}). Listing numbers separately without comparative words receives an \textbf{Incomplete (I)} score.
+\end{trapbox}
+
+\section{Outlier Calculation: The 1.5 $\times$ IQR Rule}
+\begin{equation}
+  \text{IQR} = Q_3 - Q_1
+\end{equation}
+\begin{equation}
+  \text{Lower Fence} = Q_1 - 1.5(\text{IQR}), \qquad \text{Upper Fence} = Q_3 + 1.5(\text{IQR})
+\end{equation}
+Any data point $x < \text{Lower Fence}$ or $x > \text{Upper Fence}$ is flagged as an outlier.
+
+\section{TI-84 Plus CE Calculator Playbook: 1-Var Stats}
+\begin{calculatorbox}[TI-84 Playbook: Summary Statistics \& Boxplots]
+\textbf{To calculate 1-Variable Summary Statistics:}
+\begin{enumerate}[leftmargin=1.2em]
+  \item Press \texttt{[STAT]} $\rightarrow$ \texttt{1:Edit...} $\rightarrow$ Enter dataset into \texttt{L1}.
+  \item Press \texttt{[STAT]} $\rightarrow$ Arrow right to \texttt{CALC} $\rightarrow$ Select \texttt{1:1-Var Stats}.
+  \item Set \texttt{List: L1}, leave \texttt{FreqList} blank $\rightarrow$ Press \texttt{Calculate}.
+  \item Outputs: $\bar{x}$ (sample mean), $s_x$ (sample SD), $n$ (size), $\min X$, $Q_1$, $\text{Med}$, $Q_3$, $\max X$.
+\end{enumerate}
+\textbf{To generate a Modified Boxplot with Outliers:}
+\begin{enumerate}[leftmargin=1.2em]
+  \item Press \texttt{[2nd] [Y=]} (\texttt{STAT PLOT}) $\rightarrow$ Select \texttt{Plot1} $\rightarrow$ Turn \texttt{ON}.
+  \item Under \texttt{Type:}, select the first icon (Boxplot with isolated outlier dots).
+  \item Press \texttt{[ZOOM]} $\rightarrow$ Select \texttt{9:ZoomStat}.
+\end{enumerate}
+\end{calculatorbox}
+
+\section{Unit 1 Guided Practice Workbook}
+\begin{workbookbox}[Practice Drill 1.1: 5-Number Summary \& Outlier Analysis]
+\textbf{Problem:} A random sample of 12 AP Statistics students reported the following hours spent studying for the midterm exam:
+\[ 4, \; 6, \; 7, \; 8, \; 9, \; 10, \; 11, \; 12, \; 14, \; 15, \; 18, \; 32 \]
+(a) Determine the 5-number summary ($Min, Q_1, Median, Q_3, Max$).\\
+(b) Calculate the Interquartile Range (IQR).\\
+(c) Test for outliers using the $1.5 \times \text{IQR}$ rule and state any outliers in context.
+
+\textbf{Step-by-Step Grader-Approved Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $n = 12$. Ordered array:
+  $\text{Min} = 4$. Median = average of 6th and 7th values = $(10 + 11)/2 = 10.5$.
+  Lower half ($4, 6, 7, 8, 9, 10$): $Q_1 = (7 + 8)/2 = 7.5$.
+  Upper half ($11, 12, 14, 15, 18, 32$): $Q_3 = (14 + 15)/2 = 14.5$.
+  $\text{Max} = 32$.
+  5-Number Summary: $\{4, \; 7.5, \; 10.5, \; 14.5, \; 32\}$.
+  \item \textbf{Part (b):} $\text{IQR} = Q_3 - Q_1 = 14.5 - 7.5 = 7.0\text{ hours}$.
+  \item \textbf{Part (c):}
+  $\text{Lower Fence} = 7.5 - 1.5(7.0) = 7.5 - 10.5 = -3.0$.\\
+  $\text{Upper Fence} = 14.5 + 1.5(7.0) = 14.5 + 10.5 = 25.0$.\\
+  Since $32 > 25.0$, the value 32 hours is an outlier. All other values fall within $[-3.0, 25.0]$.
+\end{itemize}
+\end{workbookbox}
+
+% =========================================================================
+% UNIT 2: EXPLORING TWO-VARIABLE DATA
+% =========================================================================
+\chapter{Unit 2: Exploring Two-Variable Data}
+
+\section{Scatterplots and Correlation ($r$)}
+When describing scatterplots, state \textbf{D-O-F-S}: Direction (positive/negative), Outliers/influential points, Form (linear/non-linear), and Strength (strong/moderate/weak).
+
+\begin{equation}
+  r = \frac{1}{n-1}\sum_{i=1}^n \left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right), \qquad -1 \le r \le 1
+\end{equation}
+
+\section{Least-Squares Regression Line (LSRL)}
+\begin{equation}
+  \hat{y} = a + bx, \qquad b = r\left(\frac{s_y}{s_x}\right), \qquad a = \bar{y} - b\bar{x}
+\end{equation}
+
+\begin{frqrubricbox}[Score-4 FRQ Template: LSRL Slope \& Intercept Interpretation]
+\textbf{Slope ($b$):} \textit{"For each additional 1 [unit of $x$] increase in [explanatory variable], the predicted [response variable] increases/decreases by approximately $|b|$ [units of $y$]."}
+
+\textbf{$y$-Intercept ($a$):} \textit{"When the [explanatory variable] is 0 [units of $x$], the predicted [response variable] is $a$ [units of $y$]."}
+
+\textbf{Coefficient of Determination ($r^2$):} \textit{"Approximately [r$^2 \times 100\%$] of the variability in [response variable] is accounted for by the linear relationship with [explanatory variable]."}
+\end{frqrubricbox}
+
+\section{Residuals and Residual Plots}
+\begin{equation}
+  \text{Residual} = y - \hat{y} = \text{Actual } y - \text{Predicted } y
+\end{equation}
+A linear model is appropriate if and only if the residual plot shows a \textbf{random scatter of points around zero with no discernable curved or fan-shaped pattern}.
+
+% =========================================================================
+% UNIT 3: COLLECTING DATA
+% =========================================================================
+\chapter{Unit 3: Collecting Data}
+
+\section{Sampling Methods vs. Experimental Design}
+\begin{lessonbox}[Lesson 3.1: Sampling vs. Experiments]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Observational Study:} Observes individuals and measures variables of interest without attempting to influence responses. Cannot establish cause-and-effect!
+  \item \textbf{Experiment:} Deliberately imposes treatments on experimental units to observe responses. Well-designed randomized experiments are the \textbf{ONLY} way to establish causation.
+\end{itemize}
+\end{lessonbox}
+
+\section{Sampling Techniques}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Simple Random Sample (SRS):} Every group of size $n$ has an equal chance of being selected.
+  \item \textbf{Stratified Random Sample:} Divide population into homogeneous strata (e.g., grade level) and take an SRS from every stratum.
+  \item \textbf{Cluster Sample:} Divide population into heterogeneous mini-populations (clusters), select an SRS of whole clusters, and survey all members.
+  \item \textbf{Systematic Sample:} Select every $k^{\text{th}}$ individual from a randomized starting point.
+\end{itemize}
+
+\section{Principles of Experimental Design}
+The 4 pillars of experimental design:
+\textbf{Comparison} (use 2+ treatments to prevent confounding), \textbf{Random Assignment} (balances lurking variables), \textbf{Replication} (sufficient sample size), and \textbf{Control} (holding external conditions constant).
+
+% =========================================================================
+% UNIT 4: PROBABILITY, RANDOM VARIABLES, AND DISTRIBUTIONS
+% =========================================================================
+\chapter{Unit 4: Probability \& Random Variables}
+
+\section{Fundamental Probability Rules}
+\begin{equation}
+  P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\end{equation}
+\begin{equation}
+  P(A|B) = \frac{P(A \cap B)}{P(B)} \iff P(A \cap B) = P(B) \cdot P(A|B)
+\end{equation}
+Two events $A$ and $B$ are \textbf{Independent} if and only if:
+\begin{equation}
+  P(A|B) = P(A) \iff P(A \cap B) = P(A) \cdot P(B)
+\end{equation}
+
+\section{Discrete Random Variables}
+\begin{equation}
+  \mu_X = E(X) = \sum x_i P(x_i), \qquad \sigma_X^2 = \text{Var}(X) = \sum (x_i - \mu_X)^2 P(x_i)
+\end{equation}
+\textbf{Linear Combinations of Independent Random Variables:}
+\begin{equation}
+  \mu_{aX + bY} = a\mu_X + b\mu_Y, \qquad \sigma_{aX \pm bY}^2 = a^2\sigma_X^2 + b^2\sigma_Y^2 \implies \sigma = \sqrt{a^2\sigma_X^2 + b^2\sigma_Y^2}
+\end{equation}
+\textit{Note: Standard deviations never add directly; variances always add regardless of sign!}
+
+\section{Binomial and Geometric Distributions}
+\begin{lessonbox}[Binomial Distribution: B-I-N-S Checklist]
+\textbf{B}inary outcomes (Success/Failure), \textbf{I}ndependent trials, \textbf{N}umber of trials fixed ($n$), \textbf{S}ame probability of success ($p$).
+\begin{equation}
+  P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad \mu_X = np, \qquad \sigma_X = \sqrt{np(1-p)}
+\end{equation}
+\end{lessonbox}
+
+% =========================================================================
+% UNIT 5: SAMPLING DISTRIBUTIONS
+% =========================================================================
+\chapter{Unit 5: Sampling Distributions}
+
+\section{Sampling Distribution of Sample Proportion ($\hat{p}$)}
+\begin{equation}
+  \mu_{\hat{p}} = p, \qquad \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}
+\end{equation}
+\textbf{Conditions:}
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Random Sample:} Explicitly stated random sample or randomized experiment.
+  \item \textbf{10\% Condition:} $n \le 0.10N$ (ensures independence when sampling without replacement).
+  \item \textbf{Large Counts (Normality):} $np \ge 10$ and $n(1-p) \ge 10$.
+\end{enumerate}
+
+\section{Sampling Distribution of Sample Mean ($\bar{x}$)}
+\begin{equation}
+  \mu_{\bar{x}} = \mu, \qquad \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}
+\end{equation}
+\textbf{Central Limit Theorem (CLT):} As sample size $n$ increases ($n \ge 30$), the sampling distribution of the sample mean $\bar{x}$ becomes approximately Normal, regardless of the underlying population shape.
+
+% =========================================================================
+% UNIT 6: INFERENCE FOR CATEGORICAL DATA (PROPORTIONS)
+% =========================================================================
+\chapter{Unit 6: Inference for Proportions}
+
+\section{The P-A-N-I-C Confidence Interval Workflow}
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{P}arameter: Define true population proportion $p$ in context.
+  \item \textbf{A}ssumptions: Check Random Sample, 10\% Condition, and Large Counts ($n\hat{p} \ge 10, n(1-\hat{p}) \ge 10$).
+  \item \textbf{N}ame the Test: 1-Proportion $z$-Interval.
+  \item \textbf{I}nterval: $\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$.
+  \item \textbf{C}onclusion: Standard interpretation frame.
+\end{enumerate}
+
+\section{The P-H-A-N-T-O-M Significance Test Workflow}
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{P}arameter: Define $p$ in context.
+  \item \textbf{H}ypotheses: $H_0: p = p_0$ vs $H_a: p \ne p_0$ (or $<, >$).
+  \item \textbf{A}ssumptions: Random, 10\% Condition, Large Counts using $p_0$ ($np_0 \ge 10, n(1-p_0) \ge 10$).
+  \item \textbf{N}ame the Test: 1-Proportion $z$-Test.
+  \item \textbf{T}est Statistic: $z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$.
+  \item \textbf{O}btain $p$-value: Normal tail probability.
+  \item \textbf{M}ake Decision: Compare $p$-value to significance level $\alpha = 0.05$.
+\end{enumerate}
+
+\begin{frqrubricbox}[Score-4 FRQ Template: $p$-Value Conclusion]
+\textit{"Because the p-value ($p = \text{[val]}$) is less than/greater than $\alpha = 0.05$, we reject/fail to reject the null hypothesis $H_0$. There is convincing/insufficient statistical evidence that [state $H_a$ in context]."}
+\end{frqrubricbox}
+
+% =========================================================================
+% UNIT 7: INFERENCE FOR QUANTITATIVE DATA (MEANS)
+% =========================================================================
+\chapter{Unit 7: Inference for Means}
+
+\section{The $t$-Distribution and Degrees of Freedom}
+When population standard deviation $\sigma$ is unknown (almost always), we substitute the sample standard deviation $s_x$ and use the $t$-distribution with $df = n - 1$.
+
+\begin{equation}
+  \text{1-Sample } t\text{-Interval:} \quad \bar{x} \pm t^* \left(\frac{s_x}{\sqrt{n}}\right)
+\end{equation}
+\begin{equation}
+  \text{1-Sample } t\text{-Test:} \quad t = \frac{\bar{x} - \mu_0}{s_x / \sqrt{n}}, \qquad df = n - 1
+\end{equation}
+
+\section{Paired $t$-Test vs. 2-Sample $t$-Test}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Paired $t$-Test (Matched Pairs):} Two dependent observations per unit (e.g., Pre-test vs Post-test). Calculate differences $d = x_1 - x_2$ and perform a 1-sample $t$-test on $\mu_d$.
+  \item \textbf{2-Sample $t$-Test (Independent Groups):} Two distinct samples from separate populations.
+\end{itemize}
+
+% =========================================================================
+% UNIT 8: INFERENCE FOR CATEGORICAL DATA (CHI-SQUARE)
+% =========================================================================
+\chapter{Unit 8: Inference for Chi-Square}
+
+\section{The Three Chi-Square Tests}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llll}
+\toprule
+\textbf{Chi-Square Test} & \textbf{Data Structure} & \textbf{Hypothesis $H_0$} & \textbf{Degrees of Freedom} \\
+\midrule
+\textbf{Goodness-of-Fit} & 1 Categorical Var, 1 Sample & Fits hypothesized distribution & $df = k - 1$ \\
+\textbf{Homogeneity} & 1 Categorical Var, 2+ Samples & Proportions are identical across pops & $df = (r-1)(c-1)$ \\
+\textbf{Independence} & 2 Categorical Vars, 1 Sample & Variables are independent/no association & $df = (r-1)(c-1)$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\begin{equation}
+  \chi^2 = \sum \frac{(O - E)^2}{E}, \qquad E = \frac{\text{Row Total} \times \text{Column Total}}{\text{Table Total}}
+\end{equation}
+\textbf{Condition:} All expected cell counts must be $E \ge 5$ (never check observed counts!).
+
+% =========================================================================
+% UNIT 9: INFERENCE FOR QUANTITATIVE DATA (SLOPES)
+% =========================================================================
+\chapter{Unit 9: Inference for Slopes}
+
+\section{Linear Regression Model \& $t$-Test for Slope}
+\begin{equation}
+  \text{Sample LSRL:} \; \hat{y} = b_0 + b_1 x, \qquad \text{Population Model:} \; \mu_y = \alpha + \beta x
+\end{equation}
+\begin{equation}
+  t = \frac{b_1 - 0}{\text{SE}(b_1)}, \qquad df = n - 2
+\end{equation}
+\begin{equation}
+  \text{Confidence Interval for Slope } \beta: \quad b_1 \pm t^* \text{SE}(b_1)
+\end{equation}
+
+\section{L-I-N-E-R Regression Conditions}
+\textbf{L}inear relationship, \textbf{I}ndependent observations, \textbf{N}ormally distributed residuals, \textbf{E}qual standard deviation of residuals ($s$), \textbf{R}andom sampling.
+
+% =========================================================================
+% PART II: EXAM STRATEGIES & FULL-LENGTH PRACTICE EXAMS
+% =========================================================================
+\chapter{Chapter 10: Top 25 Student Exam Traps}
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Trap 1:} Saying \textit{"We accept the null hypothesis"}. (Always write \textit{"We fail to reject the null hypothesis"}).
+  \item \textbf{Trap 2:} Saying \textit{"There is a 95\% chance the true mean is in (12.4, 18.2)"}. (The parameter is fixed; 95\% of constructed intervals contain the parameter).
+  \item \textbf{Trap 3:} Concluding cause-and-effect from an observational study.
+  \item \textbf{Trap 4:} Forgetting context in FRQ interpretations (e.g., omitting units of measurement).
+  \item \textbf{Trap 5:} Calculating expected Chi-Square counts on observed values rather than theoretical distributions.
+\end{enumerate}
+
+\chapter{Chapter 11: 2027 Full-Length Practice Exam 1}
+\section*{Section I: Multiple-Choice Questions (40 Questions, 90 Minutes)}
+\textbf{Question 1:} A researcher studies the relationship between study hours ($x$) and exam score ($y$). The regression line is $\hat{y} = 45 + 4.2x$, with $r = 0.82$. What is the predicted exam score for a student who studies 8 hours?
+\begin{enumerate}[label=(\Alph*)]
+  \item 45.0
+  \item 78.6
+  \item 82.0
+  \item 74.4
+  \item 85.2
+\end{enumerate}
+\textbf{Answer:} (B). $\hat{y} = 45 + 4.2(8) = 45 + 33.6 = 78.6$.
+
+\section*{Section II: Free-Response Questions (6 Questions, 90 Minutes)}
+\textbf{FRQ 1 (Inference Investigation):} A university health center claims that 65\% of college freshmen get fewer than 7 hours of sleep. A random sample of 200 freshmen reveals 144 sleep fewer than 7 hours.
+(a) State the hypotheses.\\
+(b) Check conditions for a 1-proportion $z$-test.\\
+(c) Calculate the test statistic and $p$-value.\\
+(d) State your conclusion in context at $\alpha = 0.05$.
+
+\textbf{Rubric Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item (a) $H_0: p = 0.65$ vs $H_a: p > 0.65$, where $p$ is the true proportion of freshmen getting $<7$ hours sleep.
+  \item (b) Random: Sample is stated random. 10\%: $200 \le 0.10(\text{Freshmen})$. Large Counts: $200(0.65) = 130 \ge 10$, $200(0.35) = 70 \ge 10$.
+  \item (c) $\hat{p} = 144/200 = 0.72$. $z = \frac{0.72 - 0.65}{\sqrt{\frac{0.65(0.35)}{200}}} = \frac{0.07}{0.03373} \approx 2.08$. $p$-value = $P(Z \ge 2.08) = 0.0188$.
+  \item (d) Since $p = 0.0188 < 0.05$, reject $H_0$. There is convincing statistical evidence that more than 65\% of freshmen get fewer than 7 hours of sleep.
+\end{itemize}
+
+\backmatter
+\chapter*{Official AP Formula Sheet Quick Reference}
+\addcontentsline{toc}{chapter}{Official AP Formula Sheet Quick Reference}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lll}
+\toprule
+\textbf{Topic} & \textbf{Official Formula} & \textbf{Calculator Shortcut} \\
+\midrule
+Standardized Test Stat & $\text{Statistic} - \text{Parameter} / \text{Standard Error}$ & \texttt{STAT $\rightarrow$ TESTS} \\
+Confidence Interval & $\text{Statistic} \pm (\text{Critical Value})(\text{Standard Error})$ & \texttt{1-PropZInt / TInterval} \\
+Mean of $\hat{p}_1 - \hat{p}_2$ & $\mu_{\hat{p}_1 - \hat{p}_2} = p_1 - p_2$ & \texttt{2-PropZTest} \\
+Variance of $\bar{x}_1 - \bar{x}_2$ & $\sigma^2_{\bar{x}_1 - \bar{x}_2} = \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}$ & \texttt{2-SampTTest} \\
+Chi-Square Statistic & $\chi^2 = \sum \frac{(O-E)^2}{E}$ & \texttt{$\chi^2$-Test} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\end{document}

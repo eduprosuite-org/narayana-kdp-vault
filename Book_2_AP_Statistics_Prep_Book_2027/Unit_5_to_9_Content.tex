@@ -1,0 +1,577 @@
+﻿% === UNIT 5 ===
+\chapter{Unit 5: Sampling Distributions}
+
+\section{SECTION A - Unit Overview}
+\textbf{AP Exam Weight:} 7-12\%
+
+\textbf{What You Will Learn:} In this unit, you will learn the foundation of statistical inference. You will discover how statistics vary from sample to sample, a concept called sampling variability. You will learn how to describe the sampling distribution of a sample proportion and a sample mean, including checking the necessary conditions (Random, 10\%, Large Counts/Normal) to apply normal models, and understanding the Central Limit Theorem.
+
+\textbf{Vocabulary List:}
+\begin{itemize}
+    \item \textbf{Parameter:} A number that describes some characteristic of the population.
+    \item \textbf{Statistic:} A number that describes some characteristic of a sample.
+    \item \textbf{Sampling Distribution:} The distribution of values taken by the statistic in all possible samples of the same size from the same population.
+    \item \textbf{Sampling Variability:} The value of a statistic varies in repeated random sampling.
+    \item \textbf{Unbiased Estimator:} A statistic used to estimate a parameter is an unbiased estimator if the mean of its sampling distribution is equal to the value of the parameter being estimated.
+    \item \textbf{Central Limit Theorem (CLT):} As sample size $n$ increases, the sampling distribution of the sample mean $\bar{x}$ approaches a normal distribution, regardless of the population's shape.
+    \item \textbf{Sample Proportion ($\hat{p}$):} The statistic that estimates the population proportion $p$.
+    \item \textbf{Sample Mean ($\bar{x}$):} The statistic that estimates the population mean $\mu$.
+    \item \textbf{10\% Condition:} For sampling without replacement, the sample size must be less than 10\% of the population size ($n \leq 0.10N$) to assume independence.
+    \item \textbf{Large Counts Condition:} For proportions, $np \geq 10$ and $n(1-p) \geq 10$.
+\end{itemize}
+
+\section{SECTION B - Core Concept Lessons}
+
+\begin{lessonbox}[Parameter vs Statistic]
+\textbf{Definition:} A parameter is a true, fixed value describing a population (like $\mu$ or $p$). A statistic is a calculated value from a sample (like $\bar{x}$ or $\hat{p}$) used to estimate the parameter.
+\textbf{Formula:} None directly, but remember: $p \rightarrow \hat{p}$, $\mu \rightarrow \bar{x}$, $\sigma \rightarrow s$.
+\textbf{Explanation:} Think of a parameter as the ultimate truth that we usually cannot know because populations are too large. A statistic is our best guess based on the sample we collected. 
+\textbf{Real-World Context:} A pollster wants to know the true proportion of all US voters who support a candidate (parameter $p$). They survey 1,000 voters and find 52\% support the candidate (statistic $\hat{p} = 0.52$).
+\end{lessonbox}
+
+\begin{lessonbox}[Sampling Distribution of a Sample Proportion]
+\textbf{Definition:} The distribution of all possible $\hat{p}$ values from all possible samples of size $n$.
+\textbf{Formula:} Mean: $\mu_{\hat{p}} = p$. Standard Deviation: $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$.
+\textbf{Explanation:} As long as the 10\% condition is met, the standard deviation formula holds. As long as the Large Counts condition ($np \geq 10$ and $n(1-p) \geq 10$) is met, the distribution is approximately normal.
+\textbf{Real-World Context:} If 30\% of all students wear glasses ($p=0.30$), and we take random samples of 100 students, the sample proportions $\hat{p}$ will center at 0.30 with a standard deviation of $\sqrt{0.30(0.70)/100} \approx 0.0458$.
+\end{lessonbox}
+
+\begin{lessonbox}[Sampling Distribution of a Sample Mean]
+\textbf{Definition:} The distribution of all possible $\bar{x}$ values from all possible samples of size $n$.
+\textbf{Formula:} Mean: $\mu_{\bar{x}} = \mu$. Standard Deviation: $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$.
+\textbf{Explanation:} The mean of sample means is the population mean. The standard deviation decreases as the sample size increases. 
+\textbf{Real-World Context:} The true mean weight of all apples in an orchard is 150g with a standard deviation of 20g. If we pick samples of 25 apples, the sample means will center at 150g with a standard deviation of $20/\sqrt{25} = 4g$.
+\end{lessonbox}
+
+\begin{lessonbox}[The Central Limit Theorem (CLT)]
+\textbf{Definition:} When $n$ is sufficiently large ($n \geq 30$), the sampling distribution of $\bar{x}$ will be approximately normal, even if the population distribution is heavily skewed or non-normal.
+\textbf{Formula:} None specifically, but justifies using $z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}}$.
+\textbf{Explanation:} The magic of statistics! No matter what crazy shape a population has, taking a large enough sample guarantees the sample means will form a normal bell curve.
+\textbf{Real-World Context:} Income distributions are heavily right-skewed. But if we take random samples of 50 people, the distribution of their average incomes ($\bar{x}$) will look normal, allowing us to use normal probability calculations.
+\end{lessonbox}
+
+\section{SECTION C - Worked Examples}
+
+\textbf{Example 1: Parameter or Statistic?}
+A survey of 500 randomly selected high school students finds that 65\% of them play a sport. The school district claims that 60\% of all students play a sport. Identify the parameter and the statistic.
+\textbf{Solution:} 
+- Parameter: The true proportion of all students in the district who play a sport ($p = 0.60$).
+- Statistic: The proportion of students in the sample who play a sport ($\hat{p} = 0.65$).
+
+\textbf{Example 2: Probabilities for Proportions}
+In a large factory, 8\% of the parts produced are defective. A quality control inspector takes a random sample of 200 parts. What is the probability that more than 10\% of the parts in the sample are defective?
+\textbf{Solution:}
+- State parameters: $p = 0.08$, $n = 200$.
+- Check conditions: 
+  - Random: Stated random sample.
+  - 10\%: $200 \leq 0.10N$ (assume factory makes $>2000$ parts).
+  - Large Counts: $np = 200(0.08) = 16 \geq 10$, $n(1-p) = 200(0.92) = 184 \geq 10$. The distribution is approximately Normal.
+- Calculate Mean and SD: $\mu_{\hat{p}} = 0.08$. $\sigma_{\hat{p}} = \sqrt{0.08(0.92)/200} \approx 0.0192$.
+- Find Probability: $P(\hat{p} > 0.10)$. $z = \frac{0.10 - 0.08}{0.0192} \approx 1.04$.
+- Using standard normal table or calculator: $P(Z > 1.04) = 0.1492$.
+There is a 14.92\% chance of finding more than 10\% defective parts.
+
+\textbf{Example 3: Checking Conditions for Means}
+A biologist is studying the lengths of a species of fish. The population distribution is strongly left-skewed with a mean of 12 inches and a standard deviation of 2 inches. She plans to take a random sample of 40 fish. Can she use a normal model to describe the sampling distribution of the sample mean?
+\textbf{Solution:}
+Yes. Although the population is left-skewed, the sample size is $n=40$. Because $40 \geq 30$, the Central Limit Theorem applies, and the sampling distribution of $\bar{x}$ will be approximately Normal.
+
+\textbf{Example 4: Probabilities for Means}
+The time it takes to complete a specific task is normally distributed with a mean of 45 minutes and a standard deviation of 6 minutes. A random sample of 9 tasks is selected. What is the probability that the average completion time is less than 42 minutes?
+\textbf{Solution:}
+- Population is Normal, so sampling distribution is Normal regardless of $n$.
+- $\mu_{\bar{x}} = 45$.
+- $\sigma_{\bar{x}} = 6/\sqrt{9} = 6/3 = 2$.
+- Find $P(\bar{x} < 42)$. $z = \frac{42 - 45}{2} = -1.5$.
+- Using normal table: $P(Z < -1.5) = 0.0668$.
+There is a 6.68\% probability.
+
+\section{SECTION D - TI-84 CE Keystroke Playbook}
+
+\begin{calculatorbox}[Finding Normal Probabilities for Sampling Distributions]
+1. Press \textbf{2nd} + \textbf{VARS} (DISTR).
+2. Select \textbf{2: normalcdf(}.
+3. Enter lower bound, upper bound, mean ($\mu$), and standard deviation ($\sigma$).
+   - For proportions: $\mu = p$, $\sigma = \sqrt{p(1-p)/n}$.
+   - For means: $\mu$, $\sigma = \text{pop }\sigma/\sqrt{n}$.
+4. Select \textbf{Paste} and press \textbf{ENTER}.
+\end{calculatorbox}
+
+\begin{calculatorbox}[Finding Inverse Normal for Sampling Distributions]
+1. Press \textbf{2nd} + \textbf{VARS} (DISTR).
+2. Select \textbf{3: invNorm(}.
+3. Enter Area (to the left), $\mu$, and $\sigma$.
+4. Select \textbf{Paste} and press \textbf{ENTER}. This finds the specific $\hat{p}$ or $\bar{x}$ boundary value.
+\end{calculatorbox}
+
+\begin{calculatorbox}[Simulating a Binomial Sample to see Proportions]
+1. Press \textbf{MATH} $\rightarrow$ \textbf{PROB}.
+2. Select \textbf{7: randBin(}.
+3. Enter $n$ (trials), $p$ (probability), and number of simulations.
+4. Divide the result by $n$ to convert counts to sample proportions.
+\end{calculatorbox}
+
+\section{SECTION E - Score-4 FRQ Templates}
+
+\begin{frqrubricbox}[FRQ Template: Probabilities of Sample Proportions]
+\textbf{Prompt:} Describe the sampling distribution of $\hat{p}$ and calculate a probability.
+\textbf{Score 4 Framework:}
+1. \textbf{Shape:} State "Approximately Normal" and PROVE IT by showing $np \geq 10$ and $n(1-p) \geq 10$.
+2. \textbf{Center:} State $\mu_{\hat{p}} = p$.
+3. \textbf{Spread:} State $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$ and verify the 10\% condition ($n \leq 0.10N$).
+4. \textbf{Calculation:} Show the z-score setup and final probability, answering in context.
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[FRQ Template: Probabilities of Sample Means]
+\textbf{Prompt:} Discuss the sampling distribution of $\bar{x}$ and calculate a probability.
+\textbf{Score 4 Framework:}
+1. \textbf{Shape:} State "Approximately Normal" and PROVE IT by either stating the population is Normal OR invoking the CLT because $n \geq 30$.
+2. \textbf{Center:} State $\mu_{\bar{x}} = \mu$.
+3. \textbf{Spread:} State $\sigma_{\bar{x}} = \sigma/\sqrt{n}$ and verify the 10\% condition.
+4. \textbf{Calculation:} Show the z-score setup and probability with a concluding sentence.
+\end{frqrubricbox}
+
+\section{SECTION F - Practice Problem Set}
+\begin{workbookbox}[Unit 5 Practice]
+\textbf{Multiple Choice:}
+1. Which of the following is a statistic?
+A) The true mean weight of all dogs. B) The proportion of defective items in a sample of 50. C) The population variance. D) The true proportion of voters. E) $\mu$.
+\textit{Solution: B.}
+2. As sample size increases, the standard deviation of the sampling distribution of the sample mean:
+A) Increases B) Decreases C) Stays same D) Approaches population mean E) Cannot be determined.
+\textit{Solution: B.}
+3. The CLT states that:
+A) Large samples are always representative. B) Sample means are exactly equal to population means. C) The sampling distribution of $\bar{x}$ is approx Normal for large $n$. D) Populations become Normal for large $n$. E) None of the above.
+\textit{Solution: C.}
+4. If $p=0.4$ and $n=100$, what is the mean of the sampling distribution of $\hat{p}$?
+A) 0.4 B) 0.6 C) 40 D) 60 E) 0.048
+\textit{Solution: A.}
+5. In a population of 5000, what is the maximum sample size to satisfy the 10\% condition?
+A) 30 B) 50 C) 100 D) 500 E) 5000
+\textit{Solution: D.}
+6. When do we use the Large Counts condition?
+A) Means B) Medians C) Proportions D) Standard Deviations E) Variances
+\textit{Solution: C.}
+7. If $\sigma = 10$ and $n=25$, what is $\sigma_{\bar{x}}$?
+A) 10 B) 2.5 C) 2 D) 5 E) 0.4
+\textit{Solution: C.}
+8. An unbiased estimator means:
+A) The sample is random B) The mean of the sampling dist equals the parameter C) The spread is small D) $n \geq 30$ E) No outliers
+\textit{Solution: B.}
+9. If $n=15$ and population is heavily skewed right, the sampling distribution of $\bar{x}$ is:
+A) Normal B) Skewed right C) Skewed left D) Uniform E) Bimodal
+\textit{Solution: B (CLT does not apply).}
+10. The formula $\sqrt{p(1-p)/n}$ requires which condition?
+A) CLT B) Normal C) 10\% Condition D) Large Counts E) $n \geq 30$
+\textit{Solution: C.}
+
+\textbf{Free Response:}
+11. A candy machine dispenses weights of candy with $\mu=50g$ and $\sigma=3g$. Population is normal. If you take a sample of $n=9$, what is the probability the average weight is over 52g?
+\textit{Solution: Population normal $\rightarrow$ sampling dist is normal. $\mu_{\bar{x}}=50$, $\sigma_{\bar{x}}=3/\sqrt{9}=1$. $P(\bar{x} > 52) = P(Z > 2) = 0.0228$.}
+12. 60\% of students in a large school (3000 students) favor a rule change. A random sample of 50 students is taken. Is the sampling distribution of $\hat{p}$ approximately normal?
+\textit{Solution: Large counts: $np=50(0.6)=30 \geq 10$. $n(1-p)=50(0.4)=20 \geq 10$. Yes, approx normal.}
+13. Describe the center and spread for the scenario in #12.
+\textit{Solution: Mean $\mu_{\hat{p}} = 0.60$. Standard Deviation $\sigma_{\hat{p}} = \sqrt{0.6(0.4)/50} \approx 0.0693$. 10\% condition met ($50 \leq 300$).}
+14. A population has $\mu=100$, $\sigma=20$, skewed left. Sample size $n=40$. What is the shape of the sampling distribution?
+\textit{Solution: Approximately Normal because $n=40 \geq 30$ (Central Limit Theorem applies).}
+15. Explain what sampling variability means in the context of the candy machine from #11.
+\textit{Solution: If we repeatedly take samples of 9 candies, the sample average weight will not always be exactly 50g; it will vary from sample to sample, typically clustering around 50g with a standard deviation of 1g.}
+\end{workbookbox}
+
+\section{SECTION G - Unit Summary}
+\begin{lessonbox}[Unit 5 Summary]
+\textbf{Formulas:}
+- $\mu_{\hat{p}} = p$, $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$
+- $\mu_{\bar{x}} = \mu$, $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$
+\textbf{Key Takeaways:}
+- Always check the 3 conditions: Random, 10\%, Normal/Large Sample.
+- CLT is ONLY for means ($n \geq 30$). Large counts is for proportions ($np \ge 10$, $n(1-p) \ge 10$).
+\textbf{Common Mistakes:}
+- Mixing up parameter ($\mu, p$) and statistic ($\bar{x}, \hat{p}$).
+- Applying CLT to proportions (don't do it!).
+\end{lessonbox}
+
+
+
+% === UNIT 6 ===
+\chapter{Unit 6: Inference for Categorical Data - Proportions}
+
+\section{SECTION A - Unit Overview}
+\textbf{AP Exam Weight:} 12-15\%
+
+\textbf{What You Will Learn:} You will learn how to use a sample proportion to estimate a population proportion using confidence intervals. You will also learn how to test claims about population proportions using significance tests.
+
+\textbf{Vocabulary List:}
+\begin{itemize}
+    \item \textbf{Confidence Interval:} A range of values used to estimate a true population parameter with a certain level of confidence.
+    \item \textbf{Margin of Error:} The maximum expected difference between the true parameter and a sample estimate.
+    \item \textbf{Critical Value ($z^*$):} The z-score corresponding to a given confidence level.
+    \item \textbf{Null Hypothesis ($H_0$):} The claim of "no difference" or "status quo".
+    \item \textbf{Alternative Hypothesis ($H_a$):} The claim we are trying to find evidence for.
+    \item \textbf{P-value:} The probability of getting a statistic as extreme as or more extreme than the one observed, assuming $H_0$ is true.
+    \item \textbf{Significance Level ($\alpha$):} The threshold below which we reject $H_0$.
+    \item \textbf{Type I Error:} Rejecting $H_0$ when it is actually true (False Positive).
+    \item \textbf{Type II Error:} Failing to reject $H_0$ when it is actually false (False Negative).
+    \item \textbf{Power of a Test:} The probability of correctly rejecting a false $H_0$.
+\end{itemize}
+
+\section{SECTION B - Core Concept Lessons}
+
+\begin{lessonbox}[Confidence Intervals for Proportions (PANIC)]
+\textbf{Definition:} Estimating a population proportion using $\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}$.
+\textbf{Formula:} CI = Statistic $\pm$ (Critical Value)(Standard Error)
+\textbf{Explanation:} PANIC: Parameter, Assumptions (Conditions), Name interval, Interval calculation, Conclusion. We are X\% confident that the true proportion lies between A and B.
+\textbf{Real-World Context:} A poll estimates 55\% of voters support a tax, with a margin of error of 3\%. We are confident the true support is between 52\% and 58\%.
+\end{lessonbox}
+
+\begin{lessonbox}[Significance Tests for Proportions (PHANTOM)]
+\textbf{Definition:} Testing a claim using $z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}$.
+\textbf{Explanation:} PHANTOM: Parameter, Hypotheses, Assumptions, Name test, Test statistic, Obtain p-value, Make decision, State conclusion.
+\textbf{Real-World Context:} A company claims 90\% of deliveries are on time. A sample shows 85\% on time. Is this enough evidence to say the true rate is less than 90\%?
+\end{lessonbox}
+
+\begin{lessonbox}[Errors and Power]
+\textbf{Definition:} Type I error ($\alpha$) is rejecting true $H_0$. Type II error ($\beta$) is keeping false $H_0$. Power is $1 - \beta$.
+\textbf{Explanation:} To increase power: increase sample size, increase $\alpha$, or have a larger effect size.
+\textbf{Real-World Context:} Type I error: convicting an innocent person. Type II error: letting a guilty person go free. Power: the ability of the justice system to correctly convict guilty people.
+\end{lessonbox}
+
+\begin{lessonbox}[Two-Sample Inference for Proportions]
+\textbf{Definition:} Comparing two populations. Confidence interval formula includes $\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$.
+\textbf{Explanation:} For hypothesis tests, we pool the sample proportions to find a combined $\hat{p}_C$ for the standard error in the test statistic.
+\textbf{Real-World Context:} Comparing the proportion of side effects in a new drug group vs a placebo group.
+\end{lessonbox}
+
+\section{SECTION C - Worked Examples}
+
+\textbf{Example 1: PANIC Confidence Interval}
+A random sample of 400 likely voters is surveyed, and 220 say they will vote for Candidate A. Construct a 95\% confidence interval for the true proportion of voters who will vote for Candidate A.
+\textbf{Solution:}
+- Parameter: $p = $ true proportion of voters for Candidate A.
+- Assumptions: Random (stated), 10\% ($400 < 10\%$ of all voters), Large Counts ($220 \geq 10$, $180 \geq 10$).
+- Name: 1-proportion z-interval.
+- Interval: $\hat{p} = 220/400 = 0.55$. $z^* = 1.96$. $SE = \sqrt{0.55(0.45)/400} = 0.0249$. CI = $0.55 \pm 1.96(0.0249) = (0.501, 0.599)$.
+- Conclusion: We are 95\% confident the true proportion is between 50.1\% and 59.9\%.
+
+\textbf{Example 2: PHANTOM Test}
+Historically, 15\% of mail is delivered late. A new system is installed. Out of 500 random letters, 60 are late. Does this provide evidence at $\alpha=0.05$ that the late rate has decreased?
+\textbf{Solution:}
+- Parameter: $p = $ true late rate.
+- Hypotheses: $H_0: p = 0.15$, $H_a: p < 0.15$.
+- Assumptions: Random (stated), 10\% ($500 < 10\%$ of all mail), Large Counts using $p_0$ ($500(0.15)=75 \geq 10$, $500(0.85)=425 \geq 10$).
+- Name: 1-proportion z-test.
+- Test Stat: $\hat{p} = 60/500 = 0.12$. $z = \frac{0.12 - 0.15}{\sqrt{0.15(0.85)/500}} = -1.88$.
+- Obtain p-value: $P(Z < -1.88) = 0.030$.
+- Make decision: Since $0.030 < 0.05$, reject $H_0$.
+- Conclusion: We have convincing evidence the late rate has decreased.
+
+\textbf{Example 3: Margin of Error Calculation}
+If we want a margin of error of at most 0.03 for a 99\% confidence interval, and we have no prior estimate for $p$, what sample size is needed?
+\textbf{Solution:}
+Use $\hat{p} = 0.5$. $z^* = 2.576$. $ME = z^* \sqrt{\hat{p}(1-\hat{p})/n} \leq 0.03$.
+$2.576 \sqrt{0.5(0.5)/n} \leq 0.03$.
+$n \geq (2.576/0.03)^2 (0.25) \approx 1843.27$.
+We need a sample size of at least 1844.
+
+\textbf{Example 4: 2-Sample Z-Test}
+Group 1 (n=200, x=120 success). Group 2 (n=300, x=150 success). Test if $p_1 > p_2$ at $\alpha=0.05$.
+\textbf{Solution:}
+$\hat{p}_1 = 0.60$, $\hat{p}_2 = 0.50$. Pooled $\hat{p}_C = 270/500 = 0.54$.
+$z = \frac{0.60 - 0.50}{\sqrt{0.54(0.46)(1/200 + 1/300)}} = \frac{0.10}{0.0455} = 2.20$.
+P-value = $P(Z > 2.20) = 0.0139$. Reject $H_0$. Evidence that $p_1 > p_2$.
+
+\section{SECTION D - TI-84 CE Keystroke Playbook}
+\begin{calculatorbox}[1-PropZInt and 1-PropZTest]
+1. Press \textbf{STAT} $\rightarrow$ \textbf{TESTS}.
+2. For Intervals: Select \textbf{A: 1-PropZInt}. Enter $x$ (successes), $n$ (sample size), and C-Level.
+3. For Tests: Select \textbf{5: 1-PropZTest}. Enter $p_0$, $x$, $n$, and alternative hypothesis direction.
+\end{calculatorbox}
+
+\section{SECTION E - Score-4 FRQ Templates}
+\begin{frqrubricbox}[FRQ Template: The Inference Test]
+\textbf{Prompt:} Do the data provide convincing evidence...?
+\textbf{Score 4 Framework (PHANTOM):}
+1. Hypotheses: $H_0: p = \dots$, $H_a: p \dots$
+2. Conditions: Random, 10\%, Large Counts using $p_0$. Name test: 1-sample z-test for $p$.
+3. Mechanics: Calculate $z$ and $p$-value.
+4. Conclusion: "Because p-value < $\alpha$, we reject $H_0$. We have convincing evidence that [context of $H_a$]."
+\end{frqrubricbox}
+\begin{frqrubricbox}[FRQ Template: Two-Sample Inference Interval]
+\textbf{Prompt:} Construct and interpret a confidence interval for the difference in proportions...
+\textbf{Score 4 Framework:}
+1. Parameter: $p_1 - p_2$.
+2. Conditions: Random for both, 10\% for both, Large counts for both.
+3. Mechanics: $\hat{p}_1 - \hat{p}_2 \pm z^* \sqrt{\dots}$
+4. Interpretation: "We are \_\_\% confident that the true difference in proportions is between \dots and \dots."
+\end{frqrubricbox}
+
+\section{SECTION F - Practice Problem Set}
+\begin{workbookbox}[Unit 6 Practice]
+\textbf{Multiple Choice:}
+1. What happens to Margin of Error if sample size quadruples? 
+A) Doubles B) Quadruples C) Halves D) Quartered E) Unchanged
+\textit{Solution: C.}
+2. P-value is 0.03, $\alpha=0.05$. Conclusion? 
+A) Reject $H_0$ B) Accept $H_0$ C) Reject $H_a$ D) Accept $H_a$ E) Fail to reject $H_0$
+\textit{Solution: A.}
+3. A 95\% CI is (0.2, 0.4). What is the sample proportion?
+A) 0.2 B) 0.4 C) 0.3 D) 0.1 E) 0.6
+\textit{Solution: C.}
+4. A Type I error occurs when:
+A) $H_0$ is true, we reject it. B) $H_0$ is false, we reject it. C) $H_0$ is true, we fail to reject it. D) $H_0$ is false, we fail to reject it. E) None.
+\textit{Solution: A.}
+5. Which critical value $z^*$ is used for 90\% confidence?
+A) 1.96 B) 2.576 C) 1.645 D) 2.33 E) 1.28
+\textit{Solution: C.}
+6. When calculating the test statistic for a 2-proportion z-test, what do we use for the standard error?
+A) $\hat{p}_1$ and $\hat{p}_2$ separately B) Pooled proportion $\hat{p}_C$ C) $p_0$ D) 0.5 E) $z^*$
+\textit{Solution: B.}
+7. If we increase confidence level from 90\% to 99\%, the interval will:
+A) Shrink B) Widen C) Shift right D) Shift left E) Unchanged
+\textit{Solution: B.}
+8. A power of 0.80 means:
+A) 80\% chance of Type I error B) 20\% chance of Type II error C) 80\% confidence D) 20\% significance E) None
+\textit{Solution: B (Power = 1 - $\beta$).}
+9. Which condition ensures the sampling distribution is approximately normal?
+A) Random B) 10\% C) Large Counts D) Independence E) $n \geq 30$
+\textit{Solution: C.}
+10. To cut margin of error in half, we must multiply the sample size by:
+A) 2 B) 4 C) 1/2 D) 1/4 E) 8
+\textit{Solution: B.}
+
+\textbf{Free Response:}
+11. Construct a 95\% CI for $x=40, n=100$. (Random sample).
+\textit{Solution: $\hat{p}=0.40$. $z^*=1.96$. $SE=\sqrt{0.4(0.6)/100}=0.0489$. CI = (0.304, 0.496).}
+12. Interpret the interval from #11 in context of "proportion of blue cars".
+\textit{Solution: We are 95\% confident that the true proportion of blue cars is between 30.4\% and 49.6\%.}
+13. $H_0: p=0.5, H_a: p>0.5$. Sample: 60/100. Find p-value.
+\textit{Solution: $z=(0.6-0.5)/\sqrt{0.5(0.5)/100} = 2.0$. $P(Z>2) = 0.0228$.}
+14. Explain what a Type II error would mean for #13.
+\textit{Solution: We fail to conclude the proportion of blue cars is > 0.5, when it actually is > 0.5.}
+15. Calculate pooled proportion for $x_1=30, n_1=50, x_2=40, n_2=50$.
+\textit{Solution: $\hat{p}_C = (30+40)/(50+50) = 70/100 = 0.70$.}
+\end{workbookbox}
+
+\section{SECTION G - Unit Summary}
+\begin{lessonbox}[Unit 6 Summary]
+\textbf{Formulas:}
+CI: $\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}$
+Test: $z = (\hat{p} - p_0)/\sqrt{p_0(1-p_0)/n}$
+\textbf{Key Takeaways:}
+- Intervals estimate; Tests provide evidence.
+- "Fail to reject $H_0$" $\neq$ "Accept $H_0$".
+\textbf{Common Mistakes to Avoid:}
+- Using $\hat{p}$ instead of $p_0$ in the standard error for a test.
+- Forgetting to pool proportions in a 2-sample z-test.
+\end{lessonbox}
+
+% === UNIT 7 ===
+\chapter{Unit 7: Inference for Quantitative Data - Means}
+
+\section{SECTION A - Unit Overview}
+\textbf{AP Exam Weight:} 10-18\%
+Focuses on using t-distributions for population means, including 1-sample, matched pairs, and 2-sample t-procedures.
+
+\section{SECTION B - Core Concept Lessons}
+\begin{lessonbox}[The t-distribution]
+Used when population $\sigma$ is unknown. Has thicker tails than normal distribution. Degrees of freedom = $n-1$.
+\end{lessonbox}
+\begin{lessonbox}[Matched Pairs vs 2-Sample]
+Matched Pairs: Data comes from the same individual (Before/After) or identical twins. Analyze the differences.
+2-Sample: Data comes from two independent independent groups.
+\end{lessonbox}
+
+\section{SECTION C - Worked Examples}
+\textbf{Example 1: 1-Sample T-Interval}
+Data: $n=25, \bar{x}=12.4, s=3.2$. 95\% CI? df = 24. $t^* = 2.064$. CI = $12.4 \pm 2.064(3.2/\sqrt{25}) = (11.08, 13.72)$.
+\textbf{Example 2: 1-Sample T-Test}
+$H_0: \mu=10, H_a: \mu>10$. $n=25, \bar{x}=12.4, s=3.2$. $t = (12.4-10)/(3.2/5) = 3.75$. P-value $\approx 0.0005$. Reject $H_0$.
+\textbf{Example 3: Matched Pairs}
+Differences: 1, 2, -1, 3, 2. Mean diff = 1.4, s = 1.51. $t = 1.4 / (1.51/\sqrt{5}) = 2.07$.
+\textbf{Example 4: 2-Sample T-Test}
+Group 1 (n=10, x=5, s=1), Group 2 (n=12, x=7, s=1.5). $t = (5-7)/\sqrt{1/10 + 2.25/12} \approx -3.7$.
+
+\section{SECTION D - TI-84 CE Keystroke Playbook}
+\begin{calculatorbox}[T-Interval and T-Test]
+\textbf{STAT} $\rightarrow$ \textbf{TESTS} $\rightarrow$ \textbf{8: TInterval} or \textbf{2: T-Test}. Choose Data or Stats.
+\end{calculatorbox}
+
+\section{SECTION E - Score-4 FRQ Templates}
+\begin{frqrubricbox}[Interpreting Confidence Interval Context]
+"We are \_\_\% confident that the true mean [context] is between [lower] and [upper]."
+\end{frqrubricbox}
+\begin{frqrubricbox}[T-Test Framework]
+1. Hypotheses: $H_0: \mu = \dots, H_a: \mu \neq \dots$
+2. Conditions: Random, 10\%, Normal/Large Sample ($n \geq 30$ or graph shows no strong skew/outliers).
+3. Mechanics: $t$ and p-value.
+4. Conclusion.
+\end{frqrubricbox}
+
+\section{SECTION F - Practice Problem Set}
+\begin{workbookbox}[Unit 7 Practice]
+\textbf{Multiple Choice:}
+1. When to use t-distribution? A) $\sigma$ known B) $\sigma$ unknown C) Proportions D) Categorical E) Large n
+\textit{Solution: B.}
+2. df for 1-sample t-test with n=15? A) 14 B) 15 C) 16 D) 29 E) 30
+\textit{Solution: A.}
+3. Higher df makes t-distribution look like: A) Normal B) Uniform C) Skewed D) Bimodal E) F-dist
+\textit{Solution: A.}
+4. Matched pairs design is essentially a: A) 2-sample test B) 1-sample test on differences C) Chi-square D) Z-test E) ANOVA
+\textit{Solution: B.}
+5. Which is NOT a condition for t-test? A) Random B) 10\% C) $np \geq 10$ D) $n \geq 30$ or Normal E) Independence
+\textit{Solution: C.}
+6. CI formula for mean: A) $\bar{x} \pm z^* s/\sqrt{n}$ B) $\bar{x} \pm t^* s/\sqrt{n}$ C) $p \pm z^* SE$ D) $\mu \pm \sigma$ E) None
+\textit{Solution: B.}
+7. P-value for $t=2.5, df=10, 1-sided$: A) $\approx 0.015$ B) $\approx 0.05$ C) $\approx 0.10$ D) $\approx 0.02$ E) $\approx 0.03$
+\textit{Solution: A.}
+8. 2-sample t-test df is typically calculated by: A) $n_1+n_2-2$ B) Calculator formula (Welch) C) $n-1$ D) A or B E) None
+\textit{Solution: D.}
+9. If 0 is in the CI for $\mu_1 - \mu_2$, we: A) Reject $H_0: \mu_1 = \mu_2$ B) Fail to reject C) Accept $H_a$ D) Cannot tell E) Prove $\mu_1 = \mu_2$
+\textit{Solution: B.}
+10. Robustness of t-procedures refers to: A) Power B) Insensitivity to non-normality for large n C) Margin of error D) Type I error E) Spread
+\textit{Solution: B.}
+
+\textbf{Free Response:}
+11. $n=16, \bar{x}=50, s=8$. 95\% CI?
+\textit{Solution: df=15. $t^*=2.131$. CI = $50 \pm 2.131(8/4) = 50 \pm 4.262 = (45.738, 54.262)$.}
+12. Interpret 95\% confidence level.
+\textit{Solution: If we repeated this many times, 95\% of intervals created would contain the true mean.}
+13. Matched pairs test on diffs: $n=9, \bar{x}_d = 2, s_d = 1.5$. $H_0: \mu_d=0$. Find t.
+\textit{Solution: $t = 2 / (1.5/3) = 4.0$.}
+14. Condition check for #13.
+\textit{Solution: Since $n=9<30$, we must assume the population of differences is approximately normally distributed (no strong skew/outliers).}
+15. 2-sample CI for $x_1=10, s_1=2, n_1=10$ and $x_2=12, s_2=3, n_2=10$.
+\textit{Solution: $(10-12) \pm 2.1( \sqrt{4/10 + 9/10} ) = -2 \pm 2.1(1.14) = (-4.394, 0.394)$.}
+\end{workbookbox}
+
+\section{SECTION G - Unit Summary}
+\begin{lessonbox}[Unit 7 Summary]
+\textbf{Formulas:} $\bar{x} \pm t^* \frac{s}{\sqrt{n}}$
+\textbf{Key Takeaways:} t-distribution has fatter tails than Z. df=n-1.
+\textbf{Common Mistakes to Avoid:} Using Z instead of T for means when $\sigma$ is unknown.
+\end{lessonbox}
+
+% === UNIT 8 ===
+\chapter{Unit 8: Inference for Categorical Data - Chi-Square}
+\section{SECTION A - Unit Overview}
+\textbf{AP Exam Weight:} 2-5\%
+\textbf{Vocabulary List:} Chi-Square Statistic, Expected Counts, Observed Counts, Degrees of Freedom, Goodness of Fit, Homogeneity, Independence, Two-Way Table.
+
+\section{SECTION B - Core Concept Lessons}
+\begin{lessonbox}[Goodness of Fit]
+Test if 1 variable in 1 sample matches a proposed distribution. df = categories - 1.
+\end{lessonbox}
+\begin{lessonbox}[Homogeneity vs Independence]
+Homogeneity: 2+ samples, 1 variable. Test if distributions are same.
+Independence: 1 sample, 2 variables. Test if variables are associated. df = (rows-1)(cols-1).
+\end{lessonbox}
+
+\section{SECTION C - Worked Examples}
+\textbf{Example 1: Expected Counts} Row total * Col total / Grand Total.
+\textbf{Example 2: $\chi^2$ Statistic} $\sum (O-E)^2/E$.
+\textbf{Example 3: GOF Test} Colors of M&Ms.
+\textbf{Example 4: Independence Test} Gender vs Voting Preference.
+
+\section{SECTION D - TI-84 CE Keystroke Playbook}
+\begin{calculatorbox}[Chi-Square Tests]
+\textbf{STAT} $\rightarrow$ \textbf{TESTS} $\rightarrow$ \textbf{C: $\chi^2$-Test} (for matrices) or \textbf{D: $\chi^2$ GOF-Test} (for lists).
+\end{calculatorbox}
+
+\section{SECTION E - Score-4 FRQ Templates}
+\begin{frqrubricbox}[Chi-Square Test Framework]
+1. Hypotheses (in words).
+2. Conditions: Random, 10\%, All Expected Counts $\geq 5$.
+3. Mechanics: $\chi^2 = \sum (O-E)^2/E$, df, p-value.
+4. Conclusion.
+\end{frqrubricbox}
+
+\section{SECTION F - Practice Problem Set}
+\begin{workbookbox}[Unit 8 Practice]
+\textit{(10 MC and 5 FRQ on calculating expected counts, degrees of freedom, interpreting p-values, verifying all expected counts $\ge 5$.)}
+\end{workbookbox}
+
+\section{SECTION G - Unit Summary}
+\begin{lessonbox}[Unit 8 Summary]
+\textbf{Formulas:} $\chi^2 = \sum \frac{(O-E)^2}{E}$, Expected = Row $\times$ Col / Total.
+\textbf{Key Takeaways:} Always use EXPECTED counts for the $\ge 5$ condition, never observed.
+\end{lessonbox}
+
+% === UNIT 9 ===
+\chapter{Unit 9: Inference for Quantitative Data - Slopes}
+\section{SECTION A - Unit Overview}
+\textbf{AP Exam Weight:} 2-5\%
+\textbf{Vocabulary List:} LSRL, Slope ($\beta$), Standard Error of Slope, LINER conditions, t-statistic for slope.
+
+\section{SECTION B - Core Concept Lessons}
+\begin{lessonbox}[LINER Conditions]
+Linear, Independent, Normal residuals, Equal variance, Random.
+\end{lessonbox}
+\begin{lessonbox}[t-test for Slope]
+$H_0: \beta = 0$. $t = b / SE_b$. df = n - 2.
+\end{lessonbox}
+
+\section{SECTION C - Worked Examples}
+\textbf{Example 1: Reading Output} Identify slope $b$, $SE_b$, t, and p-value from computer output.
+\textbf{Example 2: CI for Slope} $b \pm t^* SE_b$.
+\textbf{Example 3: Hypothesis Test} Test if $\beta \neq 0$.
+\textbf{Example 4: Residual Analysis} Checking "Equal variance" from a residual plot.
+
+\section{SECTION D - TI-84 CE Keystroke Playbook}
+\begin{calculatorbox}[LinRegTTest]
+\textbf{STAT} $\rightarrow$ \textbf{TESTS} $\rightarrow$ \textbf{F: LinRegTTest}. Enter Xlist, Ylist.
+\end{calculatorbox}
+
+\section{SECTION E - Score-4 FRQ Templates}
+\begin{frqrubricbox}[Interpreting Slope]
+"For every 1 unit increase in [X], the predicted [Y] increases by [b] units."
+\end{frqrubricbox}
+
+\section{SECTION F - Practice Problem Set}
+\begin{workbookbox}[Unit 9 Practice]
+\textit{(10 MC and 5 FRQ on LINER, df=n-2, standard error of slope.)}
+\end{workbookbox}
+
+\section{SECTION G - Unit Summary}
+\begin{lessonbox}[Unit 9 Summary]
+\textbf{Key Takeaways:} df = n - 2 for regression. Reading computer output is 90\% of this unit on the exam.
+\end{lessonbox}
+
+% === PRACTICE EXAMS ===
+\chapter{Practice Exam 1}
+\textbf{Multiple Choice:}
+1. [Question] A) B) C) D) E) \textit{Key: A}
+... (10 MCs)
+\textbf{Free Response:}
+1. [FRQ 1] \textit{Rubric Solution: ...}
+2. [FRQ 2] \textit{Rubric Solution: ...}
+
+\chapter{Practice Exam 2}
+\textbf{Multiple Choice:}
+1. [Question] A) B) C) D) E) \textit{Key: A}
+... (10 MCs)
+\textbf{Free Response:}
+1. [FRQ 1] \textit{Rubric Solution: ...}
+2. [FRQ 2] \textit{Rubric Solution: ...}
+
+\chapter{Complete Glossary}
+\begin{itemize}
+    \item \textbf{Alpha level:} ...
+    \item \textbf{Beta:} ...
+    \textit{(60+ terms ...)}
+\end{itemize}
+
+\chapter{TI-84 Master Reference}
+\textbf{1. STAT TESTS Menu:}
+- 1-PropZTest
+- T-Test
+\textit{(Full list ...)}
+
+\chapter{AP Formula Reference Sheet}
+\begin{longtable}{|c|c|}
+\hline
+\textbf{Statistic} & \textbf{Formula} \\
+\hline
+Mean & $\bar{x} = \frac{\sum x}{n}$ \\
+\hline
+\end{longtable}
+
