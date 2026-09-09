@@ -103,8 +103,15 @@ This file contains the **permanent workspace guidelines** that are automatically
    - `$bX = 140` (left start, clears 0.125" bleed)
    - `$safeWidth = $backMaxX - $bX` (all back text must fit within this)
 5. **Back Cover Font Sizes:** Title max 28px, Body max 19px — prevents text truncation within safe zone.
-6. **PDF Output:** Use `Convert-JpgToPdf` function after each JPG save.
-7. **Output per book:** 5 Kindle JPGs + 5 Paperback JPG+PDF + 5 Hardcover JPG+PDF = 25 files total.
+6. **Back Cover Text Content Rules (STRICT — prevents clipping):**
+   - **Title line:** MAX 30 characters — short punchy title only (e.g. "Master AP Statistics" NOT "The Complete AP Statistics Study Guide and Textbook")
+   - **Bullet points:** MAX 6 bullets per cover. Each bullet MAX 40 characters including "* " prefix.
+   - **Bullet format:** `* Feature: Short Value` — e.g. `* 9-Unit Curriculum: All Topics` NOT `* Complete 9-Unit High School AP Statistics Curriculum Fully Aligned`
+   - **Bottom tagline:** MAX 45 characters — e.g. `AP Statistics Master Review Series | Book 2`
+   - **NEVER use long sentences** on back cover — always short, punchy, scannable bullets only.
+   - **Test before saving:** Use `$g.MeasureString(text, font).Width` to confirm text fits within `$safeWidth` before DrawString.
+7. **PDF Output:** Use `Convert-JpgToPdf` function after each JPG save.
+8. **Output per book:** 5 Kindle JPGs + 5 Paperback JPG+PDF + 5 Hardcover JPG+PDF = 25 files total.
 
 ---
 
