@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en data-theme=light>
 <head>
   <meta charset=UTF-8>
@@ -172,11 +172,11 @@
   <section class=hero style=padding: 36px 0;>
     <div class=container>
       <h1 style=font-size:2.2rem;>Official 2027 Digital AP® Statistics Exam Simulator</h1>
-      <p>10 Full-Length Authentic Practice Exams (Exams 3 to 12) featuring the 2027 42-MCQ + 4-FRQ format, Bluebook timer, Desmos calculator, and instant rubric scoring.</p>
+      <p>23 Full-Length Authentic Online Practice Exams (Exams 3 to 25) featuring the 2027 42-MCQ + 4-FRQ format, Bluebook timer, Desmos calculator, and instant rubric scoring (25 Total Exams including 2 in-book).</p>
       <div class=badge-row>
         <span class=hero-pill>⏱️ 90-Minute Timed Bluebook Interface</span>
         <span class=hero-pill>🧮 Built-in Desmos & Formula Sheet</span>
-        <span class=hero-pill>🎯 42 MCQs + 4 FRQs Per Exam</span>
+        <span class=hero-pill>🎯 23 Online Full-Length Exams (966 MCQs)</span>
         <span class=hero-pill>📄 1-Click Printable PDF Mode</span>
       </div>
     </div>
@@ -190,10 +190,10 @@
       <!-- Exam Selector Sidebar -->
       <aside class=exam-nav-card>
         <h3 style=margin-bottom: 12px; font-size: 1.1rem; color: #0284c7;>🎯 Select Online Exam</h3>
-        <p style=font-size:0.85rem; color:var(--text-muted); margin-bottom: 14px;>10 Full-Length Exams aligned with the 2027 5-Unit Framework:</p>
+        <p style=font-size:0.85rem; color:var(--text-muted); margin-bottom: 14px;>23 Full-Length Exams aligned with the 2027 5-Unit Framework:</p>
         
-        <div id=examList>
-          <button class=exam-item-btn active onclick=loadExam(3)><span>Exam 3: Diagnostic 2</span><span class=badge-pill>42 MCQs</span></button>
+        <div id=examList style="max-height: 520px; overflow-y: auto; padding-right: 4px;">
+          <button class="exam-item-btn active" onclick=loadExam(3)><span>Exam 3: Diagnostic 2</span><span class=badge-pill>42 MCQs</span></button>
           <button class=exam-item-btn onclick=loadExam(4)><span>Exam 4: Bluebook Test A</span><span class=badge-pill>42 MCQs</span></button>
           <button class=exam-item-btn onclick=loadExam(5)><span>Exam 5: Bluebook Test B</span><span class=badge-pill>42 MCQs</span></button>
           <button class=exam-item-btn onclick=loadExam(6)><span>Exam 6: Skills 1 & 2 Focus</span><span class=badge-pill>42 MCQs</span></button>
@@ -202,12 +202,25 @@
           <button class=exam-item-btn onclick=loadExam(9)><span>Exam 9: Regression Deep-Dive</span><span class=badge-pill>42 MCQs</span></button>
           <button class=exam-item-btn onclick=loadExam(10)><span>Exam 10: Mastery Simulator 1</span><span class=badge-pill>42 MCQs</span></button>
           <button class=exam-item-btn onclick=loadExam(11)><span>Exam 11: Mastery Simulator 2</span><span class=badge-pill>42 MCQs</span></button>
-          <button class=exam-item-btn onclick=loadExam(12)><span>Exam 12: Ultimate Score-5</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(12)><span>Exam 12: Grand Mock 1</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(13)><span>Exam 13: Grand Mock 2</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(14)><span>Exam 14: Probability & CLT Drill</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(15)><span>Exam 15: Experimental Design Master</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(16)><span>Exam 16: Two-Sample Proportions</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(17)><span>Exam 17: Two-Sample Means t-Test</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(18)><span>Exam 18: Chi-Square Goodness-of-Fit</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(19)><span>Exam 19: Chi-Square Homogeneity</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(20)><span>Exam 20: Slope Inference & LINER</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(21)><span>Exam 21: High-Yield FRQ Synthesizer</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(22)><span>Exam 22: Score-5 Challenge Exam 1</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(23)><span>Exam 23: Score-5 Challenge Exam 2</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(24)><span>Exam 24: Pre-Exam Dress Rehearsal</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(25)><span>Exam 25: The Ultimate Score-5 Grand Finale</span><span class=badge-pill>42 MCQs</span></button>
         </div>
 
         <div style=margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color); font-size: 0.85rem;>
           <p><strong>In-Book Exams:</strong><br>• Exam 1: 2027 Diagnostic (p. 210)<br>• Exam 2: 2027 Mastery (p. 248)</p>
-          <p style=margin-top: 8px; color: #0284c7;><strong>Total Suite: 12 Full Exams</strong></p>
+          <p style=margin-top: 8px; color: #0284c7;><strong>Total Suite: 25 Full Exams (2 Book + 23 Online)</strong></p>
         </div>
       </aside>
 

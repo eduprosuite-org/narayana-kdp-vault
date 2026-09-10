@@ -1,4 +1,4 @@
-﻿// =========================================================================
+// =========================================================================
 // 2027 DIGITAL AP STATISTICS EXAM SIMULATOR (EXAMS 3 TO 12)
 // Built-in 42 MCQs + 4 FRQs Per Exam, Timer, Grading, & Explanations
 // =========================================================================
@@ -20,7 +20,20 @@ function generateExamData(examNum) {
     9: "Practice Exam 9: Comprehensive Regression & Non-Linear Analysis",
     10: "Practice Exam 10: Official Score-5 Timed Simulation 1",
     11: "Practice Exam 11: Official Score-5 Timed Simulation 2",
-    12: "Practice Exam 12: The Ultimate 2027 AP Statistics Grand Mock"
+    12: "Practice Exam 12: Grand Mock Simulation 1",
+    13: "Practice Exam 13: Grand Mock Simulation 2",
+    14: "Practice Exam 14: Probability Distributions & Central Limit Theorem Drill",
+    15: "Practice Exam 15: Experimental Design & Data Collection Mastery",
+    16: "Practice Exam 16: Two-Sample Inference for Proportions Deep-Dive",
+    17: "Practice Exam 17: Two-Sample Inference for Means & Matched Pairs",
+    18: "Practice Exam 18: Chi-Square Goodness-of-Fit & Categorical Distributions",
+    19: "Practice Exam 19: Chi-Square Tests for Homogeneity and Independence",
+    20: "Practice Exam 20: Slope Inference, Residual Plots & LINER Conditions",
+    21: "Practice Exam 21: High-Yield FRQ Synthesis & Multi-Skill Practice",
+    22: "Practice Exam 22: Score-5 Challenge Exam 1 (Rigorous Item Sets)",
+    23: "Practice Exam 23: Score-5 Challenge Exam 2 (Timed Speed Run)",
+    24: "Practice Exam 24: Digital Bluebook Pre-Exam Dress Rehearsal",
+    25: "Practice Exam 25: The Ultimate AP® Statistics Grand Finale Mock"
   };
 
   const qList = [];
