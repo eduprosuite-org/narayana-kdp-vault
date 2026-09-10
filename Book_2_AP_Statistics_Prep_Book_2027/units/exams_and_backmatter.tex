@@ -4,14 +4,14 @@
 \chapter{Practice Exam 1}
 
 \section*{Exam Overview \& Instructions}
-This authentic practice exam simulates the official AP Statistics Exam.
+This authentic practice exam simulates the official 2027 digital AP Statistics Exam.
 \begin{itemize}[leftmargin=1.2em]
-  \item \textbf{Section I:} 40 Multiple-Choice Questions (90 Minutes | 50\% of Total Score).
-  \item \textbf{Section II:} 6 Free-Response Questions (90 Minutes | 50\% of Total Score).
-  \item Calculator active throughout both sections. Standard normal, $t$, and $\chi^2$ tables provided.
+  \item \textbf{Section I:} 42 Multiple-Choice Questions (90 Minutes | 50\% of Total Score).
+  \item \textbf{Section II:} 4 Free-Response Questions (90 Minutes | 50\% of Total Score).
+  \item Calculator active throughout both sections (TI-84 Plus CE or Bluebook Desmos Graphing Calculator). Nongraphing scientific calculators are strictly prohibited. Standard normal, $t$, and $\chi^2$ tables provided in Appendix D.
 \end{itemize}
 
-\section{Section I: Multiple-Choice Questions (Questions 1--40)}
+\section{Section I: Multiple-Choice Questions (Questions 1--42)}
 \begin{enumerate}[leftmargin=1.5em]
   \item A set of 20 exam scores has $\text{Mean} = 75$ and $\text{SD} = 8$. A score of 91 corresponds to a $z$-score of:
   \begin{enumerate}[label=(\Alph*)]
@@ -228,48 +228,74 @@ This authentic practice exam simulates the official AP Statistics Exam.
     \item The $y$-intercept
     \item The $r^2$ value
   \end{enumerate}
+
+  % Item Set (Questions 41-42 based on a shared prompt)
+  \vspace{8pt}
+  \noindent\textbf{Directions for Questions 41--42:} Use the following information to answer Questions 41 and 42.
+
+  A public health agency studies the relationship between daily physical activity ($x$, in minutes) and resting pulse rate ($y$, in beats per minute) for a random sample of 25 adults. The least-squares regression line is $\hat{y} = 78.4 - 0.32x$, with $r = -0.68$ and standard error of the slope $\text{SE}(b_1) = 0.075$.
+
+  \item What percentage of the variability in resting pulse rate is explained by the linear relationship with daily physical activity?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 32.0\% \item 46.2\% \item 68.0\% \item 82.5\% \item 64.0\%
+  \end{enumerate}
+
+  \item In a hypothesis test of $H_0: \beta = 0$ versus $H_a: \beta < 0$, what is the calculated value of the test statistic $t$ and its degrees of freedom?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $t = -4.27, \; df = 23$
+    \item $t = -4.27, \; df = 24$
+    \item $t = -0.32, \; df = 25$
+    \item $t = -2.13, \; df = 23$
+    \item $t = -1.96, \; df = 24$
+  \end{enumerate}
 \end{enumerate}
 
-\section{Section II: Free-Response Questions (Questions 1--6)}
-\textbf{Time: 90 Minutes | 6 Questions | 50\% of Exam Score}
+\section{Section II: Free-Response Questions (Questions 1--4)}
+\textbf{Time: 90 Minutes | 4 Questions | 50\% of Exam Score}
 
-\begin{workbookbox}[Question 1: Data Exploration \& Outlier Analysis (Short-Answer FRQ)]
-A nutritionist records the sugar content (in grams per serving) for 14 brands of breakfast cereals:
-\[ 4, \; 6, \; 7, \; 8, \; 9, \; 10, \; 11, \; 12, \; 12, \; 13, \; 14, \; 15, \; 18, \; 26 \]
-(a) Determine the 5-number summary for this dataset.\\
-(b) Calculate the outlier boundary fences using the $1.5 \times \text{IQR}$ rule and identify any confirmed outliers.\\
-(c) Write a complete description of the distribution addressing center, spread, shape, and unusual features in context.
+\begin{workbookbox}[Question 1: Multi-Focus on Practices 1 \& 2 (Formulate Questions \& Collect Data)]
+A school district administration investigates whether introducing dynamic standing desks into high school classrooms improves student academic attentiveness. A total of 40 standard classrooms across 4 high schools are available for an educational trial.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 1.A:} Formulate a precise, valid statistical investigative question that can be addressed by this comparative study.
+  \item \textbf{Skill 2.B:} Describe an ethical and valid random assignment protocol to allocate 20 classrooms to receive standing desks and 20 classrooms to maintain traditional seated desks using a random number generator.
+  \item \textbf{Skill 2.D:} Identify a potential confounding variable (e.g., subject matter or time of day) and explain how a randomized block design (blocking by academic discipline, such as STEM vs. Humanities) would control for this variable.
+  \item \textbf{Skill 2.E:} State the null and alternative hypotheses in words and mathematical symbols for a significance test evaluating whether standing desks produce higher mean attentiveness ratings.
+\end{enumerate}
 \end{workbookbox}
 
-\begin{workbookbox}[Question 2: Experimental Design \& Confounding (Short-Answer FRQ)]
-A school district tests whether introducing standing desks increases student attentiveness. 40 high school classrooms are available for the study.
-(a) Explain how you would implement a completely randomized design comparing standing desks against traditional desks.\\
-(b) Describe a potential confounding variable and explain how a randomized block design (blocking by subject area, such as Math vs. History) would mitigate this confounding.
+\begin{workbookbox}[Question 2: Multi-Focus on Practices 3 \& 4 (Analyze Data \& Interpret Results)]
+A pediatric nutritional researcher examines the sugar content ($x$, in grams per serving) and caloric density ($y$, in calories) for $n = 14$ popular commercial breakfast cereals. Summary statistics for sugar content are:
+\[ \text{Min} = 4, \quad Q_1 = 7, \quad \text{Median} = 11.5, \quad Q_3 = 14, \quad \text{Max} = 26 \]
+A computer regression package outputs the least-squares regression equation relating calories to sugar content:
+\[ \widehat{\text{Calories}} = 95.20 + 3.85(\text{Sugar}) \]
+with $s = 8.64\text{ calories}$ and $r^2 = 72.8\%$.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 3.B:} Determine the outlier boundary fences for sugar content using the $1.5 \times \text{IQR}$ rule. Is the cereal with 26 grams of sugar a confirmed outlier? Justify mathematically.
+  \item \textbf{Skill 4.A:} Construct and describe the distribution of sugar content addressing Center, Unusual features, Shape, and Spread (C-U-S-S) with context.
+  \item \textbf{Skill 3.B:} Predict the caloric content of a cereal containing 12.0 grams of sugar per serving. If an observed cereal with 12.0 grams of sugar actually has 148 calories, calculate and interpret the residual.
+  \item \textbf{Skill 4.B:} Interpret the slope $3.85$ and the coefficient of determination $r^2 = 72.8\%$ in complete context.
+\end{enumerate}
 \end{workbookbox}
 
-\begin{workbookbox}[Question 3: Probability \& Random Variables (Short-Answer FRQ)]
-A high-tech machine component has a 10\% failure rate within its first year. A company installs 8 independent components.
-(a) What is the probability that exactly 2 components fail during the first year?\\
-(b) What is the probability that at least 1 component fails during the first year?\\
-(c) The replacement cost is \$150 per failed component plus a flat \$100 technician dispatch fee if any components fail. Calculate the expected total repair cost.
+\begin{workbookbox}[Question 3: Statistical Inference (Hypothesis Test for Proportions)]
+A university admissions office claims that at least 65\% of admitted students will accept their offer and enroll. In an SRS of $n = 300$ admitted high school seniors, 180 enroll.
+Conduct a complete significance test at the $\alpha = 0.05$ level following the PHANTOM framework:
+\begin{enumerate}[label=(\alph*)]
+  \item State the null and alternative hypotheses, clearly defining the parameter of interest in context.
+  \item Identify the correct inference procedure and verify all necessary conditions (Random, 10\%, Large Counts) with explicit numerical evidence.
+  \item Calculate the standardized test statistic $z$ and determine the associated $p$-value.
+  \item State your conclusion in the context of university enrollment at the $\alpha = 0.05$ significance level.
+\end{enumerate}
 \end{workbookbox}
 
-\begin{workbookbox}[Question 4: Inference for Proportions (Short-Answer FRQ)]
-A university admissions office claims that at least 65\% of accepted students enroll. In an SRS of $n = 300$ accepted students, 180 enroll.
-Conduct a complete hypothesis test at $\alpha = 0.05$ to evaluate whether the true enrollment proportion is significantly less than 65\%.
-\end{workbookbox}
-
-\begin{workbookbox}[Question 5: Inference for Means \& Two-Sample Comparison (Short-Answer FRQ)]
-An agricultural test compares the weight gain (in pounds) of cattle fed Diet 1 ($n_1 = 16, \bar{x}_1 = 85.4, s_1 = 6.2$) versus Diet 2 ($n_2 = 16, \bar{x}_2 = 79.1, s_2 = 5.8$). Boxplots of both samples show no outliers.
-Construct and interpret a 95\% confidence interval for the true difference in mean weight gain ($\mu_1 - \mu_2$).
-\end{workbookbox}
-
-\begin{workbookbox}[Question 6: The Investigative Task (Extended Multi-Part FRQ)]
-An educational research team models the relationship between daily study hours ($x$) and exam score ($y$) using regression: $\hat{y} = 42.0 + 7.5x$.
-(a) Interpret the slope 7.5 in context.\\
-(b) A student who studied 4 hours scored 78. Calculate and interpret the residual.\\
-(c) The researchers discover that sleep duration ($w$, in hours) also impacts exam scores. When sleep is added, the model becomes $\hat{y} = 20.0 + 6.0x + 3.5w$. Explain how omitted variable bias affected the initial estimate of slope in part (a).\\
-(d) Recommend an optimal study-and-sleep schedule subject to the constraint that study time plus sleep time cannot exceed 14 hours per day.
+\begin{workbookbox}[Question 4: Multi-Focus Synthesis on Practices 2, 3, \& 4 (Comprehensive Investigation)]
+An educational research team models the relationship between daily study hours ($x$) and standardized exam performance ($y$, on a 100-point scale). The preliminary simple linear model is $\hat{y} = 42.0 + 7.5x$.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Practices 3 \& 4:} A student who studied 4.0 hours scored 78 points. Calculate and interpret the residual in context. Explain what the slope $7.5$ means.
+  \item \textbf{Practices 2 \& 3:} The researchers suspect omitted variable bias due to sleep duration ($w$, in hours). When sleep is included, the estimated model is $\hat{y} = 20.0 + 6.0x + 3.5w$. Explain how omitted variable bias affected the initial slope estimate in part (a).
+  \item \textbf{Practice 3 (Probability Model):} Suppose exam score gains $G$ follow a normal distribution with $\mu_G = 12.5$ points and $\sigma_G = 3.2$ points. What is the probability that a randomly chosen student gains more than 15.0 points?
+  \item \textbf{Practices 2, 3, \& 4 (Optimization under Constraint):} A student has a total combined daily budget of 14 hours for study and sleep ($x + w \le 14$). Assuming minimum biological sleep required is 6 hours ($w \ge 6$), find the daily schedule that maximizes predicted exam score and calculate the maximum predicted score.
+\end{enumerate}
 \end{workbookbox}
 
 % =========================================================================
@@ -278,13 +304,14 @@ An educational research team models the relationship between daily study hours (
 \chapter{Practice Exam 2}
 
 \section*{Exam Overview \& Instructions}
-This second full-length practice exam provides comprehensive final review across all 9 curriculum units under strict testing conditions.
+This second full-length practice exam provides comprehensive final review across the 5 curriculum units under strict 2027 digital testing conditions.
 \begin{itemize}[leftmargin=1.2em]
-  \item \textbf{Section I:} 40 Multiple-Choice Questions (90 Minutes | 50\% of Total Score).
-  \item \textbf{Section II:} 6 Free-Response Questions (90 Minutes | 50\% of Total Score).
+  \item \textbf{Section I:} 42 Multiple-Choice Questions (90 Minutes | 50\% of Total Score).
+  \item \textbf{Section II:} 4 Free-Response Questions (90 Minutes | 50\% of Total Score).
+  \item Graphing calculator active throughout (TI-84 Plus CE or Bluebook Desmos Graphing Calculator). Nongraphing scientific calculators are strictly prohibited.
 \end{itemize}
 
-\section{Section I: Multiple-Choice Questions (Questions 1--40)}
+\section{Section I: Multiple-Choice Questions (Questions 1--42)}
 \begin{enumerate}[leftmargin=1.5em]
   \item In a dataset of 100 values, the mean is 50 and standard deviation is 0. This implies:
   \begin{enumerate}[label=(\Alph*)]
@@ -487,79 +514,83 @@ This second full-length practice exam provides comprehensive final review across
   \begin{enumerate}[label=(\Alph*)]
     \item Matched pairs design \item Completely randomized design \item Observational study \item Cluster trial \item Stratified survey
   \end{enumerate}
+
+  % Item Set (Questions 41-42 based on a shared prompt)
+  \vspace{8pt}
+  \noindent\textbf{Directions for Questions 41--42:} Use the following information to answer Questions 41 and 42.
+
+  An automotive engineering team examines the relationship between curb weight ($x$, in thousands of pounds) and highway fuel economy ($y$, in miles per gallon) for an SRS of $n = 18$ vehicles. Computer regression output yields: $\hat{y} = 48.24 - 5.12x$, with $\text{SE}(b_1) = 0.640$, $s = 1.86\text{ mpg}$, and $R\text{-sq} = 80.0\%$.
+
+  \item What is the value of the correlation coefficient $r$ between vehicle curb weight and fuel economy?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $+0.800$ \item $-0.800$ \item $+0.894$ \item $-0.894$ \item $-0.640$
+  \end{enumerate}
+
+  \item Which expression represents a 95\% confidence interval for the true slope $\beta$ of the population regression line?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-5.12 \pm 2.120(0.640)$
+    \item $-5.12 \pm 2.101(0.640)$
+    \item $-5.12 \pm 1.960(0.640)$
+    \item $-5.12 \pm 2.120(1.86)$
+    \item $48.24 \pm 2.120(0.640)$
+  \end{enumerate}
 \end{enumerate}
 
-\section{Section II: Free-Response Questions (Questions 1--6)}
-\textbf{Time: 90 Minutes | 6 Questions | 50\% of Exam Score}
+\section{Section II: Free-Response Questions (Questions 1--4)}
+\textbf{Time: 90 Minutes | 4 Questions | 50\% of Exam Score}
 
-\begin{workbookbox}[Question 1: Comparative Data Analysis (Short-Answer FRQ)]
-A regional hospital network compares patient recovery times (in days) between two rehabilitation protocols: Protocol Alpha ($n = 25$) and Protocol Beta ($n = 25$). 
-The summary statistics are:
-\begin{itemize}
-  \item Protocol Alpha: $\text{Min} = 4$, $Q_1 = 7$, $\text{Median} = 10$, $Q_3 = 14$, $\text{Max} = 22$, $\bar{x} = 10.8$, $s = 4.5$.
-  \item Protocol Beta: $\text{Min} = 6$, $Q_1 = 11$, $\text{Median} = 15$, $Q_3 = 18$, $\text{Max} = 29$, $\bar{x} = 15.2$, $s = 5.6$.
-\end{itemize}
-(a) Determine if there are any outliers in either protocol using the $1.5 \times \text{IQR}$ rule.\\
-(b) Compare the two recovery time distributions addressing Center, Unusual features, Shape, and Spread in context.\\
-(c) A patient requires a protocol where recovery takes no longer than 14 days. Based on the data, which protocol would you recommend? Justify your choice.
+\begin{workbookbox}[Question 1: Multi-Focus on Practices 1 \& 2 (Formulate Questions \& Collect Data)]
+A regional orthopedic medical network evaluates two post-surgical rehabilitation regimens: Protocol Alpha (incorporating hydrotherapy) and Protocol Beta (standard land-based physical therapy). A total of 50 patients scheduled for identical knee replacement surgeries agree to participate.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 1.A:} Formulate a precise statistical investigative question that can be evaluated using the patient recovery time data.
+  \item \textbf{Skill 2.B:} Justify why a randomized comparative experiment is necessary to evaluate the recovery protocols rather than simply allowing patients to select their preferred rehabilitation regimen.
+  \item \textbf{Skill 2.D:} The researchers recognize that patient age (under 60 vs. 60 and older) is strongly associated with recovery rate. Explain how a randomized block design blocking on age controls for this source of variation.
+  \item \textbf{Skill 2.E:} State the null and alternative hypotheses in words and parameters ($\mu_\alpha, \mu_\beta$) for a significance test to determine if Protocol Alpha results in a faster mean recovery time.
+\end{enumerate}
 \end{workbookbox}
 
-\begin{workbookbox}[Question 2: Non-Linear Modeling \& Transformations (Short-Answer FRQ)]
-A marine biologist investigates the relationship between ocean depth ($x$, in hundreds of meters) and underwater light intensity ($y$, in lumens per square meter). The raw scatterplot displays a distinct non-linear decaying curve. 
-A natural logarithm transformation is applied to the response variable, producing the least-squares regression equation:
+\begin{workbookbox}[Question 2: Multi-Focus on Practices 3 \& 4 (Analyze Data \& Interpret Results)]
+A marine research expedition measures water depth ($x$, in hundreds of meters) and underwater ambient light intensity ($y$, in lumens/$\text{m}^2$) across $n = 22$ oceanic sampling sites. The raw scatterplot exhibits a strong non-linear decay. Applying a natural logarithm transformation to the response variable yields:
 \[ \widehat{\ln(y)} = 6.42 - 0.58x \]
-The standard error of the slope is $s_{b_1} = 0.042$, and $r^2 = 0.941$ with $n = 22$ depth measurement stations.
-(a) Predict the light intensity $y$ at a depth of 500 meters ($x = 5.0$).\\
-(b) At a depth of 300 meters ($x = 3.0$), the observed light intensity was 120 lumens/$\text{m}^2$. Calculate and interpret the residual in the transformed scale.\\
-(c) Interpret the coefficient of determination $r^2 = 0.941$ in context.
+with $s = 0.145$, $\text{SE}(b_1) = 0.042$, and $r^2 = 94.1\%$.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 3.B:} Predict the light intensity $y$ (in lumens/$\text{m}^2$) at a depth of 500 meters ($x = 5.0$).
+  \item \textbf{Skill 3.B \& 4.D:} At depth $x = 3.0$ (300 meters), observed light intensity is 120 lumens/$\text{m}^2$. Calculate and interpret the residual in the natural logarithm scale.
+  \item \textbf{Skill 4.A:} Explain why examining the residual plot of the raw $(x, y)$ data versus the transformed $(x, \ln(y))$ data is crucial before concluding that the linear model is appropriate.
+  \item \textbf{Skill 4.B:} Interpret the coefficient of determination $r^2 = 94.1\%$ in context.
+\end{enumerate}
 \end{workbookbox}
 
-\begin{workbookbox}[Question 3: Random Variables \& Combinations (Short-Answer FRQ)]
-A commercial express delivery service uses two independent routes to deliver packages between two distribution hubs.
-Let $X$ represent the transit time (in hours) along Route 1, where $\mu_X = 4.2$ hours and $\sigma_X = 0.6$ hours.
-Let $Y$ represent the transit time (in hours) along Route 2, where $\mu_Y = 5.1$ hours and $\sigma_Y = 0.8$ hours.
-(a) A dispatcher dispatches one vehicle along Route 1 and one vehicle along Route 2. Find the mean and standard deviation of the total combined transit time $T = X + Y$.\\
-(b) Find the mean and standard deviation of the difference in transit times $D = Y - X$.\\
-(c) Assuming both transit times follow approximately normal distributions, calculate the probability that Route 2 takes at least 1.5 hours longer than Route 1.
-\end{workbookbox}
-
-\begin{workbookbox}[Question 4: Inference for Two Proportions (Short-Answer FRQ)]
-A consumer advocacy organization surveys adult smartphone users to determine whether there is a difference in the proportion of satisfied users between Brand A and Brand B.
+\begin{workbookbox}[Question 3: Statistical Inference (Two-Proportion Confidence Interval)]
+A technology consumer research firm investigates whether user satisfaction differs between two prominent mobile operating systems: OS-Alpha and OS-Beta.
 \begin{itemize}
-  \item Brand A: In an SRS of 400 users, 328 report being satisfied.
-  \item Brand B: In an SRS of 500 users, 375 report being satisfied.
+  \item OS-Alpha: In an independent random sample of 400 active users, 328 report being highly satisfied.
+  \item OS-Beta: In an independent random sample of 500 active users, 375 report being highly satisfied.
 \end{itemize}
-(a) Construct a 95\% confidence interval for the true difference in the proportion of satisfied users ($p_A - p_B$).\\
-(b) Based on your confidence interval, is there convincing statistical evidence that Brand A has a higher customer satisfaction rate than Brand B? Explain.
+\begin{enumerate}[label=(\alph*)]
+  \item Define the parameters of interest and state the appropriate inference procedure.
+  \item Verify all necessary conditions for constructing a two-proportion confidence interval with explicit numbers.
+  \item Construct a 95\% confidence interval for the true difference in satisfaction proportions ($p_\alpha - p_\beta$).
+  \item Based on your confidence interval, does the data provide convincing statistical evidence that OS-Alpha achieves a higher satisfaction rate than OS-Beta? Justify your claim.
+\end{enumerate}
 \end{workbookbox}
 
-\begin{workbookbox}[Question 5: Inference for Means: Paired $t$-Test (Short-Answer FRQ)]
-A corporate wellness director evaluates an 8-week mindfulness stress reduction workshop. Ten executives record their resting heart rate (beats per minute) immediately before starting the workshop and after completion:
-\begin{center}
-\begin{adjustbox}{max width=\linewidth}
-\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
-\hline
-Executive & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
-Before & 82 & 78 & 88 & 74 & 80 & 85 & 90 & 76 & 84 & 79 \\ \hline
-After & 75 & 74 & 81 & 72 & 76 & 80 & 82 & 73 & 78 & 75 \\ \hline
-Difference (B $-$ A) & 7 & 4 & 7 & 2 & 4 & 5 & 8 & 3 & 6 & 4 \\ \hline
-\end{tabular}
-\end{adjustbox}
-\end{center}
-The sample mean difference is $\bar{x}_d = 5.0\text{ bpm}$ and the sample standard deviation is $s_d = 1.886\text{ bpm}$. A normal probability plot of the differences shows a strong linear pattern with no outliers.
-Carry out an appropriate significance test at the $\alpha = 0.01$ level to determine if the mindfulness workshop significantly reduces executive resting heart rate.
-\end{workbookbox}
-
-\begin{workbookbox}[Question 6: Investigative Task: Decision Analysis Under Uncertainty]
-A biomedical startup is deciding whether to manufacture a rapid diagnostic test kit for a rare disease. 
-The disease prevalence in the target population is $P(D) = 0.02$.
-The diagnostic test has the following performance characteristics:
+\begin{workbookbox}[Question 4: Multi-Focus Synthesis on Practices 2, 3, \& 4 (Decision Analysis Under Uncertainty)]
+A clinical diagnostic startup develops a rapid screening test kit for an asymptomatic cardiovascular condition. The disease prevalence in the screening population is $P(D) = 0.02$. Laboratory trials establish:
 \begin{itemize}
   \item Sensitivity (True Positive Rate): $P(+ \mid D) = 0.95$
   \item Specificity (True Negative Rate): $P(- \mid D^c) = 0.98$
 \end{itemize}
-(a) Calculate the probability that a randomly chosen individual tests positive, $P(+)$.\\
-(b) Calculate the Positive Predictive Value (PPV), which is the conditional probability that a person actually has the disease given that they received a positive test result, $P(D \mid +)$. Interpret this result in context.\\
-(c) The medical clinic must adopt a treatment protocol. If a patient is treated when they actually have the disease, the net health benefit is $+$10,000. If an uninfected person is treated unnecessarily (false positive), adverse drug side effects incur a net cost of $-$2,500. If an infected person is left untreated (false negative), severe complications incur a cost of $-$50,000. Correctly withholding treatment from an uninfected person has a net payoff of \$0.
-Using your probabilities from parts (a) and (b), calculate the expected monetary/health payoff of adopting the rapid diagnostic test protocol for 1,000 tested individuals versus treating no one.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 3.C:} Calculate the overall probability that a randomly chosen individual tests positive, $P(+)$, showing complete probability tree or total probability calculations.
+  \item \textbf{Skill 3.C \& 4.D:} Calculate the Positive Predictive Value (PPV), $P(D \mid +)$, and interpret this conditional probability in context. Explain why PPV is surprisingly low despite high sensitivity and specificity.
+  \item \textbf{Practices 2, 3, \& 4 (Decision Payoff Matrix):} The public health department evaluates a protocol where positive test results trigger immediate preventive therapy. Net payoffs per individual are:
+  \begin{itemize}
+    \item True Positive (Treated correctly): $+\$10,000$ (avoided hospitalization benefit)
+    \item False Positive (Unnecessary treatment): $-\$2,500$ (medication side effects cost)
+    \item False Negative (Missed case): $-\$50,000$ (severe disease progression cost)
+    \item True Negative (Correct non-treatment): $\$0$
+  \end{itemize}
+  Calculate the expected net payoff per 1,000 screened individuals under this protocol versus a policy of screening no one (where all diseased cases go untreated). Provide a clear policy recommendation.
+\end{enumerate}
 \end{workbookbox}
