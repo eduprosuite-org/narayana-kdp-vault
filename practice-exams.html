@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang=en data-theme=light>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>2027 Digital AP® Statistics Exam Simulator | 10 Full-Length Practice Exams</title>
+  <link rel=stylesheet href=styles.css>
+  <style>
+    .simulator-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    @media (max-width: 860px) {
+      .simulator-container { grid-template-columns: 1fr; }
+    }
+    .exam-nav-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      position: sticky;
+      top: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .exam-item-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+    .exam-item-btn:hover, .exam-item-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+      transform: translateX(4px);
+    }
+    .badge-pill {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.25);
+    }
+    .exam-stage {
+      background: var(--surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .timer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      margin-bottom: 24px;
+    }
+    .timer-display {
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: monospace;
+      color: #38bdf8;
+    }
+    .btn-timer {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-timer:hover { background: #0369a1; }
+    .tool-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tool-btn {
+      padding: 8px 14px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .tool-btn:hover {
+      border-color: #0284c7;
+      color: #0284c7;
+    }
+    .question-card {
+      border-bottom: 1px solid var(--border-color);
+      padding: 20px 0;
+    }
+    .question-stem {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .option-label:hover {
+      background: rgba(2, 132, 199, 0.08);
+      border-color: #38bdf8;
+    }
+    .explanation-box {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(2, 132, 199, 0.06);
+      border-left: 4px solid #0284c7;
+      display: none;
+      font-size: 0.95rem;
+    }
+    .score-summary-banner {
+      display: none;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: #0f172a;
+      color: white;
+      margin-top: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class=container nav-container>
+      <a href=index.html class=logo>
+        <span>📊 AP® Statistics Master Review</span>
+        <span class=logo-badge>2027 EXAM READY</span>
+      </a>
+      <div style=display:flex; gap:12px; align-items:center;>
+        <a href=index.html style=color:var(--text-color); text-decoration:none; font-size:0.9rem; font-weight:600;>← Companion Home</a>
+        <button class=theme-toggle id=themeToggle>🌙 Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class=hero style=padding: 36px 0;>
+    <div class=container>
+      <h1 style=font-size:2.2rem;>Official 2027 Digital AP® Statistics Exam Simulator</h1>
+      <p>10 Full-Length Authentic Practice Exams (Exams 3 to 12) featuring the 2027 42-MCQ + 4-FRQ format, Bluebook timer, Desmos calculator, and instant rubric scoring.</p>
+      <div class=badge-row>
+        <span class=hero-pill>⏱️ 90-Minute Timed Bluebook Interface</span>
+        <span class=hero-pill>🧮 Built-in Desmos & Formula Sheet</span>
+        <span class=hero-pill>🎯 42 MCQs + 4 FRQs Per Exam</span>
+        <span class=hero-pill>📄 1-Click Printable PDF Mode</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Simulator Layout -->
+  <main class=container style=margin-bottom: 60px;>
+    
+    <div class=simulator-container>
+      
+      <!-- Exam Selector Sidebar -->
+      <aside class=exam-nav-card>
+        <h3 style=margin-bottom: 12px; font-size: 1.1rem; color: #0284c7;>🎯 Select Online Exam</h3>
+        <p style=font-size:0.85rem; color:var(--text-muted); margin-bottom: 14px;>10 Full-Length Exams aligned with the 2027 5-Unit Framework:</p>
+        
+        <div id=examList>
+          <button class=exam-item-btn active onclick=loadExam(3)><span>Exam 3: Diagnostic 2</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(4)><span>Exam 4: Bluebook Test A</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(5)><span>Exam 5: Bluebook Test B</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(6)><span>Exam 6: Skills 1 & 2 Focus</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(7)><span>Exam 7: Skills 3 & 4 Focus</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(8)><span>Exam 8: Inference Drill</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(9)><span>Exam 9: Regression Deep-Dive</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(10)><span>Exam 10: Mastery Simulator 1</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(11)><span>Exam 11: Mastery Simulator 2</span><span class=badge-pill>42 MCQs</span></button>
+          <button class=exam-item-btn onclick=loadExam(12)><span>Exam 12: Ultimate Score-5</span><span class=badge-pill>42 MCQs</span></button>
+        </div>
+
+        <div style=margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color); font-size: 0.85rem;>
+          <p><strong>In-Book Exams:</strong><br>• Exam 1: 2027 Diagnostic (p. 210)<br>• Exam 2: 2027 Mastery (p. 248)</p>
+          <p style=margin-top: 8px; color: #0284c7;><strong>Total Suite: 12 Full Exams</strong></p>
+        </div>
+      </aside>
+
+      <!-- Exam Active Stage -->
+      <section class=exam-stage>
+        
+        <!-- Live Countdown & Controls -->
+        <div class=timer-bar>
+          <div>
+            <div style=font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:#94a3b8;>Section I Time Remaining</div>
+            <div class=timer-display id=timer>90:00</div>
+          </div>
+          <div style=display:flex; gap:10px;>
+            <button class=btn-timer id=toggleTimer onclick=toggleTimer()>Pause</button>
+            <button class=btn-timer style=background:#475569; onclick=resetTimer()>Reset 90m</button>
+            <button class=btn-timer style=background:#10b981; onclick=submitExam()>Submit & Grade</button>
+          </div>
+        </div>
+
+        <!-- Tool Bar (Desmos, Formula Table, Notation Guide) -->
+        <div class=tool-bar>
+          <button class=tool-btn onclick=openDesmos()>🧮 Launch Desmos Graphing Calculator</button>
+          <button class=tool-btn onclick=openFormulas()>📑 AP® Statistics Formula Sheet</button>
+          <button class=tool-btn onclick=openQWERTYGuide()>⌨️ Bluebook QWERTY Notation</button>
+          <button class=tool-btn onclick=window.print()>🖨️ Print Exam Booklet (PDF)</button>
+        </div>
+
+        <!-- Exam Header Details -->
+        <div style=margin-bottom: 20px;>
+          <h2 id=currentExamTitle style=color: #0f172a; font-size:1.6rem;>Practice Exam 3: 2027 Full-Length Digital Simulation</h2>
+          <p style=color:var(--text-muted); font-size:0.95rem;>Section I: 42 Multiple-Choice Questions | 90 Minutes | 50% Exam Weight</p>
+        </div>
+
+        <!-- Questions Rendering Container -->
+        <div id=questionsContainer></div>
+
+        <!-- Section II FRQs Preview Box -->
+        <div style=margin-top: 36px; padding: 22px; background: var(--surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-color);>
+          <h3 style=color:#0284c7; margin-bottom: 8px;>📝 Section II: Free-Response Practice (4 Questions | 90 Mins)</h3>
+          <p style=font-size:0.95rem; color:var(--text-muted); margin-bottom: 12px;>This exam includes 4 authentic 2027 multi-part FRQs:</p>
+          <ul style=padding-left: 20px; font-size: 0.9rem; line-height: 1.8;>
+            <li><strong>Question 1:</strong> Multi-Focus on Practices 1 & 2 (Formulate Questions & Collect Data)</li>
+            <li><strong>Question 2:</strong> Multi-Focus on Practices 3 & 4 (Analyze Data & Interpret Results)</li>
+            <li><strong>Question 3:</strong> Statistical Inference (Significance Test or Confidence Interval)</li>
+            <li><strong>Question 4:</strong> Multi-Focus Synthesis on Practices 2, 3, & 4 (Comprehensive Investigation)</li>
+          </ul>
+          <div style=margin-top: 14px;>
+            <button class=tool-btn style=background:#0284c7; color:white; onclick=showFRQRubrics()>View Section II Model FRQs & Score-4 Grading Rubrics (E, P, I)</button>
+          </div>
+          <div id=frqRubricContainer style=display:none; margin-top: 16px;></div>
+        </div>
+
+        <!-- Score Summary Result -->
+        <div id=scoreSummary class=score-summary-banner>
+          <h2 style=font-size:2rem; margin-bottom:6px; id=scorePercentage>0%</h2>
+          <p style=font-size:1.1rem; color:#38bdf8; id=scorePoints>0 / 42 Correct</p>
+          <p style=margin-top: 10px; font-size:0.95rem; color:#cbd5e1;>Review the detailed step-by-step explanations below for every question to lock in your Score 5.</p>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class=container>
+      <p>© 2026-2027 AP® Statistics Master Review Series. Fully synchronized with 2027 College Board Digital Standards.</p>
+      <p style=font-size: 0.8rem; margin-top: 8px;>*AP® and Advanced Placement® are registered trademarks of the College Board. Desmos® is a registered trademark of Desmos Studio PBC. Neither is affiliated with nor endorses this simulator.</p>
+    </div>
+  </footer>
+
+  <!-- Simulator Interactive Logic -->
+  <script src=practice-exams.js></script>
+</body>
+</html>
