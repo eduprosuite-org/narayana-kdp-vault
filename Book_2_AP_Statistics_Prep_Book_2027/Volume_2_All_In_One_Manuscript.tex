@@ -10,9 +10,9 @@
   bottom=0.75in,
   inner=0.875in,
   outer=0.625in,
-  headheight=24pt,
-  headsep=12pt,
-  footskip=20pt
+  headheight=28pt,
+  headsep=18pt,
+  footskip=24pt
 ]{geometry}
 
 \usepackage{amsmath,amssymb,amsthm,mathtools}
@@ -40,14 +40,23 @@
 \newcommand{\BookAuthor}{PR}
 \newcommand{\Edition}{2027 Exam Ready Edition}
 
-% Header & Footer
+% Clean, Non-Overlapping Running Headers & Footers
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\itshape \BookTitle}
-\fancyhead[R]{\small\itshape \leftmark}
-\fancyfoot[C]{\small\thepage}
+\fancyhead[L]{\parbox[b]{3.5in}{\raggedright\small\color{MidnightBlue}\nouppercase{\leftmark}}}
+\fancyhead[R]{\small\bfseries\color{MidnightBlue}\thepage}
+\fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
+
+% Chapter opening pages: clean header, page number at bottom center
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
 
 % Section styling
 \titleformat{\chapter}[display]

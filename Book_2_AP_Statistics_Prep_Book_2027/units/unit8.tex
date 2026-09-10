@@ -1,4 +1,4 @@
-% =========================================================================
+﻿% =========================================================================
 % UNIT 8: INFERENCE FOR CATEGORICAL DATA - CHI-SQUARE TESTS
 % =========================================================================
 \chapter{Unit 8: Inference for Categorical Data: Chi-Square Tests}
@@ -62,7 +62,7 @@ AP graders rigorously penalize students who misidentify the specific Chi-Square 
 \end{itemize}
 \end{lessonbox}
 
-\begin{lessonbox}[Lesson 8.3: Calculating Expected Counts & Test Statistic]
+\begin{lessonbox}[Lesson 8.3: Calculating Expected Counts \& Test Statistic]
 \begin{itemize}[leftmargin=1.2em]
   \item \textbf{Goodness-of-Fit Expected Counts:}
   \begin{equation}
@@ -119,6 +119,7 @@ The Large Counts condition for Chi-Square tests requires that \textbf{all expect
 \subsection*{Example 8.2: Chi-Square Test for Independence}
 \textbf{Problem:} A market research firm surveys an SRS of 400 vehicle owners to examine whether vehicle body style (Sedan, SUV, Truck) is independent of buyer age bracket ($<35$, $35\text{--}55$, $>55$). The sample counts are:
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Age Group} & \textbf{Sedan} & \textbf{SUV} & \textbf{Truck} & \textbf{Total} \\
@@ -130,6 +131,7 @@ $> 55$ & 50 & 30 & 20 & 100 \\
 \textbf{Total} & 160 & 160 & 80 & 400 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 (a) Find the expected number of buyers aged $<35$ who purchase an SUV under $H_0$.\\
 (b) Calculate the Chi-Square test statistic, degrees of freedom, and state the conclusion at $\alpha = 0.01$.
@@ -140,6 +142,7 @@ $> 55$ & 50 & 30 & 20 & 100 \\
   \item \textbf{Part (b):}
   Expected counts matrix:
   \begin{center}
+  \begin{adjustbox}{max width=\linewidth}
   \begin{tabular}{lccc}
   \toprule
   \textbf{Age} & \textbf{Sedan} & \textbf{SUV} & \textbf{Truck} \\
@@ -149,6 +152,7 @@ $> 55$ & 50 & 30 & 20 & 100 \\
   $> 55$ & $100(160)/400 = 40$ & $100(160)/400 = 40$ & $100(80)/400 = 20$ \\
   \bottomrule
   \end{tabular}
+  \end{adjustbox}
   \end{center}
   All expected counts are $\ge 20$, satisfying the Large Counts condition.\\
   \[ \chi^2 = \sum \frac{(O - E)^2}{E} = \frac{(60-56)^2}{56} + \frac{(50-56)^2}{56} + \frac{(30-28)^2}{28} + \frac{(50-64)^2}{64} + \frac{(80-64)^2}{64} \]
@@ -308,6 +312,7 @@ $> 55$ & 50 & 30 & 20 & 100 \\
 \textbf{Problem:} An airline carrier surveys independent random samples of passengers across three route types (Domestic Short-Haul, Domestic Transcontinental, International) regarding on-board Wi-Fi satisfaction. 
 The observed frequencies are:
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Route Type} & \textbf{Satisfied} & \textbf{Neutral} & \textbf{Dissatisfied} & \textbf{Total} \\
@@ -319,6 +324,7 @@ International & 95 & 35 & 20 & 150 \\
 \textbf{Total} & 240 & 120 & 90 & 450 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 Perform an appropriate hypothesis test at $\alpha = 0.05$ to determine if the satisfaction distribution differs across route types.
 

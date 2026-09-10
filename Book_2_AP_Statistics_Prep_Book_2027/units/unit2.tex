@@ -62,7 +62,7 @@ Whenever an exam question asks you to describe the relationship shown in a scatt
 \end{itemize}
 \end{lessonbox}
 
-\begin{frqrubricbox}[Score-4 Interpretation Templates: Slope & $y$-Intercept]
+\begin{frqrubricbox}[Score-4 Interpretation Templates: Slope \& $y$-Intercept]
 \textbf{Slope ($b_1$):}
 \textit{"For each additional 1 [unit of $x$] increase in [explanatory variable], the predicted [response variable] increases/decreases by approximately $|b_1|$ [units of $y$]."}
 \textit{(Note: You MUST include the word "predicted" or "estimated" to earn full credit!)}
@@ -72,7 +72,7 @@ Whenever an exam question asks you to describe the relationship shown in a scatt
 \textit{(Note: Comment if $x=0$ makes physical sense in the real-world context).}
 \end{frqrubricbox}
 
-\begin{lessonbox}[Lesson 2.4: Residuals & Residual Plot Analysis]
+\begin{lessonbox}[Lesson 2.4: Residuals \& Residual Plot Analysis]
 \begin{equation}
   \text{Residual } e = y - \hat{y} = \text{Actual } y - \text{Predicted } y
 \end{equation}
@@ -85,7 +85,7 @@ A linear regression model is appropriate if and only if the residual plot exhibi
 \end{itemize}
 \end{lessonbox}
 
-\begin{lessonbox}[Lesson 2.5: Coefficient of Determination ($r^2$) & Residual SD ($s$)]
+\begin{lessonbox}[Lesson 2.5: Coefficient of Determination ($r^2$) \& Residual SD ($s$)]
 \begin{frqrubricbox}[Score-4 Template: $r^2$ and $s$ Interpretation]
 \textbf{Coefficient of Determination ($r^2$):}
 \textit{"Approximately $[r^2 \times 100\%]$ of the variability in [response variable $y$] is accounted for by the linear relationship with [explanatory variable $x$]."}
@@ -98,7 +98,7 @@ A linear regression model is appropriate if and only if the residual plot exhibi
 \end{frqrubricbox}
 \end{lessonbox}
 
-\begin{lessonbox}[Lesson 2.6: High Leverage, Outliers, & Influential Points]
+\begin{lessonbox}[Lesson 2.6: High Leverage, Outliers, \& Influential Points]
 \begin{itemize}[leftmargin=1.2em]
   \item \textbf{High Leverage Point:} Has an $x$-value substantially higher or lower than the mean $\bar{x}$. Acts as an anchor point; if it aligns with the overall trend, it inflates $r$ without altering slope.
   \item \textbf{Outlier in Regression:} An observation with a very large residual (far above or below the regression line).
@@ -109,6 +109,7 @@ A linear regression model is appropriate if and only if the residual plot exhibi
 \begin{lessonbox}[Lesson 2.7: Reading Regression Computer Output]
 Computer printouts (from Minitab, R, or JMP) always follow this standardized grid:
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
@@ -117,6 +118,7 @@ Computer printouts (from Minitab, R, or JMP) always follow this standardized gri
 \textbf{Variable ($x$)} & $b_1$ & $\text{SE}(b_1)$ & $t$ & $p$ \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 $S = s$ (Standard deviation of residuals), $R\text{-sq} = r^2$.
 To obtain $r$ from $R\text{-sq}$, compute $\sqrt{r^2}$ and \textbf{match the sign of the slope ($b_1$)}!
@@ -124,9 +126,10 @@ To obtain $r$ from $R\text{-sq}$, compute $\sqrt{r^2}$ and \textbf{match the sig
 
 \section{Worked Step-by-Step Examples}
 
-\subsection*{Example 2.1: Interpreting Computer Output & Calculating Residuals}
+\subsection*{Example 2.1: Interpreting Computer Output \& Calculating Residuals}
 \textbf{Problem:} A biologist investigates the relationship between ambient water temperature ($x$, in $^\circ\text{C}$) and the larval development time of a species of fish ($y$, in days). Regression output for 12 tanks is displayed below:
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
@@ -135,6 +138,7 @@ To obtain $r$ from $R\text{-sq}$, compute $\sqrt{r^2}$ and \textbf{match the sig
 \textbf{Temp} & -1.420 & 0.095 & -14.95 & 0.000 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 $S = 1.15\text{ days}, \quad R\text{-sq} = 95.7\%, \quad R\text{-sq(adj)} = 95.3\%$.\\
 (a) Write the equation of the least-squares regression line.\\
@@ -156,7 +160,7 @@ $S = 1.15\text{ days}, \quad R\text{-sq} = 95.7\%, \quad R\text{-sq(adj)} = 95.3
 
 \section{TI-84 Plus CE Calculator Playbook}
 
-\begin{calculatorbox}[TI-84 Playbook: Linear Regression & Residual Plots]
+\begin{calculatorbox}[TI-84 Playbook: Linear Regression \& Residual Plots]
 \begin{enumerate}[leftmargin=1.2em]
   \item \textbf{Diagnostic ON:} Press \texttt{[2nd] [0]} (\texttt{CATALOG}) $\rightarrow$ Scroll to \texttt{DiagnosticOn} $\rightarrow$ Press \texttt{[ENTER]} twice. (Crucial to display $r$ and $r^2$!).
   \item Enter $x$-data into \texttt{L1} and $y$-data into \texttt{L2}.
@@ -320,7 +324,7 @@ $S = 1.15\text{ days}, \quad R\text{-sq} = 95.7\%, \quad R\text{-sq(adj)} = 95.3
 
 \subsection*{Part II: Free-Response Practice Problem}
 
-\begin{workbookbox}[FRQ 2.1: Regression Modeling & Residual Evaluation]
+\begin{workbookbox}[FRQ 2.1: Regression Modeling \& Residual Evaluation]
 \textbf{Problem:} An environmental engineer investigates the relationship between wind speed ($x$, in mph) and electricity generation ($y$, in kilowatts) of a wind turbine. The regression line is $\widehat{\text{Power}} = -15.4 + 4.8(\text{Wind})$. $r^2 = 0.88, s = 6.2\text{ kW}$.
 (a) Interpret the slope $4.8$ in context.\\
 (b) Interpret $r^2 = 0.88$ in context.\\
@@ -340,6 +344,7 @@ $S = 1.15\text{ days}, \quad R\text{-sq} = 95.7\%, \quad R\text{-sq(adj)} = 95.3
 \begin{frqrubricbox}[FRQ 2.2: Regression Output, Residuals, and Outliers vs. High Leverage]
 \textbf{Problem:} A real estate analyst investigates the relationship between living area ($x$, in hundreds of square feet) and selling price ($y$, in thousands of dollars) for 24 recently sold suburban homes. A computer regression package outputs:
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
@@ -348,6 +353,7 @@ Constant & 45.20 & 16.40 & 2.76 & 0.011 \\
 Area & 12.80 & 1.60 & 8.00 & 0.000 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 $S = 18.50\text{ (\$1,000s)}, \quad R\text{-sq} = 74.4\%$.
 \begin{enumerate}[label=(\alph*)]

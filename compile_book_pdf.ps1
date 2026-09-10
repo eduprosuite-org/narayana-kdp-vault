@@ -1,5 +1,6 @@
-﻿param (
-    [int]$BookNumber = 2
+param (
+    [int]$BookNumber = 2,
+    [string]$Subject = "Statistics"
 )
 
 $pdflatex = "C:\Users\Admin\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe"
@@ -8,7 +9,10 @@ if (-not (Test-Path $pdflatex)) {
     exit 1
 }
 
-$bookFolders = Get-ChildItem -Directory -Path "d:\Narayana kdp\With 2.o" -Filter "Book_${BookNumber}_*"
+$bookFolders = Get-ChildItem -Directory -Path "d:\Narayana kdp\With 2.o" -Filter "Book_${BookNumber}_*${Subject}*"
+if ($bookFolders.Count -eq 0) {
+    $bookFolders = Get-ChildItem -Directory -Path "d:\Narayana kdp\With 2.o" -Filter "Book_${BookNumber}_*"
+}
 if ($bookFolders.Count -eq 0) {
     Write-Host "[ERROR] Folder Book_${BookNumber}_* not found!" -ForegroundColor Red
     exit 1
