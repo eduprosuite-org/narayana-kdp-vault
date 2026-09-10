@@ -1,0 +1,161 @@
+﻿\documentclass[12pt,oneside,openany]{book}
+
+% =========================================================================
+% STRICT KDP 6" x 9" NO-BLEED INTERIOR GEOMETRY (RULE M2)
+% =========================================================================
+\usepackage[
+  paperwidth=6in,
+  paperheight=9in,
+  top=0.75in,
+  bottom=0.75in,
+  inner=0.875in,
+  outer=0.625in,
+  headheight=24pt,
+  headsep=12pt,
+  footskip=20pt
+]{geometry}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,multirow,tabularx}
+\usepackage{enumitem}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[breakable]{tcolorbox}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\onehalfspacing
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+
+\newcommand{\BookTitle}{AP Calculus: 10 Full-Length Practice Exams & FRQ Scoring Playbook 2027}
+\newcommand{\BookSubtitle}{The Complete Study Guide \& Textbook for High School Students Featuring Practice Workbooks, TI-84 Playbooks, and 2027 Full-Length Exams}
+\newcommand{\BookSeries}{AP Calculus Master Review Series --- Book 3}
+\newcommand{\BookAuthor}{PR}
+\newcommand{\Edition}{2027 Exam Ready Edition}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape \BookTitle}
+\fancyhead[R]{\small\itshape \leftmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\color{MidnightBlue}}{\chaptertitlename\ \thechapter}{6pt}{\LARGE\bfseries}
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{MidnightBlue}}{\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{DarkSlateGray}}{\thesubsection}{0.8em}{}
+
+% Custom Fast TColorBoxes (Standard jigsaw, width=\linewidth, breakable)
+\newtcolorbox{lessonbox}[1][]{
+  standard jigsaw,
+  width=\linewidth,
+  breakable,
+  colback=NavyBlue!5!white,
+  colframe=NavyBlue!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{workbookbox}[1][]{
+  standard jigsaw,
+  width=\linewidth,
+  breakable,
+  colback=ForestGreen!5!white,
+  colframe=ForestGreen!85!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{calculatorbox}[1][]{
+  standard jigsaw,
+  width=\linewidth,
+  breakable,
+  colback=Orange!5!white,
+  colframe=DarkOrange!90!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{trapbox}[1][]{
+  standard jigsaw,
+  width=\linewidth,
+  breakable,
+  colback=Red!5!white,
+  colframe=Red!80!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+\newtcolorbox{frqrubricbox}[1][]{
+  standard jigsaw,
+  width=\linewidth,
+  breakable,
+  colback=Purple!5!white,
+  colframe=Purple!85!black,
+  fonttitle=\bfseries\color{white},
+  title={#1},
+  arc=1.5mm,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=6pt, after skip=6pt
+}
+
+% =========================================================================
+% MANDATORY TRADEMARK & NOMINATIVE FAIR USE DISCLAIMER (RULE 3)
+% AP(R) and Advanced Placement(R) are registered trademarks of the College Board,
+% which was not involved in the production of, and does not endorse, this product.
+% =========================================================================
+
+\begin{document}
+\frontmatter
+\input{units/frontmatter.tex}
+\input{units/introduction.tex}
+
+\mainmatter
+\input{units/unit1.tex}
+\input{units/unit2.tex}
+\input{units/unit3.tex}
+\input{units/unit4.tex}
+\input{units/unit5.tex}
+\input{units/unit6.tex}
+\input{units/unit7.tex}
+\input{units/unit8.tex}
+\input{units/unit9.tex}
+
+\input{units/exams_and_backmatter.tex}
+\input{units/pe1_solutions.tex}
+\input{units/pe2_solutions.tex}
+
+\appendix
+\input{units/appendices.tex}
+\input{units/appendix_tables.tex}
+
+\end{document}

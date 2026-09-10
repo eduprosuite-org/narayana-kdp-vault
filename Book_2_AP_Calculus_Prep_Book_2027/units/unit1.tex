@@ -1,0 +1,373 @@
+﻿% =========================================================================
+% UNIT 1: EXPLORING ONE-VARIABLE DATA
+% =========================================================================
+\chapter{Unit 1: Exploring One-Variable Data}
+
+\section{Unit Overview \& Exam Weight}
+Unit 1 accounts for \textbf{15\% to 23\%} of the total score on the official AP Statistics Exam, making it one of the highest-yield foundational units in the entire curriculum. Mastery of variable classification, distribution descriptions, summary statistics, and normal distributions forms the indispensable grammar for every inference procedure tested in Units 6 through 9.
+
+\subsection*{Key Unit Vocabulary}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Individual:] An object or person described by a set of data (e.g., students, patients, vehicles).
+  \item[Variable:] Any characteristic of an individual that can take different values for different individuals.
+  \item[Categorical Variable:] Places an individual into one of several non-numerical groups or categories (e.g., eye color, grade level, zip code).
+  \item[Quantitative Variable:] Takes numerical values for which arithmetic operations such as addition or averaging make sense (e.g., weight, reaction time, exam score).
+  \item[Discrete Quantitative Variable:] A quantitative variable whose possible values can be counted (e.g., number of siblings, goals scored).
+  \item[Continuous Quantitative Variable:] A quantitative variable that can take any value in an interval on the real number line (e.g., height, temperature, running speed).
+  \item[Distribution:] The pattern of variation of a variable; tells us what values the variable takes and how frequently it takes those values.
+  \item[Resistance:] A statistical measure is resistant if extreme observations (outliers or strong skewness) have little to no influence on its value. The median and IQR are resistant; the mean, range, and standard deviation are non-resistant.
+  \item[Percentile:] The percentage of values in a distribution that fall strictly below a given value.
+  \item[Z-Score (Standardized Value):] Measures the directed distance between an individual data value and the mean in units of standard deviation: $z = (x - \mu)/\sigma$.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 1.1: Variable Classification & The Identifier Trap]
+\textbf{Foundational Principle:} Not every variable expressed as a number is quantitative! A zip code (e.g., 90210), a social security number, or a jersey number (\#23) uses numbers strictly as categorical labels. Taking the average of zip codes has no mathematical meaning.
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Categorical:} Look for categories or groupings. Operations like averaging are meaningless.
+  \item \textbf{Quantitative:} Look for counts or measurements with units (e.g., inches, seconds, dollars). Calculating the mean makes conceptual sense.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.2: Visualizing Categorical Data & Simpson's Paradox]
+Categorical distributions are displayed using \textbf{Bar Charts, Segmented Bar Charts, and Mosaic Plots}.
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Bar Chart:} Bars must have distinct spaces between them to emphasize discrete categories. Heights represent frequencies or relative frequencies.
+  \item \textbf{Mosaic Plot:} A segmented bar chart where the width of each bar is proportional to the size of the corresponding group, allowing visual assessment of association.
+  \item \textbf{Simpson's Paradox:} An apparent association between two categorical variables can reverse or disappear when data from several groups are combined into a single aggregate table.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.3: Visualizing Quantitative Data]
+Quantitative data must be displayed using charts that preserve or bin numerical scale:
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Dotplots:} Ideal for small to moderate datasets ($n < 50$). Every individual observation is plotted as a single dot above a continuous number line. Shows exact data values, clusters, gaps, and outliers.
+  \item \textbf{Stemplots (Stem-and-Leaf Displays):} Separates each value into a stem and a leaf. Always include an explicit \textbf{KEY} (e.g., $4 \mid 2 = 42\text{ mph}$).
+  \item \textbf{Histograms:} Bins contiguous quantitative data into equal-width intervals along the horizontal axis. Unlike bar charts, the vertical bars in a histogram touch each other.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.4: Describing Distributions with C-U-S-S]
+Whenever an AP exam prompt asks you to \textbf{"describe"} or \textbf{"compare"} distributions, you MUST write complete sentences addressing all four pillars in context:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{C --- Center:} State the numerical median (for skewed data or outliers) or mean (for roughly symmetric, non-outlier data). Always include units!
+  \item \textbf{U --- Unusual Features:} Explicitly state any outliers, clusters, or notable gaps. If no outliers exist, explicitly state: \textit{"There are no apparent outliers or gaps."}
+  \item \textbf{S --- Spread:} State the numerical IQR and range (for skewed data) or standard deviation and variance (for symmetric data).
+  \item \textbf{S --- Shape:} State whether the distribution is \textbf{Skewed Left} (tail extends to the left), \textbf{Skewed Right} (tail extends to the right), \textbf{Roughly Symmetric}, \textbf{Bimodal}, or \textbf{Uniform}.
+\end{enumerate}
+\end{lessonbox}
+
+\begin{trapbox}[Exam Trap Alert: Comparative Language on FRQs]
+When comparing two or more distributions on the exam, you \textbf{cannot} simply list summary statistics for each group separately! You MUST use explicit comparative adjectives such as \textit{"greater than"}, \textit{"less than"}, \textit{"more variable than"}, or \textit{"approximately equal to"}.
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Incorrect (Score: Incomplete):} "Group A has a median of 45. Group B has a median of 30."
+  \item \textbf{Correct (Score: Complete):} "The median exam score for Group A (45 points) is \textbf{significantly greater than} the median score for Group B (30 points)."
+\end{itemize}
+\end{trapbox}
+
+\begin{lessonbox}[Lesson 1.5: Measures of Center --- Mean vs. Median]
+\begin{equation}
+  \text{Sample Mean: } \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i = \frac{x_1 + x_2 + \dots + x_n}{n}
+\end{equation}
+The \textbf{median} ($M$) is the midpoint of the ordered array:
+\begin{itemize}[leftmargin=1.2em]
+  \item If $n$ is odd, $M$ is the exact middle observation at position $(n+1)/2$.
+  \item If $n$ is even, $M$ is the average of the two middle observations at positions $n/2$ and $(n/2)+1$.
+\end{itemize}
+\textbf{The Skewness Relationship:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Symmetric:} $\text{Mean} \approx \text{Median}$
+  \item \textbf{Skewed Right:} $\text{Mean} > \text{Median}$ (the extreme right tail pulls the non-resistant mean upward)
+  \item \textbf{Skewed Left:} $\text{Mean} < \text{Median}$ (the extreme low tail pulls the mean downward)
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.6: Measures of Spread --- IQR and Standard Deviation]
+\begin{equation}
+  \text{Interquartile Range: } \text{IQR} = Q_3 - Q_1
+\end{equation}
+$Q_1$ is the median of the lower half of data; $Q_3$ is the median of the upper half of data.
+\begin{equation}
+  \text{Sample Standard Deviation: } s_x = \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2}
+\end{equation}
+\textbf{Interpretation of Standard Deviation:} \textit{"The standard deviation of $s_x$ measures the typical distance that individual observations in this dataset deviate from the sample mean $\bar{x}$."}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.7: The $1.5 \times \text{IQR}$ Rule for Outliers]
+To mathematically identify outliers, establish two boundary fences:
+\begin{equation}
+  \text{Lower Fence} = Q_1 - 1.5(\text{IQR}), \qquad \text{Upper Fence} = Q_3 + 1.5(\text{IQR})
+\end{equation}
+Any individual observation $x$ satisfying:
+\begin{equation}
+  x < \text{Lower Fence} \quad \text{OR} \quad x > \text{Upper Fence}
+\end{equation}
+is classified as a statistical outlier. In a \textbf{Modified Boxplot}, whiskers extend only to the smallest and largest observations inside the fences; outliers are plotted as isolated dots.
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.8: Linear Transformations of Datasets]
+Suppose a dataset undergoes a linear transformation $y_i = a + b x_i$, where $a$ and $b$ are constants:
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Adding/Subtracting a Constant ($a$):} Adds $a$ to all measures of \textbf{center and position} (Mean, Median, Quartiles, Min, Max). Measures of \textbf{spread} (Standard Deviation, Variance, Range, IQR) remain \textbf{strictly unchanged}!
+  \item \textbf{Multiplying/Dividing by a Constant ($b$):} Multiplies measures of center and position by $b$. Multiplies measures of spread by $|b|$. Variances multiply by $b^2$.
+  \item \textbf{Shape:} Linear transformations \textbf{never} change the shape of a distribution!
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 1.9: Standardized Scores (Z-Scores) & Normal Distribution]
+\begin{equation}
+  z = \frac{x - \mu}{\sigma} \quad \text{(Population)}, \qquad z = \frac{x - \bar{x}}{s_x} \quad \text{(Sample)}
+\end{equation}
+A $z$-score indicates how many standard deviations an observation falls above ($z > 0$) or below ($z < 0$) the mean.
+\textbf{The Empirical 68--95--99.7 Rule:}
+For approximately normal distributions $N(\mu, \sigma)$:
+\begin{itemize}[leftmargin=1.2em]
+  \item Approx. \textbf{68\%} of observations fall within $\mu \pm 1\sigma$.
+  \item Approx. \textbf{95\%} of observations fall within $\mu \pm 2\sigma$.
+  \item Approx. \textbf{99.7\%} of observations fall within $\mu \pm 3\sigma$.
+\end{itemize}
+\end{lessonbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 1.1: Comprehensive C-U-S-S Analysis & Outlier Testing}
+\textbf{Problem:} A sports scientist records the recovery heart rates (in beats per minute) of 15 elite cross-country runners 5 minutes post-race:
+\[ 68, \; 72, \; 74, \; 75, \; 76, \; 78, \; 79, \; 80, \; 81, \; 82, \; 85, \; 88, \; 91, \; 94, \; 118 \]
+(a) Determine the 5-number summary and construct the outlier boundary fences.\\
+(b) Identify any outliers and justify mathematically.\\
+(c) Describe the distribution using the C-U-S-S framework in complete context.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $n = 15$. Sorted observations:\\
+  $\text{Min} = 68\text{ bpm}$, $\text{Max} = 118\text{ bpm}$.\\
+  Median position: $(15+1)/2 = 8^{\text{th}}$ value $\implies M = 80\text{ bpm}$.\\
+  Lower half (first 7 values): $Q_1 = 4^{\text{th}}$ value $= 75\text{ bpm}$.\\
+  Upper half (last 7 values): $Q_3 = 4^{\text{th}}$ value $= 88\text{ bpm}$.\\
+  $\text{5-Number Summary:} \; \{68, \; 75, \; 80, \; 88, \; 118\}\text{ bpm}$.\\
+  $\text{IQR} = Q_3 - Q_1 = 88 - 75 = 13\text{ bpm}$.\\
+  $\text{Lower Fence} = 75 - 1.5(13) = 75 - 19.5 = 55.5\text{ bpm}$.\\
+  $\text{Upper Fence} = 88 + 1.5(13) = 88 + 19.5 = 107.5\text{ bpm}$.
+  \item \textbf{Part (b):} Because $118\text{ bpm} > 107.5\text{ bpm}$, the observation 118 bpm is a confirmed high outlier. There are no low outliers because $\text{Min} = 68 > 55.5$.
+  \item \textbf{Part (c):}
+  \textit{"The distribution of recovery heart rates among these 15 elite runners is skewed to the right, with an isolated high outlier at 118 bpm. The center of the distribution is best represented by a median recovery rate of 80 bpm. The spread is characterized by an Interquartile Range (IQR) of 13 bpm and an overall range of 50 bpm (from 68 bpm to 118 bpm)."}
+\end{itemize}
+
+\subsection*{Example 1.2: Normal Distribution Forward Probability & Percentile}
+\textbf{Problem:} The birth weights of full-term newborn infants in a hospital system are approximately normally distributed with a mean of $\mu = 3,450\text{ grams}$ and a standard deviation of $\sigma = 480\text{ grams}$.
+(a) What proportion of full-term newborns weigh more than $4,000\text{ grams}$?\\
+(b) An infant is classified as "low birth weight" if its weight falls below the $10^{\text{th}}$ percentile. What is the maximum cutoff weight for this classification?
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} Let $X \sim N(3450, 480)$. Standardize $x = 4000$:
+  \[ z = \frac{4000 - 3450}{480} = \frac{550}{480} \approx 1.15 \]
+  $P(X > 4000) = P(Z > 1.15) = 1 - 0.8749 = 0.1251$ (\textbf{12.51\%}).
+  \item \textbf{Part (b):} For $10^{\text{th}}$ percentile, $z^* \approx -1.282$ via standard normal table.\\
+  \[ x^* = \mu + z^*\sigma = 3450 + (-1.282)(480) = 3450 - 615.36 = \mathbf{2,834.64\text{ grams}}. \]
+\end{itemize}
+
+\section{TI-84 Plus CE Calculator Playbook}
+
+\begin{calculatorbox}[TI-84 Playbook: Summary Statistics & Modified Boxplots]
+\begin{enumerate}[leftmargin=1.2em]
+  \item Press \texttt{[STAT]} $\rightarrow$ Select \texttt{1:Edit...} $\rightarrow$ Enter data into \texttt{L1}.
+  \item Press \texttt{[STAT]} $\rightarrow$ \texttt{CALC} $\rightarrow$ Select \texttt{1:1-Var Stats} $\rightarrow$ Calculate.
+  \item To plot: Press \texttt{[2nd] [Y=]} (\texttt{STAT PLOT}) $\rightarrow$ Select \texttt{Plot1} $\rightarrow$ Turn \texttt{ON}.
+  \item Under \texttt{Type:}, select the first boxplot icon (with isolated outlier points).
+  \item Press \texttt{[ZOOM]} $\rightarrow$ Select \texttt{9:ZoomStat}.
+\end{enumerate}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item A survey records: GPA, Gender, Miles driven per week, and Zip code. How many variables are quantitative?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0 \item 1 \item 2 \item 3 \item 4
+  \end{enumerate}
+  \textbf{Answer: (C).} GPA and Miles driven are quantitative. Gender and Zip code are categorical.
+
+  \item A distribution of employee salaries is strongly skewed to the right. Which relationship is true?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\text{Mean} < \text{Median}$ \item $\text{Mean} \approx \text{Median}$ \item $\text{Mean} > \text{Median}$ \item $\text{SD} = \text{IQR}$ \item $\text{Mean} = 0$
+  \end{enumerate}
+  \textbf{Answer: (C).} Right skewness pulls the non-resistant mean above the median.
+
+  \item A dataset has $Q_1 = 28$ and $Q_3 = 44$. An outlier must fall:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Below 4 or above 68 \item Below 12 or above 60 \item Below 20 or above 50 \item Exactly at 44 \item Between 28 and 44
+  \end{enumerate}
+  \textbf{Answer: (A).} $\text{IQR} = 16$. $\text{Lower Fence} = 28 - 24 = 4$. $\text{Upper Fence} = 44 + 24 = 68$.
+
+  \item If every observation is multiplied by 3 and increased by 10, how do the mean and standard deviation change?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Mean $\times 3 + 10$; SD $\times 3 + 10$ \item Mean $\times 3 + 10$; SD $\times 3$ \item Mean $+ 10$; SD $\times 3$ \item Both $\times 3$ \item Neither changes
+  \end{enumerate}
+  \textbf{Answer: (B).} Center shifts by addition and multiplication; spread scales only by multiplication.
+
+  \item A runner's time in a 10K race corresponds to $z = -1.80$. This indicates:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The runner finished 1.8 minutes faster than average.
+    \item The runner's time was 1.80 standard deviations below the mean.
+    \item The runner was in the bottom 1.8\% of competitors.
+    \item The runner was 1.80 standard deviations above the mean.
+    \item The time was negative.
+  \end{enumerate}
+  \textbf{Answer: (B).} $z = -1.80$ means 1.80 standard deviations below the mean.
+
+  \item Adult male heights follow $N(70\text{ in}, 3\text{ in})$. Approximately what percentage are between 64 and 76 inches?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 50\% \item 68\% \item 95\% \item 99.7\% \item 100\%
+  \end{enumerate}
+  \textbf{Answer: (C).} Within $\mu \pm 2\sigma$ is approximately 95\% by the Empirical Rule.
+
+  \item Which summary statistic is resistant to outliers?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Sample Mean \item Range \item Standard Deviation \item Interquartile Range (IQR) \item Variance
+  \end{enumerate}
+  \textbf{Answer: (D).} IQR is based on percentiles, making it resistant.
+
+  \item If scores are transformed by $y = 1.2x - 5$ and original variance was 25, the new variance is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 25 \item 30 \item 36 \item 20 \item 28.8
+  \end{enumerate}
+  \textbf{Answer: (C).} Variance scales by $b^2 = 1.2^2 = 1.44$. $25 \times 1.44 = 36$.
+
+  \item On an exam, Alice scored 82 ($\mu=76, \sigma=4$). Bob scored 88 ($\mu=82, \sigma=5$). Who performed better relatively?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Alice ($z = 1.50$ vs Bob's $z = 1.20$) \item Bob \item Both equal \item Cannot determine \item Alice, because $s$ was smaller
+  \end{enumerate}
+  \textbf{Answer: (A).} Alice: $z = (82-76)/4 = 1.50$. Bob: $z = (88-82)/5 = 1.20$.
+
+  \item Test scores follow $N(50, 10)$. What percentage exceed 70?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 2.5\% \item 5\% \item 16\% \item 32\% \item 0.15\%
+  \end{enumerate}
+  \textbf{Answer: (A).} $z = (70-50)/10 = 2.0$. Tail area $= 2.5\%$.
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item The $75^{\text{th}}$ percentile of $N(100, 15)$ is closest to:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 110.1 \item 115.0 \item 107.5 \item 112.3 \item 120.0
+  \end{enumerate}
+  \textbf{Answer: (A).} $z \approx 0.674$. $x = 100 + 0.674(15) = 110.1$.
+
+  \item In a boxplot, if the right whisker is much longer than the left whisker, the shape is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Skewed left \item Symmetric \item Skewed right \item Uniform \item Normal
+  \end{enumerate}
+  \textbf{Answer: (C).} Elongated upper values reflect positive (rightward) skewness.
+
+  \item In a standard normal distribution, what is the mean and standard deviation?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\mu=1, \sigma=0$ \item $\mu=0, \sigma=1$ \item $\mu=1, \sigma=1$ \item $\mu=0, \sigma=0$ \item Variable
+  \end{enumerate}
+  \textbf{Answer: (B).} By definition, $Z \sim N(0, 1)$.
+
+  \item If the minimum value in a dataset decreases by 10, which statistic remains unchanged?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Mean \item Range \item Standard Deviation \item Median \item Minimum
+  \end{enumerate}
+  \textbf{Answer: (D).} The median is resistant to changes in extreme values.
+
+  \item A distribution of incomes has $\text{Mean} = \$70,000$ and $\text{Median} = \$52,000$. This indicates:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Symmetric \item Skewed left \item Skewed right \item Uniform \item Bell-shaped
+  \end{enumerate}
+  \textbf{Answer: (C).} $\text{Mean} > \text{Median}$ indicates right skewness.
+
+  \item The area under a standard normal curve between $z = -1.0$ and $z = +1.5$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.6826 \item 0.7745 \item 0.8185 \item 0.8664 \item 0.9332
+  \end{enumerate}
+  \textbf{Answer: (B).} $0.9332 - 0.1587 = 0.7745$.
+
+  \item A 5-number summary is $10, 20, 35, 50, 95$. The upper outlier fence is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 50 \item 80 \item 95 \item 100 \item 110
+  \end{enumerate}
+  \textbf{Answer: (C).} $\text{IQR} = 30$. $\text{Upper Fence} = 50 + 1.5(30) = 95$.
+
+  \item Back-to-back stemplots are most useful for:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Displaying two categorical variables \item Comparing two quantitative distributions \item Scatterplots \item Time series \item Normal probability plots
+  \end{enumerate}
+  \textbf{Answer: (B).} Enables direct comparison of shapes, centers, and spreads on the same scale.
+
+  \item If $P(Z < z) = 0.20$, what is the approximate value of $z$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-0.84$ \item $+0.84$ \item $-0.20$ \item $+0.20$ \item $-1.28$
+  \end{enumerate}
+  \textbf{Answer: (A).} By table lookup, $z \approx -0.84$.
+
+  \item A dotplot showing two distinct separated peaks with few observations in between is described as:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Uniform \item Unimodal \item Bimodal \item Skewed left \item Normal
+  \end{enumerate}
+  \textbf{Answer: (C).} Two major peaks represent a bimodal distribution.
+\end{enumerate}
+
+\subsection*{Part II: Free-Response Practice Problem}
+
+\begin{workbookbox}[FRQ 1.1: Comparing Class Distributions]
+\textbf{Problem:} Two classes take a 100-point statistics exam: Class A ($n=25$) has $\text{Med}=82, \text{IQR}=18$, skewed left. Class B ($n=25$) has $\text{Med}=74, \text{IQR}=10$, roughly symmetric. Neither class has outliers. Compare the distributions.
+
+\textbf{Grader-Approved Score-4 Solution:}
+\textit{Center:} The median exam score for Class A (82 points) is greater than Class B (74 points).\\
+\textit{Spread:} The variability in scores is greater for Class A than Class B, as Class A has an IQR of 18 points compared to Class B's IQR of 10 points.\\
+\textit{Shape:} Class A is skewed to the left, whereas Class B is approximately symmetric.\\
+\textit{Unusual Features:} Neither distribution exhibits any outliers or notable gaps.
+\end{workbookbox}
+
+
+\begin{frqrubricbox}[FRQ 1.2: Standardized Scores, Outliers, and Transformations]
+\textbf{Problem:} A regional 10K road race records finish times (in minutes) for a random sample of 28 adult runners.
+The 5-number summary of finish times is:
+\[ \text{Min} = 38.0, \quad Q_1 = 45.0, \quad \text{Median} = 52.0, \quad Q_3 = 58.0, \quad \text{Max} = 82.0 \]
+The sample mean is $\bar{x} = 53.5$ minutes and the standard deviation is  = 9.2$ minutes.
+\begin{enumerate}[label=(\alph*)]
+  \item Determine the outlier boundary fences using the .5 \times \text{IQR}$ rule. Is the maximum finish time of 82.0 minutes a confirmed outlier? Justify your answer.
+  \item A competitor, Alice, finished the race in 42.0 minutes. Calculate Alice's $-score and interpret this value in context.
+  \item Due to an official timing malfunction at the starting gun, race judges subtract 2.0 minutes from every runner's recorded time, and then convert all times from minutes to seconds by multiplying by 60. Describe how this linear transformation affects the mean, standard deviation, and shape of the finish time distribution.
+\end{enumerate}
+
+\textbf{Grader-Approved Score-4 Solution \& Rubric:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $\text{IQR} = Q_3 - Q_1 = 58.0 - 45.0 = 13.0\text{ minutes}$.\\
+  $\text{Lower Fence} = Q_1 - 1.5(\text{IQR}) = 45.0 - 1.5(13.0) = 45.0 - 19.5 = 25.5\text{ minutes}$.\\
+  $\text{Upper Fence} = Q_3 + 1.5(\text{IQR}) = 58.0 + 1.5(13.0) = 58.0 + 19.5 = 77.5\text{ minutes}$.\\
+  Because the maximum time .0\text{ minutes} > 77.5\text{ minutes}$, 82.0 minutes is a confirmed high outlier.
+  \item \textbf{Part (b):}  = \frac{x - \bar{x}}{s} = \frac{42.0 - 53.5}{9.2} = \frac{-11.5}{9.2} \approx -1.25$.\\
+  \textit{Interpretation:} Alice's race time was approximately 1.25 standard deviations below the average finish time of the sample of runners.
+  \item \textbf{Part (c):} Let  = 60(X - 2) = 60X - 120$ seconds.\\
+  \textit{Center (Mean):} $\bar{y} = 60(53.5 - 2) = 60(51.5) = 3090\text{ seconds}$. Center shifts by both subtracting 2 minutes and multiplying by 60.\\
+  \textit{Spread (SD):}  = 60(s_x) = 60(9.2) = 552\text{ seconds}$. Spread scales strictly by multiplication by $|60|$; subtracting 2 has zero effect on spread.\\
+  \textit{Shape:} The shape of the distribution remains unchanged (still skewed right due to the high outlier).
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{trapbox}[Unit 1 Top 5 AP Exam Pitfalls to Avoid]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{No Context Deduction:} Stating "the distribution is skewed right" without mentioning the variable (e.g., "race finish times") loses credit.
+  \item \textbf{Comparing Distributions Without Comparative Words:} Always use words like \textit{"strictly greater than"}, \textit{"less variable"}, rather than simply listing numbers.
+  \item \textbf{Confusing Mean and Median in Skewed Data:} Remember the mean is pulled toward the long tail; the median is resistant.
+  \item \textbf{Failing to Box Outliers on Boxplots:} Whiskers must stop at the adjacent non-outlier value, not at the fences!
+  \item \textbf{Adding Constants to Standard Deviation:} Adding or subtracting a constant shifts all data equally and leaves standard deviation completely unchanged.
+\end{enumerate}
+\end{trapbox}
+\section{Unit 1 Master Summary}
+\begin{lessonbox}[Unit 1 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{C-U-S-S:} Center, Unusual Features, Spread, Shape in complete context.
+  \item \textbf{Outliers:} $Q_1 - 1.5(\text{IQR})$ and $Q_3 + 1.5(\text{IQR})$.
+  \item \textbf{Resistance:} Median \& IQR resist extreme values; Mean \& SD do not.
+  \item \textbf{Linear Transformation ($y = a + bx$):} Center changes by $a + bx$; Spread scales by $|b|$; Shape is unchanged.
+  \item \textbf{Standardized Score:} $z = (x - \mu)/\sigma$.
+\end{itemize}
+\end{lessonbox}
+\clearpage

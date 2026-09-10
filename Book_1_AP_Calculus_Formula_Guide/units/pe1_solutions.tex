@@ -1,0 +1,322 @@
+% =========================================================================
+% PRACTICE EXAM 1: DETAILED SOLUTIONS & SCORING RUBRICS
+% =========================================================================
+\chapter{Practice Exam 1: Detailed Solutions \& Grading Rubrics}
+
+\section{Section I: Multiple-Choice Detailed Explanations}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The $z$-score formula is $z = \frac{x - \mu}{\sigma}$. Substituting the given values:
+  \[ z = \frac{91 - 75}{8} = \frac{16}{8} = 2.00 \]
+  A $z$-score of 2.00 signifies that an exam score of 91 lies exactly 2.00 standard deviations above the class mean.
+  \textit{Distractor analysis:} (A) $1.50$ results from dividing 16 by 10 or calculating $(91-75)/10.67$. (C) $2.25$ is $(93-75)/8$. (D) $1.75$ is $(89-75)/8$. (E) $1.25$ is $(85-75)/8$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} A categorical (qualitative) variable places an individual into one of several groups or categories. Blood type (A, B, AB, O) is defined by qualitative categories with no meaningful numerical arithmetic. Annual income, blood pressure, commute time, and GPA are all quantitative variables measured on continuous or numerical scales.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The coefficient of determination is $r^2$. Squaring the correlation coefficient gives:
+  \[ r^2 = (-0.92)^2 = 0.8464 \approx 0.846 \]
+  By mathematical definition, $r^2$ is always non-negative ($0 \le r^2 \le 1$), so option (A) $-0.846$ is impossible. Interpretation: approximately 84.6\% of the variation in the response variable is explained by the linear relationship with the explanatory variable.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} In a modified boxplot, individual outliers are plotted as separate dots, asterisks, or points beyond the fences. Whiskers do not extend indefinitely to the fences themselves; rather, they extend to the most extreme actual observations in the sample that fall inside the lower fence $Q_1 - 1.5(\text{IQR})$ and upper fence $Q_3 + 1.5(\text{IQR})$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Observational studies observe individuals and record variables of interest without imposing treatments. Because no random assignment was utilized, lurking and confounding variables (e.g., diet, exercise, socioeconomic status, sleep habits) cannot be controlled. Thus, observational studies cannot establish cause-and-effect relationships.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} By the general addition rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. Because events $A$ and $B$ are independent, $P(A \cap B) = P(A) \times P(B) = (0.5)(0.4) = 0.20$.
+  Therefore:
+  \[ P(A \cup B) = 0.50 + 0.40 - 0.20 = 0.70 \]
+  \textit{Distractor analysis:} Option (A) 0.90 incorrectly assumes the events are mutually exclusive (disjoint) and fails to subtract $P(A \cap B)$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} For a binomial distribution $X \sim B(n, p)$:
+  \[ \mu = np = 50(0.20) = 10 \]
+  \[ \sigma = \sqrt{np(1-p)} = \sqrt{50(0.20)(0.80)} = \sqrt{8.00} \approx 2.828 \approx 2.83 \]
+  Option (A) is correct.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} The Central Limit Theorem (CLT) states that for any population distribution with finite mean $\mu$ and finite standard deviation $\sigma$, the sampling distribution of the sample mean $\bar{x}$ becomes approximately normal as the sample size $n$ becomes sufficiently large ($n \ge 30$). The CLT does not alter the shape of the underlying population or individual samples.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} For a right-tailed alternative hypothesis $H_a: p > 0.50$ with test statistic $z = 2.33$, the $p$-value is the area under the standard normal curve to the right of 2.33:
+  \[ p\text{-value} = P(Z \ge 2.33) = 1 - P(Z < 2.33) = 1 - 0.9901 = 0.0099 \]
+  Using TI-84: \texttt{normalcdf(2.33, 9999, 0, 1)} $= 0.009903$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} With $n = 16$, the degrees of freedom are $df = n - 1 = 15$. For a 95\% confidence interval, the area in each tail is $(1 - 0.95)/2 = 0.025$. Looking up $df = 15$ with central area 0.95 gives $t^* = 2.131$ (or on TI-84: \texttt{invT(0.975, 15)} $= 2.1314$). Critical value 1.960 corresponds to the standard normal $z^*$ distribution.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} A Chi-Square Test for Homogeneity evaluates whether the distribution of a single categorical variable is identical across two or more independent populations or treatment groups (here, 3 hospital networks). A test of independence uses a single sample categorized by two variables. Goodness-of-fit evaluates a single sample against a hypothesized distribution.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} In simple linear regression inference for the slope $\beta$, degrees of freedom are given by $df = n - 2$ because two parameters (the intercept $\alpha$ and slope $\beta$) are estimated from the sample data. For $n = 28$:
+  \[ df = 28 - 2 = 26 \]
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} An appropriate linear model displays a random cloud of points scattered evenly above and below the zero residual line with constant vertical spread. Any clear curved or parabolic pattern (such as a U-shape) in the residual plot indicates that the relationship between $x$ and $y$ is non-linear and that a straight line is not an appropriate model.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Let $X$ be the number of rolls until a 4 appears ($p = 1/6$). The event that $X > 3$ means that the first three consecutive rolls must all be failures (not a 4). The probability of failure on any single roll is $q = 1 - 1/6 = 5/6$. By the multiplication rule for independent trials:
+  \[ P(X > 3) = (5/6)^3 = \frac{125}{216} \approx 0.5787 \]
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} When sampling without replacement from a finite population, the observations are technically dependent. However, if the sample size $n$ does not exceed 10\% of the population size $N$ ($n \le 0.10N$), the dependence between trials is negligible and the standard deviation formula $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$ remains sufficiently accurate.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} Since the entire 99\% confidence interval $(1.2, 5.8)$ is strictly greater than zero, zero is not a plausible value for the true difference $\mu_1 - \mu_2$. This provides statistically significant evidence at $\alpha = 0.01$ that $\mu_1 - \mu_2 > 0$, or $\mu_1 > \mu_2$.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} Power is the probability of correctly rejecting a false null hypothesis ($1 - \beta$). Increasing the sample size $n$ decreases the standard error of the estimator, narrowing the sampling distribution and reducing the overlap between the null and alternative distributions, which directly increases power.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} In a balanced completely randomized design with $N = 60$ subjects divided equally among $k = 3$ treatment groups, each group receives:
+  \[ \frac{N}{k} = \frac{60}{3} = 20\text{ subjects} \]
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} In a normal distribution, the Empirical Rule states that approximately 68\% of values lie within $\pm 1\sigma$ of the mean, leaving 32\% in the two tails (16\% below $\mu - 1\sigma$ and 16\% above $\mu + 1\sigma$). Therefore, the area below $\mu + 1\sigma$ is $50\% + 34\% = 84\%$, corresponding to the $84^{\text{th}}$ percentile:
+  \[ x = \mu + 1\sigma = 500 + 100(1) = 600 \]
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} Standard deviation $s_x$ is computed in the exact same measurement units as the original data (e.g., inches, grams, dollars), making it readily interpretable. Variance is measured in squared units. Standard deviation is non-resistant to outliers, can never be negative, and scales linearly when multiplied by a constant.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} A fundamental mathematical property of the least-squares regression line (LSRL) $\hat{y} = b_0 + b_1 x$ is that it always passes through the point of averages, $(\bar{x}, \bar{y})$. This is derived from the formula for the intercept: $b_0 = \bar{y} - b_1 \bar{x}$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Voluntary response bias occurs when sample members self-select themselves into the survey by choosing whether to respond (such as callers responding to a call-in radio poll or online survey). People with strong negative opinions are heavily overrepresented.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} For two independent events $A$ and $B$, the multiplication rule states:
+  \[ P(A \cap B) = P(A) \times P(B) = 0.3 \times 0.7 = 0.21 \]
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The $p$-value is the conditional probability, assuming the null hypothesis $H_0$ is true, of observing a test statistic as extreme as or more extreme than the value actually observed in the sample, in the direction of the alternative hypothesis $H_a$.
+
+  \item \textbf{Answer: (D)} \\
+  \textbf{Explanation:} For a two-way contingency table with $r$ rows and $c$ columns, the degrees of freedom for a Chi-Square test of independence or homogeneity are:
+  \[ df = (r - 1)(c - 1) = (2 - 1)(3 - 1) = 1 \times 2 = 2 \]
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The slope of the least-squares regression line is calculated as:
+  \[ b_1 = r \left(\frac{s_y}{s_x}\right) = -0.6 \left(\frac{10}{5}\right) = -0.6(2) = -1.2 \]
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The Large Counts condition for Chi-Square tests requires that all individual expected cell counts must be at least 5 ($E_i \ge 5$). This ensures that the discrete multinomial distribution is sufficiently well approximated by the continuous Chi-Square distribution.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The 1-sample $t$-test statistic is:
+  \[ t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{50 - 45}{10 / \sqrt{25}} = \frac{5}{10 / 5} = \frac{5}{2} = 2.5 \]
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In a double-blind experiment, neither the experimental subjects nor the researchers/evaluators who interact with them know which treatment each subject is receiving. This eliminates both the psychological placebo effect in subjects and diagnostic/evaluator bias in researchers.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} The sample proportion $\hat{p}$ is an unbiased estimator of the true population proportion $p$. The mean of its sampling distribution is exactly equal to the parameter: $\mu_{\hat{p}} = p$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} For the standard normal distribution $Z \sim N(0, 1)$, the area to the left of $z = -1.96$ is:
+  \[ P(Z \le -1.96) = 0.0250 \]
+  Together with the right tail above $+1.96$ ($0.0250$), exactly 5\% of the total area lies in the two tails, leaving 95\% in the center.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The five conditions required for linear regression inference are summarized by the acronym \textbf{LINER}: Linear relationship, Independent observations, Normal distribution of $y$-values for each $x$, Equal variance of residuals ($\sigma$ constant), and Random sampling or assignment.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Because each subject receives both conditions (resting and post-exercise measurements) and the analysis focuses on the within-subject differences, this is an example of a matched pairs experimental design.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} By the complement rule of probability:
+  \[ P(A^c) = 1 - P(A) = 1 - 0.8 = 0.2 \]
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} By mathematical construction of the ordinary least-squares line, the positive and negative vertical deviations from the line perfectly cancel out: $\sum (y_i - \hat{y}_i) = 0$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The width of the confidence interval is $\text{Upper} - \text{Lower} = 18.6 - 12.4 = 6.2$. The margin of error is half the interval width:
+  \[ \text{ME} = \frac{6.2}{2} = 3.1 \]
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} The number of cars passing an intersection is obtained by counting distinct individual vehicles ($0, 1, 2, 3, \dots$). Values are non-negative integers with no fractional values possible, defining a discrete quantitative variable.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In hypothesis testing, the decision rule is to reject the null hypothesis $H_0$ if and only if the $p\text{-value} \le \alpha$. Therefore, if $H_0$ was rejected at $\alpha = 0.05$, the $p$-value must be less than or equal to 0.05.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Margin of error is $\text{ME} = z^* \left(\frac{\sigma}{\sqrt{n}}\right)$. Increasing the confidence level from 90\% ($z^* = 1.645$) to 99\% ($z^* = 2.576$) increases the critical value $z^*$, which directly increases the margin of error and widens the confidence interval.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The standard error of the slope, $\text{SE}(b_1)$, estimates the standard deviation of the sampling distribution of sample slopes $b_1$ across repeated random samples of size $n$ drawn from the same population.
+\end{enumerate}
+
+\section{Section II: Free-Response Complete Scoring Guidelines}
+
+\begin{frqrubricbox}[Question 1: Data Exploration \& Outlier Analysis --- Model Solution \& Rubric]
+\textbf{Part (a): 5-Number Summary}\\
+Arranging the 14 cereal sugar values: $4, 6, 7, 8, 9, 10, 11, 12, 12, 13, 14, 15, 18, 26$.
+\begin{itemize}
+  \item $\text{Minimum} = 4$
+  \item $Q_1$ (median of lower 7 values: $4, 6, 7, 8, 9, 10, 11$) $= 8$
+  \item $\text{Median}$ (average of $7^{\text{th}}$ and $8^{\text{th}}$ values: $(11 + 12)/2$) $= 11.5$
+  \item $Q_3$ (median of upper 7 values: $12, 13, 14, 15, 18, 26$) $= 14$
+  \item $\text{Maximum} = 26$
+\end{itemize}
+
+\textbf{Part (b): Outlier Identification}\\
+$\text{IQR} = Q_3 - Q_1 = 14 - 8 = 6\text{ grams}$.
+\[ \text{Lower Fence} = Q_1 - 1.5(\text{IQR}) = 8 - 1.5(6) = 8 - 9 = -1 \]
+\[ \text{Upper Fence} = Q_3 + 1.5(\text{IQR}) = 14 + 1.5(6) = 14 + 9 = 23 \]
+Because $26 > 23$, the value 26 grams is a confirmed high outlier. There are no low outliers because $\text{Min} = 4 \ge -1$.
+
+\textbf{Part (c): Distribution Description (CUSS Framework)}\\
+\begin{itemize}
+  \item \textbf{Center:} The median sugar content is 11.5 grams per serving (or mean $\bar{x} \approx 12.07$ grams).
+  \item \textbf{Spread:} The sugar content exhibits an IQR of 6 grams (and an overall range of $26 - 4 = 22$ grams).
+  \item \textbf{Shape:} The distribution of sugar content is skewed to the right due to the high outlier.
+  \item \textbf{Unusual Features:} There is a single high outlier at 26 grams per serving.
+\end{itemize}
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correctly computes all 5 summary values, accurately applies $1.5 \times \text{IQR}$ fences to identify 26, and fully describes all four CUSS elements in context.
+  \item \textbf{Partially Correct (P):} Fails to calculate fences explicitly, omits units/context, or misses one CUSS element.
+  \item \textbf{Incomplete (I):} Major arithmetic errors or failure to address shape and spread.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 2: Experimental Design \& Confounding --- Model Solution \& Rubric]
+\textbf{Part (a): Completely Randomized Design Protocol}\\
+1. Label all 40 available classrooms with integers from 01 to 40.\\
+2. Use a random number generator to select 20 unique two-digit integers between 01 and 40 without replacement. The classrooms corresponding to these numbers are assigned to receive standing desks.\\
+3. The remaining 20 classrooms are assigned to retain traditional desks.\\
+4. After a predetermined observation period (e.g., 6 weeks), measure student attentiveness in all 40 classrooms using an identical standardized observational rubric.\\
+5. Compare the mean attentiveness scores between the standing desk and traditional desk groups using a two-sample $t$-test.
+
+\textbf{Part (b): Confounding \& Blocking Strategy}\\
+A potential confounding variable is the subject matter taught in the classroom (e.g., physical education or art vs. mathematics or history). Students may naturally be more active or attentive in certain disciplines regardless of desk type. If one treatment group unintentionally receives more math classes, the effect of desk type becomes confounded with subject matter.\\
+\textit{Blocking Remedy:} Group the 40 classrooms into homogeneous blocks by academic discipline (e.g., STEM block, Humanities block). Within each block, randomly assign half the classrooms to standing desks and half to traditional desks. This eliminates variability attributable to subject matter from the experimental error.
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Fully explains random assignment with unique numbers, no replacement, treatment allocation, response comparison, and provides a clear confounding explanation with a valid blocking design.
+  \item \textbf{Partially Correct (P):} Mentions random assignment but omits labeling/generation details, or identifies confounding without explaining how blocking controls it.
+  \item \textbf{Incomplete (I):} Conflates blocking with stratified sampling or fails to describe random assignment.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 3: Probability \& Random Variables --- Model Solution \& Rubric]
+\textbf{Part (a): Exactly 2 Failures}\\
+Let $X$ be the number of failed components out of $n = 8$ with failure probability $p = 0.10$. $X \sim B(8, 0.10)$.
+\[ P(X = 2) = \binom{8}{2} (0.10)^2 (0.90)^6 = 28 \times 0.01 \times 0.531441 \approx 0.1488 \]
+
+\textbf{Part (b): At Least 1 Failure}\\
+Using the complement rule:
+\[ P(X \ge 1) = 1 - P(X = 0) = 1 - (0.90)^8 = 1 - 0.430467 \approx 0.5695 \]
+
+\textbf{Part (c): Expected Repair Cost}\\
+Let $C$ be the total repair cost: $C = 150X + 100 \cdot I$, where $I = 1$ if $X \ge 1$ and $I = 0$ if $X = 0$.
+The expected number of failed components is $E(X) = np = 8(0.10) = 0.80$.
+The probability that a dispatch fee is incurred is $P(X \ge 1) \approx 0.5695$.
+By linearity of expectation:
+\[ E(C) = 150 \cdot E(X) + 100 \cdot P(X \ge 1) = 150(0.80) + 100(0.5695) = 120 + 56.95 = \$176.95 \]
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correct binomial setup and calculation for parts (a) and (b), and rigorous expected value breakdown incorporating both variable component cost and conditional fixed dispatch fee.
+  \item \textbf{Partially Correct (P):} Calculates parts (a) and (b) correctly but omits the dispatch fee in part (c) (yielding \$120) or miscalculates the complement.
+  \item \textbf{Incomplete (I):} Incorrect probability formulas used throughout.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 4: Inference for Proportions --- Model Solution \& Rubric]
+\textbf{Step 1: Hypotheses}\\
+Let $p$ be the true proportion of all accepted students who enroll at the university.
+\[ H_0: p = 0.65 \quad \text{vs.} \quad H_a: p < 0.65 \]
+
+\textbf{Step 2: Conditions}\\
+\begin{itemize}
+  \item \textbf{Random:} An SRS of $n = 300$ accepted students was selected. (Met)
+  \item \textbf{10\% Condition:} $300 \le 0.10(\text{All accepted students})$, assuming the total accepted cohort exceeds 3,000. (Met)
+  \item \textbf{Large Counts:} Under $H_0$, $n p_0 = 300(0.65) = 195 \ge 10$ and $n(1 - p_0) = 300(0.35) = 105 \ge 10$. Both expected counts exceed 10. (Met)
+\end{itemize}
+
+\textbf{Step 3: Test Statistic \& $p$-value}\\
+Sample proportion: $\hat{p} = \frac{180}{300} = 0.60$.
+Standard error under $H_0$:
+\[ \text{SE}_0 = \sqrt{\frac{p_0(1 - p_0)}{n}} = \sqrt{\frac{(0.65)(0.35)}{300}} = \sqrt{\frac{0.2275}{300}} \approx 0.02754 \]
+Test statistic:
+\[ z = \frac{\hat{p} - p_0}{\text{SE}_0} = \frac{0.60 - 0.65}{0.02754} = \frac{-0.05}{0.02754} \approx -1.82 \]
+$p$-value: $P(Z \le -1.82) = 0.0344$.
+
+\textbf{Step 4: Conclusion}\\
+Because the $p$-value ($0.0344$) is less than the significance level $\alpha = 0.05$, we reject the null hypothesis $H_0$. There is convincing statistical evidence at the 5\% significance level that the true enrollment proportion of accepted students is less than 65\%.
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correct hypotheses defining parameter in context, all 3 conditions explicitly checked with numbers, correct $z$ and $p$-value, and conclusive contextual decision comparing $p$-value to $\alpha$.
+  \item \textbf{Partially Correct (P):} Uses $\hat{p}$ instead of $p_0$ in standard error formula or states hypotheses without defining $p$.
+  \item \textbf{Incomplete (I):} Omits conditions or makes incorrect rejection decision.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 5: Inference for Means \& Two-Sample Comparison --- Model Solution \& Rubric]
+\textbf{Step 1: Parameter \& Procedure}\\
+We construct a 95\% confidence interval for $\mu_1 - \mu_2$, the true difference in mean weight gain between cattle fed Diet 1 and cattle fed Diet 2. Procedure: Two-sample $t$-interval for $\mu_1 - \mu_2$.
+
+\textbf{Step 2: Check Conditions}\\
+\begin{itemize}
+  \item \textbf{Random:} Two independent random samples of cattle were assigned to Diet 1 and Diet 2. (Met)
+  \item \textbf{10\% Condition:} The 16 cattle in each group represent less than 10\% of the cattle population. (Met)
+  \item \textbf{Normal/Large Sample:} $n_1 = 16 < 30$ and $n_2 = 16 < 30$. However, we are given that boxplots of both samples show no extreme skewness and no outliers, so the $t$-distribution is robust and appropriate. (Met)
+\end{itemize}
+
+\textbf{Step 3: Calculations}\\
+Point estimate: $\bar{x}_1 - \bar{x}_2 = 85.4 - 79.1 = 6.30\text{ lbs}$.
+Standard error:
+\[ \text{SE} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} = \sqrt{\frac{6.2^2}{16} + \frac{5.8^2}{16}} = \sqrt{\frac{38.44}{16} + \frac{33.64}{16}} = \sqrt{2.4025 + 2.1025} = \sqrt{4.505} \approx 2.1225 \]
+Conservative degrees of freedom: $df = \min(16-1, 16-1) = 15$. (TI-84 Satterthwaite $df \approx 29.87$).
+Using $df = 15$, $t^* = 2.131$.
+\[ \text{Margin of Error} = t^* \times \text{SE} = 2.131 \times 2.1225 \approx 4.52\text{ lbs} \]
+Confidence interval:
+\[ 6.30 \pm 4.52 \implies (1.78\text{ lbs}, \; 10.82\text{ lbs}) \]
+
+\textbf{Step 4: Interpretation}\\
+We are 95\% confident that the true difference in mean weight gain between cattle fed Diet 1 and cattle fed Diet 2 ($\mu_1 - \mu_2$) is between 1.78 pounds and 10.82 pounds. Because the entire interval is strictly positive, there is convincing evidence that Diet 1 produces a greater mean weight gain than Diet 2.
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correct parameter, all conditions verified, correct $t^*$ and interval, and correct contextual interpretation with comparative conclusion.
+  \item \textbf{Partially Correct (P):} Pooled variance used without justification or standard interpretation lacking context.
+  \item \textbf{Incomplete (I):} Formula errors or critical value from normal distribution ($z^* = 1.96$).
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 6: Investigative Task --- Model Solution \& Rubric]
+\textbf{Part (a): Slope Interpretation}\\
+The slope of 7.5 indicates that for each additional hour spent studying per day, the predicted exam score increases by approximately 7.5 points.
+
+\textbf{Part (b): Residual Calculation \& Interpretation}\\
+For $x = 4$ hours: $\hat{y} = 42.0 + 7.5(4) = 42.0 + 30.0 = 72.0$ points.
+Observed score: $y = 78$ points.
+\[ \text{Residual} = y - \hat{y} = 78 - 72 = +6.0\text{ points} \]
+Interpretation: The student scored 6.0 points higher on the exam than predicted by the linear regression model based on 4 hours of study time.
+
+\textbf{Part (c): Omitted Variable Bias Analysis}\\
+In the original model $\hat{y} = 42.0 + 7.5x$, the estimated slope for study time ($7.5$) was higher than the coefficient in the multiple regression model ($6.0$). This occurs because students who study more may also differ systematically in sleep duration, or because sleep time ($w$) accounts for additional explained variation in exam scores. By omitting sleep, the simple regression model attributed some of the joint benefits to study time alone, inflating the slope estimate.
+
+\textbf{Part (d): Optimal Allocation Under Constraint}\\
+Constraint: $x + w \le 14 \implies w = 14 - x$.
+Substituting into the multiple regression equation:
+\[ \hat{y} = 20.0 + 6.0x + 3.5(14 - x) = 20.0 + 6.0x + 49.0 - 3.5x = 69.0 + 2.5x \]
+Because the coefficient of study time $x$ ($+2.5$) is positive, predicted exam scores increase with every additional hour allocated to study rather than sleep within the 14-hour block. However, realistic physiological requirements dictate minimum sleep for memory retention (typically at least 6--7 hours). If $w \ge 7$ hours, then study time is maximized at $x = 14 - 7 = 7$ hours, yielding a predicted score of $\hat{y} = 20.0 + 6.0(7) + 3.5(7) = 20.0 + 42.0 + 24.5 = 86.5$ points.
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correct slope and residual interpretations with units, mathematically sound explanation of omitted variable bias, and rigorous optimization under the 14-hour constraint with practical biological justification.
+  \item \textbf{Partially Correct (P):} Omits units in part (a)/(b) or fails to formulate the linear constraint in part (d).
+  \item \textbf{Incomplete (I):} Major misconceptions in regression mechanics.
+\end{itemize}
+\end{frqrubricbox}

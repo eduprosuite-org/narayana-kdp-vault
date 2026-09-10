@@ -1,0 +1,380 @@
+﻿% =========================================================================
+% UNIT 6: INFERENCE FOR CATEGORICAL DATA - PROPORTIONS
+% =========================================================================
+\chapter{Unit 6: Inference for Categorical Data: Proportions}
+
+\section{Unit Overview \& Exam Weight}
+Unit 6 accounts for \textbf{12\% to 15\%} of the AP Statistics Exam. This unit marks the formal beginning of statistical inference. You will master the two primary pillars of inference: constructing and interpreting \textbf{Confidence Intervals} (estimating population proportions) and conducting \textbf{Significance Tests} (evaluating hypotheses). You will also master error analysis (Type I vs. Type II errors) and statistical power.
+
+\subsection*{Key Unit Vocabulary}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Point Estimate:] A single value calculated from sample data that serves as the best guess for an unknown population parameter ($\hat{p}$ for $p$).
+  \item[Confidence Interval:] An interval of plausible values for a parameter, structured as: $\text{Point Estimate} \pm \text{Margin of Error}$.
+  \item[Margin of Error:] The maximum expected difference between the true parameter and point estimate at a specified confidence level: $\text{ME} = z^* \cdot \text{SE}$.
+  \item[Critical Value ($z^*$):] A multiplier based on the desired confidence level from the standard normal curve (e.g., $z^* = 1.96$ for 95\% confidence, $z^* = 2.576$ for 99\%).
+  \item[Null Hypothesis ($H_0$):] The default claim of "no difference," "no change," or "status quo" ($H_0: p = p_0$). Assumed true throughout calculations until disproven.
+  \item[Alternative Hypothesis ($H_a$):] The research claim we seek convincing evidence for ($p > p_0$, $p < p_0$, or $p \neq p_0$).
+  \item[P-Value:] The probability of obtaining a test statistic as extreme as or more extreme than the observed sample result, assuming the null hypothesis $H_0$ is true.
+  \item[Type I Error ($\alpha$):] Rejecting the null hypothesis $H_0$ when $H_0$ is actually true (a "false alarm"). $P(\text{Type I Error}) = \alpha$.
+  \item[Type II Error ($\beta$):] Failing to reject $H_0$ when $H_0$ is actually false (a "missed detection").
+  \item[Power of a Test ($1 - \beta$):] The probability of correctly rejecting a false null hypothesis.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 6.1: The P-A-N-I-C Framework for Confidence Intervals]
+Whenever constructing an AP confidence interval on an FRQ, follow the 5-step P-A-N-I-C process:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{P --- Parameter:} State the population parameter in complete context: \textit{"Let $p$ = the true proportion of all [individuals in population] who [characteristic]."}
+  \item \textbf{A --- Assumptions / Conditions:} Verify the 3 mandatory conditions:
+  \begin{itemize}
+    \item \textit{Random:} Data gathered via an SRS or random sample stated in the prompt.
+    \item \textit{10\% Condition:} $n \le 0.10N$ (sampling without replacement).
+    \item \textit{Large Counts:} $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$. (Show actual numbers!).
+  \end{itemize}
+  \item \textbf{N --- Name the Interval:} State: \textit{"One-sample $z$-interval for a population proportion $p$."}
+  \item \textbf{I --- Interval Calculation:}
+  \begin{equation}
+    \hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+  \end{equation}
+  \item \textbf{C --- Conclusion in Context:} Use the official AP sentence frame:
+  \textit{"We are [C\%] confident that the true proportion of [parameter in context] is between [Lower Bound] and [Upper Bound]."}
+\end{enumerate}
+\end{lessonbox}
+
+\begin{trapbox}[Exam Trap Alert: Confidence Interval vs. Confidence Level]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Interpreting the Interval:} \textit{"We are 95\% confident that the true proportion of voters who support Candidate X is between 0.52 and 0.58."}
+  \item \textbf{Interpreting the Level (95\%):} \textit{"If we were to take many repeated random samples of the same size from this population and construct a 95\% confidence interval from each sample, approximately 95\% of the resulting intervals would successfully capture the true population proportion $p$."}
+  \item \textbf{NEVER say:} \textit{"There is a 95\% probability that the true proportion is in this interval."} (Once calculated, the true parameter is either in the interval or it is not; probability applies to the method over repeated sampling, not a fixed interval!).
+\end{itemize}
+\end{trapbox}
+
+\begin{lessonbox}[Lesson 6.2: The P-H-A-N-T-O-M Framework for Significance Tests]
+Follow the 7-step P-H-A-N-T-O-M protocol for testing claims:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{P --- Parameter:} Define $p$ in context.
+  \item \textbf{H --- Hypotheses:} $H_0: p = p_0$ versus $H_a: p > p_0, p < p_0,$ or $p \neq p_0$.
+  \item \textbf{A --- Assumptions:} Random, 10\%, and Large Counts: $n p_0 \ge 10$ and $n(1-p_0) \ge 10$! (Notice: Use the hypothesized $p_0$ to check conditions, NOT $\hat{p}$!).
+  \item \textbf{N --- Name the Test:} \textit{"One-sample $z$-test for a population proportion $p$."}
+  \item \textbf{T --- Test Statistic:}
+  \begin{equation}
+    z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}
+  \end{equation}
+  \item \textbf{O --- Obtain P-Value:} Compute $P(Z \ge z), P(Z \le z),$ or $2 \times P(Z \ge |z|)$.
+  \item \textbf{M --- Make Decision & State Conclusion in Context:}
+  \begin{itemize}
+    \item \textbf{If $p\text{-value} \le \alpha$:} \textit{"Because the $p$-value of [Value] is less than $\alpha = 0.05$, we reject $H_0$. There is convincing statistical evidence that [state $H_a$ in context]."}
+    \item \textbf{If $p\text{-value} > \alpha$:} \textit{"Because the $p$-value of [Value] is greater than $\alpha = 0.05$, we fail to reject $H_0$. There is not convincing statistical evidence that [state $H_a$ in context]."}
+  \end{itemize}
+\end{enumerate}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 6.3: Error Analysis & Statistical Power]
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+& \textbf{$H_0$ is Actually True} & \textbf{$H_0$ is Actually False} \\
+\hline
+\textbf{Reject $H_0$} & \textbf{Type I Error} (prob $= \alpha$) & \textbf{Correct Decision} (Power $= 1 - \beta$) \\
+\hline
+\textbf{Fail to Reject $H_0$} & \textbf{Correct Decision} & \textbf{Type II Error} (prob $= \beta$) \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{How to Increase the Power of a Test:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Increase sample size $n$:} Decreases standard error, sharpening distributions (most practical method!).
+  \item \textbf{Increase significance level $\alpha$:} Widens the rejection region, decreasing $\beta$ and increasing power. (Tradeoff: Increases Type I error risk).
+  \item \textbf{Increase effect size:} A larger true difference between the parameter and null value makes detection easier.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 6.4: Two-Sample Inference for Proportions ($p_1 - p_2$)]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Two-Sample $z$-Interval for $p_1 - p_2$:}
+  \begin{equation}
+    (\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
+  \end{equation}
+  \item \textbf{Two-Sample $z$-Test for $p_1 - p_2$ ($H_0: p_1 - p_2 = 0$):}
+  Because $H_0$ assumes $p_1 = p_2$, pool sample counts into a single combined proportion:
+  \begin{equation}
+    \hat{p}_C = \frac{X_1 + X_2}{n_1 + n_2}
+  \end{equation}
+  \begin{equation}
+    z = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}_C(1-\hat{p}_C)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}
+  \end{equation}
+\end{itemize}
+\end{lessonbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 6.1: Complete 1-Proportion Significance Test (PHANTOM)}
+\textbf{Problem:} A streaming service claims that 70\% of its subscribers watch content on mobile devices. A competitor believes the true proportion is lower. In an SRS of $n = 400$ subscribers, 260 watch on mobile devices. Conduct a hypothesis test at $\alpha = 0.05$.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{P:} Let $p = \text{the true proportion of all subscribers who watch on mobile devices}$.
+  \item \textbf{H:} $H_0: p = 0.70$ versus $H_a: p < 0.70$.
+  \item \textbf{A:}
+  \textit{Random:} Stated SRS of subscribers.\\
+  \textit{10\% Condition:} $n = 400 \le 0.10(\text{all subscribers})$ (millions of users).\\
+  \textit{Large Counts:} $n p_0 = 400(0.70) = 280 \ge 10$ and $n(1-p_0) = 400(0.30) = 120 \ge 10$. Both $\ge 10$.
+  \item \textbf{N:} One-sample $z$-test for a population proportion $p$.
+  \item \textbf{T:} $\hat{p} = 260/400 = 0.65$.
+  \[ z = \frac{0.65 - 0.70}{\sqrt{\frac{0.70(0.30)}{400}}} = \frac{-0.05}{\sqrt{0.000525}} = \frac{-0.05}{0.02291} \approx -2.18 \]
+  \item \textbf{O:} $p\text{-value} = P(Z \le -2.18) = \mathbf{0.0146}$.
+  \item \textbf{M:} Because the $p$-value ($0.0146$) is less than $\alpha = 0.05$, we reject the null hypothesis $H_0$. There is convincing statistical evidence that the true proportion of subscribers who watch on mobile devices is strictly less than 70\%.
+\end{itemize}
+
+\section{TI-84 Plus CE Calculator Playbook}
+
+\begin{calculatorbox}[TI-84 Playbook: Proportions Inference Tests and Intervals]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{1-Prop $z$-Test:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ 5:1-PropZTest}. Enter $p_0, x, n$, and direction of $H_a$.
+  \item \textbf{1-Prop $z$-Interval:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ A:1-PropZInt}. Enter $x, n, \text{C-Level}$.
+  \item \textbf{2-Prop $z$-Test:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ 6:2-PropZTest}. Enter $x_1, n_1, x_2, n_2$.
+  \item \textbf{2-Prop $z$-Interval:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ B:2-PropZInt}. Enter $x_1, n_1, x_2, n_2, \text{C-Level}$.
+\end{itemize}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item What does it mean to be "95\% confident" in the context of a confidence interval?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 95\% of the data values fall within the interval.
+    \item There is a 95\% probability that the true parameter lies in this specific interval.
+    \item In repeated random sampling, approximately 95\% of all intervals constructed will capture the true population parameter.
+    \item 95\% of future sample means will fall within this interval.
+    \item The test has a 5\% margin of error.
+  \end{enumerate}
+  \textbf{Answer: (C).} Standard definition of confidence level.
+
+  \item To reduce the margin of error of a confidence interval by a factor of 3 without changing the confidence level, the sample size must:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Triple \item Multiply by 6 \item Multiply by 9 \item Multiply by $\sqrt{3}$ \item Be cut in third
+  \end{enumerate}
+  \textbf{Answer: (C).} $\text{ME} \propto 1/\sqrt{n}$. To cut ME by 3, $n$ must multiply by $3^2 = 9$.
+
+  \item In an SRS of $n = 100$ students, 40 play an instrument. What is the standard error of $\hat{p}$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\sqrt{0.4(0.6)/100} = 0.04899$ \item $0.4 / 100 = 0.004$ \item $\sqrt{100(0.4)(0.6)} = 4.899$ \item $1.96 \times 0.04899$ \item 0.40
+  \end{enumerate}
+  \textbf{Answer: (A).} $\text{SE}(\hat{p}) = \sqrt{\hat{p}(1-\hat{p})/n} = \sqrt{0.24/100} \approx 0.049$.
+
+  \item A 95\% confidence interval for $p$ is $(0.42, 0.54)$. What is the point estimate $\hat{p}$ and margin of error?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\hat{p} = 0.48, \text{ME} = 0.06$ \item $\hat{p} = 0.48, \text{ME} = 0.12$ \item $\hat{p} = 0.50, \text{ME} = 0.04$ \item $\hat{p} = 0.42, \text{ME} = 0.54$ \item $\hat{p} = 0.45, \text{ME} = 0.09$
+  \end{enumerate}
+  \textbf{Answer: (A).} Center $= (0.42 + 0.54)/2 = 0.48$. $\text{ME} = 0.54 - 0.48 = 0.06$.
+
+  \item In testing $H_0: p = 0.50$ vs. $H_a: p > 0.50$, the test statistic is $z = 1.96$. At $\alpha = 0.05$, the decision is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Reject $H_0$ because $p\text{-value} = 0.025 \le 0.05$.
+    \item Fail to reject $H_0$ because $z > 0$.
+    \item Accept $H_a$ with 100\% certainty.
+    \item Reject $H_a$.
+    \item Retest with a larger sample.
+  \end{enumerate}
+  \textbf{Answer: (A).} For $z = 1.96$, one-sided $p\text{-value} = 0.025 < 0.05 \implies$ Reject $H_0$.
+
+  \item A Type I error is committed when:
+  \begin{enumerate}[label=(\Alph*)]
+    \item We reject $H_0$ when $H_0$ is actually true.
+    \item We fail to reject $H_0$ when $H_0$ is false.
+    \item The sample size is too small.
+    \item The null hypothesis is false.
+    \item The confidence interval includes zero.
+  \end{enumerate}
+  \textbf{Answer: (A).} False alarm / rejecting a true null hypothesis.
+
+  \item Increasing the significance level $\alpha$ from 0.01 to 0.05:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Increases the power of the test and decreases the probability of a Type II error.
+    \item Decreases power.
+    \item Increases $\beta$.
+    \item Has no effect on Type II errors.
+    \item Decreases the probability of a Type I error.
+  \end{enumerate}
+  \textbf{Answer: (A).} A higher $\alpha$ widens the rejection zone, increasing power and reducing $\beta$.
+
+  \item A 99\% confidence interval for $p_1 - p_2$ is $(-0.08, 0.04)$. Based on this interval, what can be concluded?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $p_1$ is definitely greater than $p_2$.
+    \item Because zero is included in the interval, there is no convincing evidence of a difference between $p_1$ and $p_2$ at $\alpha = 0.01$.
+    \item $p_2$ is significantly greater than $p_1$.
+    \item $p_1 = p_2 = 0$.
+    \item The sample sizes were unequal.
+  \end{enumerate}
+  \textbf{Answer: (B).} An interval containing 0 cannot rule out $p_1 = p_2$.
+
+  \item What is the pooled proportion $\hat{p}_C$ for $X_1 = 30, n_1 = 50$ and $X_2 = 45, n_2 = 50$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.60 \item 0.75 \item 0.75 \item 0.75 \item 0.75
+  \end{enumerate}
+  \textbf{Answer: (C).} $\hat{p}_C = (30 + 45)/(50 + 50) = 75/100 = 0.75$.
+
+  \item When testing $H_0: p = 0.40$ vs. $H_a: p \neq 0.40$, the test statistic is $z = -2.15$. The $p$-value is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.0158 \item 0.0316 \item 0.9842 \item 0.0500 \item 0.0079
+  \end{enumerate}
+  \textbf{Answer: (B).} Two-sided test: $2 \times P(Z \le -2.15) = 2(0.0158) = 0.0316$.
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item Which critical value $z^*$ is used for a 90\% confidence interval for a proportion?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1.282 \item 1.645 \item 1.960 \item 2.326 \item 2.576
+  \end{enumerate}
+  \textbf{Answer: (B).} Middle 90\% leaves 5\% in each tail $\implies z^* = 1.645$.
+
+  \item If a test fails to reject $H_0$, which error could have potentially been made?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Type I Error \item Type II Error \item Confounding Error \item Standard Error \item No error is possible
+  \end{enumerate}
+  \textbf{Answer: (B).} Failing to reject when $H_0$ is actually false is a Type II error ($\beta$).
+
+  \item If an experimenter rejects $H_0$ at $\alpha = 0.05$, will they definitely reject $H_0$ at $\alpha = 0.01$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes, always. \item No, only if the $p$-value is also less than 0.01. \item Yes, because 0.05 > 0.01. \item No, because power decreases. \item Cannot be determined.
+  \end{enumerate}
+  \textbf{Answer: (B).} A result with $p = 0.03$ rejects at 0.05 but fails to reject at 0.01.
+
+  \item The power of a significance test against a specific alternative parameter value is $0.85$. What is $\beta$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.05 \item 0.15 \item 0.85 \item 0.90 \item 0.01
+  \end{enumerate}
+  \textbf{Answer: (B).} $\text{Power} = 1 - \beta \implies \beta = 1 - 0.85 = 0.15$.
+
+  \item In a poll of $n = 500$ voters, $\hat{p} = 0.52$. Can we claim Candidate A has a statistically significant lead over 50\% at $\alpha = 0.05$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes, because $0.52 > 0.50$.
+    \item No, because $z = (0.52-0.50)/\sqrt{0.5(0.5)/500} = 0.02/0.02236 \approx 0.89$, giving $p\text{-value} = 0.1867 > 0.05$.
+    \item Yes, because $500 \ge 30$.
+    \item Yes, by the Central Limit Theorem.
+    \item No, because $500$ is too small.
+  \end{enumerate}
+  \textbf{Answer: (B).} $z = 0.89$ produces $p\text{-value} = 0.187 > 0.05$, failing to reject $H_0$.
+
+  \item Why do we use hypothesized $p_0$ instead of $\hat{p}$ when calculating standard error in a 1-proportion test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Because $p_0$ is always larger.
+    \item Because hypothesis tests proceed under the formal assumption that $H_0$ is true.
+    \item To avoid calculating square roots.
+    \item Because $\hat{p}$ is biased.
+    \item It is required by the 10\% condition.
+  \end{enumerate}
+  \textbf{Answer: (B).} Testing logic evaluates how likely the sample is assuming $H_0: p = p_0$ is the truth.
+
+  \item A 95\% confidence interval for $p$ is calculated as $(0.18, 0.26)$. Which of the following two-sided hypotheses would be rejected at $\alpha = 0.05$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $H_0: p = 0.20$ \item $H_0: p = 0.22$ \item $H_0: p = 0.25$ \item $H_0: p = 0.28$ \item $H_0: p = 0.24$
+  \end{enumerate}
+  \textbf{Answer: (D).} Any value outside the 95\% CI ($p = 0.28$) is rejected at $\alpha = 0.05$.
+
+  \item What is the minimum sample size required to estimate a population proportion within $\pm 0.03$ with 95\% confidence if no prior estimate of $p$ is available?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 385 \item 752 \item 1,068 \item 1,500 \item 2,000
+  \end{enumerate}
+  \textbf{Answer: (C).} Conservative estimate uses $p^* = 0.50$: $1.96 \sqrt{0.25/n} \le 0.03 \implies n \ge (1.96/0.03)^2(0.25) \approx 1,067.1 \implies 1,068$.
+
+  \item In a 2-sample $z$-test for $p_1 - p_2$, why do we pool the proportions?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Because $n_1 = n_2$.
+    \item Because the null hypothesis assumes $p_1 = p_2$, so both samples come from a population with a single common proportion.
+    \item To reduce bias.
+    \item Because the variables are continuous.
+    \item It is required by the Central Limit Theorem.
+  \end{enumerate}
+  \textbf{Answer: (B).} Under $H_0: p_1 = p_2$, pooling provides the best estimate of the shared parameter.
+
+  \item If an AP exam question states "interpret the $p$-value in context," you should write:
+  \begin{enumerate}[label=(\Alph*)]
+    \item "The probability that $H_0$ is true."
+    \item "The probability that $H_a$ is true."
+    \item "Assuming the null hypothesis is true, the probability of obtaining a sample proportion as extreme as or more extreme than observed purely by random chance."
+    \item "The probability that we made an error."
+    \item "The probability of getting an outlier."
+  \end{enumerate}
+  \textbf{Answer: (C).} Standard statistical definition of $p$-value.
+\end{enumerate}
+
+\subsection*{Part II: Free-Response Practice Problem}
+
+\begin{workbookbox}[FRQ 6.1: Full PANIC Confidence Interval & Claim Evaluation]
+\textbf{Problem:} A consumer advocacy group surveys a random sample of 200 electric vehicle (EV) owners and finds that 156 are satisfied with their vehicle's battery range.
+(a) Construct and interpret a 95\% confidence interval for the true proportion of all EV owners who are satisfied with battery range.\\
+(b) An industry report claims that at least 85\% of all EV owners are satisfied. Based on your confidence interval from part (a), what can you conclude about this claim?
+
+\textbf{Grader-Approved Score-4 Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a) [PANIC]:}\\
+  \textit{Parameter:} Let $p = \text{the true proportion of all EV owners satisfied with battery range}$.\\
+  \textit{Assumptions/Conditions:}
+  1. \textit{Random:} Stated random sample of 200 owners.
+  2. \textit{10\% Condition:} $n = 200 \le 0.10(\text{all EV owners})$ (hundreds of thousands of owners).
+  3. \textit{Large Counts:} $n\hat{p} = 156 \ge 10$ and $n(1-\hat{p}) = 200 - 156 = 44 \ge 10$. Both $\ge 10$.\\
+  \textit{Name:} One-sample $z$-interval for a population proportion $p$.\\
+  \textit{Interval Calculation:} $\hat{p} = 156/200 = 0.78$. For 95\% confidence, $z^* = 1.96$.
+  \[ \text{SE} = \sqrt{\frac{0.78(0.22)}{200}} = \sqrt{\frac{0.1716}{200}} \approx 0.02929 \]
+  \[ \text{ME} = 1.96(0.02929) \approx 0.0574 \]
+  $\text{Interval} = 0.78 \pm 0.0574 = \mathbf{(0.7226, \; 0.8374)}$ or \textbf{(72.26\%, 83.74\%)}.\\
+  \textit{Conclusion:} \textit{"We are 95\% confident that the true proportion of all EV owners satisfied with their battery range is between 72.26\% and 83.74\%."}
+  \item \textbf{Part (b):} Because the claimed value of 85\% (0.85) lies entirely above and outside the 95\% confidence interval of (0.7226, 0.8374), our interval provides convincing statistical evidence that the true satisfaction proportion is \textbf{strictly less than 85\%}. The industry claim is not supported.
+\end{itemize}
+\end{workbookbox}
+
+
+\begin{frqrubricbox}[FRQ 6.2: Two-Proportion $z$-Interval & Error Analysis in Medicine]
+\textbf{Problem:} A pharmaceutical clinical trial compares a new allergy medication (Drug A) against a standard over-the-counter medication (Drug B).
+Two independent random samples of adult allergy sufferers are tested:
+\begin{itemize}
+  \item Drug A: In an SRS of 250 patients, 215 report significant symptom relief.
+  \item Drug B: In an SRS of 250 patients, 175 report significant symptom relief.
+\end{itemize}
+\begin{enumerate}[label=(\alph*)]
+  \item Construct and interpret a 95\% confidence interval for the difference in relief proportions ($p_A - p_B$).
+  \item Based on your interval, is there convincing statistical evidence that Drug A provides a higher relief rate than Drug B?
+  \item Suppose researchers conduct a formal hypothesis test of $H_0: p_A = p_B$ vs. $H_a: p_A > p_B$. Describe a Type I error and a Type II error in the context of this study, and identify which error would be more serious for patient care.
+\end{enumerate}
+
+\textbf{Grader-Approved Score-4 Solution \& Rubric:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $\hat{p}_A = \frac{215}{250} = 0.86$, $\hat{p}_B = \frac{175}{250} = 0.70$.
+  $\hat{p}_A - \hat{p}_B = 0.86 - 0.70 = 0.16$.\\
+  \textit{Conditions:} Independent random samples; $250 \le 0.10N$ for both; all 4 counts ($215, 35, 175, 75$) are $\ge 10$.\\
+  $\text{SE} = \sqrt{\frac{0.86(0.14)}{250} + \frac{0.70(0.30)}{250}} = \sqrt{0.0004816 + 0.000840} = \sqrt{0.0013216} \approx 0.03635$.\\
+  For 95\% confidence, $z^* = 1.960$.\\
+  $\text{ME} = 1.960(0.03635) \approx 0.0712$.\\
+  $\text{CI} = 0.16 \pm 0.0712 \implies \mathbf{(0.0888, \; 0.2312)}$.\\
+  \textit{Interpretation:} We are 95\% confident that the true difference in the proportion of patients experiencing relief between Drug A and Drug B ($p_A - p_B$) is between 8.88\% and 23.12\%.
+  \item \textbf{Part (b):} Yes. Because the entire 95\% confidence interval is strictly positive and does not contain 0, there is convincing evidence at $\alpha = 0.05$ that Drug A has a higher relief rate than Drug B.
+  \item \textbf{Part (c):}
+  \textit{Type I Error:} Concluding Drug A is more effective when in reality Drug A and Drug B have identical efficacy. (Consequence: Patients pay more for a new drug that offers no actual clinical advantage).\\
+  \textit{Type II Error:} Failing to detect that Drug A is genuinely more effective. (Consequence: Patients miss out on a superior therapeutic treatment).
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{trapbox}[Unit 6 Top 5 AP Exam Pitfalls to Avoid]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Using Pooled $\hat{p}_c$ for Confidence Intervals:} Pooled proportions are used ONLY for hypothesis tests ($H_0: p_1 = p_2$), NEVER for confidence intervals!
+  \item \textbf{Hypothesizing with Statistics:} Writing $H_0: \hat{p}_1 = \hat{p}_2$ loses credit instantly. Always use parameters $p_1$ and $p_2$.
+  \item \textbf{Confusing Margin of Error with Standard Error:} $\text{ME} = z^* \times \text{SE}$. Standard error does not include the critical value.
+  \item \textbf{Claiming $p$-value is the Probability $H_0$ is True:} The $p$-value is $P(\text{data as extreme} \mid H_0 \text{ is true})$, NOT $P(H_0 \text{ is true})$.
+  \item \textbf{Power Confusion:} Power increases when sample size $n$ increases, $\alpha$ increases, or the true parameter is further from the null value.
+\end{enumerate}
+\end{trapbox}
+\section{Unit 6 Master Summary}
+\begin{lessonbox}[Unit 6 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{PANIC for Intervals:} Parameter, Assumptions, Name, Interval, Conclusion.
+  \item \textbf{PHANTOM for Tests:} Parameter, Hypotheses, Assumptions, Name, Test Stat, Obtain p-value, Make decision.
+  \item \textbf{Conditions for Proportions:} Random, 10\% ($n \le 0.10N$), Large Counts ($np \ge 10, n(1-p) \ge 10$).
+  \item \textbf{Decision Rule:} If $p\text{-value} \le \alpha \implies$ Reject $H_0$; If $p\text{-value} > \alpha \implies$ Fail to reject $H_0$.
+  \item \textbf{Errors:} Type I = False Alarm ($\alpha$); Type II = Miss ($\beta$); $\text{Power} = 1 - \beta$.
+\end{itemize}
+\end{lessonbox}
+\clearpage

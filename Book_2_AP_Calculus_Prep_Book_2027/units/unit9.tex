@@ -1,0 +1,329 @@
+% =========================================================================
+% UNIT 9: INFERENCE FOR QUANTITATIVE DATA - SLOPES
+% =========================================================================
+\chapter{Unit 9: Inference for Quantitative Data: Slopes}
+
+\section{Unit Overview \& AP Exam Weight}
+Unit 9 accounts for \textbf{2\% to 5\%} of the multiple-choice section of the AP Statistics Exam and appears frequently on Section II Free-Response Questions (often as part of Question 1 or Question 6 Investigative Task). It integrates two-variable regression analysis from Unit 2 with formal inference concepts ($t$-intervals and $t$-tests).
+
+\subsection*{Key Vocabulary Terms}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Population Regression Line:] $\mu_y = \alpha + \beta x$. Models the true mean response $\mu_y$ for any given value of explanatory variable $x$. Parameter $\beta$ represents the true population slope.
+  \item[Sample Regression Line (LSRL):] $\hat{y} = b_0 + b_1 x$. The estimated regression line calculated from sample data, where $b_1$ is the point estimate of $\beta$ and $b_0$ estimates $\alpha$.
+  \item[Standard Error of the Slope ($\text{SE}(b_1)$):] The estimated standard deviation of the sampling distribution of sample slopes $b_1$:
+  \begin{equation}
+    \text{SE}(b_1) = \frac{s}{s_x \sqrt{n - 1}}
+  \end{equation}
+  where $s$ is the standard deviation of the residuals and $s_x$ is the sample standard deviation of $x$.
+  \item[Standard Deviation of Residuals ($s$):] Estimates the standard deviation $\sigma$ of the response variable $y$ about the true population regression line:
+  \begin{equation}
+    s = \sqrt{\frac{\sum (y_i - \hat{y}_i)^2}{n - 2}} = \sqrt{\frac{\sum e_i^2}{n - 2}}
+  \end{equation}
+  \item[Degrees of Freedom for Regression:] $df = n - 2$, reflecting the estimation of two parameters ($\alpha$ and $\beta$).
+  \item[LINER Conditions:] The five mandatory assumptions for valid regression inference: Linear, Independent, Normal residuals, Equal variance of residuals, Random sample/assignment.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 9.1: The L-I-N-E-R Conditions for Regression Inference]
+On an AP exam FRQ, you must state and verify all 5 LINER conditions:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{L --- Linear:} The true relationship between $x$ and $y$ in the population is linear.\\
+  \textit{Verification:} The scatterplot shows a roughly linear pattern, and the residual plot exhibits random scatter around the horizontal zero line with no curved pattern.
+  \item \textbf{I --- Independent:} Individual observations are independent.\\
+  \textit{Verification:} When sampling without replacement, verify $n \le 0.10N$. In an experiment, verify subjects were randomly assigned to treatments.
+  \item \textbf{N --- Normal Residuals:} For any fixed $x$, responses $y$ vary normally about the line.\\
+  \textit{Verification:} Construct a histogram, boxplot, or normal probability plot of the residuals. Confirm there is no extreme skewness and no severe outliers.
+  \item \textbf{E --- Equal Variance (Homoscedasticity):} The standard deviation of $y$ ($\sigma$) is constant across all values of $x$.\\
+  \textit{Verification:} In the residual plot, the vertical spread of the residuals is roughly uniform across the range of $x$ values (no fan-shaped or funnel pattern).
+  \item \textbf{R --- Random:} Data were collected using a well-designed random sample or randomized experiment.\\
+  \textit{Verification:} Quote the problem stem confirming an SRS or randomized experimental protocol.
+\end{enumerate}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 9.2: Confidence Interval for Slope $\beta$]
+A $C\%$ confidence interval for the true population slope $\beta$ is:
+\begin{equation}
+  b_1 \pm t^* \cdot \text{SE}(b_1)
+\end{equation}
+where $t^*$ is the critical value from the $t$-distribution with $df = n - 2$.
+
+\begin{frqrubricbox}[Score-4 Template: Interpreting a Confidence Interval for Slope]
+\textit{"We are [C\%] confident that for each additional 1 [unit of $x$] increase in [explanatory variable $x$], the true population mean [response variable $y$] increases/decreases by an amount between [Lower Bound] and [Upper Bound] [units of $y$]."}
+\end{frqrubricbox}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 9.3: Hypothesis Test for Slope $\beta$ ($H_0: \beta = 0$)]
+To test whether there is a statistically significant linear association:
+\begin{align*}
+  H_0 &: \beta = 0 \quad (\text{There is no linear association between } x \text{ and } y \text{ in the population}) \\
+  H_a &: \beta \neq 0 \quad \text{or} \quad \beta > 0 \quad \text{or} \quad \beta < 0
+\end{align*}
+The test statistic is:
+\begin{equation}
+  t = \frac{b_1 - 0}{\text{SE}(b_1)}, \qquad df = n - 2
+\end{equation}
+If $p\text{-value} \le \alpha$, reject $H_0$ and conclude that convincing evidence exists of a linear relationship between $x$ and $y$.
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 9.4: Deciphering Computer Regression Output]
+AP exams regularly provide regression computer output rather than raw data. You must extract key statistics instantly:
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+\midrule
+Constant & $b_0$ ($y$-intercept) & $\text{SE}(b_0)$ & $t = b_0 / \text{SE}(b_0)$ & $p\text{-value}$ \\
+\textbf{Explanatory Variable ($x$)} & \textbf{$b_1$ (slope)} & \textbf{$\text{SE}(b_1)$} & \textbf{$t = b_1 / \text{SE}(b_1)$} & \textbf{Two-sided $p$-value} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\textbf{Additional Output Statistics:}
+\begin{itemize}
+  \item $S = s$: The standard deviation of the residuals. Measures the typical prediction error.
+  \item $R\text{-sq} = r^2$: The coefficient of determination.
+  \item \textbf{Direction of $r$:} The computer output reports $r^2$ as a positive percentage. To find $r$, calculate $\pm \sqrt{r^2}$, giving $r$ the same sign as the slope coefficient $b_1$!
+  \item \textbf{One-Sided $p$-Value Warning:} Computer tables report \textbf{two-sided} $p$-values. If your alternative hypothesis is one-sided ($H_a: \beta > 0$ or $H_a: \beta < 0$), divide the table $p$-value by 2 (provided the sample slope is in the hypothesized direction)!
+\end{itemize}
+\end{lessonbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 9.1: Regression Output Analysis \& Interpretation}
+\textbf{Problem:} An automotive research team investigates the relationship between vehicle curb weight ($x$, in thousands of pounds) and highway fuel efficiency ($y$, in miles per gallon). An SRS of $n = 18$ passenger cars yields:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+\midrule
+Constant & 48.24 & 2.18 & 22.13 & 0.000 \\
+Weight & $-5.12$ & 0.64 & $-8.00$ & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+$S = 1.86\text{ mpg}, \quad R\text{-sq} = 80.0\%$.\\
+(a) Write the equation of the least-squares regression line.\\
+(b) Interpret the slope $b_1 = -5.12$ in context.\\
+(c) Interpret $S = 1.86\text{ mpg}$ in context.\\
+(d) Construct a 95\% confidence interval for the true slope $\beta$.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $\widehat{\text{Fuel Efficiency}} = 48.24 - 5.12(\text{Weight})$.
+  \item \textbf{Part (b):} For each additional 1,000-pound increase in vehicle weight, the predicted highway fuel efficiency decreases by approximately 5.12 miles per gallon.
+  \item \textbf{Part (c):} When using vehicle weight to predict highway fuel efficiency with this model, predictions will typically be off by about 1.86 miles per gallon from the actual observed fuel efficiency.
+  \item \textbf{Part (d):} Degrees of freedom: $df = n - 2 = 18 - 2 = 16$.
+  From the $t$-table, for 95\% confidence with $df = 16$, $t^* = 2.120$.\\
+  \[ \text{CI} = b_1 \pm t^* \cdot \text{SE}(b_1) = -5.12 \pm 2.120(0.64) = -5.12 \pm 1.3568 = \mathbf{(-6.477, \; -3.763)\text{ mpg/1000 lbs}} \]
+  \textit{"We are 95\% confident that for each additional 1,000-pound increase in vehicle curb weight, the true mean highway fuel efficiency decreases by between 3.76 and 6.48 miles per gallon."}
+\end{itemize}
+
+\subsection*{Example 9.2: Hypothesis Test for Positive Linear Association}
+\textbf{Problem:} Using the tree dataset from Example 9.1 where $n = 16$, $b_1 = 2.85$, and $\text{SE}(b_1) = 0.42$, carry out a formal hypothesis test to determine if there is convincing evidence that taller trees have larger diameters ($\beta > 0$) at $\alpha = 0.01$.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Step 1 (Hypotheses):}
+  $H_0: \beta = 0$ (No positive linear relationship between diameter and height).\\
+  $H_a: \beta > 0$ (There is a positive linear relationship between diameter and height).
+  \item \textbf{Step 2 (Conditions):}
+  Assume all LINER conditions are met as verified by scatterplots and residual plots.
+  \item \textbf{Step 3 (Mechanics):}
+  \[ t = \frac{b_1 - 0}{\text{SE}(b_1)} = \frac{2.85 - 0}{0.42} = 6.786 \approx 6.79 \]
+  Degrees of freedom: $df = 16 - 2 = 14$.\\
+  $p$-value: $P(t_{14} \ge 6.79) = \text{tcdf}(6.79, 10^{99}, 14) \approx 0.000004 < 0.0001$.
+  \item \textbf{Step 4 (Conclusion):}
+  Because the $p$-value ($< 0.0001$) is much less than $\alpha = 0.01$, we reject $H_0$. There is convincing statistical evidence of a positive linear association between pine tree diameter and tree height.
+\end{itemize}
+
+\section{TI-84 CE Calculator Procedures for Slope Inference}
+\begin{calculatorbox}[TI-84 Playbook: Linear Regression Inference]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Linear Regression $t$-Test (\texttt{LinRegTTest}):}
+  1. Enter explanatory data into \texttt{L1} and response data into \texttt{L2}.\\
+  2. Press \texttt{[STAT]} $\to$ Arrow to \texttt{TESTS} $\to$ Select \texttt{F:LinRegTTest}.\\
+  3. Enter \texttt{Xlist: L1}, \texttt{Ylist: L2}, \texttt{Freq: 1}.\\
+  4. Select the alternative hypothesis for $\beta$ and $\rho$ ($\neq 0, < 0,$ or $> 0$).\\
+  5. Select \texttt{Calculate}. Displays $t$-statistic, $p$-value, $df = n - 2, a, b, s, r^2,$ and $r$.
+  \item \textbf{Linear Regression $t$-Interval (\texttt{LinRegTInt}):}
+  1. Press \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ Select \texttt{G:LinRegTInt}.\\
+  2. Enter \texttt{Xlist: L1}, \texttt{Ylist: L2}, and desired \texttt{C-Level} (e.g., 0.95).\\
+  3. Select \texttt{Calculate}. Displays the confidence interval for $\beta$, $b_1, df, s, \text{SE}(b_1), a, r^2,$ and $r$.
+\end{itemize}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions with Explanations}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item What are the degrees of freedom for a linear regression $t$-test with a sample size of $n = 25$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 25 \item 24 \item 23 \item 2 \item 1
+  \end{enumerate}
+  \textbf{Answer: (C).} Regression inference for slope uses $df = n - 2 = 25 - 2 = 23$.
+
+  \item The null hypothesis in a regression significance test evaluating linear association is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $H_0: b_1 = 0$ \item $H_0: \beta = 0$ \item $H_0: \mu = 0$ \item $H_0: r = 1$ \item $H_0: \alpha = \beta$
+  \end{enumerate}
+  \textbf{Answer: (B).} Hypotheses must be stated in terms of the population parameter $\beta$, never the sample statistic $b_1$.
+
+  \item Which of the following conditions ensures that the standard deviation of residuals is constant across all $x$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Linear \item Independent \item Normal residuals \item Equal variance \item Random
+  \end{enumerate}
+  \textbf{Answer: (D).} The Equal Variance condition (homoscedasticity) specifies constant vertical spread of $y$ about the line.
+
+  \item In a regression computer output, the standard error of the slope $\text{SE}(b_1)$ appears under which column header?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Coef \item SE Coef \item T \item P \item R-sq
+  \end{enumerate}
+  \textbf{Answer: (B).} The standard error of the slope is located in the ``SE Coef'' column on the row for the explanatory variable.
+
+  \item A 95\% confidence interval for the slope $\beta$ is $(0.45, 1.85)$. Based on this interval:
+  \begin{enumerate}[label=(\Alph*)]
+    \item There is no linear relationship between $x$ and $y$. \item We fail to reject $H_0: \beta = 0$ at $\alpha = 0.05$. \item We reject $H_0: \beta = 0$ at $\alpha = 0.05$ because zero is not contained in the interval. \item The correlation coefficient must be negative. \item $r^2 > 0.95$.
+  \end{enumerate}
+  \textbf{Answer: (C).} Because the entire interval is strictly positive and excludes 0, zero is not a plausible value for $\beta$.
+
+  \item If the residual plot exhibits a distinct fan shape (narrow on the left, wide on the right), which condition is violated?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Linearity \item Independence \item Normality \item Equal variance \item Randomness
+  \end{enumerate}
+  \textbf{Answer: (D).} A fan or funnel shape violates the Equal Variance assumption.
+
+  \item What does the statistic $s$ represent in a regression output?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The slope of the line \item The correlation coefficient \item The estimated standard deviation of the residuals \item The sample size \item The standard error of the intercept
+  \end{enumerate}
+  \textbf{Answer: (C).} $s = \sqrt{\frac{\sum e_i^2}{n-2}}$ estimates the typical distance that observed $y$-values deviate from the predicted line.
+
+  \item A regression yields $b_1 = 3.60$ with $\text{SE}(b_1) = 0.90$ for $n = 20$. The $t$-statistic for $H_0: \beta = 0$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.25 \item 4.00 \item 2.70 \item 3.24 \item 18.0
+  \end{enumerate}
+  \textbf{Answer: (B).} $t = \frac{b_1 - 0}{\text{SE}(b_1)} = \frac{3.60}{0.90} = 4.00$.
+
+  \item If computer output reports $R\text{-sq} = 64\%$ and the slope coefficient is negative, what is the correlation coefficient $r$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.64 \item 0.80 \item $-0.80$ \item $-0.64$ \item $-0.4096$
+  \end{enumerate}
+  \textbf{Answer: (C).} $r = -\sqrt{0.64} = -0.80$. The sign of $r$ matches the sign of the slope $b_1$.
+
+  \item How is the Normality of residuals condition checked in practice?
+  \begin{enumerate}[label=(\Alph*)]
+    \item By checking whether $n \ge 30$ \item By inspecting a histogram, boxplot, or normal probability plot of the residuals \item By testing $r^2$ \item By plotting $y$ versus $x$ \item By checking $n \le 0.10N$
+  \end{enumerate}
+  \textbf{Answer: (B).} Normality applies to the distribution of residuals, checked via an NPP or histogram of residuals.
+
+  \item If the $p$-value for the slope $t$-test is $0.003$ and $\alpha = 0.01$, the correct conclusion is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Fail to reject $H_0$ \item Reject $H_0$; there is convincing evidence of a linear association \item Accept $H_0$ \item Conclude the relationship is non-linear \item Extrapolate predictions
+  \end{enumerate}
+  \textbf{Answer: (B).} Since $p\text{-value} = 0.003 < 0.01$, we reject $H_0$.
+
+  \item When constructing a 90\% confidence interval for slope with $n = 12$, what critical value $t^*$ is used?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $t^*$ with $df = 12$ \item $t^*$ with $df = 11$ \item $t^*$ with $df = 10$ \item $z^* = 1.645$ \item $z^* = 1.960$
+  \end{enumerate}
+  \textbf{Answer: (C).} $df = n - 2 = 12 - 2 = 10$.
+
+  \item The point of averages $(\bar{x}, \bar{y})$ in simple linear regression:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Is always an outlier \item Always lies exactly on the least-squares regression line \item Has residual equal to 1 \item Has leverage equal to 1 \item Is never on the line
+  \end{enumerate}
+  \textbf{Answer: (B).} The LSRL always passes through $(\bar{x}, \bar{y})$ by mathematical definition of the intercept $b_0 = \bar{y} - b_1 \bar{x}$.
+
+  \item In regression, which value measures the percentage of variation in $y$ explained by the linear model?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $r$ \item $r^2$ \item $s$ \item $\text{SE}(b_1)$ \item $t$
+  \end{enumerate}
+  \textbf{Answer: (B).} The coefficient of determination $r^2$ measures explained variation.
+
+  \item A two-sided $p$-value in a computer printout is $0.040$. For $H_a: \beta > 0$ with positive $b_1$, the one-sided $p$-value is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.040 \item 0.080 \item 0.020 \item 0.960 \item 0.010
+  \end{enumerate}
+  \textbf{Answer: (C).} A one-sided $p$-value in the direction of the sample slope is half the two-sided value: $0.040 / 2 = 0.020$.
+
+  \item If $n = 10$, what are the degrees of freedom for the slope $t$-statistic?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 8 \item 9 \item 10 \item 18 \item 20
+  \end{enumerate}
+  \textbf{Answer: (A).} $df = n - 2 = 10 - 2 = 8$.
+
+  \item The sum of the residuals $\sum (y_i - \hat{y}_i)$ for any least-squares regression line is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Always positive \item Always negative \item Always exactly zero \item Equal to $r^2$ \item Equal to $s$
+  \end{enumerate}
+  \textbf{Answer: (C).} A mathematical property of the LSRL is that positive and negative residuals sum to zero.
+
+  \item What does a residual plot with a curved U-shape indicate?
+  \begin{enumerate}[label=(\Alph*)]
+    \item A linear model is inappropriate \item The correlation is 1 \item The slope is zero \item Conditions are satisfied \item Extrapolation was performed
+  \end{enumerate}
+  \textbf{Answer: (A).} Any systematic curve in the residual plot indicates that the relationship is non-linear.
+
+  \item If the confidence interval for slope $\beta$ is $(-1.5, 0.5)$, what can be concluded at the corresponding $\alpha$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\beta$ is significantly positive \item $\beta$ is significantly negative \item Fail to reject $H_0: \beta = 0$ because 0 is inside the interval \item $r = 0$ \item Sample size was too large
+  \end{enumerate}
+  \textbf{Answer: (C).} Since 0 is contained within the confidence interval, zero is a plausible value for $\beta$.
+
+  \item Which acronym summarizes the regression inference conditions?
+  \begin{enumerate}[label=(\Alph*)]
+    \item BINS \item BITS \item CUSS \item PANIC \item LINER
+  \end{enumerate}
+  \textbf{Answer: (E).} LINER: Linear, Independent, Normal residuals, Equal variance, Random.
+\end{enumerate}
+
+\subsection*{Part II: Score-4 Free-Response Problem with Complete Rubric}
+
+\begin{frqrubricbox}[FRQ 9.1: Comprehensive Regression Inference on Computer Output]
+\textbf{Problem:} A sports physiologist studies the relationship between weekly training volume ($x$, in miles) and marathon completion time ($y$, in minutes) for an SRS of $n = 20$ competitive amateur runners. The regression analysis produces:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+\midrule
+Constant & 310.50 & 14.25 & 21.79 & 0.000 \\
+Miles & $-1.85$ & 0.35 & $-5.29$ & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+$S = 8.42\text{ min}, \quad R\text{-sq} = 60.8\%$.\\
+(a) State the equation of the least-squares regression line.\\
+(b) Interpret the slope $-1.85$ in context.\\
+(c) Construct and interpret a 95\% confidence interval for the true slope $\beta$.\\
+(d) Explain what $S = 8.42$ minutes means in the context of this study.
+
+\textbf{Grader-Approved Score-4 Solution:}\\
+\textbf{Part (a):}\\
+$\widehat{\text{Marathon Time}} = 310.50 - 1.85(\text{Weekly Miles})$.\\
+\textbf{Part (b):}\\
+For each additional 1 mile of weekly training volume, the predicted marathon completion time decreases by approximately 1.85 minutes.\\
+\textbf{Part (c):}\\
+\textit{Step 1: Parameter \& Name:} We construct a 95\% confidence interval for the true slope $\beta$ of the population regression line relating weekly training miles to marathon finish time. Procedure: Linear regression $t$-interval for slope.\\
+\textit{Step 2: Conditions:} Stated as an SRS of 20 runners ($n = 20 < 0.10(\text{All runners})$). Assume scatterplot and residual plot verify linearity, normal residuals, and equal variance.\\
+\textit{Step 3: Interval Calculations:} $df = n - 2 = 20 - 2 = 18$. For 95\% confidence with $df = 18$, $t^* = 2.101$.\\
+From output: $b_1 = -1.85, \text{SE}(b_1) = 0.35$.\\
+\[ \text{CI} = -1.85 \pm 2.101(0.35) = -1.85 \pm 0.7354 = \mathbf{(-2.5854, \; -1.1146)\text{ min/mile}} \]
+\textit{Step 4: Interpretation:} We are 95\% confident that for each additional 1 mile per week of training, the true mean marathon completion time decreases by between 1.11 minutes and 2.59 minutes.\\
+\textbf{Part (d):}\\
+When using weekly training volume to predict marathon completion time with this linear model, predictions will typically deviate from actual observed race times by approximately 8.42 minutes.
+\end{frqrubricbox}
+
+\section{Unit 9 Master Summary}
+\begin{lessonbox}[Unit 9 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{LINER:} Linear, Independent, Normal residuals, Equal variance, Random.
+  \item \textbf{Degrees of Freedom:} $df = n - 2$ for all slope $t$-intervals and $t$-tests.
+  \item \textbf{Slope CI Formula:} $b_1 \pm t^* \cdot \text{SE}(b_1)$.
+  \item \textbf{Slope Test Statistic:} $t = (b_1 - 0)/\text{SE}(b_1)$.
+  \item \textbf{Computer Output:} Extract $b_1$ and $\text{SE}(b_1)$ from second row; remember $r$ has the same sign as $b_1$.
+\end{itemize}
+\end{lessonbox}
+\clearpage

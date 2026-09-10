@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Calculus Score-5 Blueprint | Interactive Student Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .calc-tag {
+      background: #0284C7;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span>∫dx AP® Calculus Master Review</span>
+        <span class="logo-badge">2027 EXAM READY</span>
+      </a>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a href="index.html" style="color:var(--text-color); text-decoration:none; font-size:0.9rem; font-weight:600;">📊 AP Statistics Portal</a>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>AP® Calculus Digital Companion Portal</h1>
+      <p>Instant derivative & integral rules, interactive existence theorem guides (IVT, MVT, FTC), series convergence decision flowcharts, and rubric-perfect FRQ sentence builders.</p>
+      <div class="badge-row">
+        <span class="hero-pill">⚡ 10-Unit Rule Translation</span>
+        <span class="hero-pill">🎯 Existence Theorem Wizard</span>
+        <span class="hero-pill">✍️ FRQ Justification Builder</span>
+        <span class="hero-pill">✨ 2027 Exam Ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Portal -->
+  <main class="container" style="margin-top: 30px;">
+    
+    <!-- Tab Navigation -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="calc-formulas">📚 Derivative & Integral Sheets</button>
+      <button class="tab-btn" data-tab="calc-theorems">🧭 Existence Theorem Selector</button>
+      <button class="tab-btn" data-tab="calc-frq">✍️ FRQ Justification Generator</button>
+      <button class="tab-btn" data-tab="calc-series">🔬 Series Convergence Wizard</button>
+      <button class="tab-btn" data-tab="calc-books">📖 Series Books & 300+ Page Guides</button>
+    </nav>
+
+    <!-- TAB 1: FORMULAS -->
+    <section class="tab-pane active" id="calc-formulas">
+      <div class="card">
+        <h2>Searchable AP® Calculus AB & BC Rules & Formulas</h2>
+        <input type="text" class="search-box" id="calcFormulaSearch" placeholder="Type to search any rule (e.g. chain rule, FTC, integration by parts, quotient, power)...">
+        <div class="grid-2" id="calcFormulaGrid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: THEOREM SELECTOR -->
+    <section class="tab-pane" id="calc-theorems">
+      <div class="card">
+        <h2>Existence Theorem Justification Selector</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Pick the scenario you are analyzing on your AP exam to see required hypotheses and exact College Board sentence phrasing.</p>
+        <div class="grid-2">
+          <div class="formula-card">
+            <h3>Intermediate Value Theorem (IVT)</h3>
+            <p><strong>Hypothesis:</strong> $f(x)$ is continuous on the closed interval $[a, b]$.</p>
+            <p><strong>Conclusion:</strong> $f(x)$ takes on every value between $f(a)$ and $f(b)$ at least once in $(a, b)$.</p>
+            <p><strong>FRQ Phrase:</strong> "Since $f$ is continuous on $[a, b]$ and $f(a) < k < f(b)$, by IVT there exists $c \in (a, b)$ such that $f(c) = k$."</p>
+          </div>
+          <div class="formula-card">
+            <h3>Mean Value Theorem (MVT)</h3>
+            <p><strong>Hypothesis:</strong> $f(x)$ is continuous on $[a, b]$ AND differentiable on $(a, b)$.</p>
+            <p><strong>Conclusion:</strong> There exists at least one $c \in (a, b)$ such that $f'(c) = \frac{f(b) - f(a)}{b - a}$.</p>
+            <p><strong>FRQ Phrase:</strong> "Because $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, by MVT there exists $c \in (a, b)$ where $f'(c) = \frac{f(b)-f(a)}{b-a}$."</p>
+          </div>
+          <div class="formula-card">
+            <h3>Extreme Value Theorem (EVT)</h3>
+            <p><strong>Hypothesis:</strong> $f(x)$ is continuous on the closed interval $[a, b]$.</p>
+            <p><strong>Conclusion:</strong> $f(x)$ attains both an absolute maximum and an absolute minimum on $[a, b]$.</p>
+            <p><strong>FRQ Phrase:</strong> "By EVT, since $f$ is continuous on the closed interval $[a, b]$, absolute extrema must occur at critical points or endpoints."</p>
+          </div>
+          <div class="formula-card">
+            <h3>Fundamental Theorem of Calculus (FTC)</h3>
+            <p><strong>Part 1 (Accumulation):</strong> $\frac{d}{dx}\left[\int_a^x f(t)\,dt\right] = f(x)$.</p>
+            <p><strong>Part 2 (Net Change):</strong> $\int_a^b f'(t)\,dt = f(b) - f(a)$.</p>
+            <p><strong>FRQ Phrase:</strong> "The amount at $t = b$ equals the initial amount at $t = a$ plus the net change: $f(b) = f(a) + \int_a^b f'(t)\,dt$."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: FRQ GENERATOR -->
+    <section class="tab-pane" id="calc-frq">
+      <div class="card">
+        <h2>Interactive Calculus FRQ Justification Builder</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Generate College Board rubric-compliant response templates with full partial credit justification.</p>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Select Justification Task:</label>
+            <select id="calcFrqType" class="form-control" onchange="generateCalcFrq()">
+              <option value="mvt">Mean Value Theorem (Instantaneous = Average Rate)</option>
+              <option value="ivt">Intermediate Value Theorem (Guaranteed Function Value)</option>
+              <option value="concavity">Points of Inflection & Concavity</option>
+              <option value="critical">Relative Extrema (First Derivative Test)</option>
+              <option value="speed">Particle Speed (Increasing vs Decreasing)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Interval or Values:</label>
+            <input type="text" id="calcFrqInterval" class="form-control" value="[0, 5]" placeholder="e.g. [0, 4] or t = 3" oninput="generateCalcFrq()">
+          </div>
+        </div>
+        <div class="template-output" id="calcFrqResult" style="margin-top:20px; padding:15px; background:var(--card-bg); border-left:4px solid #0284C7; border-radius:4px;"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: SERIES CONVERGENCE -->
+    <section class="tab-pane" id="calc-series">
+      <div class="card">
+        <h2>AP Calculus BC Series Convergence Test Decision Tree</h2>
+        <div class="grid-2">
+          <div class="formula-card">
+            <h3>1. nth-Term Test for Divergence</h3>
+            <p>If $\lim_{n \to \infty} a_n \neq 0$, the series <strong>DIVERGES</strong>.</p>
+            <p><small>Warning: If limit equals 0, the test is INCONCLUSIVE.</small></p>
+          </div>
+          <div class="formula-card">
+            <h3>2. Geometric Series Test</h3>
+            <p>$\sum a r^n$ converges if and only if $|r| < 1$. Sum $= \frac{a}{1 - r}$.</p>
+          </div>
+          <div class="formula-card">
+            <h3>3. p-Series Test</h3>
+            <p>$\sum \frac{1}{n^p}$ converges if $p > 1$, and diverges if $p \le 1$.</p>
+          </div>
+          <div class="formula-card">
+            <h3>4. Ratio Test (Power Series & Factorials)</h3>
+            <p>$\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = L$. Converges if $L < 1$, diverges if $L > 1$.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: BOOKS -->
+    <section class="tab-pane" id="calc-books">
+      <div class="card">
+        <h2>The AP® Calculus Master Review Series (2027 Exam Ready)</h2>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Three 300+ page comprehensive textbooks and exam simulators engineered for high school mastery.</p>
+        <div class="grid-2">
+          <div class="formula-card">
+            <h3>📘 Book 1: Formula & Theorem Quick Study Guide (301 Pages)</h3>
+            <p>The High-Yield Score-5 Cram Companion: Rapid Derivative & Integral Rules, Existence Theorems, and Step-by-Step FRQ Justification Templates.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> 301-Page Manuscript & 5 3D Covers Complete</p>
+          </div>
+          <div class="formula-card">
+            <h3>📗 Book 2: AP® Calculus AB & BC Prep Book 2027 (301 Pages)</h3>
+            <p>The Complete High School Textbook & Study Guide with Practice Workbooks, Drill Sets, and TI-84/TI-Nspire Exam Strategies.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> 301-Page Manuscript & 5 3D Covers Complete</p>
+          </div>
+          <div class="formula-card">
+            <h3>🎯 Book 3: 10 Full-Length Practice Exams (301 Pages)</h3>
+            <p>The Ultimate Score-5 Exam Simulator: 10 Complete Timed Tests (450 MCQs + 60 FRQs), Step-by-Step Scoring Rubrics, and Digital Flashcards.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> 301-Page Manuscript & 5 3D Covers Complete</p>
+          </div>
+          <div class="formula-card">
+            <h3>🌐 Companion: Digital Web Companion Portal</h3>
+            <p>Live interactive formula search, theorem justification builders, and series convergence selectors.</p>
+            <p style="margin-top: 10px;"><strong>Status:</strong> 100% Free Live Access</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 PR. Designed for independent AP Calculus student mastery.</p>
+      <p style="font-size: 0.8rem; margin-top: 8px;">*AP® and Advanced Placement® are registered trademarks of the College Board. TI-84® is a registered trademark of Texas Instruments. Neither is affiliated with nor endorses this site.</p>
+    </div>
+  </footer>
+
+  <script src="calculus_app.js"></script>
+</body>
+</html>

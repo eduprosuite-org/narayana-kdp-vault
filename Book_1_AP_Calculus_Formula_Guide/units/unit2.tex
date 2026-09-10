@@ -1,0 +1,390 @@
+﻿% =========================================================================
+% UNIT 2: EXPLORING TWO-VARIABLE DATA
+% =========================================================================
+\chapter{Unit 2: Exploring Two-Variable Data}
+
+\section{Unit Overview \& Exam Weight}
+Unit 2 accounts for \textbf{5\% to 7\%} of the AP Statistics Exam. Despite its modest percentage weight, regression analysis, correlation interpretation, residual evaluation, and computer output reading appear on virtually every single AP Exam, frequently as a high-scoring Free-Response Question (FRQ).
+
+\subsection*{Key Unit Vocabulary}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Explanatory Variable ($x$):] The independent variable hypothesized to explain or predict changes in the response variable.
+  \item[Response Variable ($y$):] The dependent variable whose values are predicted or measured as an outcome.
+  \item[Scatterplot:] A two-dimensional plot displaying the relationship between two quantitative variables measured on the same individuals.
+  \item[Correlation Coefficient ($r$):] Measures the strength and direction of the linear relationship between two quantitative variables ($-1 \le r \le 1$).
+  \item[Least-Squares Regression Line (LSRL):] The unique line that minimizes the sum of squared vertical residuals: $\min \sum (y - \hat{y})^2$.
+  \item[Residual ($e$):] The directed difference between the observed value and the predicted value: $\text{Residual} = y - \hat{y}$.
+  \item[Coefficient of Determination ($r^2$):] The percentage of total variability in $y$ explained by the linear relationship with $x$.
+  \item[Extrapolation:] Predicting $y$ using $x$-values outside the domain of the collected data. Highly unreliable!
+  \item[High Leverage Point:] An observation with an extreme $x$-value relative to other observations.
+  \item[Influential Point:] An observation whose removal substantially changes the slope, $y$-intercept, or correlation.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 2.1: Describing Scatterplots with D-O-F-S]
+Whenever an exam question asks you to describe the relationship shown in a scatterplot, write complete sentences addressing all four components in context:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{D --- Direction:} State whether the relationship is \textbf{Positive} (as $x$ increases, $y$ tends to increase) or \textbf{Negative} (as $x$ increases, $y$ tends to decrease).
+  \item \textbf{O --- Outliers:} Identify any individual points that deviate substantially from the overall linear trend.
+  \item \textbf{F --- Form:} State whether the pattern is \textbf{Linear} or \textbf{Non-linear} (curved).
+  \item \textbf{S --- Strength:} Characterize the scatter as \textbf{Strong}, \textbf{Moderate}, or \textbf{Weak} based on how closely points cluster around a central trend line.
+\end{enumerate}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 2.2: The Correlation Coefficient ($r$)]
+\begin{equation}
+  r = \frac{1}{n-1}\sum_{i=1}^n \left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right)
+\end{equation}
+\textbf{Essential Properties of $r$:}
+\begin{itemize}[leftmargin=1.2em]
+  \item $r$ is strictly bounded: $-1 \le r \le 1$.
+  \item $r$ has \textbf{NO units of measurement}. Standardizing $x$ and $y$ makes $r$ invariant to changes in units (e.g., converting inches to centimeters does not change $r$).
+  \item Switching $x$ and $y$ leaves $r$ completely unchanged!
+  \item $r$ measures \textbf{LINEAR relationships only}! A scatterplot can have a perfect quadratic relationship ($y = x^2$) and still have $r = 0$.
+  \item $r$ is \textbf{non-resistant}; an isolated outlier can dramatically alter its value.
+  \item \textbf{Correlation does NOT imply causation!} An observed association may be driven by confounding variables.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 2.3: The Least-Squares Regression Line (LSRL)]
+\begin{equation}
+  \hat{y} = b_0 + b_1 x \quad \text{or} \quad \hat{y} = a + bx
+\end{equation}
+\begin{equation}
+  \text{Slope: } b_1 = r\left(\frac{s_y}{s_x}\right), \qquad y\text{-Intercept: } b_0 = \bar{y} - b_1 \bar{x}
+\end{equation}
+\textbf{Key Geometric Properties:}
+\begin{itemize}[leftmargin=1.2em]
+  \item The LSRL \textbf{always} passes through the point of means: $(\bar{x}, \bar{y})$.
+  \item The sum of the vertical residuals is always mathematically equal to zero: $\sum (y - \hat{y}) = 0$.
+  \item The sign of the slope $b_1$ is identical to the sign of the correlation coefficient $r$.
+\end{itemize}
+\end{lessonbox}
+
+\begin{frqrubricbox}[Score-4 Interpretation Templates: Slope & $y$-Intercept]
+\textbf{Slope ($b_1$):}
+\textit{"For each additional 1 [unit of $x$] increase in [explanatory variable], the predicted [response variable] increases/decreases by approximately $|b_1|$ [units of $y$]."}
+\textit{(Note: You MUST include the word "predicted" or "estimated" to earn full credit!)}
+
+\textbf{$y$-Intercept ($b_0$):}
+\textit{"When the [explanatory variable] is 0 [units of $x$], the predicted [response variable] is $b_0$ [units of $y$]."}
+\textit{(Note: Comment if $x=0$ makes physical sense in the real-world context).}
+\end{frqrubricbox}
+
+\begin{lessonbox}[Lesson 2.4: Residuals & Residual Plot Analysis]
+\begin{equation}
+  \text{Residual } e = y - \hat{y} = \text{Actual } y - \text{Predicted } y
+\end{equation}
+\textbf{The Linear Appropriateness Test:}
+A linear regression model is appropriate if and only if the residual plot exhibits a \textbf{random scatter of points around the zero line with roughly constant variance and no curved pattern}.
+\begin{itemize}[leftmargin=1.2em]
+  \item If the residual plot exhibits a curved (U-shaped or inverted U) pattern, the relationship between $x$ and $y$ is non-linear, and a linear model is \textbf{inappropriate}!
+  \item A positive residual ($y > \hat{y}$) means the actual value was \textit{above} prediction (underestimate).
+  \item A negative residual ($y < \hat{y}$) means the actual value was \textit{below} prediction (overestimate).
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 2.5: Coefficient of Determination ($r^2$) & Residual SD ($s$)]
+\begin{frqrubricbox}[Score-4 Template: $r^2$ and $s$ Interpretation]
+\textbf{Coefficient of Determination ($r^2$):}
+\textit{"Approximately $[r^2 \times 100\%]$ of the variability in [response variable $y$] is accounted for by the linear relationship with [explanatory variable $x$]."}
+
+\textbf{Standard Deviation of Residuals ($s$):}
+\begin{equation}
+  s = \sqrt{\frac{\sum (y - \hat{y})^2}{n - 2}}
+\end{equation}
+\textit{"When using the least-squares regression line to predict [response variable $y$] from [explanatory variable $x$], our predictions will typically be off by approximately $s$ [units of $y$]."}
+\end{frqrubricbox}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 2.6: High Leverage, Outliers, & Influential Points]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{High Leverage Point:} Has an $x$-value substantially higher or lower than the mean $\bar{x}$. Acts as an anchor point; if it aligns with the overall trend, it inflates $r$ without altering slope.
+  \item \textbf{Outlier in Regression:} An observation with a very large residual (far above or below the regression line).
+  \item \textbf{Influential Point:} An observation whose removal markedly changes the regression slope, $y$-intercept, or correlation. High leverage points that deviate from the linear trend are typically highly influential on slope!
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 2.7: Reading Regression Computer Output]
+Computer printouts (from Minitab, R, or JMP) always follow this standardized grid:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+\midrule
+\textbf{Constant} & $b_0$ & $\text{SE}(b_0)$ & $t$ & $p$ \\
+\textbf{Variable ($x$)} & $b_1$ & $\text{SE}(b_1)$ & $t$ & $p$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+$S = s$ (Standard deviation of residuals), $R\text{-sq} = r^2$.
+To obtain $r$ from $R\text{-sq}$, compute $\sqrt{r^2}$ and \textbf{match the sign of the slope ($b_1$)}!
+\end{lessonbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 2.1: Interpreting Computer Output & Calculating Residuals}
+\textbf{Problem:} A biologist investigates the relationship between ambient water temperature ($x$, in $^\circ\text{C}$) and the larval development time of a species of fish ($y$, in days). Regression output for 12 tanks is displayed below:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+\midrule
+\textbf{Constant} & 48.650 & 2.140 & 22.73 & 0.000 \\
+\textbf{Temp} & -1.420 & 0.095 & -14.95 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+$S = 1.15\text{ days}, \quad R\text{-sq} = 95.7\%, \quad R\text{-sq(adj)} = 95.3\%$.\\
+(a) Write the equation of the least-squares regression line.\\
+(b) Interpret the slope of the regression line in context.\\
+(c) Calculate and interpret the correlation coefficient $r$.\\
+(d) One tank at $18^\circ\text{C}$ had an observed larval development time of $21.5\text{ days}$. Calculate the residual.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $\widehat{\text{Development Time}} = 48.650 - 1.420(\text{Temperature})$.
+  \item \textbf{Part (b):} \textit{"For each additional $1^\circ\text{C}$ increase in ambient water temperature, the predicted larval development time decreases by approximately $1.420\text{ days}$."}
+  \item \textbf{Part (c):} $r = -\sqrt{0.957} \approx -0.978$. (We assign the negative sign because the slope $b_1 = -1.420$ is negative).
+  \textit{"There is a very strong, negative linear relationship between water temperature and larval development time."}
+  \item \textbf{Part (d):} Predicted development time for $x = 18$:
+  \[ \hat{y} = 48.650 - 1.420(18) = 48.650 - 25.56 = 23.09\text{ days} \]
+  $\text{Residual } e = y - \hat{y} = 21.5 - 23.09 = -1.59\text{ days}$.\\
+  \textit{"The actual development time was $1.59\text{ days}$ shorter than predicted by the linear regression model."}
+\end{itemize}
+
+\section{TI-84 Plus CE Calculator Playbook}
+
+\begin{calculatorbox}[TI-84 Playbook: Linear Regression & Residual Plots]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Diagnostic ON:} Press \texttt{[2nd] [0]} (\texttt{CATALOG}) $\rightarrow$ Scroll to \texttt{DiagnosticOn} $\rightarrow$ Press \texttt{[ENTER]} twice. (Crucial to display $r$ and $r^2$!).
+  \item Enter $x$-data into \texttt{L1} and $y$-data into \texttt{L2}.
+  \item Press \texttt{[STAT]} $\rightarrow$ \texttt{CALC} $\rightarrow$ Select \texttt{8:LinReg(a+bx)}.
+  \item Set \texttt{Xlist: L1}, \texttt{Ylist: L2}, \texttt{Store RegEQ: Y1} (press \texttt{[VARS] $\rightarrow$ Y-VARS $\rightarrow$ 1:Function $\rightarrow$ 1:Y1}). Press \texttt{Calculate}.
+  \item \textbf{To plot residuals:} In \texttt{STAT PLOT}, set \texttt{Ylist: RESID} (press \texttt{[2nd] [STAT]} $\rightarrow$ select \texttt{RESID}). Press \texttt{[ZOOM] [9:ZoomStat]}.
+\end{enumerate}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item If the correlation between two variables $x$ and $y$ is $r = 0.85$, what is the correlation if $x$ is converted from feet to meters ($1\text{ ft} = 0.3048\text{ m}$)?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $0.85 \times 0.3048$ \item $0.85 / 0.3048$ \item 0.85 \item $-0.85$ \item 0.7225
+  \end{enumerate}
+  \textbf{Answer: (C).} Changing measurement units does not alter the correlation coefficient $r$.
+
+  \item A regression line has equation $\hat{y} = 12 - 3.5x$. What is the predicted change in $y$ for each 2-unit increase in $x$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Decreases by 3.5 \item Decreases by 7.0 \item Increases by 7.0 \item Increases by 12 \item Decreases by 12
+  \end{enumerate}
+  \textbf{Answer: (B).} $2 \times (-3.5) = -7.0$.
+
+  \item Which of the following indicates that a linear model is appropriate?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The correlation $r$ is positive \item The residual plot shows a clear curved pattern \item The residual plot displays random scatter around the horizontal zero line \item $r^2$ is exactly 0.50 \item The slope is greater than 1
+  \end{enumerate}
+  \textbf{Answer: (C).} Random scatter without systematic curvature confirms appropriateness.
+
+  \item An observation has an actual value of $y = 45$ and a predicted value of $\hat{y} = 52$. The residual is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-7$ \item $+7$ \item 45 \item 52 \item 0.865
+  \end{enumerate}
+  \textbf{Answer: (A).} $\text{Residual} = y - \hat{y} = 45 - 52 = -7$.
+
+  \item If $r^2 = 0.64$ and the slope of the regression line is negative, what is $r$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.64 \item 0.80 \item $-0.80$ \item $-0.64$ \item 0.4096
+  \end{enumerate}
+  \textbf{Answer: (C).} $r = -\sqrt{0.64} = -0.80$.
+
+  \item The point of means $(\bar{x}, \bar{y})$:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Always lies on the least-squares regression line \item Lies on the line only if $r = 1$ \item Is always an outlier \item Has a non-zero residual \item Determines the direction of curvature
+  \end{enumerate}
+  \textbf{Answer: (A).} Mathematically, $\bar{y} = b_0 + b_1\bar{x}$.
+
+  \item What does $r^2 = 0.81$ mean in the context of predicting fuel efficiency ($y$) from car weight ($x$)?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 81\% of cars have high fuel efficiency.
+    \item 81\% of the variability in fuel efficiency is accounted for by the linear model with car weight.
+    \item The correlation is 0.81.
+    \item The slope of the line is 0.81.
+    \item Predictions will be correct 81\% of the time.
+  \end{enumerate}
+  \textbf{Answer: (B).} Standard definition of the coefficient of determination.
+
+  \item An influential point in regression is best described as an observation that:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Has a residual of zero.
+    \item Substantially alters the slope, intercept, or correlation when removed.
+    \item Is always an error in data collection.
+    \item Falls exactly on the mean of $x$.
+    \item Has a positive $z$-score.
+  \end{enumerate}
+  \textbf{Answer: (B).} Defining property of an influential observation.
+
+  \item Using a model $\hat{y} = 5 + 2x$ established for $x \in [10, 50]$ to predict $y$ when $x = 120$ is an example of:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Interpolation \item Extrapolation \item Randomization \item Confounding \item Residual analysis
+  \end{enumerate}
+  \textbf{Answer: (B).} Predicting beyond the range of explanatory data is extrapolation.
+
+  \item If $s_x = 4, s_y = 6,$ and $r = 0.75$, what is the slope $b_1$ of the LSRL?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.75 \item 1.125 \item 0.50 \item 1.50 \item 0.888
+  \end{enumerate}
+  \textbf{Answer: (B).} $b_1 = r(s_y / s_x) = 0.75(6/4) = 0.75(1.5) = 1.125$.
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item Which of the following correlations indicates the strongest linear relationship?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $r = 0.78$ \item $r = 0.00$ \item $r = -0.89$ \item $r = 0.85$ \item $r = -0.12$
+  \end{enumerate}
+  \textbf{Answer: (C).} Strength is determined by $|r|$; $|-0.89| = 0.89$ is the largest magnitude.
+
+  \item If the standard deviation of residuals is $s = 3.2\text{ cm}$, this means:
+  \begin{enumerate}[label=(\Alph*)]
+    \item All residuals are less than 3.2 cm.
+    \item Predictions of $y$ typically deviate from actual values by about 3.2 cm.
+    \item The slope is 3.2.
+    \item $r = 0.32$.
+    \item The mean residual is 3.2 cm.
+  \end{enumerate}
+  \textbf{Answer: (B).} Standard interpretation of $s$.
+
+  \item If the residuals for a model sum to a non-zero value, what is the most likely explanation?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The relationship is non-linear.
+    \item Rounding error in calculations.
+    \item The line used is not the least-squares regression line.
+    \item $r$ was negative.
+    \item There are outliers.
+  \end{enumerate}
+  \textbf{Answer: (C).} The true LSRL strictly satisfies $\sum e = 0$; any other line will not.
+
+  \item High leverage points in a scatterplot always have:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Large residuals \item Unusual $x$-values \item Negative slopes \item $r > 0.90$ \item Low variance
+  \end{enumerate}
+  \textbf{Answer: (B).} Leverage is governed purely by the distance of $x$ from $\bar{x}$.
+
+  \item When two variables have a strong non-linear relationship of the form $y = a b^x$, what transformation linearizes the data?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Plotting $y$ vs. $x^2$ \item Plotting $\log(y)$ vs. $x$ \item Plotting $\log(y)$ vs. $\log(x)$ \item Plotting $1/y$ vs. $1/x$ \item Plotting $\sqrt{y}$ vs. $\sqrt{x}$
+  \end{enumerate}
+  \textbf{Answer: (B).} An exponential model is linearized by taking the logarithm of $y$ only ($\log y = \log a + (\log b)x$).
+
+  \item A power model $y = a x^b$ is linearized by plotting:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\log(y)$ vs. $x$ \item $\log(y)$ vs. $\log(x)$ \item $y$ vs. $\log(x)$ \item $y^2$ vs. $x$ \item $\sqrt{y}$ vs. $x$
+  \end{enumerate}
+  \textbf{Answer: (B).} Power models linearize when both variables are transformed logarithmically.
+
+  \item In a regression analysis, the explanatory variable is speed (mph) and response is stopping distance (ft). The slope is 3.5. What are the units of the slope?
+  \begin{enumerate}[label=(\Alph*)]
+    \item mph \item ft \item ft per mph \item mph per ft \item Dimensionless
+  \end{enumerate}
+  \textbf{Answer: (C).} Slope units are always $[y\text{-units}] / [x\text{-units}] = \text{ft per mph}$.
+
+  \item If $r = 0$, what does this conclude about the relationship between $x$ and $y$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item There is no relationship of any kind.
+    \item There is no linear relationship between $x$ and $y$.
+    \item All residuals are zero.
+    \item The slope is 1.
+    \item The data is non-random.
+  \end{enumerate}
+  \textbf{Answer: (B).} A strong curved relationship can still have $r = 0$; $r$ detects only linear trends.
+
+  \item A researcher observes a strong positive correlation ($r = 0.92$) between ice cream sales and drowning deaths. The most plausible explanation is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Eating ice cream causes drowning.
+    \item Drowning causes people to buy ice cream.
+    \item Both variables are influenced by a common confounding variable: outdoor summer temperature.
+    \item The correlation was miscalculated.
+    \item Extrapolation error.
+  \end{enumerate}
+  \textbf{Answer: (C).} Classic lurking/confounding variable scenario.
+
+  \item A regression line has $\hat{y} = 10 + 2x$. If an observation at $x = 5$ has an actual value of $y = 23$, the point lies:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Exactly on the line \item 3 units below the line \item 3 units above the line \item 23 units above the line \item 10 units below the line
+  \end{enumerate}
+  \textbf{Answer: (C).} $\hat{y} = 10 + 2(5) = 20$. Actual $y = 23 \implies \text{Residual} = 23 - 20 = +3$.
+\end{enumerate}
+
+\subsection*{Part II: Free-Response Practice Problem}
+
+\begin{workbookbox}[FRQ 2.1: Regression Modeling & Residual Evaluation]
+\textbf{Problem:} An environmental engineer investigates the relationship between wind speed ($x$, in mph) and electricity generation ($y$, in kilowatts) of a wind turbine. The regression line is $\widehat{\text{Power}} = -15.4 + 4.8(\text{Wind})$. $r^2 = 0.88, s = 6.2\text{ kW}$.
+(a) Interpret the slope $4.8$ in context.\\
+(b) Interpret $r^2 = 0.88$ in context.\\
+(c) At a wind speed of $20\text{ mph}$, the turbine produced $85\text{ kW}$. Calculate the residual and state whether the model overpredicted or underpredicted power.
+
+\textbf{Grader-Approved Score-4 Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} \textit{"For each additional 1 mph increase in wind speed, the predicted electricity generation increases by approximately 4.8 kilowatts."}
+  \item \textbf{Part (b):} \textit{"Approximately 88\% of the variability in electricity generation is accounted for by the linear relationship with wind speed."}
+  \item \textbf{Part (c):} Predicted: $\hat{y} = -15.4 + 4.8(20) = -15.4 + 96.0 = 80.6\text{ kW}$.\\
+  $\text{Residual} = y - \hat{y} = 85 - 80.6 = \mathbf{+4.4\text{ kW}}$.\\
+  Because the residual is positive, the linear regression model \textbf{underpredicted} the actual electricity generation by 4.4 kW.
+\end{itemize}
+\end{workbookbox}
+
+
+\begin{frqrubricbox}[FRQ 2.2: Regression Output, Residuals, and Outliers vs. High Leverage]
+\textbf{Problem:} A real estate analyst investigates the relationship between living area ($x$, in hundreds of square feet) and selling price ($y$, in thousands of dollars) for 24 recently sold suburban homes. A computer regression package outputs:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+\midrule
+Constant & 45.20 & 16.40 & 2.76 & 0.011 \\
+Area & 12.80 & 1.60 & 8.00 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+$S = 18.50\text{ (\$1,000s)}, \quad R\text{-sq} = 74.4\%$.
+\begin{enumerate}[label=(\alph*)]
+  \item State the equation of the least-squares regression line and predict the selling price of a home with 2,500 square feet ($x = 25.0$).
+  \item A home with 2,500 square feet sold for \$390,000 ($y = 390.0$). Calculate and interpret the residual.
+  \item Distinguish between an outlier in regression and a point with high leverage. If a 6,000-sq-ft mansion is added to the dataset, would it be classified as high leverage? Explain.
+  \item Explain why the analyst should not use this model to predict the price of a 7,500-square-foot commercial estate.
+\end{enumerate}
+
+\textbf{Grader-Approved Score-4 Solution \& Rubric:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $\widehat{\text{Price}} = 45.20 + 12.80(\text{Area})$.\\
+  For $x = 25.0$: $\hat{y} = 45.20 + 12.80(25.0) = 45.20 + 320.00 = 365.20\text{ thousand dollars}$ (\$365,200).
+  \item \textbf{Part (b):} $\text{Residual} = y - \hat{y} = 390.0 - 365.20 = +24.80\text{ thousand dollars}$ (\$24,800).\\
+  \textit{Interpretation:} The actual selling price of the home was \$24,800 higher than the price predicted by the regression line based on its living area.
+  \item \textbf{Part (c):} An outlier has an unusually large residual (far above or below the regression line). A point with high leverage has an extreme $x$-value (far from $\bar{x}$) with the potential to strongly steer the slope. A 6,000-sq-ft home ($x = 60.0$) is far beyond the typical sample range, giving it high leverage.
+  \item \textbf{Part (d):} Predicting at 7,500 square feet represents dangerous \textbf{extrapolation}. We have no evidence that the linear relationship continues beyond the observed data range.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{trapbox}[Unit 2 Top 5 AP Exam Pitfalls to Avoid]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Implying Causation from Correlation:} $r$ measures linear association, never cause and effect!
+  \item \textbf{Claiming $r^2$ Means the Model is Correct:} $r^2$ can be high even if the underlying data is curved. Always inspect the residual plot!
+  \item \textbf{Confusing Residual Direction:} Residual is Observed minus Predicted ($y - \hat{y}$), never $\hat{y} - y$.
+  \item \textbf{Omitting Units in Slope Interpretation:} Always state "predicted increase in [units of $y$] per 1 [unit of $x$]".
+  \item \textbf{Extrapolation Danger:} Never make predictions outside the domain of observed $x$-values.
+\end{enumerate}
+\end{trapbox}
+\section{Unit 2 Master Summary}
+\begin{lessonbox}[Unit 2 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{D-O-F-S:} Direction, Outliers, Form, Strength for scatterplots.
+  \item \textbf{LSRL Formula:} $\hat{y} = b_0 + b_1 x$, where $b_1 = r(s_y/s_x)$ and $b_0 = \bar{y} - b_1\bar{x}$.
+  \item \textbf{Residual:} $e = y - \hat{y}$ (Actual minus Predicted).
+  \item \textbf{Residual Plot Appropriateness:} Random scatter around zero confirms a linear model is appropriate; any curved pattern indicates a non-linear relationship.
+  \item \textbf{Interpretation Keywords:} Always use "predicted" or "estimated" for slope interpretations.
+\end{itemize}
+\end{lessonbox}
+\clearpage

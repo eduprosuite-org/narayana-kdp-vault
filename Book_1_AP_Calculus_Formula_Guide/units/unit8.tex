@@ -1,0 +1,357 @@
+% =========================================================================
+% UNIT 8: INFERENCE FOR CATEGORICAL DATA - CHI-SQUARE TESTS
+% =========================================================================
+\chapter{Unit 8: Inference for Categorical Data: Chi-Square Tests}
+
+\section{Unit Overview \& AP Exam Weight}
+Unit 8 accounts for \textbf{2\% to 5\%} of the AP Statistics Exam multiple-choice section and appears on approximately \textbf{50\% of all released Free-Response Questions}. While covering fewer overall CED topics than Units 6 or 7, mastering the distinctions among the three Chi-Square tests is essential for securing a Score 5.
+
+\subsection*{Key Vocabulary Terms}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Chi-Square ($\chi^2$) Distribution:] A continuous, strictly positive probability distribution that is skewed to the right, parameterized entirely by its degrees of freedom ($df$). As degrees of freedom increase, the distribution shifts rightward and becomes progressively more symmetric.
+  \item[Observed Count ($O$):] The actual raw count of individuals or outcomes observed in each category from the sample data.
+  \item[Expected Count ($E$):] The theoretical frequency calculated under the mathematical assumption that the null hypothesis $H_0$ is true in the underlying population.
+  \item[Chi-Square Goodness-of-Fit Test:] Evaluates whether a single sample of categorical data fits a hypothesized population distribution across $k$ categories ($df = k - 1$).
+  \item[Chi-Square Test for Homogeneity:] Evaluates whether the distribution of a single categorical variable is identical across two or more independent populations or treatment groups ($df = (r - 1)(c - 1)$).
+  \item[Chi-Square Test for Independence:] Evaluates whether two categorical variables measured on a single random sample from one population are statistically independent ($df = (r - 1)(c - 1)$).
+  \item[Two-Way Contingency Table:] A rectangular data grid displaying categorical frequencies classified simultaneously by row and column variables.
+  \item[Large Counts Condition ($\chi^2$):] The requirement that \textbf{all expected cell counts must be at least 5} ($E_i \ge 5$) to ensure the discrete multinomial distribution is adequately approximated by the continuous Chi-Square curve.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 8.1: Distinguishing the Three Chi-Square Tests]
+AP graders rigorously penalize students who misidentify the specific Chi-Square test being conducted. Use the following decision matrix:
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccl}
+\toprule
+\textbf{Test Name} & \textbf{Variables} & \textbf{Samples / Populations} & \textbf{Degrees of Freedom} \\
+\midrule
+\textbf{Goodness-of-Fit (GOF)} & 1 Categorical & 1 Sample & $df = k - 1$ ($k = \text{number of categories}$) \\
+\textbf{Homogeneity} & 1 Categorical & 2+ Independent Samples & $df = (r - 1)(c - 1)$ \\
+\textbf{Independence / Association} & 2 Categorical & 1 Single Random Sample & $df = (r - 1)(c - 1)$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\textbf{Key Grader Clue for Homogeneity vs. Independence:} Look closely at the data collection protocol described in the problem stem:
+\begin{itemize}
+  \item If the stem states: \textit{"Independent random samples of 100 men and 100 women were surveyed..."} $\to$ \textbf{Homogeneity} (2 distinct populations).
+  \item If the stem states: \textit{"A single random sample of 200 adults was selected and each person was asked their gender and preference..."} $\to$ \textbf{Independence} (1 population, 2 variables recorded per subject).
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 8.2: Formulating Null and Alternative Hypotheses]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Goodness-of-Fit:}
+  \begin{align*}
+    H_0 &: \text{The distribution of [categorical variable] matches the specified probabilities: } p_1 = c_1, p_2 = c_2, \dots, p_k = c_k \\
+    H_a &: \text{At least one of the true categorical proportions differs from the specified distribution.}
+  \end{align*}
+  \item \textbf{Homogeneity:}
+  \begin{align*}
+    H_0 &: \text{The distribution of [categorical variable] is the same across all [groups/populations].} \\
+    H_a &: \text{The distribution of [categorical variable] is not the same across all [groups/populations].}
+  \end{align*}
+  \item \textbf{Independence:}
+  \begin{align*}
+    H_0 &: \text{There is no association between [Variable 1] and [Variable 2] in the population (they are independent).} \\
+    H_a &: \text{There is an association between [Variable 1] and [Variable 2] in the population (they are not independent).}
+  \end{align*}
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 8.3: Calculating Expected Counts & Test Statistic]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Goodness-of-Fit Expected Counts:}
+  \begin{equation}
+    E_i = n \times p_i
+  \end{equation}
+  where $n$ is the sample size and $p_i$ is the hypothesized proportion for category $i$.
+  \item \textbf{Two-Way Table Expected Counts (Homogeneity \& Independence):}
+  \begin{equation}
+    E_{ij} = \frac{(\text{Row } i \text{ Total}) \times (\text{Column } j \text{ Total})}{\text{Table Grand Total } n}
+  \end{equation}
+  \item \textbf{Chi-Square Test Statistic Formula:}
+  \begin{equation}
+    \chi^2 = \sum_{\text{all cells}} \frac{(O - E)^2}{E} = \frac{(O_1 - E_1)^2}{E_1} + \frac{(O_2 - E_2)^2}{E_2} + \dots + \frac{(O_m - E_m)^2}{E_m}
+  \end{equation}
+  Each individual term $\frac{(O - E)^2}{E}$ is called a \textbf{cell component}. The cell with the largest component contributed the greatest discrepancy from the null model.
+\end{itemize}
+\end{lessonbox}
+
+\begin{trapbox}[Exam Trap: Expected vs. Observed Counts Condition]
+The Large Counts condition for Chi-Square tests requires that \textbf{all expected cell counts must be at least 5 ($E_i \ge 5$)}.
+\begin{itemize}
+  \item AP students frequently and erroneously examine the \textbf{observed counts} $O$ instead of the expected counts $E$.
+  \item An observed cell count can legally be 0, 1, 2, or 3 without violating the condition!
+  \item On an FRQ, you must \textbf{explicitly write down the matrix or table of expected counts} to earn full credit ("Essentially Correct") for checking the Large Counts condition.
+\end{itemize}
+\end{trapbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 8.1: Chi-Square Goodness-of-Fit Test}
+\textbf{Problem:} A confectionery manufacturer claims that its candy bags contain the following color distribution: 30\% Brown, 20\% Yellow, 20\% Red, 10\% Orange, 10\% Green, and 10\% Blue. A student purchases a random 200-piece candy bag and counts: 70 Brown, 35 Yellow, 45 Red, 15 Orange, 15 Green, and 20 Blue. Carry out a goodness-of-fit test at $\alpha = 0.05$.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Step 1 (Hypotheses):}
+  $H_0: p_{\text{Brown}}=0.30, p_{\text{Yellow}}=0.20, p_{\text{Red}}=0.20, p_{\text{Orange}}=0.10, p_{\text{Green}}=0.10, p_{\text{Blue}}=0.10$.\\
+  $H_a:$ At least one of the true color proportions differs from the claimed distribution.
+  \item \textbf{Step 2 (Conditions):}
+  1. \textit{Random:} Stated as a random candy bag from the manufacturer. (Met)\\
+  2. \textit{10\% Condition:} $n = 200 \le 0.10(\text{Total candies produced by company})$. (Met)\\
+  3. \textit{Large Counts:} Compute expected counts $E_i = 200 \times p_i$:
+  $E_{\text{Brown}} = 200(0.30) = 60$, $E_{\text{Yellow}} = 200(0.20) = 40$, $E_{\text{Red}} = 200(0.20) = 40$,
+  $E_{\text{Orange}} = 200(0.10) = 20$, $E_{\text{Green}} = 200(0.10) = 20$, $E_{\text{Blue}} = 200(0.10) = 20$.
+  All expected counts are $\ge 5$ (minimum is 20). (Met)
+  \item \textbf{Step 3 (Mechanics):}
+  \[ \chi^2 = \frac{(70-60)^2}{60} + \frac{(35-40)^2}{40} + \frac{(45-40)^2}{40} + \frac{(15-20)^2}{20} + \frac{(15-20)^2}{20} + \frac{(20-20)^2}{20} \]
+  \[ \chi^2 = \frac{100}{60} + \frac{25}{40} + \frac{25}{40} + \frac{25}{20} + \frac{25}{20} + 0 = 1.667 + 0.625 + 0.625 + 1.250 + 1.250 + 0 = 5.417 \]
+  Degrees of freedom: $df = k - 1 = 6 - 1 = 5$.\\
+  $p$-value: Using $\chi^2\text{cdf}(5.417, 10^{99}, 5) \approx 0.3671$.
+  \item \textbf{Step 4 (Conclusion):}
+  Because the $p$-value ($0.3671$) is greater than $\alpha = 0.05$, we fail to reject $H_0$. There is insufficient statistical evidence to conclude that the candy color distribution differs from the manufacturer's claimed proportions.
+\end{itemize}
+
+\subsection*{Example 8.2: Chi-Square Test for Independence}
+\textbf{Problem:} A market research firm surveys an SRS of 400 vehicle owners to examine whether vehicle body style (Sedan, SUV, Truck) is independent of buyer age bracket ($<35$, $35\text{--}55$, $>55$). The sample counts are:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Age Group} & \textbf{Sedan} & \textbf{SUV} & \textbf{Truck} & \textbf{Total} \\
+\midrule
+$< 35$ & 60 & 50 & 30 & 140 \\
+$35\text{--}55$ & 50 & 80 & 30 & 160 \\
+$> 55$ & 50 & 30 & 20 & 100 \\
+\midrule
+\textbf{Total} & 160 & 160 & 80 & 400 \\
+\bottomrule
+\end{tabular}
+\end{center}
+(a) Find the expected number of buyers aged $<35$ who purchase an SUV under $H_0$.\\
+(b) Calculate the Chi-Square test statistic, degrees of freedom, and state the conclusion at $\alpha = 0.01$.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} $E_{12} = \frac{(\text{Row 1 Total}) \times (\text{Col 2 Total})}{\text{Grand Total}} = \frac{140 \times 160}{400} = \frac{22,400}{400} = \mathbf{56.0\text{ buyers}}$.
+  \item \textbf{Part (b):}
+  Expected counts matrix:
+  \begin{center}
+  \begin{tabular}{lccc}
+  \toprule
+  \textbf{Age} & \textbf{Sedan} & \textbf{SUV} & \textbf{Truck} \\
+  \midrule
+  $< 35$ & $140(160)/400 = 56$ & $140(160)/400 = 56$ & $140(80)/400 = 28$ \\
+  $35\text{--}55$ & $160(160)/400 = 64$ & $160(160)/400 = 64$ & $160(80)/400 = 32$ \\
+  $> 55$ & $100(160)/400 = 40$ & $100(160)/400 = 40$ & $100(80)/400 = 20$ \\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+  All expected counts are $\ge 20$, satisfying the Large Counts condition.\\
+  \[ \chi^2 = \sum \frac{(O - E)^2}{E} = \frac{(60-56)^2}{56} + \frac{(50-56)^2}{56} + \frac{(30-28)^2}{28} + \frac{(50-64)^2}{64} + \frac{(80-64)^2}{64} \]
+  \[ + \frac{(30-32)^2}{32} + \frac{(50-40)^2}{40} + \frac{(30-40)^2}{40} + \frac{(20-20)^2}{20} \]
+  \[ \chi^2 = 0.286 + 0.643 + 0.143 + 3.063 + 4.000 + 0.125 + 2.500 + 2.500 + 0 = \mathbf{13.26} \]
+  Degrees of freedom: $df = (r - 1)(c - 1) = (3 - 1)(3 - 1) = 2 \times 2 = \mathbf{4}$.\\
+  $p$-value: $\chi^2\text{cdf}(13.26, 10^{99}, 4) \approx \mathbf{0.0101}$.\\
+  At $\alpha = 0.01$, since $p\text{-value} = 0.0101 > 0.01$, we fail to reject $H_0$ (barely). There is insufficient evidence at the 1\% level of an association between age group and vehicle preference.
+\end{itemize}
+
+\section{TI-84 CE Calculator Procedures for Chi-Square}
+\begin{calculatorbox}[TI-84 Playbook: Chi-Square Tests]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Chi-Square Goodness-of-Fit Test (\texttt{$\chi^2$GOF-Test}):}
+  1. Press \texttt{[STAT]} $\to$ \texttt{1:Edit...}. Enter observed counts into \texttt{L1} and expected counts into \texttt{L2}.\\
+  2. Press \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{D:$\chi^2$GOF-Test}.\\
+  3. Enter \texttt{Observed: L1}, \texttt{Expected: L2}, \texttt{df: k-1}.\\
+  4. Select \texttt{Calculate}. Displays $\chi^2, p\text{-value}, df$, and the individual cell contributions in list \texttt{CNTRB}.
+  \item \textbf{Two-Way Table Test (\texttt{$\chi^2$-Test}):}
+  1. Press \texttt{[2nd] [$\mathbf{x^{-1}}$]} (MATRIX) $\to$ Arrow to \texttt{EDIT} $\to$ Select \texttt{[A]}.\\
+  2. Enter table dimensions ($r \times c$) and input raw observed frequencies.\\
+  3. Press \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{C:$\chi^2$-Test}.\\
+  4. Specify \texttt{Observed: [A]}, \texttt{Expected: [B]} $\to$ Select \texttt{Calculate}.\\
+  5. The calculator automatically calculates all expected counts and saves them into matrix \texttt{[B]}. Press \texttt{[2nd] [MATRIX]} $\to$ \texttt{[B]} to view and verify $E \ge 5$!
+\end{itemize}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions with Explanations}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item A standard 6-sided die is rolled 120 times to test if it is fair. What are the degrees of freedom for the goodness-of-fit test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 5 \item 6 \item 119 \item 120 \item 1
+  \end{enumerate}
+  \textbf{Answer: (A).} For a goodness-of-fit test, $df = k - 1$. With $k = 6$ possible faces, $df = 6 - 1 = 5$.
+
+  \item In a Chi-Square test of independence with a $3 \times 4$ contingency table, the degrees of freedom are:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 12 \item 11 \item 7 \item 6 \item 5
+  \end{enumerate}
+  \textbf{Answer: (D).} $df = (r - 1)(c - 1) = (3 - 1)(4 - 1) = 2 \times 3 = 6$.
+
+  \item What is the minimum expected count required for every cell in a valid Chi-Square test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1 \item 5 \item 10 \item 30 \item 50
+  \end{enumerate}
+  \textbf{Answer: (B).} The Large Counts condition requires all expected cell counts to be at least 5 ($E \ge 5$).
+
+  \item Under the null hypothesis in a Chi-Square test, the test statistic $\chi^2$ measures:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The total sample size \item The overall discrepancy between observed and expected frequencies \item The variance of the population \item The probability that $H_0$ is true \item The correlation coefficient
+  \end{enumerate}
+  \textbf{Answer: (B).} $\chi^2 = \sum \frac{(O-E)^2}{E}$ measures normalized deviations between observed and expected counts.
+
+  \item An observed cell count in a contingency table is 3. What does this indicate about the validity of the test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The test is invalid because observed counts must be at least 5. \item The test is invalid only if sample size is small. \item The test may still be valid because the condition applies to expected counts, not observed counts. \item The degrees of freedom must be reduced. \item A $t$-test must be used instead.
+  \end{enumerate}
+  \textbf{Answer: (C).} The Large Counts condition applies strictly to expected counts ($E_i \ge 5$). Observed counts can be less than 5.
+
+  \item Which of the following describes the shape of a Chi-Square distribution with small degrees of freedom ($df = 3$)?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Perfectly symmetric and bell-shaped \item Uniform \item Strongly skewed to the right \item Strongly skewed to the left \item Bimodal
+  \end{enumerate}
+  \textbf{Answer: (C).} Chi-Square distributions are bounded below by 0 and are strongly right-skewed for small $df$.
+
+  \item A test of homogeneity evaluates whether:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Two quantitative variables have zero slope \item Two independent samples have identical categorical distributions \item A single sample fits a normal curve \item Two means are equal \item Variances are pooled
+  \end{enumerate}
+  \textbf{Answer: (B).} Homogeneity tests whether a single categorical distribution is identical across two or more separate populations.
+
+  \item In a $2 \times 2$ table, the row 1 total is 80, column 1 total is 50, and table grand total is 200. The expected count for cell $(1, 1)$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 20 \item 40 \item 50 \item 80 \item 130
+  \end{enumerate}
+  \textbf{Answer: (A).} $E = \frac{80 \times 50}{200} = \frac{4000}{200} = 20$.
+
+  \item If the calculated $\chi^2 = 0$, what does this indicate?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $p$-value is 0 \item Observed counts perfectly match expected counts in every cell \item A calculation error occurred \item Degrees of freedom equal 0 \item $H_0$ is rejected
+  \end{enumerate}
+  \textbf{Answer: (B).} $\chi^2 = 0$ occurs if and only if $O_i = E_i$ for every single cell.
+
+  \item All Chi-Square tests are:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Two-sided \item One-sided (upper-tailed) \item One-sided (lower-tailed) \item Directional tests \item Non-parametric $t$-tests
+  \end{enumerate}
+  \textbf{Answer: (B).} Because deviations are squared, discrepancies make $\chi^2$ larger, placing the rejection region exclusively in the upper right tail.
+
+  \item When the degrees of freedom of a Chi-Square distribution increase, the distribution:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Becomes more skewed \item Becomes more bell-shaped and symmetric \item Shifts toward zero \item Becomes discrete \item Narrower with range 0 to 1
+  \end{enumerate}
+  \textbf{Answer: (B).} As $df \to \infty$, the Chi-Square distribution approaches a normal distribution.
+
+  \item If a Chi-Square test yields $\chi^2 = 12.5$ with $df = 4$, and the critical value at $\alpha = 0.05$ is $\chi^* = 9.49$, the decision is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Fail to reject $H_0$ \item Reject $H_0$ \item Accept $H_a$ as absolute proof \item Recalculate with $df = 3$ \item Increase $\alpha$
+  \end{enumerate}
+  \textbf{Answer: (B).} Because the test statistic $\chi^2 = 12.5 > 9.49$, the result falls into the rejection region ($p\text{-value} < 0.05$).
+
+  \item A researcher selects 50 freshmen, 50 sophomores, 50 juniors, and 50 seniors, and asks their preferred dining option. Which test is appropriate?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Chi-Square Goodness-of-Fit \item Chi-Square Test for Homogeneity \item Chi-Square Test for Independence \item Matched Pairs $t$-test \item Two-sample $z$-test for proportions
+  \end{enumerate}
+  \textbf{Answer: (B).} Four separate, independent samples (by class standing) are compared on one categorical variable (dining choice).
+
+  \item A single SRS of 300 employees is surveyed regarding department and job satisfaction (Satisfied, Neutral, Dissatisfied). Which test is appropriate?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Goodness-of-Fit \item Homogeneity \item Independence \item Two-sample $t$-test \item Linear regression
+  \end{enumerate}
+  \textbf{Answer: (C).} One single sample categorized by two variables (department and satisfaction) calls for a test of independence.
+
+  \item What is the mean of a Chi-Square distribution with $df = 8$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0 \item 4 \item 8 \item 16 \item 64
+  \end{enumerate}
+  \textbf{Answer: (C).} The theoretical mean of any Chi-Square distribution equals its degrees of freedom ($\mu = df = 8$).
+
+  \item In a Goodness-of-Fit test with 4 categories, the observed counts are $25, 25, 25, 25$ and hypothesized proportions are equal. What is $\chi^2$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0 \item 1 \item 4 \item 25 \item 100
+  \end{enumerate}
+  \textbf{Answer: (A).} Total $n = 100$. Expected count for each category is $100(0.25) = 25$. Since $O_i = E_i$ for all cells, $\chi^2 = 0$.
+
+  \item Which cell contributes most to the Chi-Square statistic?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Cell with largest expected count \item Cell with largest observed count \item Cell with largest individual component $(O - E)^2 / E$ \item Cell with $O = E$ \item The bottom-right total cell
+  \end{enumerate}
+  \textbf{Answer: (C).} The component $(O - E)^2 / E$ measures each individual cell's contribution to the total test statistic.
+
+  \item If an expected count in a $3 \times 3$ table is 3.8, what can the researcher do to satisfy conditions?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Combine adjacent categories if meaningful to increase expected counts \item Discard the row \item Change the significance level \item Double the observed count \item Run a normal approximation
+  \end{enumerate}
+  \textbf{Answer: (A).} Combining logically related categorical levels is a standard statistical remedy to ensure all $E_i \ge 5$.
+
+  \item Degrees of freedom for a Goodness-of-Fit test with 10 categories is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 10 \item 9 \item 8 \item 1 \item 100
+  \end{enumerate}
+  \textbf{Answer: (B).} $df = k - 1 = 10 - 1 = 9$.
+
+  \item What happens to the critical value $\chi^*$ as the significance level $\alpha$ decreases from 0.05 to 0.01 for fixed $df$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Decreases \item Increases \item Remains constant \item Becomes negative \item Reaches 0
+  \end{enumerate}
+  \textbf{Answer: (B).} A smaller $\alpha$ pushes the rejection threshold further into the right tail, increasing the critical value.
+\end{enumerate}
+
+\subsection*{Part II: Score-4 Free-Response Problem with Complete Rubric}
+
+\begin{frqrubricbox}[FRQ 8.1: Chi-Square Test for Homogeneity Across Age Brackets]
+\textbf{Problem:} An airline carrier surveys independent random samples of passengers across three route types (Domestic Short-Haul, Domestic Transcontinental, International) regarding on-board Wi-Fi satisfaction. 
+The observed frequencies are:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Route Type} & \textbf{Satisfied} & \textbf{Neutral} & \textbf{Dissatisfied} & \textbf{Total} \\
+\midrule
+Short-Haul & 65 & 45 & 40 & 150 \\
+Transcontinental & 80 & 40 & 30 & 150 \\
+International & 95 & 35 & 20 & 150 \\
+\midrule
+\textbf{Total} & 240 & 120 & 90 & 450 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Perform an appropriate hypothesis test at $\alpha = 0.05$ to determine if the satisfaction distribution differs across route types.
+
+\textbf{Grader-Approved Score-4 Solution:}\\
+\textbf{Step 1: Hypotheses}\\
+$H_0:$ The distribution of Wi-Fi satisfaction is the same across all three route types.\\
+$H_a:$ The distribution of Wi-Fi satisfaction is not the same across all three route types.\\
+\textbf{Step 2: Conditions}\\
+\begin{itemize}
+  \item \textit{Random:} Three independent random samples of passengers were surveyed. (Met)
+  \item \textit{10\% Condition:} The 150 passengers in each sample represent less than 10\% of all passengers flying each route type. (Met)
+  \item \textit{Large Counts:} Compute expected counts $E = \frac{\text{Row Total} \times \text{Col Total}}{450}$. Because all three row totals equal 150:
+  $E_{\text{Satisfied}} = \frac{150 \times 240}{450} = 80$, $E_{\text{Neutral}} = \frac{150 \times 120}{450} = 40$, $E_{\text{Dissatisfied}} = \frac{150 \times 90}{450} = 30$.
+  All expected counts are $\ge 30$, easily exceeding 5. (Met)
+\end{itemize}
+\textbf{Step 3: Mechanics}\\
+\[ \chi^2 = \sum \frac{(O - E)^2}{E} = \frac{(65-80)^2}{80} + \frac{(45-40)^2}{40} + \frac{(40-30)^2}{30} \]
+\[ + \frac{(80-80)^2}{80} + \frac{(40-40)^2}{40} + \frac{(30-30)^2}{30} + \frac{(95-80)^2}{80} + \frac{(35-40)^2}{40} + \frac{(20-30)^2}{30} \]
+\[ \chi^2 = \frac{225}{80} + \frac{25}{40} + \frac{100}{30} + 0 + 0 + 0 + \frac{225}{80} + \frac{25}{40} + \frac{100}{30} \]
+\[ \chi^2 = 2.8125 + 0.625 + 3.3333 + 0 + 0 + 0 + 2.8125 + 0.625 + 3.3333 = \mathbf{13.54} \]
+$df = (3 - 1)(3 - 1) = 2 \times 2 = 4$.\\
+$p$-value: $P(\chi_4^2 \ge 13.54) = 0.0089$.\\
+\textbf{Step 4: Conclusion}\\
+Because the $p$-value ($0.0089$) is less than $\alpha = 0.05$, we reject $H_0$. There is convincing statistical evidence that the distribution of Wi-Fi satisfaction differs significantly across the three airline route types.
+\end{frqrubricbox}
+
+\section{Unit 8 Master Summary}
+\begin{lessonbox}[Unit 8 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Test Types:} GOF (1 sample, 1 var), Homogeneity (2+ samples, 1 var), Independence (1 sample, 2 vars).
+  \item \textbf{Degrees of Freedom:} $df = k - 1$ for GOF; $df = (r - 1)(c - 1)$ for two-way tables.
+  \item \textbf{Expected Counts:} Must show matrix or formula; ALL $E \ge 5$ (never check observed counts!).
+  \item \textbf{Rejection Region:} Always upper right tail ($p\text{-value} = P(\chi^2 \ge \text{stat})$).
+\end{itemize}
+\end{lessonbox}
+\clearpage

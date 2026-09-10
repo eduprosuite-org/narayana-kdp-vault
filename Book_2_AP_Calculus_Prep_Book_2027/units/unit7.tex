@@ -1,0 +1,346 @@
+﻿% =========================================================================
+% UNIT 7: INFERENCE FOR QUANTITATIVE DATA - MEANS
+% =========================================================================
+\chapter{Unit 7: Inference for Quantitative Data: Means}
+
+\section{Unit Overview \& Exam Weight}
+Unit 7 accounts for \textbf{10\% to 18\%} of the AP Statistics Exam. Whenever dealing with quantitative variables where the true population standard deviation $\sigma$ is unknown (which is practically 100\% of real-world scenarios), we use the \textbf{$t$-distribution} discovered by William Sealy Gosset (writing under the pseudonym "Student"). You will master 1-sample $t$-procedures, paired $t$-procedures, and 2-sample $t$-procedures.
+
+\subsection*{Key Unit Vocabulary}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Student's $t$-Distribution:] A family of bell-shaped, symmetric density curves defined by degrees of freedom ($df$). It has heavier tails and more probability in the extremes than the standard normal distribution to account for the extra uncertainty of estimating $\sigma$ with $s_x$. As $df \to \infty$, the $t$-distribution approaches $N(0, 1)$.
+  \item[Degrees of Freedom ($df$):] For a 1-sample $t$-distribution, $df = n - 1$.
+  \item[Standard Error of the Mean:] $\text{SE}(\bar{x}) = \frac{s_x}{\sqrt{n}}$.
+  \item[1-Sample $t$-Interval:] An interval estimating an unknown population mean $\mu$: $\bar{x} \pm t^* \frac{s_x}{\sqrt{n}}$.
+  \item[1-Sample $t$-Test:] A hypothesis test evaluating claims about a population mean $\mu$: $t = \frac{\bar{x} - \mu_0}{s_x / \sqrt{n}}$.
+  \item[Paired Data (Matched Pairs):] Quantitative data resulting from paired observations on the same individuals (e.g., pre-test vs. post-test) or pairs of similar individuals. Analyzed by taking differences ($d = x_1 - x_2$) and running 1-sample $t$-procedures on the differences ($\mu_d, \bar{x}_d, s_d$).
+  \item[Two-Sample $t$-Procedures:] Inference comparing two independent population means $\mu_1 - \mu_2$. Never pool variances for means!
+  \item[Robustness:] An inference procedure is robust if the stated confidence level or $p$-value remains approximately accurate even when a condition (such as normality) is moderately violated. The $t$-procedures are robust against non-normality when $n \ge 30$.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 7.1: The $t$-Distribution vs. Standard Normal ($z$)]
+Why can we NOT use $z$ when working with sample means?
+Because the true population standard deviation $\sigma$ is almost never known! When we replace $\sigma$ with the sample standard deviation $s_x$, we introduce additional sampling variability. To compensate for this extra variation, the $t$-distribution spreads out wider, with fatter tails.
+\begin{itemize}[leftmargin=1.2em]
+  \item Bell-shaped and symmetric about 0.
+  \item Area under curve = 1.
+  \item Controlled by degrees of freedom: $df = n - 1$.
+  \item As $df$ increases, $s_x$ becomes a more precise estimate of $\sigma$, and the $t$-distribution converges to the standard normal $Z$ curve!
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 7.2: One-Sample $t$-Interval for a Population Mean $\mu$]
+\textbf{Confidence Interval Formula:}
+\begin{equation}
+  \bar{x} \pm t^* \left(\frac{s_x}{\sqrt{n}}\right)
+\end{equation}
+where $t^*$ is the critical value with $df = n - 1$.
+\textbf{Mandatory Conditions Check:}
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Random:} Data comes from an SRS or randomized experiment.
+  \item \textbf{10\% Condition:} $n \le 0.10N$ when sampling without replacement.
+  \item \textbf{Normal / Large Sample Condition:}
+  \begin{itemize}
+    \item If the population is stated to be \textbf{Normal}, the condition is met.
+    \item If $n \ge 30$, the Central Limit Theorem guarantees the sampling distribution is approximately normal.
+    \item If $n < 30$, you MUST graph the sample data (dotplot, stemplot, or boxplot) and confirm there are \textbf{no strong skewness or outliers}!
+  \end{itemize}
+\end{enumerate}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 7.3: Paired $t$-Procedures (Matched Pairs Design)]
+\textbf{Critical Distinction:} When two sets of quantitative measurements are collected on the \textbf{same individuals} (e.g., before-treatment and after-treatment) or matched pairs, they are NOT independent!
+\begin{itemize}[leftmargin=1.2em]
+  \item Compute individual differences for each pair: $d_i = x_{1i} - x_{2i}$.
+  \item Treat the list of differences as a \textbf{single sample} of size $n$ with sample mean difference $\bar{x}_d$ and sample standard deviation of differences $s_d$.
+  \item Hypotheses: $H_0: \mu_d = 0$ versus $H_a: \mu_d > 0, \mu_d < 0,$ or $\mu_d \neq 0$.
+  \item Test Statistic:
+  \begin{equation}
+    t = \frac{\bar{x}_d - 0}{s_d / \sqrt{n}}, \qquad df = n - 1
+  \end{equation}
+  \item Confidence Interval: $\bar{x}_d \pm t^* \frac{s_d}{\sqrt{n}}$.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 7.4: Two-Sample $t$-Procedures ($\mu_1 - \mu_2$)]
+Comparing the means of two independent groups:
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Confidence Interval:}
+  \begin{equation}
+    (\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+  \end{equation}
+  \item \textbf{Test Statistic ($H_0: \mu_1 - \mu_2 = 0$):}
+  \begin{equation}
+    t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+  \end{equation}
+  \item \textbf{Degrees of Freedom:} Use technology (Welch-Satterthwaite approximation) or the conservative formula: $df = \min(n_1 - 1, n_2 - 1)$.
+  \item \textbf{Important Rule:} \textbf{NEVER POOL} variances for two-sample $t$-procedures on the AP exam! Always select \texttt{Pooled: NO} on your TI-84.
+\end{itemize}
+\end{lessonbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 7.1: One-Sample $t$-Test for a Mean (PHANTOM)}
+\textbf{Problem:} A consumer agency tests whether a brand of AAA batteries lasts less than the advertised mean lifetime of 30 hours. A random sample of $n = 16$ batteries has a mean lifetime of $\bar{x} = 28.5\text{ hours}$ with a standard deviation of $s = 2.4\text{ hours}$. A dotplot of the 16 values shows no outliers or strong skewness. Conduct a test at $\alpha = 0.05$.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{P:} Let $\mu = \text{the true mean lifetime of all AAA batteries of this brand (in hours)}$.
+  \item \textbf{H:} $H_0: \mu = 30$ versus $H_a: \mu < 30$.
+  \item \textbf{A:}
+  1. \textit{Random:} Stated random sample of 16 batteries.
+  2. \textit{10\% Condition:} $n = 16 \le 0.10(\text{all batteries produced})$.
+  3. \textit{Normal/Large Sample:} Although $n = 16 < 30$, the problem states the dotplot of sample data shows no outliers or strong skewness. Therefore, $t$-procedures are safe to use.
+  \item \textbf{N:} One-sample $t$-test for a population mean $\mu$.
+  \item \textbf{T:} $df = n - 1 = 16 - 1 = 15$.
+  \[ t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{28.5 - 30}{2.4 / \sqrt{16}} = \frac{-1.5}{0.60} = -2.50 \]
+  \item \textbf{O:} $p\text{-value} = P(t_{15} \le -2.50) = \mathbf{0.0123}$.
+  \item \textbf{M:} Because the $p$-value ($0.0123$) is less than $\alpha = 0.05$, we reject $H_0$. There is convincing statistical evidence that the true mean lifetime of this battery brand is strictly less than 30 hours.
+\end{itemize}
+
+\section{TI-84 Plus CE Calculator Playbook}
+
+\begin{calculatorbox}[TI-84 Playbook: Inference for Means]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{1-Sample $t$-Test:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ 2:T-Test}.
+  Select \texttt{Inpt: Stats} (or \texttt{Data} if raw list in \texttt{L1}). Enter $\mu_0, \bar{x}, s_x, n$, and direction of $H_a$.
+  \item \textbf{1-Sample $t$-Interval:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ 8:TInterval}. Enter stats, C-Level.
+  \item \textbf{Paired $t$-Test:} Enter before-data in \texttt{L1}, after-data in \texttt{L2}. In \texttt{L3}, define \texttt{L1 - L2}. Run \texttt{2:T-Test} using \texttt{Data: L3} with $\mu_0 = 0$.
+  \item \textbf{2-Sample $t$-Test:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ 4:2-SampTTest}. Always set \texttt{Pooled: NO}!
+  \item \textbf{2-Sample $t$-Interval:} Press \texttt{[STAT] $\rightarrow$ TESTS $\rightarrow$ 0:2-SampTInt}. Always set \texttt{Pooled: NO}!
+\end{itemize}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Why do we use the $t$-distribution instead of the standard normal distribution when constructing a confidence interval for a population mean?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Because the sample size is always small.
+    \item Because the population standard deviation $\sigma$ is unknown and estimated by $s$.
+    \item Because the population is always non-normal.
+    \item Because the mean is non-resistant.
+    \item To avoid calculating degrees of freedom.
+  \end{enumerate}
+  \textbf{Answer: (B).} Estimating $\sigma$ with $s$ introduces additional variability, requiring $t$.
+
+  \item As degrees of freedom increase, the $t$-distribution:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Becomes more skewed. \item Approaches the standard normal distribution $Z$. \item Becomes wider with fatter tails. \item Has a mean greater than 0. \item Has a standard deviation of 0.
+  \end{enumerate}
+  \textbf{Answer: (B).} As $df \to \infty$, $t \to Z$.
+
+  \item A random sample of $n = 25$ students has $\bar{x} = 75, s = 10$. For a 95\% confidence interval for $\mu$, what is $df$ and $t^*$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $df = 25, t^* = 1.960$ \item $df = 24, t^* = 2.064$ \item $df = 24, t^* = 1.960$ \item $df = 25, t^* = 2.060$ \item $df = 23, t^* = 2.500$
+  \end{enumerate}
+  \textbf{Answer: (B).} $df = n - 1 = 24$. From the $t$-table, $t^* = 2.064$.
+
+  \item A matched pairs study measures cholesterol before and after a diet program for 20 patients. What degrees of freedom should be used for the hypothesis test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 38 \item 39 \item 19 \item 20 \item 18
+  \end{enumerate}
+  \textbf{Answer: (C).} Paired data is analyzed as a single sample of $n = 20$ differences $\implies df = 20 - 1 = 19$.
+
+  \item If $n = 10$ and the sample data displays a severe outlier, is it appropriate to conduct a 1-sample $t$-test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes, because $t$-procedures are always robust.
+    \item No, because for $n < 30$, the presence of an outlier violates the normality condition.
+    \item Yes, if $\alpha = 0.01$.
+    \item Yes, by the Central Limit Theorem.
+    \item No, because $10 < 30$ is never allowed.
+  \end{enumerate}
+  \textbf{Answer: (B).} For small samples ($n < 30$), outliers invalidate $t$-procedures.
+
+  \item A 95\% confidence interval for $\mu_1 - \mu_2$ is $(-4.5, -1.2)$. What can be concluded?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\mu_1 = \mu_2$.
+    \item There is convincing evidence that $\mu_1 < \mu_2$ because the entire interval is negative (strictly below 0).
+    \item There is no significant difference between the two means.
+    \item $\mu_1 > \mu_2$.
+    \item The test was two-sided.
+  \end{enumerate}
+  \textbf{Answer: (B).} All plausible values for $\mu_1 - \mu_2$ are negative $\implies \mu_1 < \mu_2$.
+
+  \item In a two-sample $t$-test, why do AP Statistics standards mandate "Never Pool"?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Pooling requires assuming the two population variances are equal ($\sigma_1^2 = \sigma_2^2$), an assumption rarely justified in practice.
+    \item Pooling decreases power.
+    \item Calculators cannot compute pooled tests.
+    \item Pooling is allowed only for proportions.
+    \item Pooling violates the 10\% condition.
+  \end{enumerate}
+  \textbf{Answer: (A).} Unequal variance $t$-tests (Welch) are far more robust and realistic.
+
+  \item If a 90\% confidence interval for $\mu$ is $(45.2, 54.8)$, what was the sample mean $\bar{x}$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 45.2 \item 50.0 \item 54.8 \item 4.8 \item 9.6
+  \end{enumerate}
+  \textbf{Answer: (B).} Center of interval: $(45.2 + 54.8)/2 = 100/2 = 50.0$.
+
+  \item A test of $H_0: \mu = 100$ vs. $H_a: \mu \neq 100$ produces $t = 2.45$ with $df = 15$. The $p$-value is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $P(t_{15} > 2.45)$ \item $2 \times P(t_{15} > 2.45)$ \item $P(t_{15} < 2.45)$ \item 0.05 \item 0.0245
+  \end{enumerate}
+  \textbf{Answer: (B).} Two-sided alternative requires doubling the tail probability.
+
+  \item If the margin of error for a 1-sample $t$-interval is $\text{ME} = 3.5$, increasing the sample size will:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Increase the margin of error \item Decrease the margin of error \item Have no effect on ME \item Increase the sample mean \item Make $t^*$ larger
+  \end{enumerate}
+  \textbf{Answer: (B).} Larger $n$ decreases standard error $s/\sqrt{n}$, reducing ME.
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item Which of the following is an example of a matched pairs design?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Comparing test scores of 30 girls and 30 boys.
+    \item Comparing blood pressure measurements of 50 patients before and after taking a medication.
+    \item Comparing corn yields from 10 plots in Texas and 10 plots in Iowa.
+    \item Surveying 100 randomly chosen voters.
+    \item Measuring weights of 40 dogs of different breeds.
+  \end{enumerate}
+  \textbf{Answer: (B).} Pre- and post-treatment measurements on the same individual constitute matched pairs.
+
+  \item In a 1-sample $t$-test with $n = 20$, the test statistic is $t = -1.73$. For $H_a: \mu < \mu_0$, the $p$-value falls in which range?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $p < 0.01$ \item $0.025 < p < 0.05$ \item $0.05 < p < 0.10$ \item $p > 0.10$ \item Exactly 0.05
+  \end{enumerate}
+  \textbf{Answer: (C).} For $df = 19$, $t_{0.05} = 1.729 \implies p \approx 0.050$. Specifically, $p$-value $\approx 0.0499 \approx 0.05$.
+
+  \item If an investigator knows the true population standard deviation $\sigma = 15$, which procedure should be used to estimate $\mu$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1-sample $t$-interval \item 1-sample $z$-interval \item 2-sample $t$-test \item Chi-square test \item Regression test
+  \end{enumerate}
+  \textbf{Answer: (B).} Knowing $\sigma$ allows using $z$ instead of $t$.
+
+  \item What is the conservative degrees of freedom for a two-sample $t$-test with $n_1 = 15$ and $n_2 = 22$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 37 \item 35 \item 14 \item 21 \item 15
+  \end{enumerate}
+  \textbf{Answer: (C).} Conservative $df = \min(n_1 - 1, n_2 - 1) = \min(14, 21) = 14$.
+
+  \item When constructing a confidence interval for $\mu$, the critical value $t^*$ depends on:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Only the sample mean $\bar{x}$
+    \item The confidence level and degrees of freedom ($n - 1$)
+    \item The population size $N$
+    \item The margin of error
+    \item The $p$-value
+  \end{enumerate}
+  \textbf{Answer: (B).} $t^*$ is determined exclusively by the desired confidence level and $df$.
+
+  \item If zero is contained within a 95\% confidence interval for $\mu_d$ in a paired experiment, what decision would be made for $H_0: \mu_d = 0$ at $\alpha = 0.05$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Reject $H_0$ \item Fail to reject $H_0$ \item Accept $H_a$ \item Increase sample size \item Conclude a Type I error was made
+  \end{enumerate}
+  \textbf{Answer: (B).} An interval containing 0 means the hypothesized value 0 is plausible, so we fail to reject $H_0$.
+
+  \item In a sample of $n = 35$, a histogram shows slight right skewness. Can a $t$-test be conducted safely?
+  \begin{enumerate}[label=(\Alph*)]
+    \item No, data must be perfectly symmetric.
+    \item Yes, because $n = 35 \ge 30$, the Central Limit Theorem ensures robustness.
+    \item No, because $s$ cannot be calculated.
+    \item Yes, only if $\mu = 0$.
+    \item No, $z$ must be used instead.
+  \end{enumerate}
+  \textbf{Answer: (B).} $t$-procedures are robust to moderate skewness when $n \ge 30$.
+
+  \item Standard error of the difference between two independent sample means is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$ \item $\frac{s_1}{n_1} + \frac{s_2}{n_2}$ \item $\sqrt{s_1^2 + s_2^2}$ \item $\frac{s_1 + s_2}{\sqrt{n_1 + n_2}}$ \item $s_1 - s_2$
+  \end{enumerate}
+  \textbf{Answer: (A).} Standard formula for $\text{SE}(\bar{x}_1 - \bar{x}_2)$.
+
+  \item If $n = 100, \bar{x} = 50, s = 10$, what is the margin of error for a 95\% confidence interval for $\mu$ ($t^* \approx 1.984$)?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1.984 \item 0.1984 \item 19.84 \item 1.00 \item 0.50
+  \end{enumerate}
+  \textbf{Answer: (A).} $\text{ME} = t^*(s/\sqrt{n}) = 1.984(10/\sqrt{100}) = 1.984(1.0) = 1.984$.
+
+  \item Which of the following is true regarding $t$-distributions?
+  \begin{enumerate}[label=(\Alph*)]
+    \item They are skewed to the right.
+    \item They have a larger variance than the standard normal distribution.
+    \item They can take only positive values.
+    \item They do not depend on sample size.
+    \item They are used exclusively for categorical variables.
+  \end{enumerate}
+  \textbf{Answer: (B).} Fatter tails mean larger variance ($\text{Var} = df/(df-2) > 1$).
+\end{enumerate}
+
+\subsection*{Part II: Free-Response Practice Problem}
+
+\begin{workbookbox}[FRQ 7.1: Paired $t$-Test for Matched Pairs]
+\textbf{Problem:} A fitness coach tests whether a 6-week plyometric training program increases vertical jump height in basketball players. 12 players have their vertical jumps measured (in inches) before and after the program. The mean difference is $\bar{x}_d = \text{After} - \text{Before} = +2.4\text{ inches}$ with a sample standard deviation of differences $s_d = 1.8\text{ inches}$. A boxplot of the differences shows no outliers. Conduct a hypothesis test at $\alpha = 0.05$.
+
+\textbf{Grader-Approved Score-4 Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{P:} Let $\mu_d = \text{the true mean difference (After } - \text{ Before) in vertical jump height for all players}$.
+  \item \textbf{H:} $H_0: \mu_d = 0$ versus $H_a: \mu_d > 0$.
+  \item \textbf{A:}
+  1. \textit{Random:} Stated representative sample of players.
+  2. \textit{10\% Condition:} $n = 12 \le 0.10(\text{all basketball players})$.
+  3. \textit{Normal Condition:} $n = 12 < 30$, but the boxplot of differences displays no outliers or extreme skewness. Safe to proceed with $t$-distribution.
+  \item \textbf{N:} Paired $t$-test for a mean difference $\mu_d$.
+  \item \textbf{T:} $df = 12 - 1 = 11$.
+  \[ t = \frac{\bar{x}_d - 0}{s_d / \sqrt{n}} = \frac{2.4 - 0}{1.8 / \sqrt{12}} = \frac{2.4}{0.5196} \approx 4.62 \]
+  \item \textbf{O:} $p\text{-value} = P(t_{11} \ge 4.62) = \mathbf{0.00036}$.
+  \item \textbf{M:} Because the $p$-value ($0.00036$) is strictly less than $\alpha = 0.05$, we reject $H_0$. There is convincing statistical evidence that the 6-week training program produces a true mean increase in vertical jump height.
+\end{itemize}
+\end{workbookbox}
+
+
+\begin{frqrubricbox}[FRQ 7.2: Paired $t$-Test for Matched Pairs vs. Two-Sample $t$-Test]
+\textbf{Problem:} An educational psychologist evaluates a spatial reasoning software module. Twelve high school seniors take a standardized 50-point spatial visualization test before and after completing a 4-week computer course.
+The summary statistics of the test score differences ($d = \text{Post} - \text{Pre}$) are:
+\[ n = 12, \quad \bar{x}_d = 6.50\text{ points}, \quad s_d = 2.40\text{ points} \]
+A normal probability plot of the differences displays a strong linear pattern with no outliers.
+\begin{enumerate}[label=(\alph*)]
+  \item Explain why a paired $t$-test is appropriate for this data rather than a two-sample independent $t$-test.
+  \item State the appropriate null and alternative hypotheses to test whether the software course significantly improves spatial visualization scores.
+  \item Check all required conditions for conducting the paired $t$-test.
+  \item Calculate the test statistic and $p$-value, and state your conclusion at the $\alpha = 0.01$ significance level.
+\end{enumerate}
+
+\textbf{Grader-Approved Score-4 Solution \& Rubric:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} A paired $t$-test is appropriate because the data consist of matched pairs of measurements taken on the exact same subjects (pre-test and post-test scores for each student). The two sets of scores are inherently dependent, not two independent random samples.
+  \item \textbf{Part (b):} Let $\mu_d$ be the true mean difference in spatial visualization scores ($\text{Post} - \text{Pre}$) for all students who complete the course.\\
+  $H_0: \mu_d = 0 \quad \text{vs.} \quad H_a: \mu_d > 0$.
+  \item \textbf{Part (c):}
+  \textit{Random:} The 12 students are treated as representative of the target student population.\\
+  \textit{10\% Condition:} $n = 12 \le 0.10(\text{All high school seniors})$.\\
+  \textit{Normal/Large Sample:} $n = 12 < 30$, but the normal probability plot of differences is linear with no outliers, making the normality assumption plausible.
+  \item \textbf{Part (d):}
+  $\text{SE}(\bar{x}_d) = \frac{s_d}{\sqrt{n}} = \frac{2.40}{\sqrt{12}} \approx \frac{2.40}{3.4641} \approx 0.6928\text{ points}$.\\
+  $t = \frac{\bar{x}_d - 0}{\text{SE}(\bar{x}_d)} = \frac{6.50}{0.6928} \approx 9.38$.\\
+  Degrees of freedom: $df = n - 1 = 12 - 1 = 11$.\\
+  $p$-value: $P(t_{11} \ge 9.38) < 0.00001$.\\
+  \textit{Conclusion:} Because $p\text{-value} < 0.01$, we reject $H_0$. There is overwhelming statistical evidence that the spatial visualization software module significantly improves student test scores.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{trapbox}[Unit 7 Top 5 AP Exam Pitfalls to Avoid]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Running a Two-Sample $t$-Test on Paired Data:} If subjects are matched or measured twice, you MUST run a paired $t$-test on differences ($df = n - 1$), NOT a two-sample test!
+  \item \textbf{Selecting Pooled on the TI-84:} On the AP Statistics Exam, NEVER pool variances for a two-sample $t$-test. Always select \texttt{Pooled: NO}!
+  \item \textbf{Degrees of Freedom for Two-Sample $t$:} Conservative $df = \min(n_1 - 1, n_2 - 1)$ is always accepted if TI-84 Satterthwaite $df$ is not used.
+  \item \textbf{Checking Normality When $n < 30$:} When $n < 30$, you MUST check the plot of sample data for outliers and severe skewness.
+  \item \textbf{Interpreting $p$-Value as Strength of Effect:} A tiny $p$-value means strong evidence against $H_0$; it does NOT mean the effect size is large!
+\end{enumerate}
+\end{trapbox}
+\section{Unit 7 Master Summary}
+\begin{lessonbox}[Unit 7 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{1-Sample $t$:} $\bar{x} \pm t^*(s/\sqrt{n})$, $df = n - 1$.
+  \item \textbf{Normality Check for Means:} Normal pop OR $n \ge 30$ (CLT) OR graph with no strong skewness/outliers.
+  \item \textbf{Paired $t$:} Run 1-sample $t$ on the list of differences ($d = x_1 - x_2$).
+  \item \textbf{2-Sample $t$:} Independent groups. Never pool variances!
+\end{itemize}
+\end{lessonbox}
+\clearpage
