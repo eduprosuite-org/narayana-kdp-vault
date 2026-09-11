@@ -1,0 +1,271 @@
+% =========================================================================
+% PRACTICE EXAM 2: DETAILED SOLUTIONS & SCORING RUBRICS
+% =========================================================================
+\chapter{Practice Exam 2: Detailed Solutions \& Grading Rubrics}
+
+\section{Section I: Multiple-Choice Detailed Explanations}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The sample standard deviation is $s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}$. For $s$ to equal exactly zero, the sum of squared deviations from the mean must be zero, meaning $(x_i - \bar{x})^2 = 0$ for every observation $i$. Hence, every observation in the sample must be identical to the mean ($x_i = 50$ for all $i$).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In a distribution that is skewed to the right (positively skewed), extreme large values in the long right tail pull the non-resistant mean upward, while the median remains resistant and anchored near the center of the data. Thus, $\text{Mean} > \text{Median}$.
+
+  \item \textbf{Answer: (C)} \\
+  \textbf{Explanation:} A correlation coefficient of $r = 0.0$ signifies the complete absence of a linear relationship between the two quantitative variables. It does not rule out strong non-linear or curved relationships (e.g., a perfect parabola).
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} In stratified random sampling, the population is partitioned into homogeneous subgroups (strata) of individuals who are similar with respect to a characteristic known to influence the response variable. Independent simple random samples are then drawn from within each stratum.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} Two events $A$ and $B$ are independent if knowing that event $B$ has occurred provides no information about the probability of event $A$, which is expressed mathematically by the condition $P(A \mid B) = P(A)$ (or equivalently $P(A \cap B) = P(A)P(B)$).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The four defining requirements for a binomial setting are summarized by the acronym \textbf{BINS}: Binary outcomes (Success or Failure), Independent trials, Number of trials $n$ is fixed in advance, and Same probability of success $p$ for each trial.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} By the Central Limit Theorem, if the sample size is sufficiently large ($n \ge 30$), the sampling distribution of the sample mean $\bar{x}$ is approximately normal regardless of the shape of the underlying population distribution.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} A Type I error occurs when a researcher rejects a null hypothesis that is actually true (a false positive finding). The maximum probability of committing a Type I error is fixed by the significance level $\alpha$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} The correct interpretation of a 95\% confidence level is: If we were to take many random samples of the same size from the same population and construct a 95\% confidence interval from each sample, approximately 95\% of the resulting intervals would capture the true population parameter.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In a Chi-Square Goodness-of-Fit test with $k$ distinct categorical levels, the degrees of freedom are $df = k - 1$, representing the number of categories minus one linear constraint (that the sum of expected counts must equal the sample size).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} For a one-sample $t$-interval or $t$-test based on a sample of size $n = 30$, the degrees of freedom are $df = n - 1 = 30 - 1 = 29$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} When subjects are grouped by age prior to treatment assignment to account for known physiological differences in pain tolerance, age is functioning as a blocking variable. Blocking reduces unexplained experimental variability.
+
+  \item \textbf{Answer: (D)} \\
+  \textbf{Explanation:} For a 99\% confidence interval, the central area under the standard normal curve is 0.99, leaving an area of $0.005$ in each tail. The critical value is $z^* = \text{invNorm}(0.995) \approx 2.576$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} A distribution with mean $\$450,000$ and median $\$320,000$ has $\text{Mean} > \text{Median}$. The substantially higher mean demonstrates that high-priced luxury homes are stretching the upper tail, indicating a right-skewed distribution.
+
+  \item \textbf{Answer: (D)} \\
+  \textbf{Explanation:} For a fair coin, the probability of flipping heads on any single toss is $0.5$. Because tosses are independent:
+  \[ P(4\text{ heads}) = (0.5)^4 = 0.0625 \]
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} A high-leverage point in regression is an observation whose explanatory variable value ($x$) is substantially farther from the mean $\bar{x}$ than the other data points. It exerts strong potential leverage over the slope of the regression line.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The standard deviation of the sampling distribution of the sample mean $\bar{x}$ is:
+  \[ \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{16}{\sqrt{64}} = \frac{16}{8} = 2.0 \]
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} Because the $p$-value ($0.082$) exceeds the significance level $\alpha = 0.05$, the sample data do not provide sufficiently extreme evidence against the null hypothesis. The correct statistical decision is to fail to reject $H_0$. (We never ``accept'' $H_0$ or claim it has been proven true).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In Chi-Square tests, the expected cell counts represent the hypothetical counts that would be anticipated if the null hypothesis were true in the population.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} A matched pairs $t$-test analyzes the single list of within-pair differences ($d_i = x_{1i} - x_{2i}$). Mathematically and computationally, it is identical to a one-sample $t$-test on the sample of differences against $H_0: \mu_d = 0$.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Under the Empirical Rule (68-95-99.7 Rule) for normal distributions, approximately 68\% of all observations fall within $\pm 1$ standard deviation of the mean ($\mu \pm 1\sigma$).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In cluster sampling, the population is divided into heterogeneous clusters (often based on geographic location). A random sample of entire clusters is chosen, and all individuals within the selected clusters are surveyed.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} By definition, events $A$ and $B$ are independent if the conditional probability $P(A \mid B)$ is identical to the unconditional probability $P(A)$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} For a binomial random variable $X \sim B(n, p)$, the standard deviation is given by $\sigma = \sqrt{np(1-p)}$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} When a residual plot exhibits random scatter with no discernible pattern, curve, or systematic change in spread around the horizontal line $\text{Residual} = 0$, it confirms that a linear model is appropriate for the data.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The sample point estimate $\hat{p}$ lies exactly at the center of the symmetric confidence interval:
+  \[ \hat{p} = \frac{0.40 + 0.60}{2} = 0.50 \]
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} An alternative hypothesis containing a strict greater-than inequality ($H_a: \mu > 0$) focuses rejection exclusively on the upper tail of the sampling distribution, making it a one-sided (right-tailed) test.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} A placebo is an inactive or dummy treatment administered to the control group to equalize psychological expectations across treatment arms, isolating the true physiological efficacy of the active treatment from the psychological placebo effect.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The Large Counts condition requires $np \ge 10$ and $n(1 - p) \ge 10$. Here, $n = 100$ and $p = 0.50$:
+  \[ np = 100(0.50) = 50 \ge 10 \quad \text{and} \quad n(1 - p) = 100(0.50) = 50 \ge 10 \]
+  Both conditions are satisfied, so the sampling distribution of $\hat{p}$ is approximately normal.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In simple linear regression with $n$ data pairs, two degrees of freedom are consumed estimating the intercept and slope parameters, leaving $df = n - 2$ for the $t$-test of the slope $\beta$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The interquartile range is defined as the distance between the third quartile and the first quartile: $\text{IQR} = Q_3 - Q_1$, measuring the spread of the middle 50\% of the data.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} In a matched pairs experimental design where each individual serves as their own control, every subject receives both experimental treatments in a randomized order to counterbalance sequence or carryover effects.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The test statistic for regression slope is $t = \frac{b_1 - 0}{\text{SE}(b_1)} = \frac{-2.5}{0.5} = -5.0$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The residual is defined as $\text{Residual} = y - \hat{y}$. If the residual is negative ($y - \hat{y} < 0$), then $y < \hat{y}$, meaning the observed actual point lies strictly below the predicted regression line.
+
+  \item \textbf{Answer: (B)} \\
+  \textbf{Explanation:} Decreasing sample size increases standard errors and widens sampling distributions, increasing the overlap between null and alternative distributions. This inflates the Type II error rate $\beta$ and directly decreases the power of the test ($1 - \beta$).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} By definition, $z = \frac{x - \bar{x}}{s}$. If $z = 0$, then $x - \bar{x} = 0 \implies x = \bar{x}$. The observation equals the mean.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The 10\% condition requires $n \le 0.10N$. Here, $n = 100$ and $N = 1000$. $0.10(1000) = 100$. Because $100 \le 100$, the condition is satisfied (barely meeting the upper boundary), justifying the independence assumption.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The sample proportion $\hat{p}$ is an unbiased estimator of the population proportion $p$ because the expected value of its sampling distribution equals $p$ ($\mu_{\hat{p}} = p$).
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} The least-squares regression line is mathematically derived specifically to minimize the sum of the squared vertical residuals, $\sum (y_i - \hat{y}_i)^2$.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} An event $A$ and its complement $A^c$ are mutually exclusive (disjoint) by definition, sharing no outcomes in common. Therefore, the intersection $A \cap A^c = \emptyset$, and $P(A \cap A^c) = 0.00$.
+
+  \item \textbf{Answer: (D)} \\
+  \textbf{Explanation:} The coefficient of determination is $R\text{-sq} = 80.0\% = 0.800$. The magnitude of the correlation coefficient is $|r| = \sqrt{0.800} \approx 0.8944$. Because the regression slope is negative ($b_1 = -5.12$), the correlation coefficient must have the same sign as the slope:
+  \[ r = -\sqrt{0.800} \approx -0.894 \]
+  Option (C) $+0.894$ fails to match the negative slope direction.
+
+  \item \textbf{Answer: (A)} \\
+  \textbf{Explanation:} For simple linear regression inference on slope $\beta$, degrees of freedom are $df = n - 2 = 18 - 2 = 16$. With $df = 16$ at a 95\% confidence level, the critical value from the $t$-table is $t^* = 2.120$. The confidence interval formula is:
+  \[ b_1 \pm t^* \cdot \text{SE}(b_1) \implies -5.12 \pm 2.120(0.640) \]
+  Option (B) incorrectly uses $df = n - 1 = 17$ ($t^* = 2.101$). Option (C) incorrectly uses normal critical value $z^* = 1.960$. Option (D) incorrectly uses $s$ instead of $\text{SE}(b_1)$.
+\end{enumerate}
+
+\section{Section II: Free-Response Complete Scoring Guidelines}
+
+\begin{frqrubricbox}[Question 1: Multi-Focus on Practices 1 \& 2 --- Model Solution \& Rubric]
+\textbf{Part (a) Skill 1.A: Formulate Question}\\
+\textit{"Does postoperative rehabilitation with Protocol Alpha (hydrotherapy) result in a statistically significant reduction in mean recovery time (in days) compared to Protocol Beta (land-based therapy) among adult knee replacement patients?"}
+
+\textbf{Part (b) Skill 2.B: Justification for Randomized Experiment}\\
+Allowing patients to self-select their rehabilitation regimen introduces severe selection bias and confounding. For example, younger, more physically active, or highly motivated patients might disproportionately choose the hydrotherapy regimen. Any observed differences in recovery time could then be caused by pre-existing patient health, age, or fitness rather than the rehabilitation protocol itself. Random assignment balances these known and lurking confounding variables across both treatment groups, establishing a valid basis for causal inference.
+
+\textbf{Part (c) Skill 2.D: Blocking by Patient Age}\\
+Patient age is strongly associated with bone healing, tissue regeneration, and joint mobility. By grouping patients into homogeneous age blocks (e.g., Block 1: Under 60; Block 2: 60 and older) and randomly assigning Protocol Alpha and Protocol Beta within each block, the researchers isolate and remove the variability in recovery times attributable to age from the experimental error. This increases the statistical power of the experiment to detect a genuine treatment effect.
+
+\textbf{Part (d) Skill 2.E: Hypotheses}\\
+Let $\mu_\alpha$ be the true mean recovery time (in days) for knee replacement patients using Protocol Alpha, and let $\mu_\beta$ be the true mean recovery time using Protocol Beta:
+\[ H_0: \mu_\alpha = \mu_\beta \quad (\text{or } \mu_\alpha - \mu_\beta = 0) \]
+\[ H_a: \mu_\alpha < \mu_\beta \quad (\text{or } \mu_\alpha - \mu_\beta < 0) \]
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Precisely formulates an investigative comparative question with variable and population, clearly explains confounding and why random assignment enables causal inference, explains how blocking isolates age variability, and correctly states hypotheses defining parameters in context.
+  \item \textbf{Partially Correct (P):} Explains random assignment without mentioning confounding, or states hypotheses without defining $\mu_\alpha$ and $\mu_\beta$.
+  \item \textbf{Incomplete (I):} Confuses blocking with random sampling.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 2: Multi-Focus on Practices 3 \& 4 --- Model Solution \& Rubric]
+\textbf{Part (a) Skill 3.B: Prediction of Light Intensity}\\
+Given the transformed model $\widehat{\ln(y)} = 6.42 - 0.58x$. At depth $x = 5.0$ (500 meters):
+\[ \widehat{\ln(y)} = 6.42 - 0.58(5.0) = 6.42 - 2.90 = 3.52 \]
+Exponentiating both sides to solve for predicted light intensity $\hat{y}$:
+\[ \hat{y} = e^{3.52} \approx 33.78\text{ lumens/}\text{m}^2 \]
+
+\textbf{Part (b) Skills 3.B \& 4.D: Residual in Transformed Scale}\\
+For $x = 3.0$: $\widehat{\ln(y)} = 6.42 - 0.58(3.0) = 6.42 - 1.74 = 4.68$.\\
+Observed $y = 120\text{ lumens/}\text{m}^2 \implies \ln(120) \approx 4.7875$.\\
+\[ \text{Residual} = \text{Observed} - \text{Predicted} = 4.7875 - 4.68 = +0.1075 \]
+\textit{Interpretation:} The observed natural logarithm of light intensity at 300 meters was 0.1075 units greater than predicted by the linear regression model.
+
+\textbf{Part (c) Skill 4.A: Importance of Residual Plot Analysis}\\
+Examining the residual plot of the raw $(x, y)$ data versus the transformed $(x, \ln(y))$ data is crucial because a high $r^2$ value alone does not guarantee model adequacy. A raw scatterplot may exhibit a strong non-linear curve that still yields a high correlation. If the residual plot of the raw data displays a distinct curved pattern, a linear model is invalid. If the residual plot of the transformed data displays a random scatter of points with no discernible pattern and constant variance around the zero residual line, the log-transformed linear model is validated as appropriate.
+
+\textbf{Part (d) Skill 4.B: Interpretation of $r^2 = 94.1\%$}\\
+Approximately 94.1\% of the total variation in the natural logarithm of underwater ambient light intensity is accounted for by the linear model with ocean depth (in hundreds of meters).
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correctly computes $\hat{y} = e^{3.52} \approx 33.78$ with units, computes transformed residual with context, articulates why residual plots detect curvature where $r^2$ cannot, and interprets $r^2$ correctly referencing the transformed response.
+  \item \textbf{Partially Correct (P):} Forgets to exponentiate in part (a) or calculates residual on untransformed scale ($120 - e^{4.68}$).
+  \item \textbf{Incomplete (I):} Major misconceptions regarding logarithmic transformations.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 3: Statistical Inference (Two-Proportion CI) --- Model Solution \& Rubric]
+\textbf{Step 1 (P): Parameter \& Procedure}\\
+Let $p_\alpha$ be the true proportion of all active OS-Alpha users who are highly satisfied, and let $p_\beta$ be the true proportion of all active OS-Beta users who are highly satisfied. Procedure: Two-sample $z$-interval for $p_\alpha - p_\beta$.
+
+\textbf{Step 2 (A): Condition Verification}\\
+\begin{itemize}
+  \item \textbf{Random:} Independent random samples of 400 OS-Alpha and 500 OS-Beta users were selected. (Satisfied)
+  \item \textbf{10\% Condition:} $400 \le 0.10(\text{All OS-Alpha users})$ and $500 \le 0.10(\text{All OS-Beta users})$, as both operating systems have millions of active users. (Satisfied)
+  \item \textbf{Large Counts:} Sample successes and failures:
+  $n_\alpha \hat{p}_\alpha = 328 \ge 10$, $n_\alpha(1 - \hat{p}_\alpha) = 72 \ge 10$;
+  $n_\beta \hat{p}_\beta = 375 \ge 10$, $n_\beta(1 - \hat{p}_\beta) = 125 \ge 10$. All counts are $\ge 10$. (Satisfied)
+\end{itemize}
+
+\textbf{Step 3 (N): Interval Calculation}\\
+Sample proportions: $\hat{p}_\alpha = \frac{328}{400} = 0.82$, $\hat{p}_\beta = \frac{375}{500} = 0.75$.
+Point estimate: $\hat{p}_\alpha - \hat{p}_\beta = 0.82 - 0.75 = 0.070$.
+Standard error (unpooled for confidence intervals):
+\[ \text{SE} = \sqrt{\frac{(0.82)(0.18)}{400} + \frac{(0.75)(0.25)}{500}} = \sqrt{\frac{0.1476}{400} + \frac{0.1875}{500}} = \sqrt{0.000369 + 0.000375} \approx 0.02728 \]
+For 95\% confidence, critical value $z^* = 1.960$:
+\[ \text{Margin of Error} = 1.960 \times 0.02728 \approx 0.0535 \]
+\[ \text{Confidence Interval} = 0.070 \pm 0.0535 \implies (0.0165, \; 0.1235) \]
+
+\textbf{Step 4 (I): Contextual Interpretation \& Claim Evaluation}\\
+\textit{Interpretation:} We are 95\% confident that the true difference in the proportion of satisfied users between OS-Alpha and OS-Beta ($p_\alpha - p_\beta$) is between 0.0165 and 0.1235 (or between 1.65\% and 12.35\%).\\
+\textit{Claim Justification:} Because the entire 95\% confidence interval consists entirely of positive values and does not include 0, there is convincing statistical evidence at the 5\% significance level that OS-Alpha achieves a higher satisfaction rate than OS-Beta.
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correct parameter definitions, all 3 conditions verified with numbers, correct unpooled SE and interval, and correct contextual interpretation with justification based on zero exclusion.
+  \item \textbf{Partially Correct (P):} Uses pooled proportions in SE formula (pooled is strictly for hypothesis tests, unpooled for confidence intervals) or states generic conclusion without context.
+  \item \textbf{Incomplete (I):} Formula or condition errors.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{frqrubricbox}[Question 4: Multi-Focus Synthesis on Practices 2, 3, \& 4 --- Model Solution \& Rubric]
+\textbf{Part (a) Skill 3.C: Total Probability of Testing Positive $P(+)$}\\
+Using the Law of Total Probability:
+\[ P(+) = P(D) \times P(+ \mid D) + P(D^c) \times P(+ \mid D^c) \]
+Given $P(D) = 0.02 \implies P(D^c) = 0.98$.
+Sensitivity $P(+ \mid D) = 0.95$.
+False positive rate $P(+ \mid D^c) = 1 - \text{Specificity} = 1 - 0.98 = 0.02$.
+\[ P(+) = (0.02)(0.95) + (0.98)(0.02) = 0.0190 + 0.0196 = 0.0386 \quad (\text{or } 3.86\%) \]
+Interpretation: Approximately 3.86\% of individuals in the population will receive a positive test result.
+
+\textbf{Part (b) Skills 3.C \& 4.D: Positive Predictive Value (PPV)}\\
+By Bayes' Theorem:
+\[ P(D \mid +) = \frac{P(D \cap +)}{P(+)} = \frac{0.0190}{0.0386} \approx 0.4922 \quad (\text{or } 49.2\%) \]
+\textit{Interpretation:} When an individual tests positive, the probability that they actually have the condition is approximately 49.2\% (less than half).\\
+\textit{Explanation:} Because the condition is rare (prevalence of only 2\%), the large healthy cohort (98\%) generates false positives ($0.0196$) that exceed the true positives ($0.0190$) from the small infected cohort. High accuracy on healthy individuals still produces substantial false positives when the baseline base rate is very low.
+
+\textbf{Part (c) Practices 2, 3, \& 4: Expected Payoff Comparison for 1,000 Individuals}\\
+In a cohort of $N = 1,000$ individuals:
+\begin{itemize}
+  \item Truly diseased: $1,000 \times 0.02 = 20$ people.
+  \item Truly healthy: $1,000 \times 0.98 = 980$ people.
+\end{itemize}
+Expected clinical outcomes under testing:
+1. True Positives (treated): $20 \times 0.95 = 19$ individuals. Payoff: $19 \times (+\$10,000) = +\$190,000$.\\
+2. False Negatives (missed): $20 \times 0.05 = 1$ individual. Payoff: $1 \times (-\$50,000) = -\$50,000$.\\
+3. False Positives (overtreated): $980 \times 0.02 = 19.6$ individuals. Payoff: $19.6 \times (-\$2,500) = -\$49,000$.\\
+4. True Negatives (correct non-treatment): $980 \times 0.98 = 960.4$ individuals. Payoff: $960.4 \times \$0 = \$0$.\\
+\textit{Net Expected Payoff with Testing:}
+\[ E(\text{Payoff}_{\text{Test}}) = +\$190,000 - \$50,000 - \$49,000 + \$0 = +\$91,000 \]
+\textit{Payoff Treating No One (Baseline):}
+All 20 diseased individuals remain untreated and progress to severe illness:
+\[ E(\text{Payoff}_{\text{No Screening}}) = 20 \times (-\$50,000) = -\$1,000,000 \]
+\textit{Policy Recommendation:} The health department should adopt the rapid screening test. The screening protocol delivers a net positive payoff of $+\$91,000$ per 1,000 people, generating a relative net health and financial gain of $\$1,091,000$ over the untreated baseline.
+
+\textbf{Grading Rubric Breakdown:}\\
+\begin{itemize}
+  \item \textbf{Essentially Correct (E):} Correct probability tree/total probability for $P(+) = 0.0386$, correct PPV $\approx 49.2\%$ with insightful explanation of base-rate fallacy, and comprehensive payoff matrix calculation comparing testing ($+\$91,000$) to the untreated baseline ($-\$1,000,000$).
+  \item \textbf{Partially Correct (P):} Computes $P(+)$ and PPV correctly but miscalculates the payoff matrix or omits the baseline comparison.
+  \item \textbf{Incomplete (I):} Confusion regarding sensitivity and conditional probabilities.
+\end{itemize}
+\end{frqrubricbox}

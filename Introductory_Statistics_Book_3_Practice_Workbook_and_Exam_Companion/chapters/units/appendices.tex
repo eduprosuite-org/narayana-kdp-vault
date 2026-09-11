@@ -1,0 +1,273 @@
+% =========================================================================
+% APPENDIX A: AP STATISTICS MASTER FORMULA REFERENCE SHEET
+% =========================================================================
+\chapter{Appendix A: AP Statistics Formula Reference Sheet}
+
+\section{Descriptive Statistics \& One-Variable Data}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Sample Mean:}
+  \[ \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i \]
+  \item \textbf{Sample Standard Deviation:}
+  \[ s_x = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (x_i - \bar{x})^2} \]
+  \item \textbf{Standardized Score ($z$-Score):}
+  \[ z = \frac{x - \mu}{\sigma} \quad \text{or} \quad z = \frac{x - \bar{x}}{s_x} \]
+  \item \textbf{Interquartile Range \& Outlier Fences:}
+  \[ \text{IQR} = Q_3 - Q_1 \]
+  \[ \text{Lower Fence} = Q_1 - 1.5(\text{IQR}), \qquad \text{Upper Fence} = Q_3 + 1.5(\text{IQR}) \]
+\end{itemize}
+
+\section{Two-Variable Data \& Linear Regression}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Least-Squares Regression Line (LSRL):}
+  \[ \hat{y} = b_0 + b_1 x \]
+  \item \textbf{Slope of Regression Line:}
+  \[ b_1 = r \left(\frac{s_y}{s_x}\right) \]
+  \item \textbf{$y$-Intercept of Regression Line:}
+  \[ b_0 = \bar{y} - b_1 \bar{x} \]
+  \item \textbf{Correlation Coefficient:}
+  \[ r = \frac{1}{n - 1} \sum_{i=1}^n \left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right) \]
+  \item \textbf{Residual:}
+  \[ e_i = y_i - \hat{y}_i = \text{Observed } y - \text{Predicted } y \]
+  \item \textbf{Standard Deviation of Residuals:}
+  \[ s = \sqrt{\frac{\sum (y_i - \hat{y}_i)^2}{n - 2}} \]
+\end{itemize}
+
+\section{Probability \& Random Variables}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Addition Rule for Disjoint Events:}
+  \[ P(A \cup B) = P(A) + P(B) \]
+  \item \textbf{General Addition Rule:}
+  \[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
+  \item \textbf{Conditional Probability:}
+  \[ P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad (P(B) > 0) \]
+  \item \textbf{Multiplication Rule for Independent Events:}
+  \[ P(A \cap B) = P(A) \times P(B) \]
+  \item \textbf{Discrete Random Variable Parameters:}
+  \[ \mu_X = E(X) = \sum x_i \cdot P(X = x_i) \]
+  \[ \sigma_X^2 = \text{Var}(X) = \sum (x_i - \mu_X)^2 \cdot P(X = x_i) \]
+  \item \textbf{Linear Transformation $Y = a + bX$:}
+  \[ \mu_Y = a + b\mu_X, \qquad \sigma_Y = |b|\sigma_X, \qquad \sigma_Y^2 = b^2\sigma_X^2 \]
+  \item \textbf{Linear Combination of Independent Random Variables $X$ and $Y$:}
+  \[ \mu_{X \pm Y} = \mu_X \pm \mu_Y, \qquad \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2, \qquad \sigma_{X \pm Y} = \sqrt{\sigma_X^2 + \sigma_Y^2} \]
+  \item \textbf{Binomial Distribution $X \sim B(n, p)$:}
+  \[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \]
+  \[ \mu_X = np, \qquad \sigma_X = \sqrt{np(1 - p)} \]
+  \item \textbf{Geometric Distribution $X \sim \text{Geom}(p)$:}
+  \[ P(X = k) = (1 - p)^{k - 1} p \]
+  \[ \mu_X = \frac{1}{p}, \qquad \sigma_X = \frac{\sqrt{1 - p}}{p} \]
+\end{itemize}
+
+\section{Sampling Distributions \& Inference Foundations}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{General Confidence Interval Structure:}
+  \[ \text{Statistic} \pm (\text{Critical Value}) \times (\text{Standard Error of Statistic}) \]
+  \item \textbf{General Significance Test Statistic Structure:}
+  \[ \text{Test Statistic} = \frac{\text{Statistic} - \text{Null Value}}{\text{Standard Error of Statistic}} \]
+  \item \textbf{Proportion Parameters \& Standard Errors:}
+  \begin{itemize}
+    \item \textit{One Proportion:} $\mu_{\hat{p}} = p, \quad \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}, \quad \text{SE}(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+    \item \textit{Two Proportions (Interval):} $\text{SE}(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$
+    \item \textit{Two Proportions (Test, Pooled):} $\hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2}, \quad \text{SE}_c = \sqrt{\hat{p}_c(1-\hat{p}_c)\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}$
+  \end{itemize}
+  \item \textbf{Mean Parameters \& Standard Errors:}
+  \begin{itemize}
+    \item \textit{One Mean:} $\mu_{\bar{x}} = \mu, \quad \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}, \quad \text{SE}(\bar{x}) = \frac{s_x}{\sqrt{n}}, \quad df = n - 1$
+    \item \textit{Paired Differences:} $\mu_{\bar{x}_d} = \mu_d, \quad \text{SE}(\bar{x}_d) = \frac{s_d}{\sqrt{n}}, \quad df = n - 1$
+    \item \textit{Two Independent Means:} $\text{SE}(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}, \quad df = \min(n_1-1, n_2-1)$
+  \end{itemize}
+  \item \textbf{Chi-Square Test Statistic:}
+  \[ \chi^2 = \sum \frac{(\text{Observed} - \text{Expected})^2}{\text{Expected}} \]
+  \[ \text{Expected Count (Two-Way Tables)} = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Table Total}}, \quad df = (r - 1)(c - 1) \]
+  \item \textbf{Inference for Regression Slope $\beta$:}
+  \[ \text{Confidence Interval:} \quad b_1 \pm t^* \cdot \text{SE}(b_1), \quad df = n - 2 \]
+  \[ \text{Test Statistic:} \quad t = \frac{b_1 - 0}{\text{SE}(b_1)}, \quad df = n - 2 \]
+\end{itemize}
+
+% =========================================================================
+% APPENDIX B: 120-TERM MASTER AP STATISTICS GLOSSARY
+% =========================================================================
+\chapter{Appendix B: Master AP Statistics Glossary}
+
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Alpha ($\alpha$) Level] The threshold probability chosen by the researcher below which the $p$-value warrants rejecting the null hypothesis; represents the maximum probability of committing a Type I error.
+  \item[Alternative Hypothesis ($H_a$)] The claim about the population parameter that the researcher seeks to establish evidence in favor of; can be one-sided ($>$, $<$) or two-sided ($\neq$).
+  \item[Back-to-Back Stemplot] A graphical display comparing two quantitative distributions using a single common stem in the center with leaves extending left and right.
+  \item[Bayes' Theorem] A mathematical formula for determining conditional probability: $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$.
+  \item[Bell Curve] The characteristic symmetric, unimodal, bell-shaped density curve representing the Gaussian or normal probability distribution.
+  \item[Bias] Systematic favoritism that causes sample results or parameter estimates to deviate consistently in one direction from the true population value.
+  \item[Bimodal] A distribution displaying two prominent distinct peaks or local maxima.
+  \item[Binomial Distribution] The probability distribution of the number of successes $k$ in $n$ independent trials, each with constant success probability $p$.
+  \item[BINS Checklist] The four requirements for a binomial setting: Binary outcomes, Independent trials, Number of trials fixed, Same probability of success.
+  \item[BITS Checklist] The four requirements for a geometric setting: Binary outcomes, Independent trials, Trials continue until first success, Same probability of success.
+  \item[Blinding] An experimental control procedure where subjects (single-blind) or both subjects and evaluators (double-blind) do not know which treatment is assigned.
+  \item[Blocking] The grouping of experimental units into homogeneous subsets based on a known extraneous source of variability prior to random assignment of treatments.
+  \item[Boxplot] A visual display representing the five-number summary (Min, $Q_1$, Median, $Q_3$, Max) of a quantitative dataset.
+  \item[Categorical Variable] A variable that places an individual into one of several non-numerical categories or qualitative groups.
+  \item[Census] An exhaustive study that attempts to collect data from every single member of an entire population.
+  \item[Central Limit Theorem (CLT)] The theorem stating that for any population with finite mean and variance, the sampling distribution of the sample mean $\bar{x}$ becomes approximately normal as sample size $n \ge 30$.
+  \item[Chi-Square Distribution] A family of right-skewed, strictly positive continuous distributions parameterized by degrees of freedom, used for testing categorical counts and variances.
+  \item[Chi-Square Goodness-of-Fit Test] A significance test evaluating whether a single categorical sample conforms to a hypothesized population distribution across $k$ categories ($df = k - 1$).
+  \item[Chi-Square Test for Homogeneity] A test evaluating whether the distribution of a single categorical variable is identical across two or more independent populations or treatment groups.
+  \item[Chi-Square Test for Independence] A test evaluating whether two categorical variables measured on a single sample from one population are statistically independent.
+  \item[Cluster Sampling] A probability sampling design where the population is partitioned into heterogeneous geographic clusters, a random sample of clusters is chosen, and all units in selected clusters are observed.
+  \item[Coefficient of Determination ($r^2$)] The fraction of total variation in the response variable $y$ that is explained by the linear relationship with explanatory variable $x$.
+  \item[Complement Rule] The probability that an event $A$ does not occur is $P(A^c) = 1 - P(A)$.
+  \item[Completely Randomized Design] An experimental design where all experimental units are allocated among all treatment groups purely through a chance mechanism.
+  \item[Conditional Probability] The probability of an event $A$ occurring given that another event $B$ is already known to have occurred: $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$.
+  \item[Confidence Interval] An interval of plausible values for an unknown population parameter, computed from sample data in the form $\text{Estimate} \pm \text{Margin of Error}$.
+  \item[Confidence Level ($C$)] The success rate of the estimation method: the percentage of all possible samples of size $n$ that produce intervals containing the true parameter.
+  \item[Confounding Variable] An extraneous variable that is associated with the explanatory variable and also influences the response variable, obscuring whether the treatment caused the observed outcome.
+  \item[Continuous Quantitative Variable] A numerical variable that can take on any real value within a continuous interval (e.g., height, weight, time, temperature).
+  \item[Control Group] A baseline comparison group in an experiment that receives an inactive placebo, standard treatment, or no treatment at all.
+  \item[Convenience Sampling] A non-probability sampling method that selects individuals who are easiest to reach, introducing substantial sampling bias.
+  \item[Correlation Coefficient ($r$)] A numerical measure between $-1$ and $+1$ of the strength and direction of a linear relationship between two quantitative variables.
+  \item[Critical Value] The number of standard errors separating the parameter from the boundary of the rejection region in a hypothesis test or confidence interval ($z^*, t^*, \chi^*$).
+  \item[CUSS Framework] The mandatory AP acronym for describing quantitative distributions: Center, Unusual features, Shape, Spread.
+  \item[Degrees of Freedom ($df$)] The number of independent pieces of information remaining in a statistic after estimating one or more sample parameters.
+  \item[Density Curve] A mathematical curve with total area equal to 1.0 that models the probability distribution of a continuous random variable.
+  \item[Discrete Quantitative Variable] A numerical variable that can take on only isolated, countable values (typically integers, e.g., number of siblings, defects).
+  \item[Disjoint Events] Events that have no outcomes in common and cannot occur simultaneously: $P(A \cap B) = 0$. Also called mutually exclusive.
+  \item[Dotplot] A simple graphical display where each data value is represented as a dot plotted above its numerical coordinate on an axis.
+  \item[Double-Blind] An experimental protocol where neither the participating subjects nor the clinical evaluators know which treatment each subject is receiving.
+  \item[Empirical Rule (68-95-99.7)] For normal distributions, approximately 68\% of values lie within $\mu \pm \sigma$, 95\% within $\mu \pm 2\sigma$, and 99.7\% within $\mu \pm 3\sigma$.
+  \item[Expected Value ($E(X)$)] The long-run theoretical weighted average value of a random variable across infinite repeated trials: $\mu_X = \sum x_i P(x_i)$.
+  \item[Experiment] A scientific investigation where researchers deliberately impose specific treatments on experimental units to observe the resulting responses.
+  \item[Explanatory Variable] The independent variable ($x$) that researchers suspect may explain, predict, or cause changes in the response variable.
+  \item[Extrapolation] The hazardous practice of using a regression model to make predictions for $x$-values outside the range of the observed training data.
+  \item[Five-Number Summary] The foundational summary of a quantitative dataset comprising: Minimum, First Quartile ($Q_1$), Median, Third Quartile ($Q_3$), and Maximum.
+  \item[Geometric Distribution] The probability distribution of the number of Bernoulli trials required to achieve the first success ($X \sim \text{Geom}(p)$).
+  \item[Histogram] A bar-like display for continuous quantitative data where the horizontal axis is divided into contiguous equal-width class intervals and bar heights represent frequencies.
+  \item[Independence (Events)] Events $A$ and $B$ are independent if $P(A \mid B) = P(A)$ or $P(A \cap B) = P(A)P(B)$.
+  \item[Influential Point] A data point in regression that substantially alters the slope, intercept, or correlation coefficient when removed.
+  \item[Interquartile Range (IQR)] The distance between the upper and lower quartiles ($Q_3 - Q_1$), capturing the spread of the central 50\% of the data.
+  \item[Law of Large Numbers] As the number of repetitions of a chance experiment increases, the empirical relative frequency of an event approaches its theoretical probability.
+  \item[Least-Squares Regression Line (LSRL)] The unique line that minimizes the sum of squared vertical residuals: $\min \sum (y_i - \hat{y}_i)^2$.
+  \item[Leverage] A measure of how far an observation's explanatory variable value ($x$) lies from the mean $\bar{x}$; high-leverage points have great potential to steer the regression line.
+  \item[Linear Transformation] Converting a variable by multiplying by a constant and/or adding a constant: $Y = a + bX$.
+  \item[LINER Conditions] The five conditions required for linear regression inference: Linear, Independent, Normal residuals, Equal variance, Random sampling.
+  \item[Margin of Error] The half-width of a confidence interval representing the maximum expected sampling error: $\text{ME} = (\text{Critical Value}) \times (\text{SE})$.
+  \item[Matched Pairs Design] A randomized block experiment where subjects are paired in sets of two based on common characteristics, or each subject receives both treatments in random order.
+  \item[Mean ($\bar{x}$)] The arithmetic average of a dataset, calculated as the sum of all values divided by the total count $n$; non-resistant to outliers.
+  \item[Median ($M$)] The middle value of an ordered dataset that divides the upper 50\% of observations from the lower 50\%; resistant to outliers.
+  \item[Nonresponse Bias] Bias introduced when individuals selected for a sample fail or refuse to provide responses, leading to systematic nonresponse errors.
+  \item[Normal Distribution] A continuous symmetric, unimodal probability distribution completely specified by its mean $\mu$ and standard deviation $\sigma$ ($N(\mu, \sigma)$).
+  \item[Null Hypothesis ($H_0$)] The skeptical baseline statement asserting that no difference, no effect, or no relationship exists in the population.
+  \item[Observational Study] A study in which researchers observe individuals and record variables without attempting to influence or manipulate responses.
+  \item[One-Sided Test] A hypothesis test where the alternative hypothesis specifies a directional effect ($H_a: \theta > \theta_0$ or $H_a: \theta < \theta_0$).
+  \item[Outlier] An extreme observation that lies significantly outside the general pattern of the data; quantitatively identified by the $1.5 \times \text{IQR}$ rule.
+  \item[$p$-Value] The probability, assuming the null hypothesis is true, of observing a test statistic as extreme as or more extreme than the observed sample value.
+  \item[Paired $t$-Test] A one-sample $t$-test conducted on the list of differences between matched pairs of quantitative measurements.
+  \item[PANIC Framework] The standard AP rubric for constructing confidence intervals: Parameter, Assumptions/Conditions, Name test, Interval, Conclusion.
+  \item[Parameter] A fixed numerical characteristic of an entire population (e.g., $\mu, \sigma, p, \beta$), typically unknown.
+  \item[PHANTOM Framework] The standard AP rubric for hypothesis tests: Parameter, Hypotheses, Assumptions, Name test, Test statistic, Obtain $p$-value, Make decision.
+  \item[Placebo] An inert, harmless dummy treatment designed to mimic the active experimental intervention without pharmacological effect.
+  \item[Placebo Effect] The well-documented psychological phenomenon where patients experience genuine perceived improvement simply from believing they are receiving treatment.
+  \item[Point Estimate] A single numerical statistic computed from sample data that serves as the best guess for an unknown population parameter.
+  \item[Power ($1 - \beta$)] The probability that a significance test will correctly reject a false null hypothesis at a chosen significance level $\alpha$.
+  \item[Quartiles] The values that partition an ordered dataset into four quarters: $Q_1$ ($25^{\text{th}}$ percentile) and $Q_3$ ($75^{\text{th}}$ percentile).
+  \item[Random Assignment] The allocation of experimental units to treatments purely by chance, creating comparable treatment groups and permitting causal inference.
+  \item[Random Sampling] Selecting individuals from a population by chance, giving each unit a known non-zero probability of inclusion, permitting generalization.
+  \item[Random Variable] A numerical variable whose values are determined by the outcomes of a random phenomenon.
+  \item[Range] The difference between the maximum and minimum values in a dataset ($\text{Max} - \text{Min}$); highly non-resistant to outliers.
+  \item[Replication] The practice of assigning each treatment to many experimental units to ensure that effects can be distinguished from chance variation.
+  \item[Residual] The vertical difference between an observed data value and the value predicted by the regression equation: $e = y - \hat{y}$.
+  \item[Residual Plot] A scatterplot of residuals plotted on the vertical axis against the explanatory variable (or predicted values) on the horizontal axis.
+  \item[Resistant Measure] A numerical summary statistic (such as median or IQR) that is not substantially affected by extreme outliers or skewness.
+  \item[Response Bias] Systematic error caused by misleading question wording, interviewer appearance, or dishonest answers to sensitive questions.
+  \item[Response Variable] The dependent outcome variable ($y$) whose values researchers seek to measure, predict, or explain.
+  \item[Sample] A representative subset of individuals selected from a population to gather information.
+  \item[Sampling Distribution] The probability distribution of values taken by a sample statistic across all possible random samples of the same size $n$ from the population.
+  \item[Sampling Variability] The natural variation observed in statistics from one random sample to another.
+  \item[Scatterplot] A two-dimensional Cartesian graph plotting pairs of quantitative observations $(x, y)$ to display association patterns.
+  \item[Significance Level ($\alpha$)] The predetermined probability cutoff used as the standard for rejecting $H_0$.
+  \item[Simple Random Sample (SRS)] A sampling design where every subset of $n$ individuals from the population has an equal chance of being selected.
+  \item[Skewed Left] A distribution whose left tail extends farther than its right tail; typically $\text{Mean} < \text{Median}$.
+  \item[Skewed Right] A distribution whose right tail extends farther than its left tail; typically $\text{Mean} > \text{Median}$.
+  \item[Slope ($b_1$)] The rate of change in the predicted response variable for each one-unit increase in the explanatory variable: $b_1 = r\left(\frac{s_y}{s_x}\right)$.
+  \item[Standard Deviation ($s_x$)] The square root of sample variance, measuring the typical distance that observations deviate from the mean.
+  \item[Standard Error (SE)] An estimate of the standard deviation of a statistic's sampling distribution based on sample data.
+  \item[Standard Normal Distribution] The unique normal distribution with mean $\mu = 0$ and standard deviation $\sigma = 1$, denoted $Z \sim N(0, 1)$.
+  \item[Statistic] A numerical measure calculated from sample data (e.g., $\bar{x}, s_x, \hat{p}, b_1$), used to estimate population parameters.
+  \item[Stemplot] A graphical display where each observation is separated into a stem (leading digits) and a leaf (final digit).
+  \item[Stratified Random Sampling] A sampling method where the population is divided into homogeneous strata and an SRS is drawn from within each stratum.
+  \item[Systematic Sampling] A probability sampling method where individuals are selected at regular fixed intervals after a random starting point (every $k^{\text{th}}$ person).
+  \item[$t$-Distribution] A family of symmetric, bell-shaped continuous probability distributions parameterized by degrees of freedom, having heavier tails than the normal curve.
+  \item[Two-Sided Test] A hypothesis test where the alternative hypothesis posits that the parameter differs from the null value in either direction ($H_a: \theta \neq \theta_0$).
+  \item[Type I Error] The error committed by rejecting a true null hypothesis (false positive); probability is $\alpha$.
+  \item[Type II Error] The error committed by failing to reject a false null hypothesis (false negative); probability is $\beta$.
+  \item[Undercoverage Bias] Bias introduced when certain members of the population are systematically omitted from the sampling frame.
+  \item[Unimodal] A distribution displaying exactly one single prominent peak.
+  \item[Variance ($s^2$)] The mean squared deviation of observations from their sample mean; equal to standard deviation squared.
+  \item[Voluntary Response Bias] Bias that occurs when sample individuals self-select themselves by volunteering to participate.
+  \item[$z$-Score] The standardized value indicating how many standard deviations an observation lies above or below the mean: $z = \frac{x - \mu}{\sigma}$.
+\end{description}
+
+% =========================================================================
+% APPENDIX C: TI-84 CE GRAPHING CALCULATOR PLAYBOOK
+% =========================================================================
+\chapter{Appendix C: TI-84 CE Graphing Calculator Master Playbook}
+
+\section{Essential Calculator Setups \& Data Management}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Diagnostic Mode Setup:}
+  Press \texttt{[2nd] [0]} (CATALOG) $\to$ Scroll to \texttt{DiagnosticOn} $\to$ Press \texttt{[ENTER]} twice. Ensures $r$ and $r^2$ are displayed when computing linear regressions.
+  \item \textbf{Data Entry into Lists:}
+  Press \texttt{[STAT]} $\to$ Select \texttt{1:Edit...} $\to$ Type values into \texttt{L1}, \texttt{L2}, etc. To clear a list, highlight the list name at the top, press \texttt{[CLEAR]}, then press \texttt{[ENTER]}.
+  \item \textbf{One-Variable Statistics:}
+  Press \texttt{[STAT]} $\to$ Arrow right to \texttt{CALC} $\to$ Select \texttt{1:1-Var Stats}. Set \texttt{List: L1}, leave \texttt{FreqList} blank (unless using frequency table) $\to$ \texttt{Calculate}. Displays $\bar{x}, \sum x, s_x, \sigma_x, n, \text{Min}, Q_1, \text{Med}, Q_3, \text{Max}$.
+\end{itemize}
+
+\section{Two-Variable Regression Procedures}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Scatterplot Configuration:}
+  Press \texttt{[2nd] [Y=]} (STAT PLOT) $\to$ Select \texttt{1:Plot1} $\to$ Turn \texttt{On}. Choose the first icon (Scatterplot). Set \texttt{Xlist: L1}, \texttt{Ylist: L2}. Press \texttt{[ZOOM] [9]} (ZoomStat) to automatically auto-scale the viewing window.
+  \item \textbf{Least-Squares Regression Line:}
+  Press \texttt{[STAT]} $\to$ Arrow to \texttt{CALC} $\to$ Select \texttt{8:LinReg(a+bx)}. Set \texttt{Xlist: L1}, \texttt{Ylist: L2}. To automatically store the regression equation in $Y_1$, set \texttt{Store RegEQ: Y1} (press \texttt{[VARS]} $\to$ \texttt{Y-VARS} $\to$ \texttt{1:Function} $\to$ \texttt{1:Y1}).
+  \item \textbf{Residual Plot Generation:}
+  After computing regression, the calculator automatically populates list \texttt{RESID}. Press \texttt{[2nd] [Y=]} $\to$ Select \texttt{Plot1} $\to$ Change \texttt{Ylist} to \texttt{RESID} (press \texttt{[2nd] [STAT]} (LIST) $\to$ Select \texttt{RESID}). Press \texttt{[ZOOM] [9]}.
+\end{itemize}
+
+\section{Probability \& Distribution Functions}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Normal Curve Area (\texttt{normalcdf}):}
+  Press \texttt{[2nd] [VARS]} (DISTR) $\to$ Select \texttt{2:normalcdf}. Syntax: \texttt{normalcdf(lower, upper, $\mu$, $\sigma$)}. For standard normal, default $\mu = 0, \sigma = 1$. Use $-10^{99}$ (\texttt{-1E99}) for $-\infty$ and $10^{99}$ (\texttt{1E99}) for $+\infty$.
+  \item \textbf{Inverse Normal Values (\texttt{invNorm}):}
+  Press \texttt{[2nd] [VARS]} $\to$ Select \texttt{3:invNorm}. Syntax: \texttt{invNorm(area, $\mu$, $\sigma$)}. Finds the value $x$ having the specified cumulative area to its left.
+  \item \textbf{Student's $t$ Distribution (\texttt{tcdf} \& \texttt{invT}):}
+  \texttt{tcdf(lower, upper, df)} computes area under $t$-curve. \texttt{invT(area, df)} finds the critical value $t^*$ for a given left-tail area and degrees of freedom.
+  \item \textbf{Binomial Probability Functions:}
+  \begin{itemize}
+    \item \texttt{binompdf(n, p, k)}: Computes exact probability of $k$ successes, $P(X = k)$.
+    \item \texttt{binomcdf(n, p, k)}: Computes cumulative probability of up to $k$ successes, $P(X \le k)$.
+  \end{itemize}
+  \item \textbf{Geometric Probability Functions:}
+  \begin{itemize}
+    \item \texttt{geometpdf(p, k)}: Probability that the first success occurs exactly on trial $k$, $P(X = k)$.
+    \item \texttt{geometcdf(p, k)}: Cumulative probability of first success on or before trial $k$, $P(X \le k)$.
+  \end{itemize}
+\end{itemize}
+
+\section{Statistical Inference Tests \& Confidence Intervals}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Proportion Inference:}
+  \begin{itemize}
+    \item \textit{One-Proportion $z$-Test:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{5:1-PropZTest}. Enter $p_0, x, n$, choose alternative, \texttt{Calculate}.
+    \item \textit{One-Proportion $z$-Interval:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{A:1-PropZInt}. Enter $x, n, C\text{-Level}$.
+    \item \textit{Two-Proportion $z$-Test:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{6:2-PropZTest}.
+    \item \textit{Two-Proportion $z$-Interval:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{B:2-PropZInt}.
+  \end{itemize}
+  \item \textbf{Mean Inference:}
+  \begin{itemize}
+    \item \textit{One-Sample $t$-Test:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{2:T-Test}.
+    \item \textit{One-Sample $t$-Interval:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{8:TInterval}.
+    \item \textit{Two-Sample $t$-Test:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{4:2-SampTTest}. Always select \texttt{Pooled: NO} for AP Statistics.
+    \item \textit{Two-Sample $t$-Interval:} \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{0:2-SampTInt}. Always select \texttt{Pooled: NO}.
+  \end{itemize}
+  \item \textbf{Chi-Square Tests:}
+  \begin{itemize}
+    \item \textit{Goodness-of-Fit Test:} Enter observed in \texttt{L1}, expected in \texttt{L2}. Press \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{D:$\chi^2$GOF-Test}. Set $df = k - 1$.
+    \item \textit{Two-Way Table Test:} Enter observed matrix in \texttt{[2nd] [$\mathbf{x^{-1}}$]} (MATRIX) $\to$ \texttt{[A]}. Press \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{C:$\chi^2$-Test}. Expected counts are automatically calculated and stored in \texttt{[B]}.
+  \end{itemize}
+  \item \textbf{Regression Inference:}
+  Press \texttt{[STAT]} $\to$ \texttt{TESTS} $\to$ \texttt{F:LinRegTTest}. Enter \texttt{Xlist: L1}, \texttt{Ylist: L2}, choose alternative ($\beta \neq 0$), \texttt{Calculate}. Outputs $t$-statistic, $p$-value, $df = n - 2, a, b, s, r^2, r$.
+\end{itemize}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introductory Statistics College Mastery Portal | Interactive Student Suite</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .intro-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0284c7 100%);
+      color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .intro-banner h1 { font-size: 2.2rem; margin-bottom: 10px; color: #38bdf8; }
+    .intro-banner p { font-size: 1.1rem; color: #cbd5e1; max-width: 850px; line-height: 1.6; }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .book-card {
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .book-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(2,132,199,0.15);
+    }
+    .badge-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .tag-book1 { background: rgba(2,132,199,0.15); color: #0284c7; }
+    .tag-book2 { background: rgba(245,158,11,0.15); color: #d97706; }
+    .tag-book3 { background: rgba(16,185,129,0.15); color: #059669; }
+    .formula-pill {
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      margin: 2px 4px 2px 0;
+      color: #0f172a;
+    }
+    .decision-step {
+      background: var(--card-bg, #ffffff);
+      border-left: 4px solid #0284c7;
+      padding: 15px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span>📈 Introductory Statistics College Mastery</span>
+        <span class="logo-badge">2027 COMPREHENSIVE</span>
+      </a>
+      <div style="display:flex; gap:14px; align-items:center;">
+        <a href="index.html" style="color:var(--text-color); text-decoration:none; font-size:0.9rem; font-weight:600;">📊 AP® Statistics</a>
+        <a href="calculus.html" style="color:var(--text-color); text-decoration:none; font-size:0.9rem; font-weight:600;">∫dx AP® Calculus</a>
+        <a href="practice-exams.html" style="color:#0284c7; text-decoration:none; font-size:0.95rem; font-weight:700; background:rgba(2,132,199,0.1); padding:6px 12px; border-radius:6px;">🎯 Practice Exams</a>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container" style="margin-top: 25px;">
+    <div class="intro-banner">
+      <h1>Introductory Statistics Digital Learning Suite</h1>
+      <p>Official open web companion for undergraduate college students, AP Statistics students, and instructors. Includes interactive decision trees, formula calculators, software output interpreters (R, Python, Excel), and exam practice modules.</p>
+    </div>
+
+    <!-- 3 Books Overview -->
+    <section>
+      <h2 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px;">📚 The 3-Volume College Mastery Series</h2>
+      <p style="color: #64748b; margin-bottom: 20px;">Complete 300–500 page textbooks and workbooks engineered for semester-long course mastery and top exam performance.</p>
+
+      <div class="series-grid">
+        <!-- Book 1 -->
+        <div class="book-card">
+          <span class="badge-tag tag-book1">Book 1: Foundations</span>
+          <h3 style="margin-top:0; color:#0f172a; font-size:1.25rem;">Foundations, Data Analysis & Probability</h3>
+          <p style="font-size:0.95rem; color:#475569; line-height:1.5;">Descriptive statistics, categorical and quantitative data displays, measures of center and variability, classical probability rules, discrete and continuous random variables, normal distributions, and Central Limit Theorem.</p>
+          <hr style="border:0; border-top:1px solid #e2e8f0; margin:15px 0;">
+          <p style="font-size:0.85rem; color:#64748b;"><b>Specs:</b> 304 Pages | 6"x9" Trim | 5 3D Cover Designs | Full A+ Content</p>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card">
+          <span class="badge-tag tag-book2">Book 2: Inference</span>
+          <h3 style="margin-top:0; color:#0f172a; font-size:1.25rem;">Statistical Inference & Hypothesis Testing</h3>
+          <p style="font-size:0.95rem; color:#475569; line-height:1.5;">Estimation theory, single-sample and two-sample confidence intervals and hypothesis tests for means (t-tests, z-tests) and proportions, paired comparisons, Chi-Square tests, One-Way ANOVA, and Linear Regression analysis.</p>
+          <hr style="border:0; border-top:1px solid #e2e8f0; margin:15px 0;">
+          <p style="font-size:0.85rem; color:#64748b;"><b>Specs:</b> 304 Pages | 6"x9" Trim | 5 3D Cover Designs | Full A+ Content</p>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card">
+          <span class="badge-tag tag-book3">Book 3: Workbook</span>
+          <h3 style="margin-top:0; color:#0f172a; font-size:1.25rem;">Comprehensive Practice Workbook</h3>
+          <p style="font-size:0.95rem; color:#475569; line-height:1.5;">Over 600+ solved drills, diagnostic conceptual quizzes, 4 full-length university midterm and final exam simulators with line-by-line worked solutions, and software output decoders (R, Python, Excel, TI-84).</p>
+          <hr style="border:0; border-top:1px solid #e2e8f0; margin:15px 0;">
+          <p style="font-size:0.85rem; color:#64748b;"><b>Specs:</b> 709 Pages | 6"x9" Trim | 5 3D Cover Designs | Full A+ Content</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Inference Decision Tool -->
+    <section style="margin-top: 40px;" class="card">
+      <h2>🧭 College Inference Test Decision Engine</h2>
+      <p style="color: #64748b;">Select your research study characteristics below to determine the appropriate statistical test and verification conditions:</p>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:15px; margin: 20px 0;">
+        <div>
+          <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:5px;">Variable Type Analyzed:</label>
+          <select id="varType" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1;">
+            <option value="mean">Quantitative (Means)</option>
+            <option value="prop">Categorical (Proportions / Frequencies)</option>
+            <option value="assoc">Relationship / Association</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:5px;">Number of Samples / Groups:</label>
+          <select id="sampleCount" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1;">
+            <option value="1">1 Sample</option>
+            <option value="2_ind">2 Independent Samples</option>
+            <option value="2_pair">2 Paired / Dependent Samples</option>
+            <option value="3plus">3 or More Groups</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-weight:600; font-size:0.9rem; display:block; margin-bottom:5px;">Population Variance (&sigma;):</label>
+          <select id="sigmaKnown" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1;">
+            <option value="unknown">Unknown (Use Sample s)</option>
+            <option value="known">Known (&sigma; given)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="decisionResult" style="margin-top: 15px; padding: 20px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+        <h4 style="margin-top:0; color:#0284c7;" id="testName">One-Sample Student's t-Test</h4>
+        <p id="testDesc" style="color:#334155; margin-bottom:10px;">Used to compare a single sample mean x-bar against a hypothesized population value &mu;0 when &sigma; is unknown.</p>
+        <div id="testFormulas">
+          <span class="formula-pill">t = (x-bar - &mu;0) / (s / &radic;n)</span>
+          <span class="formula-pill">df = n - 1</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Formula Vault -->
+    <section style="margin-top: 35px;" class="card">
+      <h2>⚡ Rapid Formula & Parameter Vault</h2>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:15px; margin-top:15px;">
+        <div class="decision-step">
+          <strong style="color:#0284c7;">Sample Mean & Standard Deviation</strong>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">x-bar = &sum; x / n</p>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">s = &radic;[ &sum; (x - x-bar)&sup2; / (n - 1) ]</p>
+        </div>
+        <div class="decision-step">
+          <strong style="color:#0284c7;">Standard Normal Z-Score</strong>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">z = (x - &mu;) / &sigma;</p>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">z = (x-bar - &mu;) / (&sigma; / &radic;n)</p>
+        </div>
+        <div class="decision-step">
+          <strong style="color:#0284c7;">Confidence Interval for Mean (&sigma; Unknown)</strong>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">CI = x-bar &plusmn; t* &middot; (s / &radic;n)</p>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">df = n - 1</p>
+        </div>
+        <div class="decision-step">
+          <strong style="color:#0284c7;">Chi-Square Test Statistic</strong>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">&chi;&sup2; = &sum; [ (O - E)&sup2; / E ]</p>
+          <p style="margin:6px 0; font-family:monospace; font-size:0.9rem;">E = (Row Total &times; Col Total) / Grand Total</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legal & Nominative Fair Use -->
+    <footer style="margin-top: 50px; padding: 25px 0; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 0.85rem; text-align: center;">
+      <p><b>Introductory Statistics College Mastery Series</b> &mdash; Independent educational and open courseware initiative.</p>
+      <p>Nominative Fair Use Disclaimer: All third-party trademarks, software names (R, Python, Excel, SPSS, TI-84 Plus), and textbook titles mentioned are used solely for identification, descriptive, and educational purposes. No sponsorship or endorsement is implied.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn?.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      themeBtn.textContent = newTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
+    // Inference test selector
+    const varType = document.getElementById('varType');
+    const sampleCount = document.getElementById('sampleCount');
+    const sigmaKnown = document.getElementById('sigmaKnown');
+    const testName = document.getElementById('testName');
+    const testDesc = document.getElementById('testDesc');
+    const testFormulas = document.getElementById('testFormulas');
+
+    function updateInference() {
+      const v = varType.value;
+      const s = sampleCount.value;
+      const sig = sigmaKnown.value;
+
+      if (v === 'mean') {
+        if (s === '1') {
+          if (sig === 'known') {
+            testName.textContent = "One-Sample Z-Test for Population Mean";
+            testDesc.textContent = "Applicable when evaluating a hypothesized mean and population standard deviation is known.";
+            testFormulas.innerHTML = '<span class="formula-pill">z = (x-bar - &mu;0) / (&sigma; / &radic;n)</span>';
+          } else {
+            testName.textContent = "One-Sample t-Test for Population Mean";
+            testDesc.textContent = "Standard test for examining a hypothesized mean when population standard deviation is unknown.";
+            testFormulas.innerHTML = '<span class="formula-pill">t = (x-bar - &mu;0) / (s / &radic;n)</span><span class="formula-pill">df = n - 1</span>';
+          }
+        } else if (s === '2_ind') {
+          testName.textContent = "Two-Sample Independent t-Test";
+          testDesc.textContent = "Compares means between two independent groups (Welch\'s t-test or pooled t-test).";
+          testFormulas.innerHTML = '<span class="formula-pill">t = (x-bar1 - x-bar2) / &radic;(s1&sup2;/n1 + s2&sup2;/n2)</span>';
+        } else if (s === '2_pair') {
+          testName.textContent = "Paired Samples t-Test (Dependent Samples)";
+          testDesc.textContent = "Analyzes mean differences for matched pairs or pre-test/post-test designs.";
+          testFormulas.innerHTML = '<span class="formula-pill">t = (d-bar - 0) / (sd / &radic;n)</span><span class="formula-pill">df = n - 1</span>';
+        } else {
+          testName.textContent = "One-Way Analysis of Variance (ANOVA)";
+          testDesc.textContent = "Tests for differences among 3 or more independent group means by comparing between-group and within-group variance.";
+          testFormulas.innerHTML = '<span class="formula-pill">F = MS_Between / MS_Within</span><span class="formula-pill">df1 = k - 1, df2 = N - k</span>';
+        }
+      } else if (v === 'prop') {
+        if (s === '1') {
+          testName.textContent = "One-Sample Z-Test for Proportion";
+          testDesc.textContent = "Evaluates whether a single population proportion differs from a null value p0.";
+          testFormulas.innerHTML = '<span class="formula-pill">z = (p-hat - p0) / &radic;[p0(1-p0)/n]</span>';
+        } else if (s === '2_ind') {
+          testName.textContent = "Two-Sample Z-Test for Proportions";
+          testDesc.textContent = "Compares success proportions between two independent groups using pooled proportion.";
+          testFormulas.innerHTML = '<span class="formula-pill">z = (p-hat1 - p-hat2) / &radic;[pc(1-pc)(1/n1 + 1/n2)]</span>';
+        } else {
+          testName.textContent = "Chi-Square Goodness-of-Fit / Homogeneity";
+          testDesc.textContent = "Assesses categorical distribution fits or compares multinomial distributions across groups.";
+          testFormulas.innerHTML = '<span class="formula-pill">&chi;&sup2; = &sum; [ (O - E)&sup2; / E ]</span>';
+        }
+      } else {
+        testName.textContent = "Simple Linear Regression & Correlation";
+        testDesc.textContent = "Models the linear relationship between two continuous variables and tests slope beta1.";
+        testFormulas.innerHTML = '<span class="formula-pill">y-hat = b0 + b1 &middot; x</span><span class="formula-pill">t = (b1 - 0) / SE_b1</span><span class="formula-pill">df = n - 2</span>';
+      }
+    }
+
+    varType.addEventListener('change', updateInference);
+    sampleCount.addEventListener('change', updateInference);
+    sigmaKnown.addEventListener('change', updateInference);
+  </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+﻿% =========================================================================
+% UNIT 3: COLLECTING DATA
+% =========================================================================
+\chapter{Unit 3: Collecting Data}
+
+\section{Unit Overview \& Exam Weight}
+Unit 3 represents \textbf{12\% to 15\%} of the AP Statistics Exam. It is heavily tested on both the Multiple-Choice section and Section II Free-Response Questions. This unit focuses on the foundational rules of statistical data collection: distinguishing between sampling methods, diagnosing bias, structuring valid experiments, and establishing the exact scope of statistical inference.
+
+\subsection*{Key Unit Vocabulary}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Population:] The entire group of individuals about which we desire information.
+  \item[Sample:] A subset of individuals selected from the population, used to collect data.
+  \item[Census:] An attempt to collect data from every individual in the entire population.
+  \item[Observational Study:] Observes individuals and measures variables of interest without attempting to influence responses. Can demonstrate association, but \textbf{CANNOT establish causation}!
+  \item[Experiment:] Deliberately imposes treatments on experimental units to observe responses. A properly designed randomized experiment is the \textbf{ONLY} valid method to establish cause-and-effect!
+  \item[Confounding:] Occurs when two variables are associated in such a way that their separate effects on a response variable cannot be distinguished.
+  \item[Simple Random Sample (SRS):] A sample of size $n$ chosen in such a way that every group of $n$ individuals in the population has an equal chance of being selected.
+  \item[Stratified Random Sample:] Dividing the population into homogeneous groups (strata) of similar characteristics, then taking a separate SRS within every stratum.
+  \item[Cluster Sample:] Dividing the population into heterogeneous, naturally occurring groups (clusters), selecting a random sample of whole clusters, and surveying all members within selected clusters.
+  \item[Random Assignment:] Using chance to assign experimental units to treatment groups, balancing the effects of unmeasured confounding variables across all groups.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 3.1: Probability Sampling Methods]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Simple Random Sample (SRS):} The gold standard. Assign each individual in the sampling frame a distinct integer from 1 to $N$. Use a random number generator to select $n$ unique integers without replacement.
+  \item \textbf{Stratified Random Sampling:} \textit{"Some from all."} Form homogeneous strata based on a variable known to influence the response (e.g., gender, grade level). Take an SRS from each stratum and combine them. Reduces sampling variability!
+  \item \textbf{Cluster Sampling:} \textit{"All from some."} Form heterogeneous clusters that mimic the overall population (e.g., homerooms, city blocks). Randomly select entire clusters and survey every individual within selected clusters. Highly cost-effective and logistically practical.
+  \item \textbf{Systematic Sampling:} Select every $k^{\text{th}}$ individual from an ordered list after a random starting point between 1 and $k$.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 3.2: Diagnosing Sampling Bias \& Pitfalls]
+\textbf{Bias} occurs when a sampling design consistently favors certain outcomes:
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Convenience Sampling:} Choosing individuals who are easiest to reach (e.g., mall intercepts). Severely unrepresentative.
+  \item \textbf{Voluntary Response Bias:} Allowing individuals to choose whether to participate (e.g., online polls, call-in shows). Over-represents individuals with strong, typically negative opinions!
+  \item \textbf{Undercoverage:} Occurs when some groups in the population are left out of the process of choosing the sample (e.g., telephone surveys omitting people without phones).
+  \item \textbf{Nonresponse Bias:} Occurs when a selected individual cannot be contacted or refuses to participate. Note: Nonresponse is NOT the same as voluntary response!
+  \item \textbf{Response Bias / Wording of Questions:} Misleading, confusing, or leading questions that influence respondents to answer untruthfully.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 3.3: The 4 Principles of Experimental Design]
+Every well-designed randomized experiment must incorporate:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Comparison:} Compare two or more treatments to prevent confounding from external temporal factors.
+  \item \textbf{Random Assignment:} Use chance process to assign experimental units to treatments. This creates roughly equivalent groups by balancing lurking variables.
+  \item \textbf{Replication:} Apply each treatment to a sufficient number of experimental units so differences in response can be distinguished from chance variation.
+  \item \textbf{Control:} Keep other external variables identical for all groups to prevent confounding.
+\end{enumerate}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 3.4: Experimental Design Frameworks]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Completely Randomized Design:} All experimental units are assigned to treatment groups strictly by chance.
+  \item \textbf{Randomized Block Design:} Form blocks of units known to be similar with respect to a variable expected to affect response (e.g., age group). Within each block, randomly assign units to treatments. \textit{"Block what you can control, randomize what you cannot!"}
+  \item \textbf{Matched Pairs Design:} A specialized block design comparing two treatments. Either each subject receives both treatments in random order (serving as their own control), or subjects are paired based on a matching characteristic and randomly assigned to separate treatments.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 3.5: Placebos, Blinding, \& The Placebo Effect]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Placebo:} A dummy or sham treatment that has no active therapeutic ingredient, used to control for psychological response.
+  \item \textbf{Placebo Effect:} The measurable psychological response of a patient to a dummy treatment.
+  \item \textbf{Single-Blind:} Either the subjects OR the evaluators measuring response do not know which treatment was administered.
+  \item \textbf{Double-Blind:} Neither the subjects NOR the medical personnel interacting with and evaluating them know which treatment was assigned.
+\end{itemize}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 3.6: The Scope of Statistical Inference Matrix]
+This $2 \times 2$ grid is tested on almost every AP Statistics exam:
+\begin{center}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{|l|c|c|}
+\hline
+& \textbf{Were Individuals Randomly Assigned?} & \textbf{No Random Assignment?} \\
+\hline
+\textbf{Random Selection?} & Inference about \textbf{Population} AND \textbf{Causation} & Inference about \textbf{Population} only (NO Causation) \\
+\hline
+\textbf{No Random Selection?} & Inference about \textbf{Causation} only (NO Population) & \textbf{NO Inference} about Population or Causation! \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\end{center}
+\end{lessonbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 3.1: Designing a Randomized Block Experiment}
+\textbf{Problem:} An agricultural researcher wants to test the effect of three different fertilizers (A, B, and C) on corn yield. The researcher has 18 plots of land available: 9 plots on a sunny hillside and 9 plots in a shady valley.
+(a) Identify the experimental units, factor, levels, and response variable.\\
+(b) Explain why a randomized block design is preferable to a completely randomized design.\\
+(c) Describe how you would carry out the random assignment within blocks.
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} Experimental units: The 18 agricultural plots. Factor: Fertilizer type. Levels: 3 levels (A, B, C). Response variable: Corn yield (e.g., bushels per acre).
+  \item \textbf{Part (b):} Sun exposure and moisture differences between the sunny hillside and shady valley will likely affect corn yield independently of the fertilizer. A randomized block design groups plots into two blocks of 9 plots (Block 1: Hillside, Block 2: Valley), isolating sunlight variation and reducing unexplained variability in yield.
+  \item \textbf{Part (c):} Within the 9 hillside plots, assign each plot an integer from 1 to 9. Use a random number generator to select 3 unique integers without replacement; assign these 3 plots to Fertilizer A. Generate 3 more unique integers from the remaining numbers; assign these to Fertilizer B. Assign the final 3 plots to Fertilizer C. Repeat this exact randomization procedure independently for the 9 valley plots.
+\end{itemize}
+
+\section{TI-84 Plus CE Calculator Playbook}
+
+\begin{calculatorbox}[TI-84 Playbook: Random Number Simulation (randIntNoRep)]
+\begin{enumerate}[leftmargin=1.2em]
+  \item Press \texttt{[MATH]} $\rightarrow$ Arrow right to \texttt{PRB} (Probability).
+  \item \textbf{For sampling without replacement:} Select \texttt{8:randIntNoRep(}.
+  \item Syntax: \texttt{randIntNoRep(lower, upper, n)}.
+  Example: To select 5 unique students from a roster of 30: \texttt{randIntNoRep(1, 30, 5)}.
+  \item Press \texttt{[ENTER]}. The calculator returns a list of 5 distinct integers with zero repeats!
+\end{enumerate}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item What is the primary purpose of random assignment in an experiment?
+  \begin{enumerate}[label=(\Alph*)]
+    \item To ensure the sample is representative of the entire population.
+    \item To create treatment groups that are roughly equivalent by balancing lurking variables.
+    \item To eliminate the need for a control group.
+    \item To guarantee double-blinding.
+    \item To reduce sample size requirements.
+  \end{enumerate}
+  \textbf{Answer: (B).} Random assignment balances unmeasured confounding variables across treatment groups.
+
+  \item A school principal surveys all students in 5 randomly selected homerooms out of 40 homerooms. What sampling method was used?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Simple Random Sample \item Stratified Random Sample \item Cluster Sample \item Systematic Sample \item Convenience Sample
+  \end{enumerate}
+  \textbf{Answer: (C).} Entire naturally occurring groups (homerooms) were sampled ("all from some").
+
+  \item A researcher selects 50 freshman, 50 sophomores, 50 juniors, and 50 seniors from a high school. This is an example of:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Cluster sampling \item Stratified random sampling \item Systematic sampling \item Simple random sampling \item Voluntary response
+  \end{enumerate}
+  \textbf{Answer: (B).} Homogeneous strata (grade levels) were sampled ("some from all").
+
+  \item Which of the following is required to establish cause-and-effect?
+  \begin{enumerate}[label=(\Alph*)]
+    \item A large observational study \item A high correlation coefficient ($r > 0.95$) \item Random assignment of treatments in a well-designed experiment \item A voluntary response survey \item A stratified random sample
+  \end{enumerate}
+  \textbf{Answer: (C).} Only randomized experiments can prove causation.
+
+  \item An online news site asks readers to vote on whether taxes should be increased. 82\% say "No." This result is most vulnerable to:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Nonresponse bias \item Voluntary response bias \item Undercoverage \item High standard deviation \item Matched pairs bias
+  \end{enumerate}
+  \textbf{Answer: (B).} Self-selected participation over-represents individuals with strong opinions.
+
+  \item In a medical trial, neither the patients nor the examining doctors know who received the real drug versus the placebo. This study is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Completely confounded \item Single-blind \item Double-blind \item Retrospective \item Observational
+  \end{enumerate}
+  \textbf{Answer: (C).} Blinding both subjects and evaluators is double-blind.
+
+  \item What is the main reason for blocking in an experiment?
+  \begin{enumerate}[label=(\Alph*)]
+    \item To reduce variability within treatment groups caused by a known confounding variable.
+    \item To eliminate the need for random assignment.
+    \item To ensure everyone gets the active treatment.
+    \item To increase the number of treatments.
+    \item To eliminate the placebo effect.
+  \end{enumerate}
+  \textbf{Answer: (A).} Blocking controls for known sources of variation, making treatment comparisons clearer.
+
+  \item A survey about gun control is conducted by law enforcement officers in full uniform. The responses are most likely subject to:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Undercoverage \item Nonresponse bias \item Response bias \item Voluntary response bias \item Stratification error
+  \end{enumerate}
+  \textbf{Answer: (C).} The interviewer's presence influences respondents to provide socially desirable answers.
+
+  \item An experiment assigns runners to test two brands of shoes. Each runner wears Brand A on one foot and Brand B on the other, determined by a coin flip. This is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item A completely randomized design \item A matched pairs design \item An observational study \item A stratified design \item A cluster design
+  \end{enumerate}
+  \textbf{Answer: (B).} Subjects act as their own control in a matched pairs design.
+
+  \item If volunteers are used in an experiment that includes random assignment to treatments, what can be concluded from statistically significant results?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Causation for the volunteers, but results cannot be generalized to the broader population.
+    \item Causation for the entire population.
+    \item Association only.
+    \item No valid conclusions can be drawn.
+    \item The experiment was biased.
+  \end{enumerate}
+  \textbf{Answer: (A).} Random assignment permits causal inference, but lack of random selection prevents generalization to the population.
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item Which of the following is an example of undercoverage?
+  \begin{enumerate}[label=(\Alph*)]
+    \item A telephone survey conducted by calling landline numbers during the day.
+    \item People refusing to answer a mail-in survey.
+    \item People lying about their income on an IRS audit.
+    \item An interviewer misreading a survey question.
+    \item Assigning treatments using coin flips.
+  \end{enumerate}
+  \textbf{Answer: (A).} Households without landlines (or adults away at work) are systematically excluded from the sampling frame.
+
+  \item What is the control group's role in an experiment?
+  \begin{enumerate}[label=(\Alph*)]
+    \item To provide a baseline for comparison against the active treatments.
+    \item To double the sample size.
+    \item To eliminate the need for random selection.
+    \item To prevent any placebo effect from occurring.
+    \item To guarantee a positive correlation.
+  \end{enumerate}
+  \textbf{Answer: (A).} Controls isolate whether changes in response are truly caused by the treatment rather than outside variables.
+
+  \item Selecting every $15^{\text{th}}$ customer entering a retail store after a random starting point is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Simple Random Sampling \item Systematic Sampling \item Stratified Sampling \item Cluster Sampling \item Convenience Sampling
+  \end{enumerate}
+  \textbf{Answer: (B).} Defining procedure of systematic sampling.
+
+  \item Why is an observational study incapable of demonstrating cause-and-effect?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Because the sample sizes are too small.
+    \item Because treatments are not deliberately imposed and confounding variables cannot be controlled.
+    \item Because they never use random samples.
+    \item Because observational studies use only categorical variables.
+    \item Because the standard error is too large.
+  \end{enumerate}
+  \textbf{Answer: (B).} Confounding between the explanatory variable and lurking factors prevents causal attribution.
+
+  \item A researcher tests 4 levels of nitrogen and 3 levels of watering frequency on plant growth. How many treatments are in this experiment?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 4 \item 3 \item 7 \item 12 \item 64
+  \end{enumerate}
+  \textbf{Answer: (D).} Treatments equal the product of the factor levels: $4 \times 3 = 12$.
+
+  \item What is the difference between nonresponse bias and voluntary response bias?
+  \begin{enumerate}[label=(\Alph*)]
+    \item In nonresponse, individuals are selected by the researcher but cannot be reached or refuse; in voluntary response, individuals self-select to participate.
+    \item They are identical terms.
+    \item Nonresponse occurs only in experiments.
+    \item Voluntary response occurs only in censuses.
+    \item Nonresponse always produces positive bias.
+  \end{enumerate}
+  \textbf{Answer: (A).} Key distinction frequently tested on the AP exam.
+
+  \item In an experiment evaluating an anti-anxiety drug, subjects receiving the sugar pill report feeling less anxious. This is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Confounding \item The placebo effect \item Response bias \item Observer bias \item Blocking error
+  \end{enumerate}
+  \textbf{Answer: (B).} Psychological improvement resulting from expectation of treatment.
+
+  \item A company wants to survey its 500 employees. Which method guarantees an SRS?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Number employees 1 to 500 and use a random number generator to pick 50 unique numbers.
+    \item Survey the first 50 employees who arrive at the office.
+    \item Pick 10 employees from each of the 5 departments.
+    \item Post a survey link on the company intranet and take the first 50 responses.
+    \item Survey all 50 employees in the marketing department.
+  \end{enumerate}
+  \textbf{Answer: (A).} Every combination of 50 employees has an equal probability of selection.
+
+  \item In an experiment comparing two diets, dogs are grouped by breed into blocks before assigning diets. Why?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Because breed is expected to affect metabolism and weight gain.
+    \item Because breed is the response variable.
+    \item To eliminate the need for replication.
+    \item To make the study double-blind.
+    \item To ensure all dogs lose weight.
+  \end{enumerate}
+  \textbf{Answer: (A).} Blocking reduces within-treatment variation caused by breed differences.
+
+  \item A study concludes that people who drink coffee daily have lower rates of cardiovascular disease. Can we conclude coffee prevents cardiovascular disease?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes, because the sample size was large.
+    \item No, because this was an observational study and other lifestyle factors could confound the relationship.
+    \item Yes, if $r > 0.8$.
+    \item No, because coffee is a categorical variable.
+    \item Yes, if the sample was an SRS.
+  \end{enumerate}
+  \textbf{Answer: (B).} Observational studies show association, not causation.
+\end{enumerate}
+
+\subsection*{Part II: Free-Response Practice Problem}
+
+\begin{workbookbox}[FRQ 3.1: Designing a Valid Medical Experiment]
+\textbf{Problem:} A pharmaceutical firm develops a new medication to reduce migraine duration. 60 adult migraine sufferers (30 men, 30 women) volunteer to participate.
+(a) Describe how you would implement a randomized block design for this study, blocking by gender.\\
+(b) Explain why a placebo and double-blinding should be used in this experiment.
+
+\textbf{Grader-Approved Score-4 Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} Because gender differences in hormone levels may affect migraine duration independently of the drug, gender serves as a blocking variable. Form two blocks: 30 men and 30 women. Within the block of 30 men, assign each subject an integer from 1 to 30. Use a random number generator to select 15 unique integers without replacement; assign these 15 men to the new medication. Assign the remaining 15 men to an identical-looking placebo. Repeat this exact randomization procedure independently for the block of 30 women. Compare the reduction in migraine duration between the treatment and placebo groups within each gender block and overall.
+  \item \textbf{Part (b):} A placebo (inactive pill identical in appearance, taste, and size) is essential to control for the placebo effect, ensuring that measured improvements are attributable to the active chemical compound rather than the psychological expectation of relief. Double-blinding (neither the subjects nor the physicians recording migraine outcomes know who receives the active drug) prevents both patient expectation bias and physician evaluation bias.
+\end{itemize}
+\end{workbookbox}
+
+
+\begin{frqrubricbox}[FRQ 3.2: Matched Pairs vs. Completely Randomized Design with Blocking]
+\textbf{Problem:} An athletic footwear company designs a new synthetic rubber sole material intended to reduce shoe wear. Thirty collegiate cross-country runners volunteer to participate in a 10-week testing trial.
+\begin{enumerate}[label=(\alph*)]
+  \item Describe how you would implement a matched pairs experimental design where each runner wears both sole materials simultaneously (one on the left foot, one on the right foot). Explain the role of randomization in your design.
+  \item Explain the primary statistical advantage of this matched pairs design over a completely randomized design where 15 runners wear only the new sole and 15 runners wear only the standard sole.
+  \item Can the results of this experiment be generalized to all casual weekend joggers? Explain your reasoning.
+\end{enumerate}
+
+\textbf{Grader-Approved Score-4 Solution \& Rubric:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} Number the 30 runners from 01 to 30. For each runner, flip a fair coin: if Heads, the runner wears the new synthetic sole on their left shoe and the standard sole on their right shoe; if Tails, the runner wears the standard sole on their left shoe and the new sole on their right shoe. Randomizing which foot receives which sole controls for natural asymmetry in runner stride, dominant foot wear patterns, and biomechanical imbalances.
+  \item \textbf{Part (b):} The matched pairs design uses each runner as their own control, eliminating between-runner variability (such as runner weight, weekly mileage, running surface, and cadence). This substantially reduces experimental error variance, making it much easier to detect true differences between sole materials.
+  \item \textbf{Part (c):} No. The subjects were collegiate cross-country runners who volunteered. Volunteers are not a random sample, and elite collegiate runners have vastly different biomechanics, speeds, and training volumes compared to casual weekend joggers.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{trapbox}[Unit 3 Top 5 AP Exam Pitfalls to Avoid]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Confusing Random Sampling with Random Assignment:} Random sampling allows generalization to the population; random assignment allows causal inference (cause-and-effect).
+  \item \textbf{Confusing Stratified Sampling with Blocking:} Stratified sampling is a survey technique for observational data; blocking is an experimental design technique.
+  \item \textbf{Thinking Large Samples Eliminate Bias:} A huge sample size cannot overcome voluntary response or undercoverage bias!
+  \item \textbf{Failing to Explain How to Randomize:} On FRQs, always explain the random mechanism (numbering, random number table without replacement, coin flips).
+  \item \textbf{Confusing Confounding with Common Response:} Confounding occurs when the treatment effect cannot be separated from an extraneous variable.
+\end{enumerate}
+\end{trapbox}
+\section{Unit 3 Master Summary}
+\begin{lessonbox}[Unit 3 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Causation vs. Association:} Experiments with random assignment show causation; observational studies show association only.
+  \item \textbf{4 Principles of Experiments:} Comparison, Random Assignment, Replication, Control.
+  \item \textbf{Blocking:} Group by a variable known to affect the response variable before random assignment within blocks.
+  \item \textbf{Scope of Inference:} Random selection $\implies$ generalize to population. Random assignment $\implies$ causal inference.
+\end{itemize}
+\end{lessonbox}
+\clearpage

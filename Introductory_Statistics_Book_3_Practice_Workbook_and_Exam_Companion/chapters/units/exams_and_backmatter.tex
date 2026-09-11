@@ -1,0 +1,596 @@
+% =========================================================================
+% PRACTICE EXAM 1 (2027 EXAM READY DIAGNOSTIC)
+% =========================================================================
+\chapter{Practice Exam 1}
+
+\section*{Exam Overview \& Instructions}
+This authentic practice exam simulates the official 2027 digital AP Statistics Exam.
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Section I:} 42 Multiple-Choice Questions (90 Minutes | 50\% of Total Score).
+  \item \textbf{Section II:} 4 Free-Response Questions (90 Minutes | 50\% of Total Score).
+  \item Calculator active throughout both sections (TI-84 Plus CE or Bluebook Desmos Graphing Calculator). Nongraphing scientific calculators are strictly prohibited. Standard normal, $t$, and $\chi^2$ tables provided in Appendix D.
+\end{itemize}
+
+\section{Section I: Multiple-Choice Questions (Questions 1--42)}
+\begin{enumerate}[leftmargin=1.5em]
+  \item A set of 20 exam scores has $\text{Mean} = 75$ and $\text{SD} = 8$. A score of 91 corresponds to a $z$-score of:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1.50 \item 2.00 \item 2.25 \item 1.75 \item 1.25
+  \end{enumerate}
+
+  \item Which of the following is a categorical variable?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Annual income \item Blood type (A, B, AB, O) \item Systolic blood pressure \item Commute time in minutes \item High school GPA
+  \end{enumerate}
+
+  \item A scatterplot exhibits a strong negative linear association with $r = -0.92$. The coefficient of determination $r^2$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-0.846$ \item 0.846 \item $-0.92$ \item 0.92 \item 0.080
+  \end{enumerate}
+
+  \item In a modified boxplot, the whiskers extend to:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The outlier boundary fences $Q_1 - 1.5(\text{IQR})$ and $Q_3 + 1.5(\text{IQR})$
+    \item The absolute minimum and maximum data values
+    \item The most extreme observations that fall within the boundary fences
+    \item $Q_1$ and $Q_3$
+    \item $\bar{x} \pm 2s$
+  \end{enumerate}
+
+  \item An observational study finds people who take multivitamins have fewer colds. Can we conclude multivitamins prevent colds?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes, if $n > 1000$ \item No, because confounding variables cannot be controlled \item Yes, if $p < 0.05$ \item No, because vitamins are categorical \item Yes, if double-blind
+  \end{enumerate}
+
+  \item If $P(A) = 0.5, P(B) = 0.4,$ and $A$ and $B$ are independent, what is $P(A \cup B)$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.90 \item 0.70 \item 0.20 \item 0.50 \item 0.80
+  \end{enumerate}
+
+  \item A random variable $X \sim B(50, 0.20)$. The mean and standard deviation are:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\mu = 10, \sigma = 2.83$ \item $\mu = 10, \sigma = 8.00$ \item $\mu = 25, \sigma = 5.00$ \item $\mu = 10, \sigma = 2.00$ \item $\mu = 50, \sigma = 10$
+  \end{enumerate}
+
+  \item The Central Limit Theorem applies to which of the following?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The shape of the population \item The shape of a single sample \item The sampling distribution of sample means $\bar{x}$ as $n \ge 30$ \item The sampling distribution of $\hat{p}$ \item The variance of a binomial variable
+  \end{enumerate}
+
+  \item In testing $H_0: p = 0.5$ vs. $H_a: p > 0.5$, a sample gives $z = 2.33$. The $p$-value is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.0198 \item 0.0099 \item 0.9901 \item 0.0500 \item 0.0200
+  \end{enumerate}
+
+  \item A 95\% confidence interval for $\mu$ with $n = 16$ uses which critical value $t^*$ ($df = 15$)?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1.960 \item 2.131 \item 1.753 \item 2.602 \item 2.947
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item Which test evaluates whether categorical proportions are identical across 3 hospital networks?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1-sample $t$-test \item Chi-Square Test for Goodness-of-Fit \item Chi-Square Test for Homogeneity \item Chi-Square Test for Independence \item ANOVA
+  \end{enumerate}
+
+  \item What are the degrees of freedom for a regression $t$-test with $n = 28$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 28 \item 27 \item 26 \item 14 \item 2
+  \end{enumerate}
+
+  \item If the residuals of a model exhibit a curved U-shape, this indicates:
+  \begin{enumerate}[label=(\Alph*)]
+    \item A linear model is inappropriate \item The correlation is positive \item The slope is 0 \item The sample size is too large \item All residuals are zero
+  \end{enumerate}
+
+  \item A fair 6-sided die is rolled until a 4 appears. What is the probability it takes more than 3 rolls?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $(1/6)^3$ \item $(5/6)^3 \approx 0.5787$ \item $1 - (5/6)^3$ \item $3(1/6)$ \item $(5/6)(1/6)^2$
+  \end{enumerate}
+
+  \item When constructing a confidence interval for $p$, which condition justifies assuming independence?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $np \ge 10$ \item $n \le 0.10N$ \item $n \ge 30$ \item $r^2 > 0.8$ \item Double-blinding
+  \end{enumerate}
+
+  \item A 99\% confidence interval for $\mu_1 - \mu_2$ is $(1.2, 5.8)$. Based on this interval:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\mu_1$ is significantly greater than $\mu_2$ at $\alpha = 0.01$ because the entire interval is positive.
+    \item $\mu_1 = \mu_2$.
+    \item $\mu_2 > \mu_1$.
+    \item No conclusion is possible.
+    \item $p\text{-value} > 0.05$.
+  \end{enumerate}
+
+  \item The power of a hypothesis test can be increased by:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Decreasing sample size $n$ \item Decreasing $\alpha$ \item Increasing sample size $n$ \item Making $H_0$ false \item Pooling variances
+  \end{enumerate}
+
+  \item In a completely randomized experiment with 60 subjects and 3 treatments, how many subjects per treatment if balanced?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 10 \item 20 \item 30 \item 60 \item 180
+  \end{enumerate}
+
+  \item A student scores at the $84^{\text{th}}$ percentile on a normal exam with $\mu = 500, \sigma = 100$. The student's score is approximately:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 584 \item 600 \item 650 \item 700 \item 750
+  \end{enumerate}
+
+  \item Which of the following is true about standard deviation $s_x$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item It is resistant to outliers. \item It can be negative. \item It is measured in the same units as the original data. \item It equals the variance. \item It is unaffected by multiplication.
+  \end{enumerate}
+
+  \item The LSRL passes through which point?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $(0, 0)$ \item $(\bar{x}, \bar{y})$ \item $(s_x, s_y)$ \item $(Q_1, Q_3)$ \item $(1, 1)$
+  \end{enumerate}
+
+  \item What type of bias occurs when voluntary callers participate in a radio poll?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Nonresponse bias \item Voluntary response bias \item Stratification bias \item Wording bias \item Randomization bias
+  \end{enumerate}
+
+  \item Two independent events $A$ and $B$ have $P(A) = 0.3$ and $P(B) = 0.7$. What is $P(A \cap B)$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1.00 \item 0.40 \item 0.21 \item 0.50 \item 0.00
+  \end{enumerate}
+
+  \item The $p$-value in a significance test represents:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The probability that $H_0$ is true. \item The probability of obtaining a test statistic as extreme as observed, assuming $H_0$ is true. \item The margin of error. \item The probability of a Type II error. \item The power.
+  \end{enumerate}
+
+  \item In a $2 \times 3$ contingency table, degrees of freedom for Chi-Square test of independence is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 6 \item 5 \item 3 \item 2 \item 1
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item If $s_x = 5, s_y = 10,$ and $r = -0.6$, what is the slope of the regression line?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-1.2$ \item $-0.3$ \item 1.2 \item $-0.6$ \item $-3.0$
+  \end{enumerate}
+
+  \item What is the minimum value for an expected count in a Chi-Square test?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1 \item 5 \item 10 \item 30 \item 50
+  \end{enumerate}
+
+  \item If $\bar{x} = 50, \mu_0 = 45, s = 10, n = 25$, what is the test statistic $t$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1.0 \item 2.5 \item 5.0 \item 0.5 \item 2.0
+  \end{enumerate}
+
+  \item A double-blind experiment prevents which sources of bias?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Both subject expectation bias and evaluator measurement bias \item Nonresponse bias \item Undercoverage \item Extrapolation \item Confounding from weather
+  \end{enumerate}
+
+  \item The sampling distribution of $\hat{p}$ has mean:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\bar{x}$ \item $\mu$ \item $p$ \item $np$ \item $\sqrt{p(1-p)}$
+  \end{enumerate}
+
+  \item If $z = -1.96$, the area to the left under the standard normal curve is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.05 \item 0.025 \item 0.95 \item 0.975 \item 0.50
+  \end{enumerate}
+
+  \item Which of the following conditions is required for regression inference?
+  \begin{enumerate}[label=(\Alph*)]
+    \item LINER \item BINS \item BITS \item CUSS \item PANIC
+  \end{enumerate}
+
+  \item An experiment that compares each participant's heart rate while resting versus after exercising is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Observational study \item Matched pairs design \item Completely randomized design \item Stratified survey \item Cluster trial
+  \end{enumerate}
+
+  \item If $P(A) = 0.8$, what is $P(A^c)$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.8 \item 0.2 \item 0.0 \item 1.0 \item 0.64
+  \end{enumerate}
+
+  \item The sum of residuals $\sum(y - \hat{y})$ for a least-squares regression line is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 1 \item $-1$ \item Always zero \item $r^2$ \item $s_y$
+  \end{enumerate}
+
+  \item A 90\% confidence interval for $\mu$ is $(12.4, 18.6)$. What is the margin of error?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 6.2 \item 3.1 \item 15.5 \item 1.96 \item 0.90
+  \end{enumerate}
+
+  \item What type of variable is the number of cars passing an intersection in one hour?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Categorical \item Continuous quantitative \item Discrete quantitative \item Qualitative \item Identifier
+  \end{enumerate}
+
+  \item If a significance test rejects $H_0$ at $\alpha = 0.05$, the $p$-value must be:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\le 0.05$ \item $> 0.05$ \item 0.05 exactly \item Negative \item 1.0
+  \end{enumerate}
+
+  \item When constructing a confidence interval, increasing the confidence level from 90\% to 99\%:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Narrows the interval \item Widens the interval \item Has no effect on width \item Cuts sample size in half \item Decreases $z^*$
+  \end{enumerate}
+
+  \item The standard error of the slope $b_1$ measures:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The true population slope $\beta$
+    \item The estimated standard deviation of the sampling distribution of sample slopes $b_1$
+    \item The correlation coefficient $r$
+    \item The $y$-intercept
+    \item The $r^2$ value
+  \end{enumerate}
+
+  % Item Set (Questions 41-42 based on a shared prompt)
+  \vspace{8pt}
+  \noindent\textbf{Directions for Questions 41--42:} Use the following information to answer Questions 41 and 42.
+
+  A public health agency studies the relationship between daily physical activity ($x$, in minutes) and resting pulse rate ($y$, in beats per minute) for a random sample of 25 adults. The least-squares regression line is $\hat{y} = 78.4 - 0.32x$, with $r = -0.68$ and standard error of the slope $\text{SE}(b_1) = 0.075$.
+
+  \item What percentage of the variability in resting pulse rate is explained by the linear relationship with daily physical activity?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 32.0\% \item 46.2\% \item 68.0\% \item 82.5\% \item 64.0\%
+  \end{enumerate}
+
+  \item In a hypothesis test of $H_0: \beta = 0$ versus $H_a: \beta < 0$, what is the calculated value of the test statistic $t$ and its degrees of freedom?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $t = -4.27, \; df = 23$
+    \item $t = -4.27, \; df = 24$
+    \item $t = -0.32, \; df = 25$
+    \item $t = -2.13, \; df = 23$
+    \item $t = -1.96, \; df = 24$
+  \end{enumerate}
+\end{enumerate}
+
+\section{Section II: Free-Response Questions (Questions 1--4)}
+\textbf{Time: 90 Minutes | 4 Questions | 50\% of Exam Score}
+
+\begin{workbookbox}[Question 1: Multi-Focus on Practices 1 \& 2 (Formulate Questions \& Collect Data)]
+A school district administration investigates whether introducing dynamic standing desks into high school classrooms improves student academic attentiveness. A total of 40 standard classrooms across 4 high schools are available for an educational trial.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 1.A:} Formulate a precise, valid statistical investigative question that can be addressed by this comparative study.
+  \item \textbf{Skill 2.B:} Describe an ethical and valid random assignment protocol to allocate 20 classrooms to receive standing desks and 20 classrooms to maintain traditional seated desks using a random number generator.
+  \item \textbf{Skill 2.D:} Identify a potential confounding variable (e.g., subject matter or time of day) and explain how a randomized block design (blocking by academic discipline, such as STEM vs. Humanities) would control for this variable.
+  \item \textbf{Skill 2.E:} State the null and alternative hypotheses in words and mathematical symbols for a significance test evaluating whether standing desks produce higher mean attentiveness ratings.
+\end{enumerate}
+\end{workbookbox}
+
+\begin{workbookbox}[Question 2: Multi-Focus on Practices 3 \& 4 (Analyze Data \& Interpret Results)]
+A pediatric nutritional researcher examines the sugar content ($x$, in grams per serving) and caloric density ($y$, in calories) for $n = 14$ popular commercial breakfast cereals. Summary statistics for sugar content are:
+\[ \text{Min} = 4, \quad Q_1 = 7, \quad \text{Median} = 11.5, \quad Q_3 = 14, \quad \text{Max} = 26 \]
+A computer regression package outputs the least-squares regression equation relating calories to sugar content:
+\[ \widehat{\text{Calories}} = 95.20 + 3.85(\text{Sugar}) \]
+with $s = 8.64\text{ calories}$ and $r^2 = 72.8\%$.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 3.B:} Determine the outlier boundary fences for sugar content using the $1.5 \times \text{IQR}$ rule. Is the cereal with 26 grams of sugar a confirmed outlier? Justify mathematically.
+  \item \textbf{Skill 4.A:} Construct and describe the distribution of sugar content addressing Center, Unusual features, Shape, and Spread (C-U-S-S) with context.
+  \item \textbf{Skill 3.B:} Predict the caloric content of a cereal containing 12.0 grams of sugar per serving. If an observed cereal with 12.0 grams of sugar actually has 148 calories, calculate and interpret the residual.
+  \item \textbf{Skill 4.B:} Interpret the slope $3.85$ and the coefficient of determination $r^2 = 72.8\%$ in complete context.
+\end{enumerate}
+\end{workbookbox}
+
+\begin{workbookbox}[Question 3: Statistical Inference (Hypothesis Test for Proportions)]
+A university admissions office claims that at least 65\% of admitted students will accept their offer and enroll. In an SRS of $n = 300$ admitted high school seniors, 180 enroll.
+Conduct a complete significance test at the $\alpha = 0.05$ level following the PHANTOM framework:
+\begin{enumerate}[label=(\alph*)]
+  \item State the null and alternative hypotheses, clearly defining the parameter of interest in context.
+  \item Identify the correct inference procedure and verify all necessary conditions (Random, 10\%, Large Counts) with explicit numerical evidence.
+  \item Calculate the standardized test statistic $z$ and determine the associated $p$-value.
+  \item State your conclusion in the context of university enrollment at the $\alpha = 0.05$ significance level.
+\end{enumerate}
+\end{workbookbox}
+
+\begin{workbookbox}[Question 4: Multi-Focus Synthesis on Practices 2, 3, \& 4 (Comprehensive Investigation)]
+An educational research team models the relationship between daily study hours ($x$) and standardized exam performance ($y$, on a 100-point scale). The preliminary simple linear model is $\hat{y} = 42.0 + 7.5x$.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Practices 3 \& 4:} A student who studied 4.0 hours scored 78 points. Calculate and interpret the residual in context. Explain what the slope $7.5$ means.
+  \item \textbf{Practices 2 \& 3:} The researchers suspect omitted variable bias due to sleep duration ($w$, in hours). When sleep is included, the estimated model is $\hat{y} = 20.0 + 6.0x + 3.5w$. Explain how omitted variable bias affected the initial slope estimate in part (a).
+  \item \textbf{Practice 3 (Probability Model):} Suppose exam score gains $G$ follow a normal distribution with $\mu_G = 12.5$ points and $\sigma_G = 3.2$ points. What is the probability that a randomly chosen student gains more than 15.0 points?
+  \item \textbf{Practices 2, 3, \& 4 (Optimization under Constraint):} A student has a total combined daily budget of 14 hours for study and sleep ($x + w \le 14$). Assuming minimum biological sleep required is 6 hours ($w \ge 6$), find the daily schedule that maximizes predicted exam score and calculate the maximum predicted score.
+\end{enumerate}
+\end{workbookbox}
+
+% =========================================================================
+% PRACTICE EXAM 2 (2027 EXAM READY MASTERY EXAM)
+% =========================================================================
+\chapter{Practice Exam 2}
+
+\section*{Exam Overview \& Instructions}
+This second full-length practice exam provides comprehensive final review across the 5 curriculum units under strict 2027 digital testing conditions.
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Section I:} 42 Multiple-Choice Questions (90 Minutes | 50\% of Total Score).
+  \item \textbf{Section II:} 4 Free-Response Questions (90 Minutes | 50\% of Total Score).
+  \item Graphing calculator active throughout (TI-84 Plus CE or Bluebook Desmos Graphing Calculator). Nongraphing scientific calculators are strictly prohibited.
+\end{itemize}
+
+\section{Section I: Multiple-Choice Questions (Questions 1--42)}
+\begin{enumerate}[leftmargin=1.5em]
+  \item In a dataset of 100 values, the mean is 50 and standard deviation is 0. This implies:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Half the values are 0 and half are 100. \item Every single value in the dataset equals 50. \item The variance is 50. \item The median is 0. \item The data is normal.
+  \end{enumerate}
+
+  \item If a distribution is skewed to the right, which is true?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\text{Mean} > \text{Median}$ \item $\text{Mean} < \text{Median}$ \item $\text{Mean} = \text{Median}$ \item Range is zero \item $s_x = 0$
+  \end{enumerate}
+
+  \item A scatterplot has $r = 0.0$. This means:
+  \begin{enumerate}[label=(\Alph*)]
+    \item There is no linear relationship between $x$ and $y$. \item There is no relationship of any kind. \item The data forms a vertical line. \item All points lie on the $y$-axis. \item $b_1 = 1$.
+  \end{enumerate}
+
+  \item In an experiment, the factor is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The explanatory variable manipulated by the researcher. \item The response variable. \item The subjects. \item The error rate. \item The randomizer.
+  \end{enumerate}
+
+  \item If $P(A) = 0.6, P(B) = 0.3,$ and $P(A \cap B) = 0.18$, events $A$ and $B$ are:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Disjoint \item Independent \item Dependent \item Impossible \item Complements
+  \end{enumerate}
+
+  \item What is the expected value of a geometric random variable with $p = 0.25$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.25 \item 1.0 \item 2.0 \item 4.0 \item 16.0
+  \end{enumerate}
+
+  \item The sampling distribution of $\bar{x}$ will be approximately normal if:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $n \ge 30$ by the Central Limit Theorem \item The population has $N \ge 30$ \item $p = 0.5$ \item $s_x = \sigma$ \item $\mu = 0$
+  \end{enumerate}
+
+  \item For a 95\% confidence interval for a proportion, the margin of error is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $1.96 \sqrt{\hat{p}(1-\hat{p})/n}$ \item $\hat{p} / n$ \item $1.96 / \sqrt{n}$ \item $\sqrt{p(1-p)}$ \item $2\sigma$
+  \end{enumerate}
+
+  \item When testing $H_0: \mu = 50$ vs. $H_a: \mu \neq 50$, $t = -2.00$ with $df = 20$. The two-sided $p$-value is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $2 \times P(t_{20} \le -2.00)$ \item $P(t_{20} \le -2.00)$ \item $1 - P(t_{20} \le -2.00)$ \item 0.05 \item 0.025
+  \end{enumerate}
+
+  \item Degrees of freedom for a Chi-Square goodness-of-fit test with 5 categories is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 5 \item 4 \item 25 \item 1 \item 10
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item In a regression analysis, the slope $b_1 = -2.5$ and $\text{SE}(b_1) = 0.5$. The $t$-statistic for $H_0: \beta = 0$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-5.0$ \item $-1.25$ \item 5.0 \item 0.20 \item $-0.20$
+  \end{enumerate}
+
+  \item If an observation has a negative residual, the actual data point:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Lies below the regression line \item Lies above the line \item Lies on the line \item Is an outlier \item Has $z = 0$
+  \end{enumerate}
+
+  \item What happens to the power of a test when the sample size $n$ decreases?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Increases \item Decreases \item Remains constant \item Becomes 1 \item Becomes 0
+  \end{enumerate}
+
+  \item A $z$-score of 0 indicates that the observation:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Equals the mean \item Equals 0 \item Is an outlier \item Has a probability of 0 \item Is negative
+  \end{enumerate}
+
+  \item A survey draws an SRS of 100 students from a school of 1000. The 10\% condition is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Satisfied ($100 \le 0.10(1000) = 100$) \item Violated \item Not applicable \item Only for means \item Only for experiments
+  \end{enumerate}
+
+  \item Which of the following is an unbiased estimator of the population proportion $p$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Sample proportion $\hat{p}$ \item $\hat{p} + 0.05$ \item Sample mean $\bar{x}$ \item $s_x$ \item $z^*$
+  \end{enumerate}
+
+  \item The sum of squared residuals $\sum(y - \hat{y})^2$ is minimized by:
+  \begin{enumerate}[label=(\Alph*)]
+    \item The least-squares regression line \item The horizontal line through $\bar{y}$ \item The median line \item Any line with positive slope \item A polynomial curve
+  \end{enumerate}
+
+  \item If $P(A) = 0.4$, what is $P(A \cap A^c)$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.00 \item 0.40 \item 0.60 \item 1.00 \item 0.24
+  \end{enumerate}
+
+  \item For a 1-sample $t$-interval with $n = 30$, degrees of freedom is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 29 \item 30 \item 31 \item 28 \item 15
+  \end{enumerate}
+
+  \item In an experiment evaluating three pain relievers, patients are assigned by age group. Age is the:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Blocking variable \item Response variable \item Treatment \item Placebo \item Dependent variable
+  \end{enumerate}
+
+  \item If $z^* = 2.576$, the corresponding confidence level is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 90\% \item 95\% \item 98\% \item 99\% \item 99.9\%
+  \end{enumerate}
+
+  \item A distribution of house prices has $\mu = \$450,000$ and $\text{Median} = \$320,000$. The shape is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Skewed right \item Skewed left \item Symmetric \item Uniform \item Normal
+  \end{enumerate}
+
+  \item What is the probability of flipping 4 heads in a row with a fair coin?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.50 \item 0.25 \item 0.125 \item 0.0625 \item 0.03125
+  \end{enumerate}
+
+  \item A high leverage point in regression:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Has an extreme $x$-value \item Always has a large residual \item Has $y = 0$ \item Is always an error \item Cannot affect the slope
+  \end{enumerate}
+
+  \item If $n = 64$ and $\sigma = 16$, the standard deviation of the sample mean $\bar{x}$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 2 \item 4 \item 8 \item 16 \item 0.25
+  \end{enumerate}
+
+  \item A significance test with $\alpha = 0.05$ produces $p\text{-value} = 0.082$. The decision is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Fail to reject $H_0$ \item Reject $H_0$ \item Accept $H_a$ \item Prove $H_0$ is true \item Increase $\alpha$
+  \end{enumerate}
+
+  \item In a Chi-Square test, the expected counts represent:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Frequencies expected if the null hypothesis is true \item Actual counts collected \item Percentages of total \item Standard errors \item Degrees of freedom
+  \end{enumerate}
+
+  \item A matched pairs $t$-test is mathematically equivalent to:
+  \begin{enumerate}[label=(\Alph*)]
+    \item A 1-sample $t$-test on differences \item A 2-sample independent $t$-test \item A 1-prop $z$-test \item An ANOVA \item A Chi-Square test
+  \end{enumerate}
+
+  \item What percentage of observations fall within $\pm 1\sigma$ of the mean in a normal distribution?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 50\% \item 68\% \item 95\% \item 99.7\% \item 100\%
+  \end{enumerate}
+
+  \item Which sampling method divides the population into clusters and samples all members of selected clusters?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Cluster sampling \item Stratified sampling \item Simple random sampling \item Systematic sampling \item Convenience sampling
+  \end{enumerate}
+
+  \item If $P(A \mid B) = P(A)$, then $A$ and $B$ are:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Independent \item Disjoint \item Mutually exclusive \item Dependent \item Equal
+  \end{enumerate}
+
+  \item Standard deviation of a binomial distribution is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $\sqrt{np(1-p)}$ \item $np$ \item $\sqrt{p(1-p)/n}$ \item $s / \sqrt{n}$ \item $\sigma^2$
+  \end{enumerate}
+
+  \item What does a residual plot with random scatter around zero indicate?
+  \begin{enumerate}[label=(\Alph*)]
+    \item A linear model is appropriate \item The model is curved \item High bias \item Outliers exist \item Extrapolation error
+  \end{enumerate}
+
+  \item A 95\% confidence interval for $p$ is $(0.40, 0.60)$. The point estimate $\hat{p}$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.50 \item 0.40 \item 0.60 \item 0.10 \item 0.20
+  \end{enumerate}
+
+  \item When testing $H_0: \mu = 0$ vs. $H_a: \mu > 0$, the test is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item One-sided (right-tailed) \item One-sided (left-tailed) \item Two-sided \item Non-directional \item Chi-square
+  \end{enumerate}
+
+  \item A placebo is used in an experiment to:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Control for the psychological effect of receiving a treatment \item Increase the sample size \item Ensure double-blinding \item Eliminate random assignment \item Guarantee significance
+  \end{enumerate}
+
+  \item If $n = 100$ and $p = 0.50$, is the Large Counts condition met?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes ($np = 50 \ge 10$ and $n(1-p) = 50 \ge 10$) \item No \item Only for means \item Only if $N > 10,000$ \item Depends on $\sigma$
+  \end{enumerate}
+
+  \item In regression, $df$ for the slope $t$-test is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $n - 2$ \item $n - 1$ \item $n$ \item $2n$ \item $(r-1)(c-1)$
+  \end{enumerate}
+
+  \item The interquartile range (IQR) is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item $Q_3 - Q_1$ \item $\text{Max} - \text{Min}$ \item $2s$ \item $\mu \pm \sigma$ \item $\bar{x} - M$
+  \end{enumerate}
+
+  \item An experimental design where each subject receives two treatments in random order is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Matched pairs design \item Completely randomized design \item Observational study \item Cluster trial \item Stratified survey
+  \end{enumerate}
+
+  % Item Set (Questions 41-42 based on a shared prompt)
+  \vspace{8pt}
+  \noindent\textbf{Directions for Questions 41--42:} Use the following information to answer Questions 41 and 42.
+
+  An automotive engineering team examines the relationship between curb weight ($x$, in thousands of pounds) and highway fuel economy ($y$, in miles per gallon) for an SRS of $n = 18$ vehicles. Computer regression output yields: $\hat{y} = 48.24 - 5.12x$, with $\text{SE}(b_1) = 0.640$, $s = 1.86\text{ mpg}$, and $R\text{-sq} = 80.0\%$.
+
+  \item What is the value of the correlation coefficient $r$ between vehicle curb weight and fuel economy?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $+0.800$ \item $-0.800$ \item $+0.894$ \item $-0.894$ \item $-0.640$
+  \end{enumerate}
+
+  \item Which expression represents a 95\% confidence interval for the true slope $\beta$ of the population regression line?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $-5.12 \pm 2.120(0.640)$
+    \item $-5.12 \pm 2.101(0.640)$
+    \item $-5.12 \pm 1.960(0.640)$
+    \item $-5.12 \pm 2.120(1.86)$
+    \item $48.24 \pm 2.120(0.640)$
+  \end{enumerate}
+\end{enumerate}
+
+\section{Section II: Free-Response Questions (Questions 1--4)}
+\textbf{Time: 90 Minutes | 4 Questions | 50\% of Exam Score}
+
+\begin{workbookbox}[Question 1: Multi-Focus on Practices 1 \& 2 (Formulate Questions \& Collect Data)]
+A regional orthopedic medical network evaluates two post-surgical rehabilitation regimens: Protocol Alpha (incorporating hydrotherapy) and Protocol Beta (standard land-based physical therapy). A total of 50 patients scheduled for identical knee replacement surgeries agree to participate.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 1.A:} Formulate a precise statistical investigative question that can be evaluated using the patient recovery time data.
+  \item \textbf{Skill 2.B:} Justify why a randomized comparative experiment is necessary to evaluate the recovery protocols rather than simply allowing patients to select their preferred rehabilitation regimen.
+  \item \textbf{Skill 2.D:} The researchers recognize that patient age (under 60 vs. 60 and older) is strongly associated with recovery rate. Explain how a randomized block design blocking on age controls for this source of variation.
+  \item \textbf{Skill 2.E:} State the null and alternative hypotheses in words and parameters ($\mu_\alpha, \mu_\beta$) for a significance test to determine if Protocol Alpha results in a faster mean recovery time.
+\end{enumerate}
+\end{workbookbox}
+
+\begin{workbookbox}[Question 2: Multi-Focus on Practices 3 \& 4 (Analyze Data \& Interpret Results)]
+A marine research expedition measures water depth ($x$, in hundreds of meters) and underwater ambient light intensity ($y$, in lumens/$\text{m}^2$) across $n = 22$ oceanic sampling sites. The raw scatterplot exhibits a strong non-linear decay. Applying a natural logarithm transformation to the response variable yields:
+\[ \widehat{\ln(y)} = 6.42 - 0.58x \]
+with $s = 0.145$, $\text{SE}(b_1) = 0.042$, and $r^2 = 94.1\%$.
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 3.B:} Predict the light intensity $y$ (in lumens/$\text{m}^2$) at a depth of 500 meters ($x = 5.0$).
+  \item \textbf{Skill 3.B \& 4.D:} At depth $x = 3.0$ (300 meters), observed light intensity is 120 lumens/$\text{m}^2$. Calculate and interpret the residual in the natural logarithm scale.
+  \item \textbf{Skill 4.A:} Explain why examining the residual plot of the raw $(x, y)$ data versus the transformed $(x, \ln(y))$ data is crucial before concluding that the linear model is appropriate.
+  \item \textbf{Skill 4.B:} Interpret the coefficient of determination $r^2 = 94.1\%$ in context.
+\end{enumerate}
+\end{workbookbox}
+
+\begin{workbookbox}[Question 3: Statistical Inference (Two-Proportion Confidence Interval)]
+A technology consumer research firm investigates whether user satisfaction differs between two prominent mobile operating systems: OS-Alpha and OS-Beta.
+\begin{itemize}
+  \item OS-Alpha: In an independent random sample of 400 active users, 328 report being highly satisfied.
+  \item OS-Beta: In an independent random sample of 500 active users, 375 report being highly satisfied.
+\end{itemize}
+\begin{enumerate}[label=(\alph*)]
+  \item Define the parameters of interest and state the appropriate inference procedure.
+  \item Verify all necessary conditions for constructing a two-proportion confidence interval with explicit numbers.
+  \item Construct a 95\% confidence interval for the true difference in satisfaction proportions ($p_\alpha - p_\beta$).
+  \item Based on your confidence interval, does the data provide convincing statistical evidence that OS-Alpha achieves a higher satisfaction rate than OS-Beta? Justify your claim.
+\end{enumerate}
+\end{workbookbox}
+
+\begin{workbookbox}[Question 4: Multi-Focus Synthesis on Practices 2, 3, \& 4 (Decision Analysis Under Uncertainty)]
+A clinical diagnostic startup develops a rapid screening test kit for an asymptomatic cardiovascular condition. The disease prevalence in the screening population is $P(D) = 0.02$. Laboratory trials establish:
+\begin{itemize}
+  \item Sensitivity (True Positive Rate): $P(+ \mid D) = 0.95$
+  \item Specificity (True Negative Rate): $P(- \mid D^c) = 0.98$
+\end{itemize}
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Skill 3.C:} Calculate the overall probability that a randomly chosen individual tests positive, $P(+)$, showing complete probability tree or total probability calculations.
+  \item \textbf{Skill 3.C \& 4.D:} Calculate the Positive Predictive Value (PPV), $P(D \mid +)$, and interpret this conditional probability in context. Explain why PPV is surprisingly low despite high sensitivity and specificity.
+  \item \textbf{Practices 2, 3, \& 4 (Decision Payoff Matrix):} The public health department evaluates a protocol where positive test results trigger immediate preventive therapy. Net payoffs per individual are:
+  \begin{itemize}
+    \item True Positive (Treated correctly): $+\$10,000$ (avoided hospitalization benefit)
+    \item False Positive (Unnecessary treatment): $-\$2,500$ (medication side effects cost)
+    \item False Negative (Missed case): $-\$50,000$ (severe disease progression cost)
+    \item True Negative (Correct non-treatment): $\$0$
+  \end{itemize}
+  Calculate the expected net payoff per 1,000 screened individuals under this protocol versus a policy of screening no one (where all diseased cases go untreated). Provide a clear policy recommendation.
+\end{enumerate}
+\end{workbookbox}

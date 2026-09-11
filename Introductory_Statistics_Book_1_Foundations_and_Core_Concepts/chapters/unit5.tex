@@ -1,0 +1,336 @@
+﻿% =========================================================================
+% UNIT 5: SAMPLING DISTRIBUTIONS
+% =========================================================================
+\chapter{Unit 5: Sampling Distributions \& The Central Limit Theorem}
+
+\section{Unit Overview \& Exam Weight}
+Unit 5 accounts for \textbf{7\% to 12\%} of the AP Statistics Exam. It is the crucial conceptual bridge between probability models and formal statistical inference. Understanding the sampling distributions of proportions ($\hat{p}$) and means ($\bar{x}$) is required to justify every confidence interval and significance test in Units 6 through 9.
+
+\subsection*{Key Unit Vocabulary}
+\begin{description}[leftmargin=1.5em, style=nextline]
+  \item[Parameter:] A numerical value describing a characteristic of an entire population. Fixed, but typically unknown ($\mu, \sigma, p$).
+  \item[Statistic:] A numerical value computed from sample data, used to estimate a population parameter ($\bar{x}, s_x, \hat{p}$).
+  \item[Sampling Distribution:] The theoretical probability distribution of all possible values of a statistic taken across all possible random samples of the exact same size $n$ from the same population.
+  \item[Sampling Variability:] The fundamental reality that different random samples produce different sample statistics.
+  \item[Unbiased Estimator:] A statistic whose sampling distribution has a mean equal to the true value of the population parameter being estimated ($E(\hat{p}) = p$ and $E(\bar{x}) = \mu$).
+  \item[Central Limit Theorem (CLT):] For a sufficiently large random sample ($n \ge 30$), the sampling distribution of the sample mean $\bar{x}$ is approximately normal, regardless of the underlying shape of the population distribution!
+  \item[10\% Condition:] When sampling without replacement, the sample size must not exceed 10\% of the population ($n \le 0.10N$) to satisfy the independence assumption in standard error formulas.
+  \item[Large Counts Condition:] For proportions, both $np \ge 10$ and $n(1-p) \ge 10$ must be satisfied to ensure the sampling distribution of $\hat{p}$ is approximately normal.
+\end{description}
+
+\section{Core Concept Lessons}
+
+\begin{lessonbox}[Lesson 5.1: The Three Distributions Distinguished]
+To avoid disastrous confusion on the AP exam, strictly distinguish between:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Population Distribution:} Gives the values of the variable for all individuals in the entire population. Fixed mean $\mu$ and spread $\sigma$.
+  \item \textbf{Sample Distribution:} Gives the values of the variable for the $n$ individuals in a single selected sample. Summary statistics are $\bar{x}$ and $s_x$.
+  \item \textbf{Sampling Distribution:} The distribution of values taken by the statistic (e.g., $\bar{x}$ or $\hat{p}$) across \textbf{all possible samples of size $n$}. As $n$ increases, its spread shrinks!
+\end{enumerate}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 5.2: Sampling Distribution of a Sample Proportion ($\hat{p}$)]
+Let $\hat{p} = X/n$ be the sample proportion of successes in an SRS of size $n$ from a population with true proportion $p$:
+\begin{equation}
+  \text{Center: } \mu_{\hat{p}} = p \quad (\hat{p} \text{ is an unbiased estimator of } p)
+\end{equation}
+\begin{equation}
+  \text{Spread: } \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} \quad (\text{Requires 10\% condition: } n \le 0.10N)
+\end{equation}
+\textbf{Shape (Normality Condition):}
+The sampling distribution of $\hat{p}$ is approximately normal if and only if the \textbf{Large Counts Condition} is satisfied:
+\begin{equation}
+  np \ge 10 \quad \text{AND} \quad n(1-p) \ge 10
+\end{equation}
+\end{lessonbox}
+
+\begin{lessonbox}[Lesson 5.3: Sampling Distribution of a Sample Mean ($\bar{x}$)]
+Let $\bar{x}$ be the sample mean of an SRS of size $n$ drawn from a population with mean $\mu$ and standard deviation $\sigma$:
+\begin{equation}
+  \text{Center: } \mu_{\bar{x}} = \mu \quad (\bar{x} \text{ is an unbiased estimator of } \mu)
+\end{equation}
+\begin{equation}
+  \text{Spread: } \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} \quad (\text{Requires 10\% condition: } n \le 0.10N)
+\end{equation}
+\textbf{Shape (Normality Condition):}
+\begin{itemize}[leftmargin=1.2em]
+  \item If the population distribution is \textbf{Normal}, the sampling distribution of $\bar{x}$ is \textbf{Normal for any sample size $n$}.
+  \item If the population distribution is \textbf{NOT Normal (skewed or multimodal)}, the \textbf{Central Limit Theorem (CLT)} guarantees that the sampling distribution of $\bar{x}$ is approximately normal provided the sample size is sufficiently large:
+  \begin{equation}
+    n \ge 30
+  \end{equation}
+\end{itemize}
+\end{lessonbox}
+
+\begin{trapbox}[Exam Trap Alert: Central Limit Theorem vs. Large Counts]
+\begin{itemize}[leftmargin=1.2em]
+  \item The \textbf{Central Limit Theorem applies ONLY to sample means ($\bar{x}$)}!
+  \item Never write \textit{"The sampling distribution of $\hat{p}$ is normal by the CLT."} That is mathematically false and loses credit. Proportions are justified normal by \textbf{Large Counts ($np \ge 10, n(1-p) \ge 10$)}.
+  \item Furthermore, the CLT says the \textbf{sampling distribution} becomes normal as $n$ grows; it does NOT say the population or the raw sample becomes normal!
+\end{itemize}
+\end{trapbox}
+
+\section{Worked Step-by-Step Examples}
+
+\subsection*{Example 5.1: Sampling Distribution of Proportions in Quality Control}
+\textbf{Problem:} A semiconductor foundry produces microchips with a defect rate of $p = 0.08$. An inspector tests a random sample of $n = 250$ microchips from a production run of 10,000 chips.
+(a) Confirm that the sampling distribution of $\hat{p}$ is approximately normal.\\
+(b) Calculate the mean and standard deviation of $\hat{p}$.\\
+(c) What is the probability that the sample contains more than 10\% defective chips?
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):}
+  \textit{Random:} Stated random sample.\\
+  \textit{10\% Condition:} $n = 250 \le 0.10(10,000) = 1,000$. Met.\\
+  \textit{Large Counts:} $np = 250(0.08) = 20 \ge 10$ and $n(1-p) = 250(0.92) = 230 \ge 10$. Both are at least 10, so the sampling distribution of $\hat{p}$ is approximately normal.
+  \item \textbf{Part (b):} $\mu_{\hat{p}} = p = \mathbf{0.08}$.\\
+  $\sigma_{\hat{p}} = \sqrt{\frac{0.08(0.92)}{250}} = \sqrt{\frac{0.0736}{250}} = \sqrt{0.0002944} \approx \mathbf{0.01716}$.
+  \item \textbf{Part (c):} We seek $P(\hat{p} > 0.10)$. Standardize $\hat{p} = 0.10$:
+  \[ z = \frac{0.10 - 0.08}{0.01716} = \frac{0.02}{0.01716} \approx 1.17 \]
+  $P(\hat{p} > 0.10) = P(Z > 1.17) = 1 - P(Z \le 1.17) = 1 - 0.8790 = \mathbf{0.1210}$ (approx. \textbf{12.1\%}).
+\end{itemize}
+
+\subsection*{Example 5.2: Applying the Central Limit Theorem to Heavily Skewed Data}
+\textbf{Problem:} The claim processing times at an insurance company are heavily right-skewed with a mean of $\mu = 14.5\text{ days}$ and a standard deviation of $\sigma = 6.0\text{ days}$. A manager reviews an SRS of $n = 36$ claims.
+What is the probability that the average processing time $\bar{x}$ for these 36 claims is under $13.0\text{ days}$?
+
+\textbf{Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Condition Check:} Although the population distribution is heavily skewed, the sample size is $n = 36 \ge 30$. By the Central Limit Theorem, the sampling distribution of the sample mean $\bar{x}$ is approximately normal!
+  \item \textbf{Parameters of $\bar{x}$:}
+  $\mu_{\bar{x}} = \mu = 14.5\text{ days}$.\\
+  $\sigma_{\bar{x}} = \sigma / \sqrt{n} = 6.0 / \sqrt{36} = 6.0 / 6 = 1.0\text{ day}$.
+  \item \textbf{Probability Calculation:} $P(\bar{x} < 13.0)$:
+  \[ z = \frac{13.0 - 14.5}{1.0} = \frac{-1.5}{1.0} = -1.50 \]
+  $P(\bar{x} < 13.0) = P(Z < -1.50) = \mathbf{0.0668}$ (approx. \textbf{6.68\%}).
+\end{itemize}
+
+\section{TI-84 Plus CE Calculator Playbook}
+
+\begin{calculatorbox}[TI-84 Playbook: Sampling Distribution Probabilities]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{For Proportions $\hat{p}$:} Press \texttt{[2nd] [VARS] $\rightarrow$ 2:normalcdf(}.
+  Enter \texttt{lower}, \texttt{upper}, $\mu = p$, $\sigma = \sqrt{p(1-p)/n}$.
+  \item \textbf{For Means $\bar{x}$:} Press \texttt{[2nd] [VARS] $\rightarrow$ 2:normalcdf(}.
+  Enter \texttt{lower}, \texttt{upper}, $\mu = \mu_{\text{pop}}$, $\sigma = \sigma_{\text{pop}}/\sqrt{n}$.
+\end{itemize}
+\end{calculatorbox}
+
+\section{Comprehensive Practice Problem Set}
+
+\subsection*{Part I: 20 Multiple-Choice Questions}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Which of the following is a statistic?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The true proportion $p$ of all voters \item The population mean $\mu$ \item The sample proportion $\hat{p}$ \item The population standard deviation $\sigma$ \item The census parameter
+  \end{enumerate}
+  \textbf{Answer: (C).} $\hat{p}$ is computed from sample data.
+
+  \item As sample size $n$ increases from 100 to 400, the standard deviation of $\hat{p}$:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Multiplies by 4 \item Multiplies by 2 \item Is cut in half \item Is divided by 4 \item Remains unchanged
+  \end{enumerate}
+  \textbf{Answer: (C).} $\sigma_{\hat{p}} \propto 1/\sqrt{n}$. $\sqrt{400}/\sqrt{100} = 20/10 = 2 \implies$ divided by 2.
+
+  \item A population distribution is heavily skewed to the left with $\mu = 80, \sigma = 12$. A random sample of size $n = 64$ is selected. The sampling distribution of $\bar{x}$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Heavily skewed left with $\mu = 80, \sigma = 12$
+    \item Approximately normal with $\mu = 80, \sigma = 1.5$
+    \item Approximately normal with $\mu = 80, \sigma = 12$
+    \item Uniform with $\mu = 80, \sigma = 1.5$
+    \item Cannot be determined because the population is skewed
+  \end{enumerate}
+  \textbf{Answer: (B).} By the CLT ($n = 64 \ge 30$), the sampling distribution is approximately normal. $\sigma_{\bar{x}} = 12/\sqrt{64} = 1.5$.
+
+  \item The Central Limit Theorem states that:
+  \begin{enumerate}[label=(\Alph*)]
+    \item As $n$ grows, the sample data looks more normal.
+    \item As $n$ grows, the population becomes normal.
+    \item As $n$ grows, the sampling distribution of $\bar{x}$ approaches a normal distribution.
+    \item As $n$ grows, the standard error increases.
+    \item Proportions are always normal.
+  \end{enumerate}
+  \textbf{Answer: (C).} Standard definition of the CLT.
+
+  \item Which condition justifies using $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item $np \ge 10$ and $n(1-p) \ge 10$ \item $n \ge 30$ \item $n \le 0.10N$ (10\% Condition) \item Population is normal \item $p = 0.50$
+  \end{enumerate}
+  \textbf{Answer: (C).} The 10\% condition satisfies the independence requirement for standard error formulas.
+
+  \item An unbiased estimator is a statistic that:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Has a standard deviation of zero.
+    \item Has a sampling distribution whose mean equals the true parameter.
+    \item Never produces an error.
+    \item Is calculated from a census.
+    \item Has a sample size greater than 100.
+  \end{enumerate}
+  \textbf{Answer: (B).} Defining condition of unbiasedness.
+
+  \item If $p = 0.60$ and $n = 100$, what is $P(\hat{p} \le 0.50)$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.0207 \item 0.0500 \item 0.1000 \item 0.4793 \item 0.9793
+  \end{enumerate}
+  \textbf{Answer: (A).} $\sigma = \sqrt{0.6(0.4)/100} = 0.04899$. $z = (0.50 - 0.60)/0.04899 = -2.04$. $P(Z < -2.04) = 0.0207$.
+
+  \item A population has $\mu = 50, \sigma = 10$. For an SRS of size $n = 25$, what is $P(\bar{x} > 54)$ if the population is normal?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.0228 \item 0.0500 \item 0.1587 \item 0.3446 \item 0.4500
+  \end{enumerate}
+  \textbf{Answer: (A).} $\sigma_{\bar{x}} = 10/\sqrt{25} = 2.0$. $z = (54 - 50)/2 = 2.00$. $P(Z > 2.00) = 0.0228$.
+
+  \item Which of the following estimators of a population mean $\mu$ is biased?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Sample mean $\bar{x}$ \item Sample median (for symmetric populations) \item $\bar{x} + 2$ \item Midrange (for symmetric populations) \item None of the above
+  \end{enumerate}
+  \textbf{Answer: (C).} Adding a constant of 2 guarantees the expected value is $\mu + 2 \neq \mu$.
+
+  \item For a population with $p = 0.02$, what is the minimum sample size required to satisfy the Large Counts condition?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 30 \item 100 \item 250 \item 500 \item 1000
+  \end{enumerate}
+  \textbf{Answer: (D).} $np \ge 10 \implies n(0.02) \ge 10 \implies n \ge 10 / 0.02 = 500$.
+\end{enumerate}
+
+\begin{enumerate}[resume, leftmargin=1.5em]
+  \item Why does the standard deviation of $\bar{x}$ decrease as $n$ increases?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Larger samples average out extreme individual values, clustering sample means closer to $\mu$.
+    \item The population standard deviation shrinks.
+    \item The degrees of freedom decrease.
+    \item The sampling frame becomes biased.
+    \item $\mu$ increases.
+  \end{enumerate}
+  \textbf{Answer: (A).} Averaging over larger sample sizes dampens extreme individual deviations.
+
+  \item A fair coin is tossed $n$ times. What is the standard deviation of the proportion of heads if $n = 400$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0.05 \item 0.025 \item 0.0125 \item 0.25 \item 0.0025
+  \end{enumerate}
+  \textbf{Answer: (B).} $\sigma = \sqrt{0.5(0.5)/400} = \sqrt{0.25/400} = 0.5/20 = 0.025$.
+
+  \item If the shape of a population is uniform between 0 and 10, the sampling distribution of $\bar{x}$ for $n = 50$ will be:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Uniform \item Skewed right \item Approximately normal \item Bimodal \item Exponential
+  \end{enumerate}
+  \textbf{Answer: (C).} By the Central Limit Theorem ($n = 50 \ge 30$).
+
+  \item The spread of a sampling distribution is also commonly called the:
+  \begin{enumerate}[label=(\Alph*)]
+    \item Parameter \item Standard error of the statistic \item Bias \item Confidence level \item P-value
+  \end{enumerate}
+  \textbf{Answer: (B).} The standard deviation of an estimator is the standard error.
+
+  \item If $n = 16$ from a normal population with $\sigma = 8$, the standard deviation of $\bar{x}$ is:
+  \begin{enumerate}[label=(\Alph*)]
+    \item 8 \item 4 \item 2 \item 0.5 \item 1
+  \end{enumerate}
+  \textbf{Answer: (C).} $\sigma_{\bar{x}} = 8/\sqrt{16} = 8/4 = 2$.
+
+  \item A study surveys 100 students from a university of 20,000. Is the 10\% condition satisfied?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Yes, because $100 \le 0.10(20,000) = 2,000$.
+    \item No, because $100 < 30$.
+    \item Yes, because $100 \ge 30$.
+    \item No, because the university is too large.
+    \item Yes, by the Central Limit Theorem.
+  \end{enumerate}
+  \textbf{Answer: (A).} $100 \le 2,000$.
+
+  \item What happens to the mean of a sampling distribution as the sample size quadruples?
+  \begin{enumerate}[label=(\Alph*)]
+    \item Quadruples \item Doubles \item Is cut in half \item Remains unchanged \item Approaches zero
+  \end{enumerate}
+  \textbf{Answer: (D).} The mean $\mu_{\bar{x}} = \mu$ is invariant to sample size.
+
+  \item An estimator that consistently overestimates the true parameter is said to have:
+  \begin{enumerate}[label=(\Alph*)]
+    \item High variability \item Positive bias \item Low degrees of freedom \item Negative variance \item Normality
+  \end{enumerate}
+  \textbf{Answer: (B).} Systematically exceeding the parameter reflects positive bias.
+
+  \item If $P(\bar{x} < 100) = 0.50$, what is the population mean $\mu$?
+  \begin{enumerate}[label=(\Alph*)]
+    \item 0 \item 50 \item 100 \item 200 \item Cannot be determined
+  \end{enumerate}
+  \textbf{Answer: (C).} Because normal distributions are symmetric around their mean, $50\%$ falls below $\mu \implies \mu = 100$.
+
+  \item Which of the following conditions is required to apply the Central Limit Theorem?
+  \begin{enumerate}[label=(\Alph*)]
+    \item The population must be normal.
+    \item The sample size must be sufficiently large ($n \ge 30$).
+    \item $np \ge 10$.
+    \item The data must be categorical.
+    \item The variance must be 1.
+  \end{enumerate}
+  \textbf{Answer: (B).} Core criterion for the CLT.
+\end{enumerate}
+
+\subsection*{Part II: Free-Response Practice Problem}
+
+\begin{workbookbox}[FRQ 5.1: Central Limit Theorem \& Sampling Distribution of Means]
+\textbf{Problem:} An automated coffee machine dispenses coffee with a mean volume of $\mu = 10.0\text{ oz}$ and a standard deviation of $\sigma = 0.8\text{ oz}$. The distribution of volumes for individual cups is skewed to the left.
+(a) Can we calculate the probability that a single randomly selected cup has fewer than $9.8\text{ oz}$ of coffee? Explain.\\
+(b) A tray holds an SRS of $n = 36$ cups. Describe the sampling distribution of the sample mean volume $\bar{x}$ (shape, center, spread).\\
+(c) What is the probability that the average volume of these 36 cups is less than $9.8\text{ oz}$?
+
+\textbf{Grader-Approved Score-4 Solution:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} No. Because the population distribution of individual cup volumes is skewed to the left and $n=1$, we cannot assume normality for a single cup, making normal probability calculations invalid.
+  \item \textbf{Part (b):}
+  \textit{Shape:} Approximately Normal because $n = 36 \ge 30$, satisfying the Central Limit Theorem.\\
+  \textit{Center:} $\mu_{\bar{x}} = \mu = \mathbf{10.0\text{ oz}}$.\\
+  \textit{Spread:} Because $n=36 \le 0.10(\text{all cups produced})$, $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{0.8}{\sqrt{36}} = \frac{0.8}{6} \approx \mathbf{0.1333\text{ oz}}$.
+  \item \textbf{Part (c):} Standardize $\bar{x} = 9.8$:
+  \[ z = \frac{9.8 - 10.0}{0.1333} = \frac{-0.2}{0.1333} = -1.50 \]
+  $P(\bar{x} < 9.8) = P(Z < -1.50) = \mathbf{0.0668}$ (approx. \textbf{6.68\%}).
+\end{itemize}
+\end{workbookbox}
+
+
+\begin{frqrubricbox}[FRQ 5.2: Sampling Distribution of Means with Central Limit Theorem]
+\textbf{Problem:} A commercial cargo airline transports standard shipping crates. The crate weights have a distribution with mean $\mu = 125\text{ lbs}$ and standard deviation $\sigma = 40\text{ lbs}$. The distribution of individual crate weights is heavily skewed to the right with occasional very heavy crates.
+\begin{enumerate}[label=(\alph*)]
+  \item Can you calculate the probability that a single randomly chosen crate weighs more than 135 lbs? Explain.
+  \item A cargo aircraft is loaded with an SRS of $n = 64$ crates. Describe the sampling distribution of the sample mean crate weight $\bar{x}$, including shape, center, and spread.
+  \item The maximum allowable average weight per crate for safe takeoff is 135 lbs. What is the probability that the sample mean weight of the 64 crates exceeds 135 lbs?
+  \item If the airline increased the sample size to $n = 100$ crates, how would the probability of exceeding the 135-lb safety threshold change? Explain.
+\end{enumerate}
+
+\textbf{Grader-Approved Score-4 Solution \& Rubric:}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Part (a):} No. We are told the population of individual crate weights is heavily skewed to the right. Because the population is not normal and $n = 1 < 30$, we cannot use the normal distribution to compute probabilities for a single crate.
+  \item \textbf{Part (b):}
+  \textit{Shape:} Approximately normal by the Central Limit Theorem because the sample size $n = 64 \ge 30$.\\
+  \textit{Center:} $\mu_{\bar{x}} = \mu = 125\text{ lbs}$.\\
+  \textit{Spread:} $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{40}{\sqrt{64}} = \frac{40}{8} = 5.0\text{ lbs}$ (assuming 64 crates is less than 10\% of all crates).
+  \item \textbf{Part (c):} $z = \frac{135 - 125}{5.0} = \frac{10}{5.0} = 2.00$.\\
+  $P(\bar{x} > 135) = P(Z > 2.00) = 1 - 0.9772 = \mathbf{0.0228}$ (approx. 2.28\%).
+  \item \textbf{Part (d):} For $n = 100$, $\sigma_{\bar{x}} = \frac{40}{\sqrt{100}} = 4.0\text{ lbs}$.
+  $z = \frac{135 - 125}{4.0} = 2.50$, so $P(Z > 2.50) = 0.0062$.
+  Increasing $n$ reduces the standard error of the sample mean, concentrating the sampling distribution closer to $\mu = 125$ and decreasing the probability of exceeding 135 lbs.
+\end{itemize}
+\end{frqrubricbox}
+
+\begin{trapbox}[Unit 5 Top 5 AP Exam Pitfalls to Avoid]
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Claiming the CLT Makes the Population Normal:} The Central Limit Theorem only normalizes the \textbf{sampling distribution of $\bar{x}$}, NEVER the population or sample!
+  \item \textbf{Applying CLT to Proportions:} CLT applies to sample means $\bar{x}$. For proportions $\hat{p}$, normality is justified by the Large Counts condition ($np \ge 10$ and $n(1-p) \ge 10$).
+  \item \textbf{Forgetting to Divide by $\sqrt{n}$:} The standard deviation of $\bar{x}$ is $\sigma / \sqrt{n}$, not $\sigma$!
+  \item \textbf{Confusing the 10\% Condition with Large Counts:} 10\% condition ($n \le 0.10N$) checks independence; Large Counts checks normality.
+  \item \textbf{Confusing Parameter with Statistic:} $\mu$ and $p$ are fixed population parameters; $\bar{x}$ and $\hat{p}$ are variable statistics.
+\end{enumerate}
+\end{trapbox}
+\section{Unit 5 Master Summary}
+\begin{lessonbox}[Unit 5 Essential Review Checklist]
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Proportions ($\hat{p}$):} $\mu = p$, $\sigma = \sqrt{p(1-p)/n}$. Normal if $np \ge 10$ and $n(1-p) \ge 10$.
+  \item \textbf{Means ($\bar{x}$):} $\mu = \mu$, $\sigma = \sigma/\sqrt{n}$. Normal if pop is normal OR $n \ge 30$ (CLT).
+  \item \textbf{10\% Condition ($n \le 0.10N$):} Required for standard deviation formulas when sampling without replacement.
+  \item \textbf{CLT Distinction:} CLT applies ONLY to means ($\bar{x}$), never to proportions!
+\end{itemize}
+\end{lessonbox}
+\clearpage
